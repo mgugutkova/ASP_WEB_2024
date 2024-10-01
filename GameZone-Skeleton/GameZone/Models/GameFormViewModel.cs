@@ -23,7 +23,7 @@ namespace GameZone.Models
         [Required]
         public int GenreId { get; }
 
-        public ICollection<Genres> Genres { get; set; } = new HashSet<Genres>();
+        public IEnumerable<GenresViewModel> Genres { get; set; } = new List<GenresViewModel>();
 
     }
 }

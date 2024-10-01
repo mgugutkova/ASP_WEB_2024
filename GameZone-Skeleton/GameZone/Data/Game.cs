@@ -19,6 +19,7 @@ namespace GameZone.Data
         public string Description { get; set; } = string.Empty;
 
         public string ImageUrl { get; set; } = string.Empty;
+
         [Required]
         public string PublisherId { get; set; } = string.Empty;
 

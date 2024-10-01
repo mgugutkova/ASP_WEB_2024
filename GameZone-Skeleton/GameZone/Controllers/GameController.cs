@@ -1,10 +1,10 @@
 ﻿using GameZone.Data;
 using GameZone.Models;
-using Microsoft.AspNetCore.Mvc;
-using GameZone.Services;
-using System.Globalization;
-using Microsoft.EntityFrameworkCore;
 using GameZone.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Globalization;
+using System.Security.Claims;
 
 namespace GameZone.Controllers
 {
@@ -56,17 +56,20 @@ namespace GameZone.Controllers
                 return BadRequest();
             }
 
-            await gameInterface.AddGameAsync(model);
+            string currentUser = GetUserId();
+
+            //model.Genres = await GetGenres();
+            await gameInterface.AddGameAsync(model, currentUser);
 
             return RedirectToAction(nameof(Index));
         }
 
         [HttpGet]
-        public async Task<ICollection<Genres>> GetGenres()
+        private async Task<IEnumerable<GenresViewModel>> GetGenres()
         {
             var genres = await data.Genre
                 .AsNoTracking()
-                .Select(x => new Genres()
+                .Select(x => new GenresViewModel()
                 {
                     Id = x.Id,
                     Name = x.Name,
@@ -74,6 +77,12 @@ namespace GameZone.Controllers
                 .ToListAsync();
 
             return genres;
+        }
+
+        [HttpGet]
+        private string GetUserId()
+        {
+            return User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? string.Empty;
         }
     }
 }

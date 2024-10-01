@@ -1,6 +1,10 @@
 ﻿using GameZone.Data;
 using GameZone.Models;
 using GameZone.Services.Interfaces;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace GameZone.Services
 {
@@ -12,7 +16,7 @@ namespace GameZone.Services
             data = context;
         }  
 
-        public async Task AddGameAsync(GameFormViewModel model)
+        public async Task AddGameAsync(GameFormViewModel model, string currentUser)
         {        
             var entity = new Game()
             {
@@ -20,13 +24,14 @@ namespace GameZone.Services
                 ImageUrl = model.ImageUrl,
                 Description = model.Description,
                 ReleasedOn = DateTime.Parse(model.ReleasedOn),
-                GenreId = model.GenreId
+                GenreId = model.GenreId,
+                PublisherId = currentUser
             };
 
             await data.AddAsync(entity);
             await data.SaveChangesAsync();
         }
 
-      
+
     }
 }

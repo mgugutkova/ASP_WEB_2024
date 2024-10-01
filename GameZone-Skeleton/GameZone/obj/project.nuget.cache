@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0o2jZcga33RtzqREb3V1GkoLxFCWFTdCZ+hOxiSoDeW/mavziqAgTKp8jcR4NkUEonfhNtRUerv1Q4Te8tWJpw==",
+  "dgSpecHash": "JWQ+HQosUX2ufM91GZv57smuVpVfu4iZL5TJk4PmU9pBiNyEZdGf6xxPLG5LBAjZVyTCQcuG0l2dzf+0NemTPA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mgugutkova\\Documents\\GitHub\\MyRepoC-\\ASP.NET\\10.PrepareExam012024\\GameZone-Skeleton\\GameZone\\GameZone.csproj",
+  "projectFilePath": "C:\\Users\\mgugutkova\\Documents\\GitHub\\ASP_WEB_2024\\GameZone-Skeleton\\GameZone\\GameZone.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mgugutkova\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\mgugutkova\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
