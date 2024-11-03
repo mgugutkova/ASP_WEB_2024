@@ -11,15 +11,6 @@ namespace PawnShop.Infrastructure.Data.Model
 		public int Id { get; set; }
 
 		[Required]
-		[MaxLength(FirstNameMaxLength)]
-		public string FirstName { get; set; } = string.Empty;
-
-
-		[Required]
-		[MaxLength(LastNameMaxLength)]
-		public string LastName { get; set; } = string.Empty;
-
-		[Required]
 		[MaxLength(PhoneNumberMaxLength)]
 		public string PhoneNumber { get; set; } = string.Empty;
 
@@ -33,7 +24,7 @@ namespace PawnShop.Infrastructure.Data.Model
 
 		[Required]
 		[ForeignKey(nameof(UserId))]	
-		public IdentityUser User { get; set; } = null!;
+		public ApplicationUser User { get; set; } = null!;
 
 		public IEnumerable<Contract> Contracts { get; set; } = new HashSet<Contract>();
 

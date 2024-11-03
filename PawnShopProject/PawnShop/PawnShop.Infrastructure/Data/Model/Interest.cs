@@ -22,7 +22,7 @@ namespace PawnShop.Infrastructure.Data.Model
 		public string OperatorId { get; set; } = string.Empty;
 
 		[ForeignKey(nameof(OperatorId))]
-		public IdentityUser Operator { get; set; } = null!;
+		public ApplicationUser Operator { get; set; } = null!;
 
 		[Required]
 		public bool IsDeleted { get; set; } = false;
