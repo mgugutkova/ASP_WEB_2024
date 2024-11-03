@@ -3108,7 +3108,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.8",
           "Microsoft.AspNetCore.Identity.UI": "8.0.8",
-          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.8"
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.10"
         },
         "compile": {
           "bin/placeholder/PawnShop.Infrastructure.dll": {}
@@ -8509,6 +8509,7 @@
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.10",
       "Microsoft.AspNetCore.Identity.UI >= 8.0.10",
       "Microsoft.EntityFrameworkCore >= 8.0.10",
+      "Microsoft.EntityFrameworkCore.Design >= 8.0.10",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.10",
       "Microsoft.EntityFrameworkCore.Sqlite >= 8.0.10",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.10",
@@ -8518,23 +8519,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mgugutkova\\.nuget\\packages\\": {},
+    "C:\\Users\\Mariana\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mgugutkova\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop\\PawnShop.csproj",
+      "projectUniqueName": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop\\PawnShop.csproj",
       "projectName": "PawnShop",
-      "projectPath": "C:\\Users\\mgugutkova\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop\\PawnShop.csproj",
-      "packagesPath": "C:\\Users\\mgugutkova\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mgugutkova\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop\\obj\\",
+      "projectPath": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop\\PawnShop.csproj",
+      "packagesPath": "C:\\Users\\Mariana\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\mgugutkova\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Mariana\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -8543,17 +8544,18 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\mgugutkova\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Core\\PawnShop.Core.csproj": {
-              "projectPath": "C:\\Users\\mgugutkova\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Core\\PawnShop.Core.csproj"
+            "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Core\\PawnShop.Core.csproj": {
+              "projectPath": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Core\\PawnShop.Core.csproj"
             },
-            "C:\\Users\\mgugutkova\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Infrastructure\\PawnShop.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\mgugutkova\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Infrastructure\\PawnShop.Infrastructure.csproj"
+            "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Infrastructure\\PawnShop.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Infrastructure\\PawnShop.Infrastructure.csproj"
             }
           }
         }
@@ -8586,6 +8588,12 @@
             "version": "[8.0.10, )"
           },
           "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[8.0.10, )"
+          },
+          "Microsoft.EntityFrameworkCore.Design": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
             "target": "Package",
             "version": "[8.0.10, )"
           },
@@ -8627,7 +8635,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

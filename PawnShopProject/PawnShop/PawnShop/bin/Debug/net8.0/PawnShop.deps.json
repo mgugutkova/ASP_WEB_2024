@@ -12,6 +12,7 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.10",
           "Microsoft.AspNetCore.Identity.UI": "8.0.10",
           "Microsoft.EntityFrameworkCore": "8.0.10",
+          "Microsoft.EntityFrameworkCore.Design": "8.0.10",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.10",
           "Microsoft.EntityFrameworkCore.Sqlite": "8.0.10",
           "Microsoft.EntityFrameworkCore.Tools": "8.0.10",
@@ -2176,7 +2177,10 @@
           "PawnShop.Infrastructure": "1.0.0"
         },
         "runtime": {
-          "PawnShop.Core.dll": {}
+          "PawnShop.Core.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "PawnShop.Infrastructure/1.0.0": {
@@ -2186,7 +2190,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.10"
         },
         "runtime": {
-          "PawnShop.Infrastructure.dll": {}
+          "PawnShop.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
