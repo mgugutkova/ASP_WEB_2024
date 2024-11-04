@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mgugutkova\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Infrastructure\\PawnShop.Infrastructure.csproj": {}
+    "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Infrastructure\\PawnShop.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mgugutkova\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Infrastructure\\PawnShop.Infrastructure.csproj": {
+    "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Infrastructure\\PawnShop.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mgugutkova\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Infrastructure\\PawnShop.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Infrastructure\\PawnShop.Infrastructure.csproj",
         "projectName": "PawnShop.Infrastructure",
-        "projectPath": "C:\\Users\\mgugutkova\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Infrastructure\\PawnShop.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\mgugutkova\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mgugutkova\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Infrastructure\\PawnShop.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Mariana\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\mgugutkova\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mariana\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -78,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
