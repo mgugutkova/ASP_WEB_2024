@@ -11,8 +11,6 @@ C:\Users\mgugutkova\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnS
 C:\Users\mgugutkova\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Infrastructure\obj\Debug\net8.0\refint\PawnShop.Infrastructure.dll
 C:\Users\mgugutkova\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Infrastructure\obj\Debug\net8.0\PawnShop.Infrastructure.pdb
 C:\Users\mgugutkova\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Infrastructure\obj\Debug\net8.0\ref\PawnShop.Infrastructure.dll
-C:\Users\mgugutkova\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Infrastructure\bin\Debug\net8.0\PawnShop.Infrastructure.runtimeconfig.json
-C:\Users\mgugutkova\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Infrastructure\obj\Debug\net8.0\PawnShop.Infrastructure.genruntimeconfig.cache
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Infrastructure\bin\Debug\net8.0\PawnShop.Infrastructure.deps.json
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Infrastructure\bin\Debug\net8.0\PawnShop.Infrastructure.dll
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Infrastructure\bin\Debug\net8.0\PawnShop.Infrastructure.pdb

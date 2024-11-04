@@ -16,6 +16,9 @@
 
         public const int PhoneNumberMaxLength = 10;
 
+        public const int StateNameMaxLength = 20;
+        public const int StateNameMinLength = 3;
+
         public const string DataFormat = "dd/MM/yyyy";
     }
 }

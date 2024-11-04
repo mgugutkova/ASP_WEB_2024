@@ -20,5 +20,8 @@ namespace PawnShop.Infrastructure.Data.Model
 
 		public DateTime SoldDate { get; set; }
 
-	}
+        [Required]
+        public bool IsDeleted { get; set; } = false;
+
+    }
 }

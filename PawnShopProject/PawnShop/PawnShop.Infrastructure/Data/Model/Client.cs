@@ -28,5 +28,8 @@ namespace PawnShop.Infrastructure.Data.Model
 
 		public IEnumerable<Contract> Contracts { get; set; } = new HashSet<Contract>();
 
+        [Required]
+        public bool IsDeleted { get; set; } = false;
+
     }
 }

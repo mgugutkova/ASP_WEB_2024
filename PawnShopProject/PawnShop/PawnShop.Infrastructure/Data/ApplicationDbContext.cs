@@ -4,7 +4,7 @@ using PawnShop.Infrastructure.Data.Model;
 
 namespace PawnShop.Infrastructure.Data
 {
-	public class ApplicationDbContext : IdentityDbContext
+	public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
 	{
 		public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
 			: base(options)
@@ -20,8 +20,7 @@ namespace PawnShop.Infrastructure.Data
 		public DbSet<Interest> Interests { get; set; }	
 
 		public DbSet<Shop> Shop { get; set; }
-
-		public DbSet<Period> Periods { get; set; }
-
+		
+		//public DbSet<Period> Periods { get; set; }
     }
 }
