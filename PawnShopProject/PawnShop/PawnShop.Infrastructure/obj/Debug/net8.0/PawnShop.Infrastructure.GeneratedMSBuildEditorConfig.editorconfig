@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PawnShop.Infrastructure
-build_property.ProjectDir = C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Infrastructure\
+build_property.ProjectDir = C:\Users\mgugutkova\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Infrastructure\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

@@ -20,5 +20,7 @@
         public const int StateNameMinLength = 3;
 
         public const string DataFormat = "dd/MM/yyyy";
+
+        public const string ErrorMessageLength = "The field {0} must be between {1} and {2} characters";
     }
 }

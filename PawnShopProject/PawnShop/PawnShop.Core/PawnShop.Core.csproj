@@ -10,4 +10,8 @@
     <ProjectReference Include="..\PawnShop.Infrastructure\PawnShop.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\Client\" />
+  </ItemGroup>
+
 </Project>
