@@ -2177,7 +2177,10 @@
           "PawnShop.Infrastructure": "1.0.0"
         },
         "runtime": {
-          "PawnShop.Core.dll": {}
+          "PawnShop.Core.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "PawnShop.Infrastructure/1.0.0": {
@@ -2187,7 +2190,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.10"
         },
         "runtime": {
-          "PawnShop.Infrastructure.dll": {}
+          "PawnShop.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
