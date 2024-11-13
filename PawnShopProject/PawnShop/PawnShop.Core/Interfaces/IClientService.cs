@@ -1,15 +1,20 @@
-﻿namespace PawnShop.Core.Interfaces
+﻿using PawnShop.Core.Models.Client;
+using PawnShop.Infrastructure.Data.Model;
+
+namespace PawnShop.Core.Interfaces
 {
     public interface IClientService
     {
-        Task<bool> ExistClientIdAsync(string clientId);
+        Task<bool> ExistClientIdAsync(string userId);
 
         Task<bool> ExistClientPhoneNumberAsync(string phoneNumber);
 
-        Task<bool> ClientHasContractsAsync(string clientId);
+        Task<bool> ClientHasContractsAsync(string userId);
 
-        Task CreateClientAsync(string clientId, string phoneNumber);
+        Task CreateClientAsync(string userId, string phoneNumber, string address);
 
-        Task GetClientIdAsync(string clientId);
+        Task<int?> GetClientIdAsync(string userId);
+
+        Task<BecomeClientFormModel> GetClient();
     }
 }

@@ -1,13 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PawnShop.Infrastructure.Data.Repo
 {
-    public class Repository : IRepository
+	public class Repository : IRepository
     {
         private readonly DbContext context;
 

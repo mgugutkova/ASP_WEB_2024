@@ -30,8 +30,4 @@
     <ProjectReference Include="..\PawnShop.Infrastructure\PawnShop.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Views\Client\" />
-  </ItemGroup>
-
 </Project>

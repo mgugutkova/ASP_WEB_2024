@@ -2,19 +2,12 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 #nullable disable
 
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
 using PawnShop.Infrastructure.Data.Model;
+using System.ComponentModel.DataAnnotations;
 
 namespace PawnShop.Areas.Identity.Pages.Account
 {
@@ -44,11 +37,14 @@ namespace PawnShop.Areas.Identity.Pages.Account
    
         public class InputModel
         {      
-            [Required]
-            [EmailAddress]
-            public string Email { get; set; }
+            //[Required]
+            //[EmailAddress]
+            //public string Email { get; set; }
 
-         
+            [Required]        
+            public string UserName { get; set; }
+
+
             [Required]
             [DataType(DataType.Password)]
             public string Password { get; set; }
@@ -83,7 +79,7 @@ namespace PawnShop.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
               
-                var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
+                var result = await _signInManager.PasswordSignInAsync(Input.UserName, Input.Password, Input.RememberMe, lockoutOnFailure: false);
 
                 if (result.Succeeded)
                 {

@@ -15,6 +15,10 @@
         public const int LastNameMinLength = 3;
 
         public const int PhoneNumberMaxLength = 10;
+        public const int PhoneNumberMinLength = 4;
+
+        public const int AddressMaxLength = 50;
+        public const int AddressMinLength = 10;
 
         public const int StateNameMaxLength = 20;
         public const int StateNameMinLength = 3;

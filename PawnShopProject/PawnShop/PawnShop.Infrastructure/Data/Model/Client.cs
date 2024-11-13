@@ -1,26 +1,27 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using static PawnShop.Infrastructure.Data.DataConstants;
 
 namespace PawnShop.Infrastructure.Data.Model
 {
-    public class Client
+	[Index(nameof(PhoneNumber), IsUnique = true)]
+	[Index(nameof(UserId), IsUnique = true)]
+	public class Client
 	{
 		[Key]
 		public int Id { get; set; }
 
 		[Required]
 		[MaxLength(PhoneNumberMaxLength)]
-		public string PhoneNumber { get; set; } = string.Empty;
+		public string PhoneNumber { get; set; } = string.Empty;		
 
-		[Required]
-		[EmailAddress]
-		public string Email { get; set; } = string.Empty;
+        [Required]     
+        public string Address { get; set; } = string.Empty;
 
-		[Required]
+        [Required]
 		public string UserId { get; set; } = string.Empty;
-
 
 		[Required]
 		[ForeignKey(nameof(UserId))]	
