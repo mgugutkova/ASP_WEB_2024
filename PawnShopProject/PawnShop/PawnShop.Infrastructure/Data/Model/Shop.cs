@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PawnShop.Infrastructure.Data.Model
@@ -6,21 +7,28 @@ namespace PawnShop.Infrastructure.Data.Model
 	public class Shop
 	{
 		[Key]
-		public int Id { get; set; }
+        [Comment("Идентификатор на стоката в магазин")]
+        public int Id { get; set; }
 
 		[Required]
-		public int ContractId { get; set; }
+        [Comment("Идентификатор на договора")]
+        public int AgreementId { get; set; }
 
 		[Required]
-		[ForeignKey(nameof(ContractId))]
-		public Contract Contract { get; set; } = null!;
+		[ForeignKey(nameof(AgreementId))]
+		public Agreement Agreement { get; set; } = null!;
+
 
 		[Column(TypeName = "decimal(18,2)")]
-		public decimal SellPrice { get; set; }
+        [Comment("Цена на стоката")]
+        public decimal SellPrice { get; set; }
 
-		public DateTime SoldDate { get; set; }
+        [Comment("Дата на продажба на стоката")]
+        public DateTime SoldDate { get; set; }
 
+        
         [Required]
+        [Comment("SoftDeleted")]
         public bool IsDeleted { get; set; } = false;
 
     }

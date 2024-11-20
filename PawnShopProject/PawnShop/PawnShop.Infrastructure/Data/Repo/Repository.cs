@@ -34,6 +34,6 @@ namespace PawnShop.Infrastructure.Data.Repo
         public async Task<int> SaveChangesAsync()
         {
             return await context.SaveChangesAsync();
-        }       
-    }
+        }	
+	}
 }

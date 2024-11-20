@@ -9,12 +9,12 @@ namespace PawnShop.Core.Interfaces
 
         Task<bool> ExistClientPhoneNumberAsync(string phoneNumber);
 
-        Task<bool> ClientHasContractsAsync(string userId);
+        Task<bool> ClientHasAgreementAsync(string userId);
 
         Task CreateClientAsync(string userId, string phoneNumber, string address);
 
-        Task<int?> GetClientIdAsync(string userId);
+        Task<int> GetClientIdAsync(string userId);
 
-        Task<BecomeClientFormModel> GetClient();
+       // Task<BecomeClientFormModel> GetClient();
     }
 }

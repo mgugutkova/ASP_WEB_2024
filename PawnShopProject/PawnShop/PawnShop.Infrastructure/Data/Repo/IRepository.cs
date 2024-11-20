@@ -1,4 +1,6 @@
-﻿namespace PawnShop.Infrastructure.Data.Repo
+﻿using System.Diagnostics.Contracts;
+
+namespace PawnShop.Infrastructure.Data.Repo
 {
     public interface IRepository
     {
@@ -7,6 +9,6 @@
 
         Task AddAsync<T>(T entiry) where T : class;
 
-        Task<int> SaveChangesAsync();
-    }
+        Task<int> SaveChangesAsync();		
+	}
 }

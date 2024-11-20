@@ -1,11 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using static PawnShop.Infrastructure.Data.DataConstants;
 
-namespace PawnShop.Infrastructure.Data.Model
+namespace PawnShop.Core.Models.AgreementState
 {
-	public class ContractState
-	{
-		[Key]
+    public class AgreementStateViewModel
+    {
+        [Key]
         public int Id { get; set; }
 
         [Required]

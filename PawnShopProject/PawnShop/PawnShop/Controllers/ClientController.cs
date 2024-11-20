@@ -1,13 +1,11 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using PawnShop.Core.Interfaces;
 using PawnShop.Core.Models.Client;
-using System.Security.Claims;
 
 namespace PawnShop.Controllers
 {
-    [Authorize]
-    public class ClientController : Controller
+
+    public class ClientController : BaseController
     {
         private readonly IClientService clientService;
 
@@ -25,9 +23,9 @@ namespace PawnShop.Controllers
 
             if (IsClientExist)
             {
-               return View("ClientExist");
+                return View("ClientExist");
             }
-        
+
             var model = new BecomeClientFormModel();
 
             return View(model);
@@ -47,12 +45,38 @@ namespace PawnShop.Controllers
             return RedirectToAction(nameof(Index), "Home");   // да връща към всички договори
         }
 
-       
-
         [HttpGet]
-		private string GetUserId()
-		{
-			return User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? string.Empty;
-		}
-	}
+        public async Task<IActionResult> MineContracts(string userId)
+        {
+            var currentUserId = GetUserId();
+
+            if (string.IsNullOrEmpty(userId) || currentUserId != userId)
+            {
+                return BadRequest("You get an error!");
+            }
+
+            int clientId = await clientService.GetClientIdAsync(userId);
+
+            if (clientId == 0)
+            {
+                return BadRequest("You get an error!");
+            }
+
+            bool isClientHasContract = await clientService.ClientHasAgreementAsync(userId);
+
+            if (isClientHasContract == false)
+            {
+                return BadRequest("You get an error!");
+            }
+
+            // todo generate model/view
+            return View();
+        }
+
+        //[HttpGet]
+        //private string GetUserId()
+        //{
+        //    return User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? string.Empty;
+        //}
+    }
 }

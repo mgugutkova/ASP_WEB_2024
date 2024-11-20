@@ -159,6 +159,114 @@ namespace PawnShop.Infrastructure.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("PawnShop.Infrastructure.Data.Model.Agreement", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasComment("Идентификатор на договора");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AgrreementStateId")
+                        .HasColumnType("int")
+                        .HasComment("Статус на договора");
+
+                    b.Property<int?>("ClientId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)")
+                        .HasComment("Описание");
+
+                    b.Property<int>("Duration")
+                        .HasColumnType("int")
+                        .HasComment("Срок на договора");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2")
+                        .HasComment("Крайна дата на договора");
+
+                    b.Property<string>("GoodName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasComment("Стока");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit")
+                        .HasComment("SoftDeleted");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)")
+                        .HasComment("Заложна стойност");
+
+                    b.Property<decimal>("ReturnPrice")
+                        .HasColumnType("decimal(18,2)")
+                        .HasComment("Стойност за връщане");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2")
+                        .HasComment("Начална дата на договора");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)")
+                        .HasComment("Идентификатор на потребителя");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AgrreementStateId");
+
+                    b.HasIndex("ClientId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Agreements");
+                });
+
+            modelBuilder.Entity("PawnShop.Infrastructure.Data.Model.AgreementState", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasComment("Идентификатор на статус");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)")
+                        .HasComment("Име на статуса");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AgreementStates");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Аwaiting approval"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Approved (Active)"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Finish"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Late"
+                        });
+                });
+
             modelBuilder.Entity("PawnShop.Infrastructure.Data.Model.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
@@ -269,108 +377,41 @@ namespace PawnShop.Infrastructure.Migrations
                     b.ToTable("Clients");
                 });
 
-            modelBuilder.Entity("PawnShop.Infrastructure.Data.Model.Contract", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("ClientId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ContractStateId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Duration")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("EndDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("GoodName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("OperatorId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("ReturnPrice")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<DateTime>("StartDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ClientId");
-
-                    b.HasIndex("ContractStateId");
-
-                    b.HasIndex("OperatorId");
-
-                    b.ToTable("Contracts");
-                });
-
-            modelBuilder.Entity("PawnShop.Infrastructure.Data.Model.ContractState", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ContractStates");
-                });
-
             modelBuilder.Entity("PawnShop.Infrastructure.Data.Model.Interest", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasComment("Идентификатор на лихва");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("ContractId")
-                        .HasColumnType("int");
+                    b.Property<int>("AgreementId")
+                        .HasColumnType("int")
+                        .HasComment("Идентификато на договора");
 
                     b.Property<DateTime>("DateInterest")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime2")
+                        .HasComment("Дата на внасяне на лихвата");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
+                        .HasColumnType("bit")
+                        .HasComment("SoftDeleted");
 
-                    b.Property<string>("OperatorId")
+                    b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(450)")
+                        .HasComment("Идентификатор на потребителя");
 
                     b.Property<decimal>("ValueInterest")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18,2)")
+                        .HasComment("Стойност на лихвата");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ContractId");
+                    b.HasIndex("AgreementId");
 
-                    b.HasIndex("OperatorId");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Interests");
                 });
@@ -379,25 +420,30 @@ namespace PawnShop.Infrastructure.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasComment("Идентификатор на стоката в магазин");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("ContractId")
-                        .HasColumnType("int");
+                    b.Property<int>("AgreementId")
+                        .HasColumnType("int")
+                        .HasComment("Идентификатор на договора");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
+                        .HasColumnType("bit")
+                        .HasComment("SoftDeleted");
 
                     b.Property<decimal>("SellPrice")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18,2)")
+                        .HasComment("Цена на стоката");
 
                     b.Property<DateTime>("SoldDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime2")
+                        .HasComment("Дата на продажба на стоката");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ContractId");
+                    b.HasIndex("AgreementId");
 
                     b.ToTable("Shop");
                 });
@@ -453,6 +499,29 @@ namespace PawnShop.Infrastructure.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("PawnShop.Infrastructure.Data.Model.Agreement", b =>
+                {
+                    b.HasOne("PawnShop.Infrastructure.Data.Model.AgreementState", "AgrreementStates")
+                        .WithMany()
+                        .HasForeignKey("AgrreementStateId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PawnShop.Infrastructure.Data.Model.Client", null)
+                        .WithMany("Contracts")
+                        .HasForeignKey("ClientId");
+
+                    b.HasOne("PawnShop.Infrastructure.Data.Model.ApplicationUser", "Account")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Account");
+
+                    b.Navigation("AgrreementStates");
+                });
+
             modelBuilder.Entity("PawnShop.Infrastructure.Data.Model.Client", b =>
                 {
                     b.HasOne("PawnShop.Infrastructure.Data.Model.ApplicationUser", "User")
@@ -464,69 +533,42 @@ namespace PawnShop.Infrastructure.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("PawnShop.Infrastructure.Data.Model.Contract", b =>
-                {
-                    b.HasOne("PawnShop.Infrastructure.Data.Model.Client", "Client")
-                        .WithMany("Contracts")
-                        .HasForeignKey("ClientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("PawnShop.Infrastructure.Data.Model.ContractState", "ContractState")
-                        .WithMany()
-                        .HasForeignKey("ContractStateId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("PawnShop.Infrastructure.Data.Model.ApplicationUser", "Operator")
-                        .WithMany()
-                        .HasForeignKey("OperatorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Client");
-
-                    b.Navigation("ContractState");
-
-                    b.Navigation("Operator");
-                });
-
             modelBuilder.Entity("PawnShop.Infrastructure.Data.Model.Interest", b =>
                 {
-                    b.HasOne("PawnShop.Infrastructure.Data.Model.Contract", null)
+                    b.HasOne("PawnShop.Infrastructure.Data.Model.Agreement", null)
                         .WithMany("Interests")
-                        .HasForeignKey("ContractId")
+                        .HasForeignKey("AgreementId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("PawnShop.Infrastructure.Data.Model.ApplicationUser", "Operator")
+                    b.HasOne("PawnShop.Infrastructure.Data.Model.ApplicationUser", "Account")
                         .WithMany()
-                        .HasForeignKey("OperatorId")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Operator");
+                    b.Navigation("Account");
                 });
 
             modelBuilder.Entity("PawnShop.Infrastructure.Data.Model.Shop", b =>
                 {
-                    b.HasOne("PawnShop.Infrastructure.Data.Model.Contract", "Contract")
+                    b.HasOne("PawnShop.Infrastructure.Data.Model.Agreement", "Agreement")
                         .WithMany()
-                        .HasForeignKey("ContractId")
+                        .HasForeignKey("AgreementId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Contract");
+                    b.Navigation("Agreement");
+                });
+
+            modelBuilder.Entity("PawnShop.Infrastructure.Data.Model.Agreement", b =>
+                {
+                    b.Navigation("Interests");
                 });
 
             modelBuilder.Entity("PawnShop.Infrastructure.Data.Model.Client", b =>
                 {
                     b.Navigation("Contracts");
-                });
-
-            modelBuilder.Entity("PawnShop.Infrastructure.Data.Model.Contract", b =>
-                {
-                    b.Navigation("Interests");
                 });
 #pragma warning restore 612, 618
         }

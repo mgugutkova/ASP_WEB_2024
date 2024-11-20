@@ -15,8 +15,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 builder.Services.AddScoped<IRepository, Repository>();
 builder.Services.AddScoped<IApplicationUserService, ApplicationUserService>();
-builder.Services.AddScoped<IClientService, ClientService>();
+builder.Services.AddScoped<IAgreementService, AgreementService>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IClientService, ClientService>();
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 

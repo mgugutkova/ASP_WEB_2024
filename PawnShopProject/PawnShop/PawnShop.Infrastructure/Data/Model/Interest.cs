@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -7,24 +8,31 @@ namespace PawnShop.Infrastructure.Data.Model
 	public class Interest
 	{
 		[Key]
+        [Comment("Идентификатор на лихва")]
         public int Id { get; set; }
 
 		[Required]
-		public int ContractId { get; set; }
+        [Comment("Идентификато на договора")]
+        public int AgreementId { get; set; }
 
 		[Required]
 		[Column(TypeName = "decimal(18,2)")]
-		public decimal ValueInterest { get; set; }
+        [Comment("Стойност на лихвата")]
+        public decimal ValueInterest { get; set; }
 
 		[Required]
-		public DateTime DateInterest { get; set; }
-
-		public string OperatorId { get; set; } = string.Empty;
-
-		[ForeignKey(nameof(OperatorId))]
-		public ApplicationUser Operator { get; set; } = null!;
+        [Comment("Дата на внасяне на лихвата")]
+        public DateTime DateInterest { get; set; }
 
 		[Required]
-		public bool IsDeleted { get; set; } = false;
+        [Comment("Идентификатор на потребителя")]
+        public string UserId { get; set; } = string.Empty;
+
+		[ForeignKey(nameof(UserId))]
+		public ApplicationUser Account { get; set; } = null!;
+
+        [Required]
+        [Comment("SoftDeleted")]
+        public bool IsDeleted { get; set; } = false;
 	}
 }

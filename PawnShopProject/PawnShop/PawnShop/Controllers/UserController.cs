@@ -9,7 +9,7 @@ using PawnShop.Infrastructure.Data.Model;
 
 namespace PawnShop.Controllers
 {
-	public class UserController : Controller
+	public class UserController : BaseController
 	{
 		private readonly IUserService userService;
 		private readonly UserManager<ApplicationUser> userManager;
@@ -19,8 +19,7 @@ namespace PawnShop.Controllers
 			userService = _userService;
 			userManager = _userManager;
 		}
-		[HttpGet]
-		[Authorize]
+		[HttpGet]		
 		public async Task<IActionResult> Edit()
 		{
 			var userName = await userManager.FindByNameAsync(HttpContext.User.Identity.Name);
@@ -40,9 +39,9 @@ namespace PawnShop.Controllers
 			return View(model);
 		}
 
-		[HttpPost]
-		[Authorize]
-		public async Task<IActionResult> Edit(UpdateUserViewModel model)
+		[HttpPost]		
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> Edit(UpdateUserViewModel model)
 		{
 			var userName = await userManager.FindByIdAsync(model.Id);
 
@@ -53,8 +52,6 @@ namespace PawnShop.Controllers
 			await userManager.UpdateAsync(userName);
 
             return RedirectToAction("Index", "Home");
-		}
-
-		
+		}		
 	}
 }

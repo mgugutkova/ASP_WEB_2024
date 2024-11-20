@@ -27,7 +27,7 @@ namespace PawnShop.Infrastructure.Data.Model
 		[ForeignKey(nameof(UserId))]	
 		public ApplicationUser User { get; set; } = null!;
 
-		public IEnumerable<Contract> Contracts { get; set; } = new HashSet<Contract>();
+		public IEnumerable<Agreement> Contracts { get; set; } = new HashSet<Agreement>();
 
         [Required]
         public bool IsDeleted { get; set; } = false;

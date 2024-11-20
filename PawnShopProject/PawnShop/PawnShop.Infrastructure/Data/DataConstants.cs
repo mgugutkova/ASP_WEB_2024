@@ -6,12 +6,18 @@
         public const int GoodNameMinLength = 3;
 
 		public const int DescriptionMaxLength = 50;
-		public const int DescriptonMinLength = 10;
+		public const int DescriptionMinLength = 10;
 
 		public const int FirstNameMaxLength = 20;
         public const int FirstNameMinLength = 3;
 
-        public const int LastNameMaxLength = 20;
+        public const int PriceMinValue = 10;
+        public const int PriceMaxValue = 1000;
+
+		public const int DurationMinValue = 1;
+		public const int DurationMaxValue = 30;
+
+		public const int LastNameMaxLength = 20;
         public const int LastNameMinLength = 3;
 
         public const int PhoneNumberMaxLength = 10;

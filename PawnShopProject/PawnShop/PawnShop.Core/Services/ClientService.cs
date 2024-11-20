@@ -1,26 +1,33 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using PawnShop.Core.Interfaces;
-using PawnShop.Core.Models.Client;
 using PawnShop.Infrastructure.Data.Model;
 using PawnShop.Infrastructure.Data.Repo;
-using System.Security.Claims;
+
 
 namespace PawnShop.Core.Services
 {
-    public class ClientService : IClientService
+	public class ClientService : IClientService
     {
         private readonly IRepository repository;
-		
-		public ClientService(IRepository _repository)
+
+        public ClientService(IRepository _repository)
         {
-            repository = _repository;           
+            repository = _repository;
         }
 
 
-        public Task<bool> ClientHasContractsAsync(string userId)
+        public async Task<bool> ClientHasAgreementAsync(string userId)
         {
-            throw new NotImplementedException();
+            var isExistContracts = await repository.AllReadOnly<Agreement>()
+                  .AnyAsync(c => c.UserId == userId);
+
+            if (isExistContracts)
+            {
+                return true;
+            }
+
+            return false;
+
         }
 
         public async Task CreateClientAsync(string userId, string phoneNumber, string address)
@@ -37,6 +44,11 @@ namespace PawnShop.Core.Services
 
         public async Task<bool> ExistClientIdAsync(string userId)
         {
+            if (string.IsNullOrEmpty(userId))
+            {
+                return false;
+            }
+
             var IsExistClientId = await repository.AllReadOnly<Client>()
                 .AnyAsync(c => c.UserId == userId);
 
@@ -49,6 +61,10 @@ namespace PawnShop.Core.Services
 
         public async Task<bool> ExistClientPhoneNumberAsync(string phoneNumber)
         {
+            if (string.IsNullOrEmpty(phoneNumber))
+            {
+                return false;
+            }
             var IsExistClientPhoneNumber = await repository.AllReadOnly<Client>()
              .AnyAsync(c => c.PhoneNumber == phoneNumber);
 
@@ -59,36 +75,42 @@ namespace PawnShop.Core.Services
             return false;
         }
 
-        public Task<BecomeClientFormModel?> GetClient()
+        //public async Task<BecomeClientFormModel?> GetClient()
+        //{
+        //    //var user = userManager.Users.FirstOrDefault();
+        //    var user = await userManager.GetUserAsync(this.User);
+
+        //    var client = repository.AllReadOnly<Client>()
+        //                 .Where(x => x.UserId == user.Id)
+        //                 .Select(c => new BecomeClientFormModel()
+        //                 {
+        //                     PhoneNumber = c.PhoneNumber,
+        //                     Address = c.Address
+        //                 })
+        //                 .FirstOrDefaultAsync();
+
+
+        //    if (client == null)
+        //    {
+        //        return null;
+        //    }
+
+        //    return null;
+        //}
+
+        public async Task<int> GetClientIdAsync(string userId)
         {
-			//var user = userManager.Users.FirstOrDefault();
+            if (string.IsNullOrEmpty(userId))
+            {
+                return 0;
+            }
 
-			//var client = repository.AllReadOnly<Client>()
-   //             .Where(x => x.UserId == user.Id)
-   //             .Select(c => new BecomeClientFormModel()
-   //             {
-   //                 PhoneNumber = c.PhoneNumber,
-   //                 Address = c.Address
-   //             })
-   //             .FirstOrDefaultAsync();
-              
-
-   //         if (client == null)
-   //         {
-   //             return null;
-   //         }
-
-            return null;
-        }
-		
-		public async Task<int?> GetClientIdAsync(string userId)
-        {
             var getUserId = await repository.AllReadOnly<Client>()
                 .FirstOrDefaultAsync(c => c.UserId == userId);
 
             if (getUserId == null)
             {
-                return null;
+                return 0;
             }
 
             return getUserId.Id;
