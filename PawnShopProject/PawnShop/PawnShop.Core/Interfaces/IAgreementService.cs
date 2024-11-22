@@ -1,20 +1,23 @@
 ﻿using PawnShop.Core.Models.Agreement;
 using PawnShop.Core.Models.AgreementState;
+using PawnShop.Infrastructure.Data.Model;
 
 namespace PawnShop.Core.Interfaces
 {
 	public interface IAgreementService
 	{
-		Task CreateAgreementAsync(string userId, 
-			string GoodName,
-			string Description,
-			decimal Price,
+		Task CreateAgreementAsync(string userId, string GoodName, string Description,decimal Price,
 			int Duration);
 
-		Task<IEnumerable<AgreementStateViewModel>> GetStates();
+		Task<IEnumerable<AgreementStateViewModel>> GetStatesAsync();
 
-		Task<AddAgreementViewModel> EditAgreementAsync(int id);
+		Task<IEnumerable<AllAgreementViewModel>> AllAsync();
 
-		Task<IEnumerable<AllAgreementViewModel>> All();
+		Task<bool> IsAgreementExistAsync(int id);
+
+		Task <AddAgreementViewModel?> GetAgreementAsync(int? id);
+
+		Task EditAgreementAsync(int id, AddAgreementViewModel model);
+
 	}
 }

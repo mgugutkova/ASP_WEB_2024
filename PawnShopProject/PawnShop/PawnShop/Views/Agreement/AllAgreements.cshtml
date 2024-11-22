@@ -17,19 +17,21 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>Стока</th>
-            <th>Описание</th>
-            <th>Заложна стойност</th>
-            <th>Стойност за връщане</th>
-            <th>Срок</th>
-            <th>Начална дата</th>
-            <th>Крайна дата</th>
-            <th>Статус</th>
+            <th>Goods</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Return Price</th>
+            <th>Duration</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>State</th>
+            <th>id</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
+           @*  <form asp-controller="Agreement" asp-action="Details" method="get" class="d-inline"> *@
             <tr>
                 <td>@item.GoodName</td>
                 <td>@item.Description</td>
@@ -39,11 +41,15 @@
                 <td>@item.StartDate.ToString("dd/MM/yyyy")</td>
                 <td>@item.EndDate.ToString("dd/MM/yyyy")</td>
                 <td>@item.AgrreementStates</td>
+                <td>@item.Id</td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a>
-                    <a asp-action="AddToProgram" asp-route-movieId="@item.Id" class="btn btn-primary">+Program</a>
+                   @*  <input type="hidden" name="Id" value="@item.Id"  />
+                    <button type="submit" class="btn btn-info">Details</button> *@
 
-                   @*  @if (User?.Identity?.IsAuthenticated ?? false) // show only if user is logged in
+                    <a asp-action="EditAgreement" asp-route-id="@item.Id" class="btn btn-info">Edit</a>
+                    <a asp-action="AddToProgram" asp-route-movieId="@item.Id" class="btn btn-primary">+Program</a>
+                 
+                  @*  @if (User?.Identity?.IsAuthenticated ?? false) // show only if user is logged in
                     {
                         <form asp-controller="Watchlist" asp-action="AddToWatchlist" method="post" class="d-inline">
                             <input type="hidden" name="movieId" value="@item.Id" />
@@ -52,6 +58,7 @@
                     } *@
                 </td>
             </tr>
+           @*  </form> *@
         }
     </tbody>
 </table>

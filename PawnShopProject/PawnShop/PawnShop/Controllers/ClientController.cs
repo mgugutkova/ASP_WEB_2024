@@ -73,10 +73,6 @@ namespace PawnShop.Controllers
             return View();
         }
 
-        //[HttpGet]
-        //private string GetUserId()
-        //{
-        //    return User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? string.Empty;
-        //}
+   
     }
 }

@@ -13,21 +13,15 @@ namespace PawnShop.Core.Models.Agreement
  
         public decimal ReturnPrice { get; set; }
 
-
         public int Duration { get; set; }
-
       
         public DateTime StartDate { get; set; }
-
       
         public DateTime EndDate { get; set; }
-
       
         public string UserId { get; set; } = string.Empty;
-
      
         public bool IsDeleted { get; set; } = false;
-
 
 		public string AgrreementStates { get; set; } = string.Empty ;
 

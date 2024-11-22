@@ -16,7 +16,7 @@ namespace PawnShop.Controllers
 		[HttpGet]
         public async Task<IActionResult> AllAgreements()
 		{
-			var model = await agreementService.All();
+			var model = await agreementService.AllAsync();
 
 			return View(model);
 		}
@@ -27,7 +27,7 @@ namespace PawnShop.Controllers
 		{
 			var model = new AddAgreementViewModel();
 
-			model.AgreementsStates = await agreementService.GetStates();			
+			model.AgreementsStates = await agreementService.GetStatesAsync();			
 
 			return View(model);
 		}
@@ -48,8 +48,37 @@ namespace PawnShop.Controllers
 				model.Duration);
 
 			//return RedirectToAction(nameof(Add));
-			return RedirectToAction(nameof(Index), "Home");
+			return RedirectToAction(nameof(AllAgreements));
 
-		}      
+		}
+
+        [HttpGet]
+        public async Task<IActionResult> EditAgreement(int id)
+        {
+			var model = await agreementService.GetAgreementAsync(id);
+
+            return View(model);
+        }
+
+
+		[HttpPost]
+		public async Task<IActionResult> EditAgreement(int id, AddAgreementViewModel model)
+		{
+			if (await agreementService.IsAgreementExistAsync(id) == false)
+			{
+				return BadRequest();
+			}
+
+			if (!ModelState.IsValid)
+			{
+				model.AgreementsStates = await agreementService.GetStatesAsync();
+
+				return View(model);
+			}
+
+			await agreementService.EditAgreementAsync(id, model);
+
+			return RedirectToAction(nameof(AllAgreements));
+		}
     }
 }

@@ -21,6 +21,11 @@ namespace PawnShop.Infrastructure.Data.Repo
            await DbSet<T>().AddAsync(entiry);
         }
 
+        //public async Task FindAsync<T>() where T : class
+        //{
+        //    await DbSet<T>().FindAsync();
+        //}
+
         public IQueryable<T> All<T>() where T : class
         {
             return DbSet<T>();   //.AsQueryable();

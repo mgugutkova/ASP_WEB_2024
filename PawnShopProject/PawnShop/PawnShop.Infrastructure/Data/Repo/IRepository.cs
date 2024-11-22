@@ -8,6 +8,7 @@ namespace PawnShop.Infrastructure.Data.Repo
         IQueryable<T> AllReadOnly<T>() where T : class;
 
         Task AddAsync<T>(T entiry) where T : class;
+      //  Task FindAsync<T>(T) 
 
         Task<int> SaveChangesAsync();		
 	}
