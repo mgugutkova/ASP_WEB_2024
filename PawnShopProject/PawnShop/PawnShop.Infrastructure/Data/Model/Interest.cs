@@ -12,8 +12,12 @@ namespace PawnShop.Infrastructure.Data.Model
         public int Id { get; set; }
 
 		[Required]
-        [Comment("Идентификато на договора")]
+        [Comment("Идентификатор на договора")]
         public int AgreementId { get; set; }
+
+        [Required]
+        [ForeignKey(nameof(AgreementId))]
+        public Agreement Agreement { get; set; } = null!;
 
 		[Required]
 		[Column(TypeName = "decimal(18,2)")]

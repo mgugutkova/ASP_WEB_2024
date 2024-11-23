@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using static PawnShop.Infrastructure.Data.DataConstants;
@@ -50,11 +51,13 @@ namespace PawnShop.Infrastructure.Data.Model
 
 		[Required]
         [Comment("SoftDeleted")]
+		[DefaultValue(false)]
         public bool IsDeleted { get; set; } = false;
 
 		[Required]
-        [Comment("Статус на договора")]
-        public int AgrreementStateId { get; set; }
+		[Comment("Статус на договора")]
+		[DefaultValue(1)]
+		public int AgrreementStateId { get; set; } = 1;
 
 		[Required]
 		[ForeignKey(nameof(AgrreementStateId))]

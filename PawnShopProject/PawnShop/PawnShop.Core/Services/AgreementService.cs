@@ -80,7 +80,7 @@ namespace PawnShop.Core.Services
                 agreement.GoodName = model.GoodName;
                 agreement.Description = model.Description;
                 agreement.Price = model.Price;
-                agreement.ReturnPrice = model.ReturnPrice;
+                agreement.ReturnPrice = model.Price + (model.Duration * 0.1M);  
                 agreement.Duration = model.Duration;
                 agreement.StartDate = model.StartDate;
                 agreement.EndDate = model.StartDate.AddDays(model.Duration);
@@ -88,6 +88,28 @@ namespace PawnShop.Core.Services
 
                 await repository.SaveChangesAsync();
             }
+        }
+
+        public async Task<AllAgreementViewModel?> FindAgreementAsync(int? id)
+        {
+            var model = await repository.AllReadOnly<Agreement>()
+                .Where(a => a.Id == id)
+                .Where(d => d.IsDeleted == false)
+                .Select(x => new AllAgreementViewModel()
+                {
+                    Id = x.Id,
+                    GoodName = x.GoodName,
+                    Description = x.Description,
+                    Price = x.Price,
+                    Duration = x.Duration,
+                    StartDate = x.StartDate,
+                    EndDate = x.EndDate,
+                    ReturnPrice = x.ReturnPrice,                   
+                    UserId = x.UserId               
+                })
+                .FirstOrDefaultAsync();
+
+            return model;
         }
 
         public async Task<AddAgreementViewModel?> GetAgreementAsync(int? id)
@@ -109,8 +131,8 @@ namespace PawnShop.Core.Services
                     UserId = x.UserId,
                     AgrreementStateId = x.AgrreementStateId,
                     UserFirstName = x.Account.FirstName ?? string.Empty,
-                    UserLastName = x.Account.LastName ?? string.Empty                   
-
+                    UserLastName = x.Account.LastName ?? string.Empty,
+                    Interest = x.ReturnPrice - x.Price
                 })
                 .FirstOrDefaultAsync();
 

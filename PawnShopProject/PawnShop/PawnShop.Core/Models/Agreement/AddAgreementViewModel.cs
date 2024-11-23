@@ -27,10 +27,9 @@ namespace PawnShop.Core.Models.Agreement
 		[Range(PriceMinValue, PriceMaxValue)]
 		public decimal Price { get; set; }
 
-		[Required]
+		
 		[Column(TypeName = "decimal(18,2)")]
-		[Display(Name = "Return Price")]
-		[Range(PriceMinValue, PriceMaxValue)]
+		[Display(Name = "Return Price - will be calculated automatically")]	
 		public decimal ReturnPrice { get; set; }
 
 
@@ -43,26 +42,23 @@ namespace PawnShop.Core.Models.Agreement
 		[Display(Name = "Start Date")]
 		public DateTime StartDate { get; set; } = DateTime.Now;
 
-
-		[Required]
-		[Display(Name = "End Date")]
-		public DateTime EndDate { get; set; }
 		
+		[Display(Name = "End Date")]
+		public DateTime EndDate { get; set; }		
      
         public string UserId { get; set; } = string.Empty;
-
         public string UserFirstName { get; set; } = string.Empty;
         public string UserLastName { get; set; } = string.Empty;
-
-
-        public bool IsDeleted { get; set; } = false;
 
 		[Required]
 		public int AgrreementStateId { get; set; }	
 
 		public string AgreementState {  get; set; } = string.Empty;
 
+        public bool IsDeleted { get; set; } = false;
 		public IEnumerable<AgreementStateViewModel>AgreementsStates { get; set; } = new List<AgreementStateViewModel>();
 
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal Interest {  get; set; }
 	}
 }

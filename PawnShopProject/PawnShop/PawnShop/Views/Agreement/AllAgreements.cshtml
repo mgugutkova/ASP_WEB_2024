@@ -24,8 +24,7 @@
             <th>Duration</th>
             <th>Start Date</th>
             <th>End Date</th>
-            <th>State</th>
-            <th>id</th>
+            <th>State</th>           
         </tr>
     </thead>
     <tbody>
@@ -40,14 +39,13 @@
                 <td>@item.Duration</td>
                 <td>@item.StartDate.ToString("dd/MM/yyyy")</td>
                 <td>@item.EndDate.ToString("dd/MM/yyyy")</td>
-                <td>@item.AgrreementStates</td>
-                <td>@item.Id</td>
+                <td>@item.AgrreementStates</td>             
                 <td>
                    @*  <input type="hidden" name="Id" value="@item.Id"  />
                     <button type="submit" class="btn btn-info">Details</button> *@
 
                     <a asp-action="EditAgreement" asp-route-id="@item.Id" class="btn btn-info">Edit</a>
-                    <a asp-action="AddToProgram" asp-route-movieId="@item.Id" class="btn btn-primary">+Program</a>
+                    <a asp-controller="Interest" asp-action="AddInterest" asp-route-agreementId="@item.Id" class="btn btn-primary">+Add Interest</a>
                  
                   @*  @if (User?.Identity?.IsAuthenticated ?? false) // show only if user is logged in
                     {

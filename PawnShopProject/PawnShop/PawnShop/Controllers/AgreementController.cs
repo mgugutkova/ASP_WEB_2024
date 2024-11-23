@@ -35,19 +35,19 @@ namespace PawnShop.Controllers
 		[HttpPost]
 		public async Task<IActionResult> Add(AddAgreementViewModel model)
 		{
-			if (ModelState.IsValid)
+			if (!ModelState.IsValid)
 			{
 				return BadRequest();
 			}
 
 			var currentUserId =  GetUserId();
+
             await agreementService.CreateAgreementAsync(currentUserId,
 				model.GoodName,
 				model.Description ?? string.Empty,
 				model.Price,
 				model.Duration);
 
-			//return RedirectToAction(nameof(Add));
 			return RedirectToAction(nameof(AllAgreements));
 
 		}

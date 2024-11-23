@@ -18,6 +18,7 @@ builder.Services.AddScoped<IApplicationUserService, ApplicationUserService>();
 builder.Services.AddScoped<IAgreementService, AgreementService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IClientService, ClientService>();
+builder.Services.AddScoped<IInterestService, InterestService>();
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
