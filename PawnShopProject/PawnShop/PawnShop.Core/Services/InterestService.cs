@@ -3,11 +3,6 @@ using PawnShop.Core.Interfaces;
 using PawnShop.Core.Models.Interest;
 using PawnShop.Infrastructure.Data.Model;
 using PawnShop.Infrastructure.Data.Repo;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PawnShop.Core.Services
 {

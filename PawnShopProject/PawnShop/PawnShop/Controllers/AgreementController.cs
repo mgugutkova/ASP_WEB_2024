@@ -62,9 +62,9 @@ namespace PawnShop.Controllers
 
 
 		[HttpPost]
-		public async Task<IActionResult> EditAgreement(int id, AddAgreementViewModel model)
+		public async Task<IActionResult> EditAgreement(AddAgreementViewModel model)
 		{
-			if (await agreementService.IsAgreementExistAsync(id) == false)
+			if (await agreementService.IsAgreementExistAsync(model.Id) == false)
 			{
 				return BadRequest();
 			}
@@ -76,7 +76,7 @@ namespace PawnShop.Controllers
 				return View(model);
 			}
 
-			await agreementService.EditAgreementAsync(id, model);
+			await agreementService.EditAgreementAsync(model.Id, model);
 
 			return RedirectToAction(nameof(AllAgreements));
 		}

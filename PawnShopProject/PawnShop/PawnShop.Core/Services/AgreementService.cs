@@ -31,7 +31,8 @@ namespace PawnShop.Core.Services
                     Duration = c.Duration,
                     StartDate = c.StartDate,
                     EndDate = c.EndDate,
-                    AgrreementStates = c.AgrreementStates.Name
+                    AgrreementStates = c.AgrreementStates.Name,
+                    Ainterest = c.Ainterest
 
                 })
                 .ToListAsync();
@@ -49,7 +50,9 @@ namespace PawnShop.Core.Services
 
             DateTime EndDate = DateTime.UtcNow.AddDays(Duration);
 
-            decimal ReturnPrice = Price + (Duration * 0.1M);
+            decimal ReturnPrice = Price + (Duration * 0.3M);
+
+            decimal AgreementInteres = Duration * 0.3M;
 
             await repository.AddAsync(new Agreement()
             {
@@ -61,7 +64,8 @@ namespace PawnShop.Core.Services
                 EndDate = EndDate,
                 ReturnPrice = ReturnPrice,
                 UserId = userId,
-                AgrreementStateId = 1
+                AgrreementStateId = 1,
+                Ainterest = AgreementInteres
             });
 
             await repository.SaveChangesAsync();
@@ -84,7 +88,8 @@ namespace PawnShop.Core.Services
                 agreement.Duration = model.Duration;
                 agreement.StartDate = model.StartDate;
                 agreement.EndDate = model.StartDate.AddDays(model.Duration);
-                agreement.AgrreementStateId = model.AgrreementStateId;            
+                agreement.AgrreementStateId = model.AgrreementStateId;  
+                agreement.Ainterest = model.Duration * 0.1M;
 
                 await repository.SaveChangesAsync();
             }
@@ -105,7 +110,9 @@ namespace PawnShop.Core.Services
                     StartDate = x.StartDate,
                     EndDate = x.EndDate,
                     ReturnPrice = x.ReturnPrice,                   
-                    UserId = x.UserId               
+                    UserId = x.UserId,
+                    Ainterest = x.Ainterest
+                    
                 })
                 .FirstOrDefaultAsync();
 
@@ -114,7 +121,7 @@ namespace PawnShop.Core.Services
 
         public async Task<AddAgreementViewModel?> GetAgreementAsync(int? id)
         {
-            var model = await repository.AllReadOnly<Agreement>()
+            var model = await repository.All<Agreement>()
                 .Where(a => a.Id == id)
                 .Where(d => d.IsDeleted == false)
                 .Select(x => new AddAgreementViewModel()
@@ -132,7 +139,7 @@ namespace PawnShop.Core.Services
                     AgrreementStateId = x.AgrreementStateId,
                     UserFirstName = x.Account.FirstName ?? string.Empty,
                     UserLastName = x.Account.LastName ?? string.Empty,
-                    Interest = x.ReturnPrice - x.Price
+                    Ainterest = x.Ainterest
                 })
                 .FirstOrDefaultAsync();
 

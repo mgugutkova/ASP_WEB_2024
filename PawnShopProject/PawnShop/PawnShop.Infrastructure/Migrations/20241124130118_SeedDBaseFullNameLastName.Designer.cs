@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PawnShop.Infrastructure.Data;
 
@@ -11,9 +12,11 @@ using PawnShop.Infrastructure.Data;
 namespace PawnShop.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241124130118_SeedDBaseFullNameLastName")]
+    partial class SeedDBaseFullNameLastName
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -171,10 +174,6 @@ namespace PawnShop.Infrastructure.Migrations
                     b.Property<int>("AgrreementStateId")
                         .HasColumnType("int")
                         .HasComment("Статус на договора");
-
-                    b.Property<decimal>("Ainterest")
-                        .HasColumnType("decimal(18,2)")
-                        .HasComment("Лихва");
 
                     b.Property<int?>("ClientId")
                         .HasColumnType("int");
@@ -355,7 +354,7 @@ namespace PawnShop.Infrastructure.Migrations
                         {
                             Id = "b97f29e7-1edd-4666-a8d8-8882858d7ccf",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "fe4209a9-45ac-4006-856f-99462daa19f7",
+                            ConcurrencyStamp = "747f7a7b-150a-45f2-8bce-59774acde61e",
                             Email = "admin@abv.bg",
                             EmailConfirmed = false,
                             FirstName = "Boss",
@@ -363,9 +362,9 @@ namespace PawnShop.Infrastructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@ABV.BG",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEIXj82U1zZh2eJ4HuqWlH7jt/v/SC6zOhS0oeBsdrK9EoazTSQwhzHgTGgknoTZ3RQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPQfjQG9UY5/7kGaOD4C1UzhpzfNo3QE9lwpYlW6fg/+7JfSjvUGVx+5LNX5itgnbQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "3229850f-6a10-44bf-9192-6b810884fe0d",
+                            SecurityStamp = "340e8eca-b0a7-439e-9d70-b06e8be4dbd3",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         },
@@ -373,7 +372,7 @@ namespace PawnShop.Infrastructure.Migrations
                         {
                             Id = "5cf194c7-b26e-42ed-8efd-d98c7980373b",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "09ea42ee-b106-47b1-801c-b69af921e32d",
+                            ConcurrencyStamp = "8ee5dd5f-0f74-4675-b346-bbd519f6481d",
                             Email = "msef@abv.bg",
                             EmailConfirmed = false,
                             FirstName = "Mary",
@@ -381,9 +380,9 @@ namespace PawnShop.Infrastructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "MSEF@ABV.BG",
                             NormalizedUserName = "MSEF",
-                            PasswordHash = "AQAAAAIAAYagAAAAEPcl+ZD0kPwEUKaxbLkWyWmONJ5LFnq27bjTyTSheTqf+luW8TMWYlU51/94qIkgdg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEIHea2PvYjECTPqYndvWUkcs4r0SeH3Ffu7A43c4bbmhgmBQD5AcTfHbMaHgtpscVw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "6445c9e0-1821-4a82-9541-6136689efe74",
+                            SecurityStamp = "9548d2f4-e32c-4b63-8f0b-8e8e749c98da",
                             TwoFactorEnabled = false,
                             UserName = "msef"
                         },
@@ -391,7 +390,7 @@ namespace PawnShop.Infrastructure.Migrations
                         {
                             Id = "ffae7662-4ff3-4698-8f36-c4e4f392da18",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e5ff24b1-8915-4add-9aad-7ca0361c9720",
+                            ConcurrencyStamp = "deae70d8-bf88-421e-a042-3da59417f2da",
                             Email = "ksef@abv.bg",
                             EmailConfirmed = false,
                             FirstName = "Kalin",
@@ -399,9 +398,9 @@ namespace PawnShop.Infrastructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "KSEF@ABV.BG",
                             NormalizedUserName = "KSEF",
-                            PasswordHash = "AQAAAAIAAYagAAAAEGNvzRtXGK3MMkL4oQ0lvnHCqnyB0F7+SAT4Syx7KobOh7oXkz2Sk5bmI+N1LsfeBQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMgVNbiqsMRv0Pw5t41cXs9qHqrvcNl1/Nh9AuPB+h5n8lctzaxFhhN0lMNeePnxog==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1d86b894-6627-4260-9847-bca7668ca542",
+                            SecurityStamp = "f6e9260e-a7bb-4fd0-a32c-dc78dc871ff1",
                             TwoFactorEnabled = false,
                             UserName = "ksef"
                         },
@@ -409,7 +408,7 @@ namespace PawnShop.Infrastructure.Migrations
                         {
                             Id = "70e39283-bd42-4d0a-aa2e-46d2a31c4f87",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "2cf5f4fb-13eb-49e5-9dfe-10f7bb949e0e",
+                            ConcurrencyStamp = "aeb48b50-627e-4df0-91fe-3f92ebd9b8b1",
                             Email = "guest@abv.bg",
                             EmailConfirmed = false,
                             FirstName = "Galin",
@@ -417,9 +416,9 @@ namespace PawnShop.Infrastructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "GUEST@ABV.BG",
                             NormalizedUserName = "GUEST",
-                            PasswordHash = "AQAAAAIAAYagAAAAEBSo0UJoSKzVIbQB79ddSG3RGVHQkEeFwp6s/yxUKkXbYmv7YVBS/kJt4Vo1QjdTxw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAELYso/l1Nzrl/x8r+Va0URUHPuSCGEu0jSJTVRm5HQNB55X1JgZwmi+WyZq/uuHSOg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e20510d7-bfae-49c0-8fd0-577b4b3d4de4",
+                            SecurityStamp = "808e7fcd-a43c-4c9c-a03d-b30c479609eb",
                             TwoFactorEnabled = false,
                             UserName = "guest"
                         });

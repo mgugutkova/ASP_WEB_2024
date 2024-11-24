@@ -34,11 +34,15 @@ namespace PawnShop.Core.Models.Agreement
 
 
 		[Required]
-		[Display(Name = "Duration. 10% interest per day")]
+		[Display(Name = "Duration. 30% interest per day")]
 		[Range(DurationMinValue, DurationMaxValue)]
 		public int Duration { get; set; }
 
-		[Required]
+        [Column(TypeName = "decimal(18,2)")]
+        [Display(Name = "Interest")]
+        public decimal Ainterest { get; set; }
+
+        [Required]
 		[Display(Name = "Start Date")]
 		public DateTime StartDate { get; set; } = DateTime.Now;
 
@@ -58,7 +62,6 @@ namespace PawnShop.Core.Models.Agreement
         public bool IsDeleted { get; set; } = false;
 		public IEnumerable<AgreementStateViewModel>AgreementsStates { get; set; } = new List<AgreementStateViewModel>();
 
-        [Column(TypeName = "decimal(18,2)")]
-        public decimal Interest {  get; set; }
+  
 	}
 }

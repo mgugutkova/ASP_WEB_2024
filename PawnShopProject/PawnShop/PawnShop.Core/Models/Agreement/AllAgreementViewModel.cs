@@ -13,6 +13,8 @@ namespace PawnShop.Core.Models.Agreement
  
         public decimal ReturnPrice { get; set; }
 
+        public decimal Ainterest { get; set; }
+
         public int Duration { get; set; }
       
         public DateTime StartDate { get; set; }

@@ -34,6 +34,10 @@ namespace PawnShop.Infrastructure.Data.Model
         [Comment("Срок на договора")]
         public int Duration { get; set; }
 
+        [Column(TypeName = "decimal(18,2)")]
+        [Comment("Лихва")]
+        public decimal Ainterest { get; set; }
+
         [Required]
         [Comment("Начална дата на договора")]
         public DateTime StartDate { get; set; }
