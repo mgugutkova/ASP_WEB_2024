@@ -50,23 +50,23 @@ namespace PawnShop.Controllers
         {
             var currentUserId = GetUserId();
 
-            if (string.IsNullOrEmpty(userId) || currentUserId != userId)
-            {
-                return BadRequest("You get an error!");
-            }
+            //if (string.IsNullOrEmpty(userId) || currentUserId != userId)
+            //{
+            //    return BadRequest("You get an error!");
+            //}
 
-            int clientId = await clientService.GetClientIdAsync(userId);
+            //int clientId = await clientService.GetClientIdAsync(userId);
 
-            if (clientId == 0)
-            {
-                return BadRequest("You get an error!");
-            }
+            //if (clientId == 0)
+            //{
+            //    return BadRequest("You get an error!");
+            //}
 
             bool isClientHasContract = await clientService.ClientHasAgreementAsync(userId);
 
             if (isClientHasContract == false)
             {
-                return BadRequest("You get an error!");
+                return RedirectToAction("Add", "Agreement");
             }
 
             // todo generate model/view

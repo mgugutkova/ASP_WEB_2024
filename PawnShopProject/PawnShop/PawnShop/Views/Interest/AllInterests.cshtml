@@ -1,0 +1,59 @@
+﻿@using PawnShop.Core.Models.Interest
+@model IEnumerable<AllInterestViewModel>
+@{
+	ViewBag.Title = "All Interests";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+@if (!ViewData.ModelState.IsValid && ViewData.ModelState["Error"] != null)
+{
+	<div class="alert alert-danger" role="alert">
+		@ViewData.ModelState["Error"].Errors.First().ErrorMessage
+	</div>
+}
+
+	<h5 class="text-center"><b>Goods:</b> @Model.FirstOrDefault().GoodName &nbsp; End Date: @Model.FirstOrDefault().EndDate.ToString("dd/MM/yyyy")</h5>
+
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Interest</th>
+				<th>Date Interest</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var item in Model)
+			{
+				@*  <form asp-controller="Agreement" asp-action="Details" method="get" class="d-inline">
+            *@
+				<tr>
+					<td>@item.ValueInterest</td>
+					<td>@item.DateInterest.ToString("dd/MM/yyyy")</td>
+					<td>@item.UserFirstName</td>
+					<td>@item.UserLastName</td>
+					<td>
+
+						<a asp-action="DeleteInterest" asp-route-Id="@item.Id" class="btn btn-info">Delete</a>
+
+						@*  @if (User?.Identity?.IsAuthenticated ?? false) // show only if user is logged in
+                    {
+                        <form asp-controller="Watchlist" asp-action="AddToWatchlist" method="post" class="d-inline">
+                            <input type="hidden" name="movieId" value="@item.Id" />
+                            <button type="submit" class="btn btn-warning">+Watchlist</button>
+                        </form>
+                    } *@
+					</td>
+				</tr>
+				@*  </form> *@
+			}
+		</tbody>
+	</table>
+	<a asp-controller="Interest" asp-action="AddInterest" asp-route-agreementId="@Model.FirstOrDefault().AgreementId" class="btn btn-primary">+Add Interest</a>
+<div>
+	<button type="button" class="btn btn-danger mt-3" onclick="window.history.back()">Cancel</button>
+</div>
+

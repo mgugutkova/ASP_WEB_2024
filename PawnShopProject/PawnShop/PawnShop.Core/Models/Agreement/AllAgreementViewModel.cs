@@ -22,10 +22,14 @@ namespace PawnShop.Core.Models.Agreement
         public DateTime EndDate { get; set; }
       
         public string UserId { get; set; } = string.Empty;
+        public string FirstName { get; set; } = string.Empty;
+        public string LastName { get; set; } = string.Empty;
      
         public bool IsDeleted { get; set; } = false;
 
-		public string AgrreementStates { get; set; } = string.Empty ;
+        public int AgrreementStateId { get; set; }
+
+        public string AgrreementStates { get; set; } = string.Empty ;
 
 	}
 }

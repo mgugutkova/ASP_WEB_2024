@@ -19,6 +19,10 @@ namespace PawnShop.Core.Interfaces
 		Task <AllAgreementViewModel?> FindAgreementAsync(int? id);
 
 		Task EditAgreementAsync(int id, AddAgreementViewModel model);
+		Task <AllAgreementViewModel>DeleteAgreementAsync(int id);
 
-	}
+		Task DeleteConfirmedAsync(int id);
+
+
+    }
 }

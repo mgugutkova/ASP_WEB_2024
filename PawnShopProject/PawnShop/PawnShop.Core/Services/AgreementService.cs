@@ -71,24 +71,75 @@ namespace PawnShop.Core.Services
             await repository.SaveChangesAsync();
         }
 
+        public async Task<AllAgreementViewModel> DeleteAgreementAsync(int id)
+        {
+            var model = await repository.AllReadOnly<Agreement>()
+             .Where(a => a.Id == id)
+             .Where(a => a.IsDeleted == false)
+             .Select(s => new AllAgreementViewModel()
+             {
+                 Id = s.Id,
+                 GoodName = s.GoodName,
+                 Price = s.Price,
+                 EndDate = s.EndDate,
+                 FirstName = s.Account.FirstName,
+                 LastName = s.Account.LastName,
+                 AgrreementStateId = s.AgrreementStateId
+             })
+             .FirstOrDefaultAsync();
+
+            //if (model == null){
+
+            //    return BadRequest();
+            //}
+            return model;
+        }
+
+        public async Task DeleteConfirmedAsync(int id)
+        {
+            var agreement = await repository.All<Agreement>()
+            .Where(a => a.Id == id)
+            .Where(a => a.IsDeleted == false)         
+            .FirstOrDefaultAsync();
+
+            if (agreement == null)
+            {
+                return;
+            }
+            agreement.IsDeleted = true;
+        
+            var interests = await repository.All<Interest>()
+                .Where(i => i.AgreementId == id)
+                .ToListAsync();
+
+            if (interests.Any())
+            {
+                foreach (var interest in interests)
+                {
+                    interest.IsDeleted = true;
+                }
+            }
+            await repository.SaveChangesAsync();
+        }
+
         public async Task EditAgreementAsync(int id, AddAgreementViewModel model)
         {
             var agreement = await repository.All<Agreement>()
                 .Where(a => a.Id == id)
                 .Where(a => a.IsDeleted == false)
                 .FirstOrDefaultAsync();
-                
+
 
             if (agreement != null)
             {
                 agreement.GoodName = model.GoodName;
                 agreement.Description = model.Description;
                 agreement.Price = model.Price;
-                agreement.ReturnPrice = model.Price + (model.Duration * 0.1M);  
+                agreement.ReturnPrice = model.Price + (model.Duration * 0.1M);
                 agreement.Duration = model.Duration;
                 agreement.StartDate = model.StartDate;
                 agreement.EndDate = model.StartDate.AddDays(model.Duration);
-                agreement.AgrreementStateId = model.AgrreementStateId;  
+                agreement.AgrreementStateId = model.AgrreementStateId;
                 agreement.Ainterest = model.Duration * 0.1M;
 
                 await repository.SaveChangesAsync();
@@ -109,10 +160,10 @@ namespace PawnShop.Core.Services
                     Duration = x.Duration,
                     StartDate = x.StartDate,
                     EndDate = x.EndDate,
-                    ReturnPrice = x.ReturnPrice,                   
+                    ReturnPrice = x.ReturnPrice,
                     UserId = x.UserId,
                     Ainterest = x.Ainterest
-                    
+
                 })
                 .FirstOrDefaultAsync();
 
@@ -167,8 +218,8 @@ namespace PawnShop.Core.Services
         public async Task<bool> IsAgreementExistAsync(int id)
         {
             return await repository.AllReadOnly<Agreement>()
-                .AnyAsync(a=> a.Id == id);
-           
+                .AnyAsync(a => a.Id == id);
+
         }
     }
 }

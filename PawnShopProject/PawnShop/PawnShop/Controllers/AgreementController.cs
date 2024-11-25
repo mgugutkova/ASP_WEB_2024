@@ -18,6 +18,11 @@ namespace PawnShop.Controllers
 		{
 			var model = await agreementService.AllAsync();
 
+			if (model.Count() == 0)
+			{
+				return RedirectToAction(nameof(Add));
+			}
+
 			return View(model);
 		}
 
@@ -77,6 +82,22 @@ namespace PawnShop.Controllers
 			}
 
 			await agreementService.EditAgreementAsync(model.Id, model);
+
+			return RedirectToAction(nameof(AllAgreements));
+		}
+
+		[HttpGet]
+		public async Task<IActionResult> DeleteAgreement(int id)
+		{
+			var model = await agreementService.DeleteAgreementAsync(id);
+
+			return View(model);
+		}
+
+		[HttpPost]
+		public async Task<IActionResult> DeleteConfirmed(int id)
+		{
+			await agreementService.DeleteConfirmedAsync(id);
 
 			return RedirectToAction(nameof(AllAgreements));
 		}
