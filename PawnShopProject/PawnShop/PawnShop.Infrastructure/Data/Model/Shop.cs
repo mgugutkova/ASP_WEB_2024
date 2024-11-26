@@ -24,7 +24,7 @@ namespace PawnShop.Infrastructure.Data.Model
         public decimal SellPrice { get; set; }
 
         [Comment("Дата на продажба на стоката")]
-        public DateTime SoldDate { get; set; }
+        public DateTime? SoldDate { get; set; }
 
         
         [Required]

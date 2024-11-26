@@ -25,6 +25,9 @@
 						<li class="nav-item">
 							<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
 						</li>
+						<li class="nav-item">
+							<a class="nav-link text-dark" asp-area="" asp-controller="Shop" asp-action="All">Shop</a>
+						</li>
 
 
 						@if (User?.Identity?.IsAuthenticated ?? false)
@@ -48,7 +51,7 @@
 								</li>
 
 								<li class="nav-item">
-									<a class="nav-link text-dark" asp-area="" asp-controller="Client" asp-action="MineContracts">Mine Agreements</a>
+									<a class="nav-link text-dark" asp-area="" asp-controller="Client" asp-action="MineAgreements">Mine Agreements</a>
 								</li>
 
 								<li class="nav-item">

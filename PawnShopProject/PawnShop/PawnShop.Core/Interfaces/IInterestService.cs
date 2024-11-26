@@ -10,7 +10,7 @@ namespace PawnShop.Core.Interfaces
 
         Task<IEnumerable<AllInterestViewModel>> GetAllInterestsAsync(int agreementId);
 
-        Task<AllInterestViewModel> DeleteInterestAsync(int id);
+        Task<AllInterestViewModel?> DeleteInterestAsync(int? id);
 
         Task DeleteConfirmedAsync(int id);
     }

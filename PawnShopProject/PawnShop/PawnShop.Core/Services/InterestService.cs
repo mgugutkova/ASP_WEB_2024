@@ -40,7 +40,7 @@ namespace PawnShop.Core.Services
             await repository.SaveChangesAsync();
         }
 
-        public async Task<AllInterestViewModel> DeleteInterestAsync(int id)
+        public async Task<AllInterestViewModel?> DeleteInterestAsync(int? id)
         {
             var model = await repository.AllReadOnly<Interest>()
              .Where(a => a.Id == id)
@@ -58,11 +58,6 @@ namespace PawnShop.Core.Services
              })
              .FirstOrDefaultAsync();
 
-            if (model == null)
-            {
-                //TODO
-            }
-
             return model;
         }
 
@@ -73,16 +68,22 @@ namespace PawnShop.Core.Services
               .Where(a => a.IsDeleted == false)
               .FirstOrDefaultAsync();
 
-            interest.IsDeleted = true;
+            if (interest != null)
+            {
+                interest.IsDeleted = true;
 
-            var agreement = await repository.All<Agreement>()
-                 .Where(a => a.Id == interest.AgreementId)
-                 .Where(a => a.IsDeleted == false)
-                 .FirstOrDefaultAsync();
+                var agreement = await repository.All<Agreement>()
+                     .Where(a => a.Id == interest.AgreementId)
+                     .Where(a => a.IsDeleted == false)
+                     .FirstOrDefaultAsync();
 
-            agreement.EndDate = agreement.EndDate.AddDays(-agreement.Duration);
+                if (agreement != null)
+                {
+                    agreement.EndDate = agreement.EndDate.AddDays(-agreement.Duration);
+                }
 
-            await repository.SaveChangesAsync();
+                await repository.SaveChangesAsync();
+            }
         }
 
         public async Task<IEnumerable<AllInterestViewModel>> GetAllInterestsAsync(int agreementId)

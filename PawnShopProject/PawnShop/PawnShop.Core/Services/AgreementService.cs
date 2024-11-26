@@ -32,7 +32,8 @@ namespace PawnShop.Core.Services
                     StartDate = c.StartDate,
                     EndDate = c.EndDate,
                     AgrreementStates = c.AgrreementStates.Name,
-                    Ainterest = c.Ainterest
+                    Ainterest = c.Ainterest,
+                    AgrreementStateId = c.AgrreementStateId
 
                 })
                 .ToListAsync();
@@ -71,7 +72,7 @@ namespace PawnShop.Core.Services
             await repository.SaveChangesAsync();
         }
 
-        public async Task<AllAgreementViewModel> DeleteAgreementAsync(int id)
+        public async Task<AllAgreementViewModel?> DeleteAgreementAsync(int? id)
         {
             var model = await repository.AllReadOnly<Agreement>()
              .Where(a => a.Id == id)
@@ -88,10 +89,6 @@ namespace PawnShop.Core.Services
              })
              .FirstOrDefaultAsync();
 
-            //if (model == null){
-
-            //    return BadRequest();
-            //}
             return model;
         }
 
@@ -135,12 +132,22 @@ namespace PawnShop.Core.Services
                 agreement.GoodName = model.GoodName;
                 agreement.Description = model.Description;
                 agreement.Price = model.Price;
-                agreement.ReturnPrice = model.Price + (model.Duration * 0.1M);
+                agreement.ReturnPrice = model.Price + (model.Duration * 0.3M);
                 agreement.Duration = model.Duration;
                 agreement.StartDate = model.StartDate;
                 agreement.EndDate = model.StartDate.AddDays(model.Duration);
                 agreement.AgrreementStateId = model.AgrreementStateId;
-                agreement.Ainterest = model.Duration * 0.1M;
+                agreement.Ainterest = model.Duration * 0.3M;
+
+                if (agreement.AgrreementStateId == 5)
+                {
+                    var goodsForShop = new Shop
+                    {
+                        AgreementId = agreement.Id,
+                        SellPrice = agreement.Price + (agreement.Price * 0.1M)
+                    };
+                    await repository.AddAsync(goodsForShop);
+                }
 
                 await repository.SaveChangesAsync();
             }

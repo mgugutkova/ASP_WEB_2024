@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PawnShop.Core.Interfaces;
+using PawnShop.Core.Models.Agreement;
 using PawnShop.Infrastructure.Data.Model;
 using PawnShop.Infrastructure.Data.Repo;
 
@@ -18,16 +19,15 @@ namespace PawnShop.Core.Services
 
         public async Task<bool> ClientHasAgreementAsync(string userId)
         {
-            var isExistContracts = await repository.AllReadOnly<Agreement>()
+            var isExistAgreements = await repository.AllReadOnly<Agreement>()
                   .AnyAsync(c => c.UserId == userId);
 
-            if (isExistContracts)
+            if (isExistAgreements)
             {
                 return true;
             }
 
             return false;
-
         }
 
         public async Task CreateClientAsync(string userId, string phoneNumber, string address)
@@ -73,6 +73,29 @@ namespace PawnShop.Core.Services
                 return true;
             }
             return false;
+        }
+
+        public async Task<IEnumerable<AllAgreementViewModel>>GetClientAgreementAsync(string userId)
+        {
+            var agreements = await repository.All<Agreement>()
+                  .Where(c => c.UserId == userId)
+                  .Where(c => c.IsDeleted == false)
+                  .Select(a => new AllAgreementViewModel()
+                  {
+                      Id = a.Id,
+                      GoodName = a.GoodName,
+                      Price = a.Price,
+                      ReturnPrice = a.ReturnPrice,
+                      Duration = a.Duration,
+                      Ainterest = a.Ainterest,
+                      StartDate = a.StartDate,
+                      EndDate = a.EndDate,
+                      AgrreementStates = a.AgrreementStates.Name,
+                      AgrreementStateId = a.AgrreementStateId
+                  })
+                  .ToListAsync();
+
+            return agreements;
         }
 
         //public async Task<BecomeClientFormModel?> GetClient()

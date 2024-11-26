@@ -46,14 +46,9 @@ namespace PawnShop.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> MineContracts(string userId)
+        public async Task<IActionResult> MineAgreements()
         {
-            var currentUserId = GetUserId();
-
-            //if (string.IsNullOrEmpty(userId) || currentUserId != userId)
-            //{
-            //    return BadRequest("You get an error!");
-            //}
+            var currentUserId = GetUserId();      
 
             //int clientId = await clientService.GetClientIdAsync(userId);
 
@@ -62,15 +57,21 @@ namespace PawnShop.Controllers
             //    return BadRequest("You get an error!");
             //}
 
-            bool isClientHasContract = await clientService.ClientHasAgreementAsync(userId);
+            bool isClientHasAgreement = await clientService.ClientHasAgreementAsync(currentUserId);
 
-            if (isClientHasContract == false)
+            if (isClientHasAgreement == false)
             {
                 return RedirectToAction("Add", "Agreement");
             }
 
-            // todo generate model/view
-            return View();
+            var model = await clientService.GetClientAgreementAsync(currentUserId);
+
+            if (ModelState.IsValid == false)
+            {
+                return BadRequest(model);
+            }
+
+            return View(model);
         }
 
    

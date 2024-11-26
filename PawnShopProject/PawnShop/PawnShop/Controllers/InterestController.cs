@@ -71,6 +71,11 @@ namespace PawnShop.Controllers
         {
             var model = await interestService.DeleteInterestAsync(id);
 
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             return View(model);
         }
 
