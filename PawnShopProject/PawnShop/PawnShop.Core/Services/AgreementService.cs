@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using PawnShop.Core.Enumerations;
 using PawnShop.Core.Interfaces;
 using PawnShop.Core.Models.Agreement;
 using PawnShop.Core.Models.AgreementState;
@@ -39,6 +39,83 @@ namespace PawnShop.Core.Services
                 .ToListAsync();
 
             return agreements;
+        }
+
+        public async Task<AgreementServiceQueryModel> AllAsync(
+            string? states = null,
+            string? searchTerm = null, 
+            AgreementSorting sorting = AgreementSorting.Newest,
+            int currentPage = 1, 
+            int agreementsPerPage = 1)
+        {
+            var agreementToShow =  repository.AllReadOnly<Agreement>()
+                .Where(a => a.IsDeleted == false);
+
+            if (!string.IsNullOrEmpty(states))
+             //   if (states != null)
+                {
+                agreementToShow = agreementToShow
+                    .Where(c => c.AgrreementStates.Name == states);             
+            }
+
+            if (searchTerm != null)
+            {
+                string normalizedSearchString = searchTerm.ToLower();
+                agreementToShow = agreementToShow
+                    .Where(h => (h.GoodName.ToLower().Contains(normalizedSearchString) ||
+                        h.Description!.ToLower().Contains(normalizedSearchString) ||
+                        h.Account.FirstName.ToLower().Contains(normalizedSearchString) ||
+                        h.Account.LastName.ToLower().Contains(normalizedSearchString)
+                        ));
+            }
+
+            agreementToShow = sorting switch
+            {
+                AgreementSorting.Newest => 
+                agreementToShow.OrderByDescending(h => h.Id),
+                    
+                AgreementSorting.Price =>
+            agreementToShow.OrderByDescending(h => h.Price),                
+
+                _ => agreementToShow.OrderByDescending(a => a.Id)
+
+            };
+
+            var agreements  = await agreementToShow
+                .Skip((currentPage - 1) * agreementsPerPage)
+                .Take(agreementsPerPage)
+                .Select( a=> new AgreementServiceModel()
+                {
+                    Id = a.Id,
+                    GoodName = a.GoodName,
+                    Description = a.Description,
+                    Price = a.Price,
+                    ReturnPrice = a.ReturnPrice,
+                    StartDate = a.StartDate,
+                    EndDate = a.EndDate,
+                    FirstName = a.Account.FirstName,
+                    LastName = a.Account.LastName,
+                    Duration = a.Duration,
+                    Ainterest = a.Ainterest,
+                    AgreementState =a.AgrreementStates.Name,
+                })
+                .ToListAsync();
+
+            int totalAgreements = await agreementToShow.CountAsync();
+
+            return new AgreementServiceQueryModel()
+            {
+                TotalAgreementCount = totalAgreements,
+                AgreementsList = agreements
+
+            };
+        }
+
+        public async Task<IEnumerable<string>> AllStatesNamesAsync()
+        {
+            return await repository.AllReadOnly<AgreementState>()
+                .Select(a => a.Name)
+                .ToListAsync();
         }
 
         public async Task CreateAgreementAsync(string userId,

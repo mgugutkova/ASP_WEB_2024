@@ -6,7 +6,7 @@ namespace PawnShop.Core.Interfaces
 	{
 		Task<IdentityResult> UpdateUserAsync(string userId, string newEmail, string newPhoneNumber);
 
-		//Task<bool> ExistUserIdAsync();
+		Task<bool> ExistUserIdAsync(string userId);
 
     }
 }

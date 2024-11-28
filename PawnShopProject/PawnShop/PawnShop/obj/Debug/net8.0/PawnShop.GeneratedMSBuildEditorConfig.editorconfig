@@ -60,6 +60,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdyZWVtZW50XEFkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Views/Agreement/All.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdyZWVtZW50XEFsbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Views/Agreement/AllAgreements.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdyZWVtZW50XEFsbEFncmVlbWVudHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -100,8 +104,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50ZXJlc3RcRGVsZXRlSW50ZXJlc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Views/Shared/BadRequest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEJhZFJlcXVlc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Views/Shared/_AgreementPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZ3JlZW1lbnRQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Views/Shared/_LoginPartial.cshtml]

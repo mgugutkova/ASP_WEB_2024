@@ -14,7 +14,7 @@ namespace PawnShop.Controllers
         }
 
 		[HttpGet]
-        public async Task<IActionResult> AllAgreements()
+		public async Task<IActionResult> AllAgreements()
 		{
 			var model = await agreementService.AllAsync();
 
@@ -28,6 +28,23 @@ namespace PawnShop.Controllers
 
 
 		[HttpGet]
+        public async Task<IActionResult> All([FromQuery] AllAgreementQueryViewModel query)
+        {
+            var model = await agreementService.AllAsync(
+				query.State,
+				query.SearchItem,
+				query.Sorting,
+				query.CurrentPage,
+				query.AgreementPerPage);
+
+			query.TotalAgreementCount = model.TotalAgreementCount;
+			query.Agreements = model.AgreementsList;
+			query.AgreementStates = await agreementService.AllStatesNamesAsync();
+
+			return View(query);        
+        }
+
+        [HttpGet]
 		public async Task<IActionResult> Add() 
 		{
 			var model = new AddAgreementViewModel();
@@ -62,6 +79,11 @@ namespace PawnShop.Controllers
         {
 			var model = await agreementService.GetAgreementAsync(id);
 
+			if (model == null)
+			{
+				return View("BadRequest");
+			}
+
             return View(model);
         }
 
@@ -71,7 +93,7 @@ namespace PawnShop.Controllers
 		{
 			if (await agreementService.IsAgreementExistAsync(model.Id) == false)
 			{
-				return BadRequest();
+				return View("BadRequest");
 			}
 
 			if (!ModelState.IsValid)
@@ -91,7 +113,12 @@ namespace PawnShop.Controllers
 		{
 			var model = await agreementService.DeleteAgreementAsync(id);
 
-			return View(model);
+            if (model == null)
+            {
+                return View("BadRequest");
+            }
+
+            return View(model);
 		}
 
 		[HttpPost]

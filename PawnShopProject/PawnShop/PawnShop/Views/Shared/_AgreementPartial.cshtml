@@ -1,0 +1,32 @@
+﻿@using PawnShop.Core.Models.Agreement
+@model AgreementServiceModel
+
+<div class="col-md-4">
+    <div class="card mb-3">
+       
+        <div class="card-body text-center">
+            <h4>@Model.GoodName</h4>
+            <p>Description: <b>@Model.Description</b></p>
+            <p>Price: <b>@Model.Price</b></p>
+            <p>Return Price: <b>@Model.ReturnPrice</b></p>
+            <p>Duration: <b>@Model.Duration</b></p>
+            <p>Start Date: <b>@Model.StartDate</b></p>
+            <p>End Date: <b>@Model.EndDate</b></p>
+            <p>First Name: <b>@Model.FirstName</b></p>
+            <p>Last Name: <b>@Model.LastName</b></p>
+            <p>State: <b>@Model.AgreementState</b></p>
+     
+        @*     <a asp-controller="House" asp-action="Details" asp-route-id="@Model.Id"
+               class="btn btn-success">Details</a> *@
+            @if (this.User.Identity.IsAuthenticated)
+            {
+                <a asp-controller="Agreement" asp-action="Edit" asp-route-id="@Model.Id"
+                   class="btn btn-warning">Edit</a>
+                <a asp-controller="Agreement" asp-action="Delete" asp-route-id="@Model.Id"
+                   class="btn btn-danger">Delete</a>
+                <p></p>     
+            }
+        </div>
+    </div>
+</div>
+

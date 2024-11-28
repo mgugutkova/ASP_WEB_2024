@@ -1,48 +1,50 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using PawnShop.Core.Interfaces;
+using PawnShop.Infrastructure.Data;
 using PawnShop.Infrastructure.Data.Model;
 
 namespace PawnShop.Core.Services
 {
     public class UserService : IUserService
-	{
-		private readonly UserManager<ApplicationUser> _userManager;
+    {
+        private readonly UserManager<ApplicationUser> _userManager;
 
-		public UserService(UserManager<ApplicationUser> userManager)
-		{
-			_userManager = userManager;
-		}
+        private readonly ApplicationDbContext data;
 
-   //     public async Task<bool> ExistUserIdAsync()
-   //     {
-   //         var userName = await _userManager.FindByNameAsync(userName: HttpContext.User.Identity.Name);
+        public UserService(UserManager<ApplicationUser> userManager, ApplicationDbContext _context)
+        {
+            _userManager = userManager;
+            data = _context;
+        }
 
-			//return true;
-   //     }
+        public async Task<bool> ExistUserIdAsync(string userId)
+        {
+            return await data.Clients.AnyAsync(x => x.UserId == userId);
+        }
 
-        // Метод за обновяване на потребителски данни
+
+
         public async Task<IdentityResult> UpdateUserAsync(string userId, string newEmail, string newPhoneNumber)
-		{
-			// Намерете потребителя по неговото ID
-			var user = await _userManager.FindByIdAsync(userId);
-			if (user == null)
-			{
-				return IdentityResult.Failed(new IdentityError
-				{
-					Description = "User not found."
-				});
-			}
+        {
+            var user = await _userManager.FindByIdAsync(userId);
 
-			// Променете желаните данни
-			user.Email = newEmail;
-			user.PhoneNumber = newPhoneNumber;
+            if (user == null)
+            {
+                return IdentityResult.Failed(new IdentityError
+                {
+                    Description = "User not found."
+                });
+            }
 
-			// Обновете потребителя в базата данни
-			var result = await _userManager.UpdateAsync(user);
+            user.Email = newEmail;
+            user.PhoneNumber = newPhoneNumber;
 
-			return result;
-		}
-	}
+            var result = await _userManager.UpdateAsync(user);
+
+            return result;
+        }
+    }
 }
 

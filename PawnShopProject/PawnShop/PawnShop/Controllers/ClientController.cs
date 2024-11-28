@@ -48,14 +48,7 @@ namespace PawnShop.Controllers
         [HttpGet]
         public async Task<IActionResult> MineAgreements()
         {
-            var currentUserId = GetUserId();      
-
-            //int clientId = await clientService.GetClientIdAsync(userId);
-
-            //if (clientId == 0)
-            //{
-            //    return BadRequest("You get an error!");
-            //}
+            var currentUserId = GetUserId();
 
             bool isClientHasAgreement = await clientService.ClientHasAgreementAsync(currentUserId);
 

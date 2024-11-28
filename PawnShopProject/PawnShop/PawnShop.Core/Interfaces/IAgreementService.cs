@@ -1,4 +1,6 @@
-﻿using PawnShop.Core.Models.Agreement;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using PawnShop.Core.Enumerations;
+using PawnShop.Core.Models.Agreement;
 using PawnShop.Core.Models.AgreementState;
 using PawnShop.Infrastructure.Data.Model;
 
@@ -25,6 +27,14 @@ namespace PawnShop.Core.Interfaces
 
 		Task DeleteConfirmedAsync(int id);
 
+		Task<AgreementServiceQueryModel> AllAsync(
+			string? states = null,
+			string? searchTerm = null,
+			AgreementSorting sorting = AgreementSorting.Newest,
+			int currentPage = 1,
+			int agreementsPerPage = 1
+			);
 
+		Task<IEnumerable<string>> AllStatesNamesAsync();
     }
 }

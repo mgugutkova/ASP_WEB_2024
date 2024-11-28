@@ -23,7 +23,7 @@ namespace PawnShop.Controllers
 
             if (agreementModel == null)
             {
-                return BadRequest();
+                return View("BadRequest");
             }
 
             var model = new AddInterestViewModel()
@@ -71,9 +71,9 @@ namespace PawnShop.Controllers
         {
             var model = await interestService.DeleteInterestAsync(id);
 
-            if (!ModelState.IsValid)
+            if (model == null)
             {
-                return BadRequest(ModelState);
+                return View("BadRequest");
             }
 
             return View(model);
