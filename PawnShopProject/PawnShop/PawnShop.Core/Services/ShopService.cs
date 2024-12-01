@@ -20,6 +20,7 @@ namespace PawnShop.Core.Services
         {
             var goods = await repository.AllReadOnly<Shop>()
                 .Where(s => s.IsDeleted == false)
+                .Where(g => g.SoldDate == null)
                 .Select(x => new AllGoodsInShopViewModel()
                 {
                     Id = x.Id,

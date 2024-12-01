@@ -721,16 +721,16 @@
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1117"},{"Name":"Content-Type","Value":"text/plain"},{"Name":"ETag","Value":"\u0022hjIBkvmgxQXbNXK3B9YQ3t06RwLuQSQzC/dpvuB/lMk=\u0022"},{"Name":"Last-Modified","Value":"Fri, 01 Nov 2024 20:10:28 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/PawnShop/PawnShop.bundle.scp.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\PawnShop.hptewe7uk8.bundle.scp.css'))</AssetFile>
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\PawnShop.txd1xkegwu.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-5ZUcilaqipwkxNB7SRZLp\u002B6ja0yTUIyeA3dig2M12GY="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1126"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00225ZUcilaqipwkxNB7SRZLp\u002B6ja0yTUIyeA3dig2M12GY=\u0022"},{"Name":"Last-Modified","Value":"Fri, 01 Nov 2024 20:10:28 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-0W2Cq6M\u002BelgxgfmSukBYoggUS\u002BIX/Nlk4jtFEvAxaiQ="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2269"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00220W2Cq6M\u002BelgxgfmSukBYoggUS\u002BIX/Nlk4jtFEvAxaiQ=\u0022"},{"Name":"Last-Modified","Value":"Sat, 30 Nov 2024 20:19:03 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/PawnShop/PawnShop.hptewe7uk8.bundle.scp.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\PawnShop.hptewe7uk8.bundle.scp.css'))</AssetFile>
+    <StaticWebAssetEndpoint Include="_content/PawnShop/PawnShop.txd1xkegwu.bundle.scp.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\PawnShop.txd1xkegwu.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"hptewe7uk8"},{"Name":"integrity","Value":"sha256-5ZUcilaqipwkxNB7SRZLp\u002B6ja0yTUIyeA3dig2M12GY="},{"Name":"label","Value":"_content/PawnShop/PawnShop.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1126"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00225ZUcilaqipwkxNB7SRZLp\u002B6ja0yTUIyeA3dig2M12GY=\u0022"},{"Name":"Last-Modified","Value":"Fri, 01 Nov 2024 20:10:28 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"txd1xkegwu"},{"Name":"integrity","Value":"sha256-0W2Cq6M\u002BelgxgfmSukBYoggUS\u002BIX/Nlk4jtFEvAxaiQ="},{"Name":"label","Value":"_content/PawnShop/PawnShop.bundle.scp.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2269"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00220W2Cq6M\u002BelgxgfmSukBYoggUS\u002BIX/Nlk4jtFEvAxaiQ=\u0022"},{"Name":"Last-Modified","Value":"Sat, 30 Nov 2024 20:19:03 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
   </ItemGroup>
 </Project>

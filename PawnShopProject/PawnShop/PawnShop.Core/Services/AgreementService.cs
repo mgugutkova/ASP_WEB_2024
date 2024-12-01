@@ -215,6 +215,7 @@ namespace PawnShop.Core.Services
                 agreement.EndDate = model.StartDate.AddDays(model.Duration);
                 agreement.AgrreementStateId = model.AgrreementStateId;
                 agreement.Ainterest = model.Duration * 0.3M;
+            
 
                 if (agreement.AgrreementStateId == 5)
                 {

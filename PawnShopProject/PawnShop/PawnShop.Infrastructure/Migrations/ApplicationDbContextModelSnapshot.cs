@@ -227,6 +227,53 @@ namespace PawnShop.Infrastructure.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Agreements");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 2,
+                            AgrreementStateId = 2,
+                            Ainterest = 3m,
+                            Description = "used - produced 2012",
+                            Duration = 30,
+                            EndDate = new DateTime(2024, 12, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            GoodName = "SONY TV",
+                            IsDeleted = false,
+                            Price = 100m,
+                            ReturnPrice = 103m,
+                            StartDate = new DateTime(2024, 11, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserId = "5cf194c7-b26e-42ed-8efd-d98c7980373b"
+                        },
+                        new
+                        {
+                            Id = 1,
+                            AgrreementStateId = 1,
+                            Ainterest = 1m,
+                            Description = "4GB RAM, 120SSD",
+                            Duration = 10,
+                            EndDate = new DateTime(2024, 12, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            GoodName = "лаптоп Acer",
+                            IsDeleted = false,
+                            Price = 200m,
+                            ReturnPrice = 201m,
+                            StartDate = new DateTime(2024, 11, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserId = "ffae7662-4ff3-4698-8f36-c4e4f392da18"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AgrreementStateId = 5,
+                            Ainterest = 0m,
+                            Description = "model Balkan",
+                            Duration = 30,
+                            EndDate = new DateTime(2024, 12, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            GoodName = "Bike",
+                            IsDeleted = false,
+                            Price = 30m,
+                            ReturnPrice = 33m,
+                            StartDate = new DateTime(2024, 11, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserId = "5cf194c7-b26e-42ed-8efd-d98c7980373b"
+                        });
                 });
 
             modelBuilder.Entity("PawnShop.Infrastructure.Data.Model.AgreementState", b =>
@@ -353,75 +400,75 @@ namespace PawnShop.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "b97f29e7-1edd-4666-a8d8-8882858d7ccf",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "52b69b2c-9295-4107-8acd-650047ed4241",
-                            Email = "admin@abv.bg",
-                            EmailConfirmed = false,
-                            FirstName = "Boss",
-                            LastName = "Petrov",
-                            LockoutEnabled = false,
-                            NormalizedEmail = "ADMIN@ABV.BG",
-                            NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEGbjiOLigr/8TP7FQjNvaQvpgaCZTU0nJej4sccCFPOzTEDKMUNohauMgllqutH/ZQ==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "37879cf3-8994-42bc-9052-0446a677af55",
-                            TwoFactorEnabled = false,
-                            UserName = "admin"
-                        },
-                        new
-                        {
-                            Id = "5cf194c7-b26e-42ed-8efd-d98c7980373b",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "8f2d1452-38bf-4848-8a9d-90c5ba27dd68",
-                            Email = "msef@abv.bg",
-                            EmailConfirmed = false,
-                            FirstName = "Mary",
-                            LastName = "Seferov",
-                            LockoutEnabled = false,
-                            NormalizedEmail = "MSEF@ABV.BG",
-                            NormalizedUserName = "MSEF",
-                            PasswordHash = "AQAAAAIAAYagAAAAEOXI/h22lDK8tGwLP8VsohUvp62lNVORPYiaykCI2atewyZXM9BGoXYIKoZ/cZH9Fg==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "acb5f6a4-bf60-4f11-b2eb-ca822cbbec23",
-                            TwoFactorEnabled = false,
-                            UserName = "msef"
-                        },
-                        new
-                        {
                             Id = "ffae7662-4ff3-4698-8f36-c4e4f392da18",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "cd27d0bb-ea64-4ebf-afe4-1c7cb60fa8c4",
+                            ConcurrencyStamp = "bc715845-7402-4960-a946-c8455d756582",
                             Email = "ksef@abv.bg",
                             EmailConfirmed = false,
                             FirstName = "Kalin",
                             LastName = "Sarafov",
                             LockoutEnabled = false,
                             NormalizedEmail = "KSEF@ABV.BG",
-                            NormalizedUserName = "KSEF",
-                            PasswordHash = "AQAAAAIAAYagAAAAED8ME2FtIhCpZE+MgN1w2SrSEHQWZGMTzDjxLikBYT2/RAIpYrhKHskJKUCOlT571w==",
+                            NormalizedUserName = "KSEF@ABV.BG",
+                            PasswordHash = "AQAAAAIAAYagAAAAEE0EJwzHJ6JTHdxTs30Jq44hw4aV+W5PD8HAY1tBCIQrr010JLu32tPwpYz0r7/ltw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "9fcf90f9-ea12-4506-a9b6-51945fd79a1d",
+                            SecurityStamp = "dc8f606f-e355-4c26-ace6-af102fa7f258",
                             TwoFactorEnabled = false,
-                            UserName = "ksef"
+                            UserName = "ksef@abv.bg"
+                        },
+                        new
+                        {
+                            Id = "5cf194c7-b26e-42ed-8efd-d98c7980373b",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "8a7c4e9f-ed25-4532-9f2a-e1eea5f6e839",
+                            Email = "msef@abv.bg",
+                            EmailConfirmed = false,
+                            FirstName = "Mary",
+                            LastName = "Seferov",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "MSEF@ABV.BG",
+                            NormalizedUserName = "MSEF@ABV.BG",
+                            PasswordHash = "AQAAAAIAAYagAAAAEL1TJAmT6sxEza/MR+u4IMNPhMMIeh8RkOnmjps7A+KZEE9QtkWklFgi/r1HHfD4CQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "7e71dd4c-e93f-4326-8834-7d99693c1d36",
+                            TwoFactorEnabled = false,
+                            UserName = "msef@abv.bg"
+                        },
+                        new
+                        {
+                            Id = "b97f29e7-1edd-4666-a8d8-8882858d7ccf",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "073c917f-ee1b-4335-bc65-3313cecf786f",
+                            Email = "admin@abv.bg",
+                            EmailConfirmed = false,
+                            FirstName = "Boss",
+                            LastName = "Petrov",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ADMIN@ABV.BG",
+                            NormalizedUserName = "ADMIN@ABV.BG",
+                            PasswordHash = "AQAAAAIAAYagAAAAEFfE1Dt5r7zkCthBAm6UQAQH7X0qQ7CPBYq5BNHhVsOR10tKkB2vJ+TIEJLfxvFFsA==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "62605c43-b06a-4b64-8448-4867a18c393e",
+                            TwoFactorEnabled = false,
+                            UserName = "admin@abv.bg"
                         },
                         new
                         {
                             Id = "70e39283-bd42-4d0a-aa2e-46d2a31c4f87",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c140987f-6ff0-4917-8fa1-a4df47150a20",
+                            ConcurrencyStamp = "b86c68ec-51e3-4b3c-929d-ce46a294fc09",
                             Email = "guest@abv.bg",
                             EmailConfirmed = false,
                             FirstName = "Galin",
                             LastName = "Gogov",
                             LockoutEnabled = false,
                             NormalizedEmail = "GUEST@ABV.BG",
-                            NormalizedUserName = "GUEST",
-                            PasswordHash = "AQAAAAIAAYagAAAAEHHdOJkS2Dpx5O4/rGcxIVTCJpk5IrR5g4CY9vVS14WR/bWVxfU2hsYVGgJhXVD6Ow==",
+                            NormalizedUserName = "GUEST@ABV.BG",
+                            PasswordHash = "AQAAAAIAAYagAAAAEIB98VSAQ+RubYAzWJpqsa5/lYQbe1nVt58IM2f27h8iqZgY7bL5q6wmCes9N4mTdg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "0a04880c-a80a-431e-b9eb-e71606367e08",
+                            SecurityStamp = "84cbdf18-6298-4d4c-bf34-5709bf0df2b5",
                             TwoFactorEnabled = false,
-                            UserName = "guest"
+                            UserName = "guest.abv.bg"
                         });
                 });
 
@@ -462,6 +509,14 @@ namespace PawnShop.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
+                            Id = 2,
+                            Address = "Plovdiv,Izgrev",
+                            IsDeleted = false,
+                            PhoneNumber = "1234599999",
+                            UserId = "ffae7662-4ff3-4698-8f36-c4e4f392da18"
+                        },
+                        new
+                        {
                             Id = 1,
                             Address = "Sofiq,Dianabad",
                             IsDeleted = false,
@@ -470,11 +525,11 @@ namespace PawnShop.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = 2,
-                            Address = "Plovdiv,Izgrev",
+                            Id = 3,
+                            Address = "Varna,Center",
                             IsDeleted = false,
-                            PhoneNumber = "1234599999",
-                            UserId = "ffae7662-4ff3-4698-8f36-c4e4f392da18"
+                            PhoneNumber = "8888899999",
+                            UserId = "b97f29e7-1edd-4666-a8d8-8882858d7ccf"
                         });
                 });
 

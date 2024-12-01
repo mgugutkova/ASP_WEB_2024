@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using PawnShop.Infrastructure.Data.Model;
 using System.ComponentModel.DataAnnotations;
+using static PawnShop.Core.Constants.AdminConstants;
 
 namespace PawnShop.Areas.Identity.Pages.Account
 {
@@ -15,11 +16,14 @@ namespace PawnShop.Areas.Identity.Pages.Account
     {
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
-
-        public LoginModel(SignInManager<ApplicationUser> signInManager, ILogger<LoginModel> logger)
+        private readonly UserManager<ApplicationUser> _userManager;
+        public LoginModel(SignInManager<ApplicationUser> signInManager,
+            ILogger<LoginModel> logger,
+            UserManager<ApplicationUser> userManager)
         {
             _signInManager = signInManager;
             _logger = logger;
+            _userManager = userManager;
         }
 
 
@@ -36,13 +40,14 @@ namespace PawnShop.Areas.Identity.Pages.Account
 
    
         public class InputModel
-        {      
-            //[Required]
-            //[EmailAddress]
-            //public string Email { get; set; }
+        {
 
-            [Required]        
-            public string UserName { get; set; }
+            [Required]
+            [EmailAddress]
+            public string Email { get; set; }
+
+            //[Required]        
+            //public string UserName { get; set; }
 
 
             [Required]
@@ -79,10 +84,17 @@ namespace PawnShop.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
               
-                var result = await _signInManager.PasswordSignInAsync(Input.UserName, Input.Password, Input.RememberMe, lockoutOnFailure: false);
+                var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
 
                 if (result.Succeeded)
                 {
+                    var user = await _userManager.FindByEmailAsync(Input.Email);
+
+                    if (await _userManager.IsInRoleAsync(user, AdminRole))
+                    {
+                        return RedirectToAction("Index", "Admin", new { area = "Admin" });
+                    }
+
                     _logger.LogInformation("User logged in.");
                     return LocalRedirect(returnUrl);
                 }           

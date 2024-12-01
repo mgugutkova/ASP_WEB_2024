@@ -1,6 +1,8 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.Serialization;
 
 namespace PawnShop.Core.Models.Shop
 {
@@ -13,8 +15,11 @@ namespace PawnShop.Core.Models.Shop
         public string GoodsName { get; set; } = null!;
 
         [Column(TypeName = "decimal(18,2)")]
-        public decimal SellPrice { get; set; } 
-        
+        public decimal SellPrice { get; set; }
+
+        //public string SoldDate { get; set; } = string.Empty;
+
+        [DataType(DataType.Date)]
         public DateTime? SoldDate { get; set; }
     }
 }

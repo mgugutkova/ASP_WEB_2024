@@ -48,20 +48,6 @@
                 <span asp-validation-for="StartDate" class="small text-danger"></span>
             </div> 
 
-            @*  <div class="form-group">
-                <label asp-for="EndDate"></label>
-                <input asp-for="EndDate" class="form-control" disabled>
-                <span asp-validation-for="EndDate" class="small text-danger"></span>
-            </div> 
-                       
-                <div class="form-group">
-                <label asp-for="AgrreementStateId" >Select State</label>
-                    <select asp-for="AgrreementStateId" class="form-control" aria-required="true" asp-items="@(new SelectList(@Model.AgreementsStates, "Id", "Name"))">
-                        <option value="">Select State...</option>
-                    </select>
-                    <span asp-validation-for="@Model.AgrreementStateId" class="text-danger"></span>
-                </div>
-			*@
             <div class="text-center">
                 <input class="btn btn-primary mt-3 " type="submit" value="Save" />
             </div>

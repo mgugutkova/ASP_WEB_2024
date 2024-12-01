@@ -26,29 +26,23 @@
 	<tbody>
 		@foreach (var item in Model)
 		{
-			@*  <form asp-controller="Agreement" asp-action="Details" method="get" class="d-inline"> *@
+			
 			<tr>
 				<td>@item.GoodsName</td>
 				<td>@item.SellPrice</td>
 				<td>@item.SoldDate</td>				
-				<td>					
+				<td>
 
-					@if (User?.Identity?.IsAuthenticated ?? false)
+					@if (User.IsInRole("AdminRole"))
 					{
 						<a asp-action="Edit" asp-route-Id="@item.Id" class="btn btn-info">Edit</a>
 
 						<a asp-controller="Shop" asp-action="Delete" asp-route-Id="@item.Id" class="btn btn-danger">Delete</a>
 					}
-					@*  @if (User?.Identity?.IsAuthenticated ?? false) // show only if user is logged in
-                    {
-                        <form asp-controller="Watchlist" asp-action="AddToWatchlist" method="post" class="d-inline">
-                            <input type="hidden" name="movieId" value="@item.Id" />
-                            <button type="submit" class="btn btn-warning">+Watchlist</button>
-                        </form>
-                    } *@
+					
 				</td>
 			</tr>
-			@*  </form> *@
+		
 		}
 	</tbody>
 </table>

@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using PawnShop.Core.Interfaces;
 using PawnShop.Core.Models.Shop;
 using PawnShop.Core.Services;
+using static PawnShop.Core.Constants.AdminConstants;
 
 namespace PawnShop.Controllers
 {
@@ -24,6 +26,7 @@ namespace PawnShop.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = AdminRole)]
         public async Task<IActionResult> Edit(int id)
         {
             var model = await shopService.FindAsync(id);
@@ -46,6 +49,7 @@ namespace PawnShop.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = AdminRole)]
         public async Task<IActionResult> Delete(int id)
         {
             var model = await shopService.DeleteAsync(id);

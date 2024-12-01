@@ -41,9 +41,6 @@ namespace PawnShop.Areas.Identity.Pages.Account
             [Display(Name = "Email")]
             public string Email { get; set; }
 
-            [Required]			
-			[Display(Name = "User Name")]
-			public string UserName { get; set; }
 
 			[Required]
             [Display(Name = "First Name")]
@@ -82,7 +79,7 @@ namespace PawnShop.Areas.Identity.Pages.Account
             {
                 var user = new ApplicationUser
                 {
-                    UserName = Input.UserName,
+                    UserName = Input.Email,
                     Email = Input.Email,
                     FirstName = Input.FirstName,
                     LastName = Input.LastName

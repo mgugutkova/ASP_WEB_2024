@@ -1,6 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using PawnShop.Core.Interfaces;
 using PawnShop.Core.Models.Interest;
+using PawnShop.Infrastructure.Data.Model;
+using static PawnShop.Core.Constants.AdminConstants;
 
 namespace PawnShop.Controllers
 {
@@ -8,11 +12,15 @@ namespace PawnShop.Controllers
     {
         private readonly IInterestService interestService;
         private readonly IAgreementService agreementService;
+    
 
-        public InterestController(IInterestService _interestService, IAgreementService _agreementService)
+        public InterestController(IInterestService _interestService,
+            IAgreementService _agreementService
+          )
         {
             interestService = _interestService;
             agreementService = _agreementService;
+          
         }
 
 
@@ -49,7 +57,7 @@ namespace PawnShop.Controllers
 
             await interestService.AddInterestAsync(model.AgreementId, currentUserId);
 
-            return RedirectToAction("AllAgreements", "Agreement");
+            return RedirectToAction(nameof(AllInterests), new { model.AgreementId });
         }
 
 
@@ -67,6 +75,7 @@ namespace PawnShop.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = AdminRole)]
         public async Task<IActionResult> DeleteInterest(int id)
         {
             var model = await interestService.DeleteInterestAsync(id);

@@ -60,7 +60,7 @@ namespace PawnShop.Infrastructure.Data.Model
 
 		[Required]
 		[Comment("Статус на договора")]
-		[DefaultValue(1)]
+		
 		public int AgrreementStateId { get; set; } = 1;
 
 		[Required]
