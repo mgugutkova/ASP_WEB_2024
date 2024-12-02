@@ -25,9 +25,7 @@
 						<li class="nav-item">
 							<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link text-dark" asp-area="" asp-controller="Shop" asp-action="All">Shop</a>
-						</li>
+
 
 
 						@if (User?.Identity?.IsAuthenticated ?? false)
@@ -41,6 +39,9 @@
 							}
 							else
 							{
+								<li class="nav-item">
+									<a class="nav-link text-dark" asp-area="" asp-controller="Shop" asp-action="AllNotSold">Shop</a>
+								</li>
 
 								<li class="nav-item">
 									<a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Edit">Edit Client data</a>
@@ -52,15 +53,7 @@
 
 								<li class="nav-item">
 									<a class="nav-link text-dark" asp-area="" asp-controller="Client" asp-action="MineAgreements">Mine Agreements</a>
-								</li>
-
-								@* <li class="nav-item">
-									<a class="nav-link text-dark" asp-area="" asp-controller="Agreement" asp-action="AllAgreements">All Agreements</a>
-								</li>
-
-								<li class="nav-item">
-									<a class="nav-link text-dark" asp-area="" asp-controller="Agreement" asp-action="All">All Agreements SearchForm</a>
-								</li> *@
+								</li>							
 							}
 						}
 

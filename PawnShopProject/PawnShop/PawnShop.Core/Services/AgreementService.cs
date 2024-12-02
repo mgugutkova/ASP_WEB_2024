@@ -42,20 +42,20 @@ namespace PawnShop.Core.Services
         }
 
         public async Task<AgreementServiceQueryModel> AllAsync(
-            string? states = null,
-            string? searchTerm = null, 
+            int states,
+            string? searchTerm = null,
             AgreementSorting sorting = AgreementSorting.Newest,
-            int currentPage = 1, 
+            int currentPage = 1,
             int agreementsPerPage = 1)
         {
-            var agreementToShow =  repository.AllReadOnly<Agreement>()
+            var agreementToShow = repository.AllReadOnly<Agreement>()
                 .Where(a => a.IsDeleted == false);
 
-            if (!string.IsNullOrEmpty(states))
-             //   if (states != null)
-                {
+            // if (!string.IsNullOrEmpty(states))
+            if (states != 0)
+            {
                 agreementToShow = agreementToShow
-                    .Where(c => c.AgrreementStates.Name == states);             
+                    .Where(c => c.AgrreementStates.Id == states);
             }
 
             if (searchTerm != null)
@@ -71,20 +71,20 @@ namespace PawnShop.Core.Services
 
             agreementToShow = sorting switch
             {
-                AgreementSorting.Newest => 
+                AgreementSorting.Newest =>
                 agreementToShow.OrderByDescending(h => h.Id),
-                    
+
                 AgreementSorting.Price =>
-            agreementToShow.OrderByDescending(h => h.Price),                
+            agreementToShow.OrderByDescending(h => h.Price),
 
                 _ => agreementToShow.OrderByDescending(a => a.Id)
 
             };
 
-            var agreements  = await agreementToShow
+            var agreements = await agreementToShow
                 .Skip((currentPage - 1) * agreementsPerPage)
                 .Take(agreementsPerPage)
-                .Select( a=> new AgreementServiceModel()
+                .Select(a => new AgreementServiceModel()
                 {
                     Id = a.Id,
                     GoodName = a.GoodName,
@@ -97,7 +97,8 @@ namespace PawnShop.Core.Services
                     LastName = a.Account.LastName,
                     Duration = a.Duration,
                     Ainterest = a.Ainterest,
-                    AgreementState =a.AgrreementStates.Name,
+                    AgreementState = a.AgrreementStates.Name,
+                    AgrreementStateId = a.AgrreementStates.Id
                 })
                 .ToListAsync();
 
@@ -173,7 +174,7 @@ namespace PawnShop.Core.Services
         {
             var agreement = await repository.All<Agreement>()
             .Where(a => a.Id == id)
-            .Where(a => a.IsDeleted == false)         
+            .Where(a => a.IsDeleted == false)
             .FirstOrDefaultAsync();
 
             if (agreement == null)
@@ -181,7 +182,7 @@ namespace PawnShop.Core.Services
                 return;
             }
             agreement.IsDeleted = true;
-        
+
             var interests = await repository.All<Interest>()
                 .Where(i => i.AgreementId == id)
                 .ToListAsync();
@@ -215,14 +216,16 @@ namespace PawnShop.Core.Services
                 agreement.EndDate = model.StartDate.AddDays(model.Duration);
                 agreement.AgrreementStateId = model.AgrreementStateId;
                 agreement.Ainterest = model.Duration * 0.3M;
-            
+
 
                 if (agreement.AgrreementStateId == 5)
                 {
                     var goodsForShop = new Shop
                     {
                         AgreementId = agreement.Id,
-                        SellPrice = agreement.Price + (agreement.Price * 0.1M)
+                        SellPrice = agreement.Price + (agreement.Price * 0.1M),
+                        Name = agreement.GoodName,
+                        Description = agreement.Description
                     };
                     await repository.AddAsync(goodsForShop);
                 }

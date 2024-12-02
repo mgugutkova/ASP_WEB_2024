@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PawnShop.Core.Interfaces;
-using PawnShop.Core.Models.Agreement;
 using PawnShop.Core.Models.Shop;
 using PawnShop.Infrastructure.Data.Model;
 using PawnShop.Infrastructure.Data.Repo;
@@ -11,12 +10,30 @@ namespace PawnShop.Core.Services
     {
 
         private readonly IRepository repository;
+       
         public ShopService(IRepository _repository)
         {
-            repository = _repository;
+            repository = _repository;           
         }
 
         public async Task<IEnumerable<AllGoodsInShopViewModel>> AllAsync()
+        {
+            var goods = await repository.AllReadOnly<Shop>()
+                .Where(s => s.IsDeleted == false)
+                .Select(x => new AllGoodsInShopViewModel()
+                {
+                    Id = x.Id,
+                    SellPrice = x.SellPrice,
+                    SoldDate = x.SoldDate,
+                    Name = x.Name,
+                    Description = x.Description ?? string.Empty
+                })
+                .ToListAsync();
+
+            return goods;
+        }
+
+        public async Task<IEnumerable<AllGoodsInShopViewModel>> AllNotSoldAsync()
         {
             var goods = await repository.AllReadOnly<Shop>()
                 .Where(s => s.IsDeleted == false)
@@ -26,11 +43,28 @@ namespace PawnShop.Core.Services
                     Id = x.Id,
                     SellPrice = x.SellPrice,
                     SoldDate = x.SoldDate,
-                    GoodsName = x.Agreement.GoodName
+                    Name = x.Name,
+                    Description = x.Description ?? string.Empty
                 })
                 .ToListAsync();
 
             return goods;
+        }
+
+        public async Task BuyAsync(int id)
+        {
+            var item = await repository.All<Shop>()
+             .Where(x => x.Id == id)
+             .Where(x => x.IsDeleted == false)
+             .Where(x => x.SoldDate == null)
+             .FirstOrDefaultAsync();
+
+            if (item != null)
+            {
+                item.SoldDate = DateTime.UtcNow;             
+
+                await repository.SaveChangesAsync();
+            }
         }
 
         public async Task<AllGoodsInShopViewModel?> DeleteAsync(int? id)
@@ -41,7 +75,8 @@ namespace PawnShop.Core.Services
              .Select(s => new AllGoodsInShopViewModel()
              {
                  Id = s.Id,
-                 GoodsName = s.Agreement.GoodName,
+                 Name = s.Name,
+                 Description = s.Description ?? string.Empty,
                  SellPrice = s.SellPrice,
                  SoldDate = s.SoldDate,
              })
@@ -76,6 +111,8 @@ namespace PawnShop.Core.Services
             {
                 item.SellPrice = model.SellPrice;
                 item.SoldDate = model.SoldDate;
+                item.Name = model.Name;
+                item.Description = model.Description;  
 
                 await repository.SaveChangesAsync();
             }
@@ -83,13 +120,14 @@ namespace PawnShop.Core.Services
 
         public async Task<EditGoodsInShop?> FindAsync(int? id)
         {
-            var goods = await repository.AllReadOnly<Shop>()
+            var goods = await repository.All<Shop>()
                 .Where(x => x.Id == id)
                 .Where(x => x.IsDeleted == false)
                 .Select(s => new EditGoodsInShop()
                 {
-                    Id = s.Id,
-                    GoodsName = s.Agreement.GoodName,
+                    Id = s.Id,                   
+                    Name = s.Name,
+                    Description = s.Description ?? string.Empty,
                     SellPrice = s.SellPrice,
                     SoldDate = s.SoldDate
                 })

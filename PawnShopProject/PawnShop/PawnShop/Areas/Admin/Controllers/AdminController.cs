@@ -6,7 +6,7 @@ namespace PawnShop.Areas.Admin.Controllers
     {
         public IActionResult Index()
         {
-            return RedirectToAction("AllAgreements", "Agreement");
+            return View();
         }
     }
 }

@@ -12,13 +12,14 @@ namespace PawnShop.Core.Models.Shop
 
         public int AgreementId { get; set; }
 
-        public string GoodsName { get; set; } = null!;
+        public string Name { get; set; } = null!;
+
+        public string Description { get; set; } = null!;
 
         [Column(TypeName = "decimal(18,2)")]
         public decimal SellPrice { get; set; }
 
-        //public string SoldDate { get; set; } = string.Empty;
-
+      
         [DataType(DataType.Date)]
         public DateTime? SoldDate { get; set; }
     }

@@ -53,7 +53,7 @@ namespace PawnShop.Controllers
 
             query.TotalAgreementCount = model.TotalAgreementCount;
             query.Agreements = model.AgreementsList;
-            query.AgreementStates = await agreementService.AllStatesNamesAsync();
+          //  query.AgreementStates = await agreementService.AllStatesNamesAsync();
 
             return View(query);
         }
@@ -88,7 +88,7 @@ namespace PawnShop.Controllers
 
             if (await userManager.IsInRoleAsync(user, AdminRole))
             {
-                return RedirectToAction(nameof(AllAgreements));
+                return RedirectToAction(nameof(All));
             }
             else
             {
@@ -142,7 +142,7 @@ namespace PawnShop.Controllers
 
             if (User.IsAdmin())
             {
-                return RedirectToAction(nameof(AllAgreements));
+                return RedirectToAction(nameof(All));
             }
             else
             {
@@ -181,7 +181,7 @@ namespace PawnShop.Controllers
         {
             await agreementService.DeleteConfirmedAsync(id);
 
-            return RedirectToAction(nameof(AllAgreements));
+            return RedirectToAction(nameof(All));
         }
     }
 }

@@ -51,6 +51,7 @@ namespace PawnShop.Core.Models.Agreement
         public string FirstName { get; set; } = string.Empty ;
         public string LastName { get; set; } = string.Empty ;
         public string AgreementState {  get; set; } = string.Empty;
+        public int AgrreementStateId {  get; set; }
 
 
     }

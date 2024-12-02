@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
 using PawnShop.Core.Interfaces;
 using PawnShop.Core.Models.Shop;
-using PawnShop.Core.Services;
 using static PawnShop.Core.Constants.AdminConstants;
 
 namespace PawnShop.Controllers
@@ -26,6 +24,14 @@ namespace PawnShop.Controllers
         }
 
         [HttpGet]
+        public async Task<IActionResult> AllNotSold()
+        {
+            var model = await shopService.AllNotSoldAsync();
+
+            return View(nameof(All), model);
+        }
+
+        [HttpGet]
         [Authorize(Roles = AdminRole)]
         public async Task<IActionResult> Edit(int id)
         {
@@ -45,7 +51,7 @@ namespace PawnShop.Controllers
 
             await shopService.EditAsync(model.Id, model);
 
-            return RedirectToAction(nameof(All));
+            return RedirectToAction(nameof(AllNotSold));
         }
 
         [HttpGet]
@@ -63,6 +69,14 @@ namespace PawnShop.Controllers
             await shopService.DeleteConfirmedAsync(id);
 
             return RedirectToAction(nameof(All));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult>Buy(int id)
+        {
+            await shopService.BuyAsync(id);
+
+            return View();
         }
 
     }

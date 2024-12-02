@@ -28,7 +28,7 @@ namespace PawnShop.Core.Interfaces
 		Task DeleteConfirmedAsync(int id);
 
 		Task<AgreementServiceQueryModel> AllAsync(
-			string? states = null,
+			int states = 0,
 			string? searchTerm = null,
 			AgreementSorting sorting = AgreementSorting.Newest,
 			int currentPage = 1,

@@ -32,23 +32,19 @@ namespace PawnShop.Areas.Identity.Pages.Account
 
         public IList<AuthenticationScheme> ExternalLogins { get; set; }
 
- 
+
         public string ReturnUrl { get; set; }
 
         [TempData]
         public string ErrorMessage { get; set; }
 
-   
+
         public class InputModel
         {
 
             [Required]
             [EmailAddress]
             public string Email { get; set; }
-
-            //[Required]        
-            //public string UserName { get; set; }
-
 
             [Required]
             [DataType(DataType.Password)]
@@ -83,7 +79,7 @@ namespace PawnShop.Areas.Identity.Pages.Account
 
             if (ModelState.IsValid)
             {
-              
+
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
 
                 if (result.Succeeded)
@@ -97,7 +93,7 @@ namespace PawnShop.Areas.Identity.Pages.Account
 
                     _logger.LogInformation("User logged in.");
                     return LocalRedirect(returnUrl);
-                }           
+                }
                 else
                 {
                     ModelState.AddModelError(string.Empty, "Invalid login attempt.");

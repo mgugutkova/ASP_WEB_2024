@@ -8,9 +8,11 @@ namespace PawnShop.Core.Interfaces
     {
         Task<IEnumerable<AllGoodsInShopViewModel>> AllAsync();
 
+        Task<IEnumerable<AllGoodsInShopViewModel>> AllNotSoldAsync();
         Task<EditGoodsInShop?> FindAsync(int? id);
 
         Task EditAsync(int id, EditGoodsInShop model);
+        Task BuyAsync(int id);
 
         Task<AllGoodsInShopViewModel?> DeleteAsync(int? id);
 

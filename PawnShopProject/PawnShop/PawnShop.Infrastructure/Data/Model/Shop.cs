@@ -10,6 +10,13 @@ namespace PawnShop.Infrastructure.Data.Model
         [Comment("Идентификатор на стоката в магазин")]
         public int Id { get; set; }
 
+        [Required]
+        [Comment("Име на стоката")]
+        public string Name { get; set; } = string.Empty;
+
+        [Comment("Допълнително описание - не е задължително")]
+        public string? Description { get; set; } = string.Empty;
+
 		[Required]
         [Comment("Идентификатор на договора")]
         public int AgreementId { get; set; }

@@ -8,7 +8,8 @@ namespace PawnShop.Core.Models.Agreement
     {
         public  int AgreementPerPage { get; set; } = 3;
 
-        public string State { get; set; } = string.Empty;
+       // public string State { get; set; } = string.Empty;
+        public int State { get; set; } 
 
         [Display(Name ="Search by text")]
         public string SearchItem { get; set; } = null!;

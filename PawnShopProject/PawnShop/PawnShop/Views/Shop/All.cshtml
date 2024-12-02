@@ -17,20 +17,22 @@
 
 <table class="table table-striped">
 	<thead>
-		<tr>	
+		<tr>
 			<th>Goods</th>
+			<th>Description</th>
 			<th>Sell Price</th>
-			<th>Sold Date</th>		
+			<th>Sold Date</th>
 		</tr>
 	</thead>
 	<tbody>
 		@foreach (var item in Model)
 		{
-			
+
 			<tr>
-				<td>@item.GoodsName</td>
+				<td>@item.Name</td>
+				<td>@item.Description</td>
 				<td>@item.SellPrice</td>
-				<td>@item.SoldDate</td>				
+				<td>@item.SoldDate</td>
 				<td>
 
 					@if (User.IsInRole("AdminRole"))
@@ -39,10 +41,15 @@
 
 						<a asp-controller="Shop" asp-action="Delete" asp-route-Id="@item.Id" class="btn btn-danger">Delete</a>
 					}
-					
+					else
+					{
+
+						<a asp-controller="Shop" asp-action="Buy" asp-route-Id="@item.Id" class="btn btn-danger">Buy</a> <span>You will be redirected to the payment system ---></span>
+					}
+
 				</td>
 			</tr>
-		
+
 		}
 	</tbody>
 </table>

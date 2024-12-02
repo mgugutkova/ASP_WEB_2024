@@ -7,7 +7,8 @@
         
             public int AgreementId { get; set; }
         
-            public string GoodsName { get; set; } = null!;
+            public string Name { get; set; } = null!;
+            public string Description { get; set; } = null!;
         
             public decimal SellPrice { get; set; }
           
