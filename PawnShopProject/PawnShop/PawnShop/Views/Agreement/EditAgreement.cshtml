@@ -77,25 +77,10 @@
 				<input asp-for="EndDate" class="form-control" disabled>
 				<span asp-validation-for="EndDate" class="small text-danger"></span>
 			</div>
-
-
-			@if (User.IsInRole("AdminRole"))
-			{
-				<div class="form-group">
-					<label asp-for="AgrreementStateId">Select State</label>
-					<select asp-for="AgrreementStateId" class="form-control" aria-required="true" asp-items="@(new SelectList(@Model.AgreementsStates, "Id", "Name"))">
-						<option value="AgrreementStateId"></option>
-					</select>
-					<span asp-validation-for="@Model.AgrreementStateId" class="text-danger"></span>
-				</div>
-			}
-			else
-			{
+			
 				<div class="form-group">
 					<input asp-for="AgrreementStateId" class="form-control" type="hidden">
-				</div>
-			}
-
+				</div
 			<div class="text-center">
 				<input class="btn btn-primary mt-3 " type="submit" value="Save" />
 			</div>

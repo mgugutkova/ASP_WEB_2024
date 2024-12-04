@@ -9,49 +9,54 @@ using PawnShop.Infrastructure.Data.Model;
 
 namespace PawnShop.Controllers
 {
-	public class UserController : BaseController
-	{
-		private readonly IUserService userService;
-		private readonly UserManager<ApplicationUser> userManager;
+    public class UserController : BaseController
+    {
+        private readonly IUserService userService;
+        private readonly UserManager<ApplicationUser> userManager;
 
-		public UserController(IUserService _userService, UserManager<ApplicationUser> _userManager)
-		{
-			userService = _userService;
-			userManager = _userManager;
-		}
-		[HttpGet]		
-		public async Task<IActionResult> Edit()
-		{
-			var userName = await userManager.FindByNameAsync(HttpContext.User.Identity.Name);
+        public UserController(IUserService _userService, UserManager<ApplicationUser> _userManager)
+        {
+            userService = _userService;
+            userManager = _userManager;
+        }
+        [HttpGet]
+        public async Task<IActionResult> Edit()
+        {
+            var userName = await userManager.FindByNameAsync(HttpContext.User.Identity.Name);
 
-			if (userName == null)
-			{
-				return BadRequest();
-			}
-			var model = new UpdateUserViewModel()
-			{
-				Id = userName.Id,
-				Email = userName.Email ?? string.Empty,
-				FirstName = userName.FirstName,
-				LastName = userName.LastName
-			};
+            if (userName == null)
+            {
+                return View("BadRequest");
+            }
+            var model = new UpdateUserViewModel()
+            {
+                Id = userName.Id,
+                Email = userName.Email ?? string.Empty,
+                FirstName = userName.FirstName,
+                LastName = userName.LastName
+            };
 
-			return View(model);
-		}
+            return View(model);
+        }
 
-		[HttpPost]		
+        [HttpPost]
         [AutoValidateAntiforgeryToken]
         public async Task<IActionResult> Edit(UpdateUserViewModel model)
-		{
-			var userName = await userManager.FindByIdAsync(model.Id);
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("BadRequest");
+            }
 
-			userName.FirstName = model.FirstName;
-			userName.LastName = model.LastName;
-			userName.Email = model.Email;
-			
-			await userManager.UpdateAsync(userName);
+            var userName = await userManager.FindByIdAsync(model.Id);
+
+            userName.FirstName = model.FirstName;
+            userName.LastName = model.LastName;
+            userName.Email = model.Email;
+
+            await userManager.UpdateAsync(userName);
 
             return RedirectToAction("Index", "Home");
-		}		
-	}
+        }
+    }
 }

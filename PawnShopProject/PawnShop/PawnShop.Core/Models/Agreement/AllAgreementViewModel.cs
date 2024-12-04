@@ -1,5 +1,7 @@
 ﻿
 
+using PawnShop.Core.Models.Interest;
+
 namespace PawnShop.Core.Models.Agreement
 {
     public class AllAgreementViewModel
@@ -30,6 +32,8 @@ namespace PawnShop.Core.Models.Agreement
         public int AgrreementStateId { get; set; }
 
         public string AgrreementStates { get; set; } = string.Empty ;
+
+        public bool IsInterestExist {  get; set; }
 
 	}
 }

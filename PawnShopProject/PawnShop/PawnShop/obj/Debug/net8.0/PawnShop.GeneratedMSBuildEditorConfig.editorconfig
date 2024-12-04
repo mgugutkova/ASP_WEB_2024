@@ -32,8 +32,44 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Areas/Admin/Views/Agreement/All.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWdyZWVtZW50XEFsbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Areas/Admin/Views/Agreement/DeleteAgreement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWdyZWVtZW50XERlbGV0ZUFncmVlbWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Areas/Admin/Views/Agreement/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWdyZWVtZW50XERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Areas/Admin/Views/Agreement/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWdyZWVtZW50XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Areas/Admin/Views/Interest/All.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSW50ZXJlc3RcQWxsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Areas/Admin/Views/Interest/DeleteInterest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSW50ZXJlc3RcRGVsZXRlSW50ZXJlc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Areas/Admin/Views/Shared/_AdminPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Areas/Admin/Views/Shop/All.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hvcFxBbGwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Areas/Admin/Views/Shop/DeleteGoods.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hvcFxEZWxldGVHb29kcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Areas/Admin/Views/Shop/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hvcFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Areas/Admin/Views/_ViewImports.cshtml]
@@ -76,16 +112,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdyZWVtZW50XEFkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Views/Agreement/All.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdyZWVtZW50XEFsbC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Views/Agreement/AllAgreements.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdyZWVtZW50XEFsbEFncmVlbWVudHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Views/Agreement/DeleteAgreement.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdyZWVtZW50XERlbGV0ZUFncmVlbWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Views/Agreement/EditAgreement.cshtml]
@@ -116,16 +144,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50ZXJlc3RcQWxsSW50ZXJlc3RzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Views/Interest/DeleteInterest.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50ZXJlc3RcRGVsZXRlSW50ZXJlc3QuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Views/Shared/BadRequest.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEJhZFJlcXVlc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Views/Shared/NotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE5vdEZvdW5kLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Views/Shared/Unauthorized.cshtml]
@@ -144,20 +172,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Views/Shop/All.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxBbGwuY3NodG1s
+[C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Views/Shop/AllNotSold.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxBbGxOb3RTb2xkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Views/Shop/Buy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxCdXkuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Views/Shop/DeleteGoods.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxEZWxldGVHb29kcy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Views/Shop/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Views/User/Edit.cshtml]
@@ -172,9 +192,9 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = b-gu5ynb14y8
+[C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Areas/Admin/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-zl4i8t997t
 
 [C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/PawnShopProject/PawnShop/PawnShop/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s

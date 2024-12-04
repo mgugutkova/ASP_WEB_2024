@@ -596,4 +596,4 @@ C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop\obj\Debug\net8.0\staticwebassets\msbuild.PawnShop.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
-C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop\obj\Debug\net8.0\scopedcss\Areas\Admin\Views\Shared\_AdminLayout.cshtml.rz.scp.css
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop\obj\Debug\net8.0\scopedcss\Areas\Admin\Views\Shared\_Layout.cshtml.rz.scp.css

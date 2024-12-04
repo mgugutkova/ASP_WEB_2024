@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using PawnShop.Core.Models.Interest;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using static PawnShop.Infrastructure.Data.DataConstants;
 
@@ -53,6 +54,6 @@ namespace PawnShop.Core.Models.Agreement
         public string AgreementState {  get; set; } = string.Empty;
         public int AgrreementStateId {  get; set; }
 
-
+      
     }
 }

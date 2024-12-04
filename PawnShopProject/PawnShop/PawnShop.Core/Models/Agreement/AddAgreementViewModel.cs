@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using PawnShop.Core.Models.AgreementState;
+using PawnShop.Core.Models.Interest;
 using PawnShop.Infrastructure.Data.Model;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -60,8 +61,6 @@ namespace PawnShop.Core.Models.Agreement
 		public string AgreementState {  get; set; } = string.Empty;
 
         public bool IsDeleted { get; set; } = false;
-		public IEnumerable<AgreementStateViewModel>AgreementsStates { get; set; } = new List<AgreementStateViewModel>();
-
-  
+		public IEnumerable<AgreementStateViewModel>AgreementsStates { get; set; } = new List<AgreementStateViewModel>();		
 	}
 }

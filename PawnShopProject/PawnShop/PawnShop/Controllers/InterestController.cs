@@ -1,10 +1,6 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using PawnShop.Core.Interfaces;
 using PawnShop.Core.Models.Interest;
-using PawnShop.Infrastructure.Data.Model;
-using static PawnShop.Core.Constants.AdminConstants;
 
 namespace PawnShop.Controllers
 {
@@ -46,11 +42,12 @@ namespace PawnShop.Controllers
         }
 
         [HttpPost]
+        [AutoValidateAntiforgeryToken]
         public async Task<IActionResult> AddInterest(AddInterestViewModel model)
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                return View("BadRequest");
             }
 
             var currentUserId = GetUserId();
@@ -72,29 +69,6 @@ namespace PawnShop.Controllers
             }
 
             return View(model);
-        }
-
-        [HttpGet]
-        [Authorize(Roles = AdminRole)]
-        public async Task<IActionResult> DeleteInterest(int id)
-        {
-            var model = await interestService.DeleteInterestAsync(id);
-
-            if (model == null)
-            {
-                return View("BadRequest");
-            }
-
-            return View(model);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            await interestService.DeleteConfirmedAsync(id);
-
-            return RedirectToAction("AllAgreements", "Agreement");
-
-        }
+        }      
     }
 }

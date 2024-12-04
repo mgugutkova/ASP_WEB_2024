@@ -1,5 +1,6 @@
 ﻿
 using PawnShop.Core.Enumerations;
+using PawnShop.Core.Models.Interest;
 using System.ComponentModel.DataAnnotations;
 
 namespace PawnShop.Core.Models.Agreement
@@ -22,5 +23,7 @@ namespace PawnShop.Core.Models.Agreement
         public IEnumerable<string> AgreementStates { get; set; } = null!;
 
         public IEnumerable<AgreementServiceModel> Agreements { get; set; } = new HashSet<AgreementServiceModel>();
+
+        public IEnumerable<AllInterestViewModel> Interests { get; set; } = new HashSet<AllInterestViewModel>();
     }
 }

@@ -42,7 +42,7 @@ namespace PawnShop.Controllers
 
             await clientService.CreateClientAsync(GetUserId(), model.PhoneNumber, model.Address);
 
-            return RedirectToAction(nameof(Index), "Home");   // да връща към всички договори
+            return RedirectToAction(nameof(Index), "Home");  
         }
 
         [HttpGet]
@@ -57,16 +57,9 @@ namespace PawnShop.Controllers
                 return RedirectToAction("Add", "Agreement");
             }
 
-            var model = await clientService.GetClientAgreementAsync(currentUserId);
-
-            if (ModelState.IsValid == false)
-            {
-                return BadRequest(model);
-            }
+            var model = await clientService.GetClientAgreementAsync(currentUserId); 
 
             return View(model);
         }
-
-   
     }
 }

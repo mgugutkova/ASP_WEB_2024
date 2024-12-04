@@ -5,6 +5,7 @@ using PawnShop.Core.Services;
 using PawnShop.Infrastructure.Data;
 using PawnShop.Infrastructure.Data.Model;
 using PawnShop.Infrastructure.Data.Repo;
+using System.Security.Policy;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -61,12 +62,15 @@ app.UseAuthorization();
 
 
 app.MapControllerRoute(
+    name: "Admin",
+    pattern: "{area:exists}/{controller=Admin}/{action=Index}/{id?}");
+
+app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-app.MapControllerRoute(
-    name: "areas",
-    pattern: "{area:exists}/{controller=Admin}/{action=Index}/{id?}");
+
+
 
 app.MapDefaultControllerRoute();
 app.MapRazorPages();

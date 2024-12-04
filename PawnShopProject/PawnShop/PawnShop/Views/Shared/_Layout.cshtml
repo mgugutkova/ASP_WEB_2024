@@ -26,8 +26,6 @@
 							<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
 						</li>
 
-
-
 						@if (User?.Identity?.IsAuthenticated ?? false)
 						{
 							@if (ViewBag.IsClientExist == false)

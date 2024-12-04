@@ -1,0 +1,101 @@
+﻿@using PawnShop.Core.Models.Agreement
+@using PawnShop.Infrastructure.Data.Model
+@model AddAgreementViewModel
+
+@{
+	ViewBag.Title = "Aprove Agreement";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+@if (!ViewData.ModelState.IsValid && ViewData.ModelState["Error"] != null)
+{
+	<div class="alert alert-danger" role="alert">
+		@ViewData.ModelState["Error"].Errors.First().ErrorMessage
+	</div>
+}
+
+<div class="row">
+	<div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+		<form asp-action="Edit" method="post">
+			<div class="form-group">
+				<label asp-for="UserFirstName">First Name</label>
+				<input asp-for="UserFirstName" class="form-control" disabled />
+				<span asp-validation-for="UserFirstName" class="small text-danger"></span>
+			</div>
+
+			<div class="form-group">
+				<label asp-for="UserLastName">Last Name</label>
+				<input asp-for="UserLastName" class="form-control" disabled />
+				<span asp-validation-for="UserLastName" class="small text-danger"></span>
+			</div>
+
+			<div class="form-group">
+				<label asp-for="GoodName"></label>
+				<input asp-for="GoodName" class="form-control" />
+				<span asp-validation-for="GoodName" class="small text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Description"></label>
+				<input asp-for="Description" class="form-control">
+				<span asp-validation-for="Description" class="small text-danger"></span>
+			</div>
+
+			<div class="form-group">
+				<label asp-for="Price"></label>
+				<input asp-for="Price" class="form-control">
+				<span asp-validation-for="Price" class="small text-danger"></span>
+			</div>
+
+			<div class="form-group">
+				<label asp-for="ReturnPrice"></label>
+				<input asp-for="ReturnPrice" class="form-control" disabled>
+				<span asp-validation-for="ReturnPrice" class="small text-danger"></span>
+			</div>
+
+			<div class="form-group">
+				<label asp-for="Duration"></label>
+				<input asp-for="Duration" class="form-control">
+				<span asp-validation-for="Duration" class="small text-danger"></span>
+			</div>
+
+			<div class="form-group">
+				<label asp-for="Ainterest"></label>
+				<input asp-for="Ainterest" class="form-control" disabled>
+
+			</div>
+
+			<div class="form-group">
+				<label asp-for="StartDate"></label>
+				<input asp-for="StartDate" class="form-control" disabled>
+				<span asp-validation-for="StartDate" class="small text-danger"></span>
+			</div>
+
+			<div class="form-group">
+				<label asp-for="EndDate"></label>
+				<input asp-for="EndDate" class="form-control" disabled>
+				<span asp-validation-for="EndDate" class="small text-danger"></span>
+			</div>
+
+
+			<div class="form-group">
+					<label asp-for="AgrreementStateId">Select State</label>
+					<select asp-for="AgrreementStateId" class="form-control" aria-required="true" asp-items="@(new SelectList(@Model.AgreementsStates, "Id", "Name"))">
+						<option value="AgrreementStateId"></option>
+					</select>
+					<span asp-validation-for="@Model.AgrreementStateId" class="text-danger"></span>
+				</div>
+			
+
+			<div class="text-center">
+				<input class="btn btn-primary mt-3 " type="submit" value="Save" />
+			</div>
+		</form>
+	</div>
+</div>
+
+@section Scripts {
+	<partial name="_ValidationScriptsPartial" />
+}
+

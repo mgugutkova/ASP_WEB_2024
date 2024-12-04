@@ -5,31 +5,18 @@
     <div class="card mb-3">
        
         <div class="card-body text-center">
-            <h4>@Model.GoodName</h4>
-            <p>Description: <b>@Model.Description</b></p>
+            <h4>@Model.GoodName</h4>           
             <p>Price: <b>@Model.Price</b></p>
             <p>Return Price: <b>@Model.ReturnPrice</b></p>
             <p>Duration: <b>@Model.Duration</b></p>
             <p>Start Date: <b>@Model.StartDate</b></p>
-            <p>End Date: <b>@Model.EndDate</b></p>
-            <p>First Name: <b>@Model.FirstName</b></p>
-            <p>Last Name: <b>@Model.LastName</b></p>
-            <p>State: <b>@Model.AgreementState</b></p>
-     
+            <p>End Date: <b>@Model.EndDate</b></p>           
+            <p>State: <b>@Model.AgreementState</b></p>     
        
             @if (this.User?.Identity?.IsAuthenticated ?? false && User.IsInRole("AdminRole"))
             {
-                @if (@Model.AgrreementStateId == 2 || @Model.AgrreementStateId == 3)
-                {
-                    <a asp-controller="Interest" asp-action="AllInterests" asp-route-agreementId="@Model.Id" class="btn btn-primary">Interests</a>
-                }
-
-                <a asp-controller="Agreement" asp-action="EditAgreement" asp-route-id="@Model.Id"
-                   class="btn btn-info">Edit</a>
-
-                <a asp-controller="Agreement" asp-action="DeleteAgreement" asp-route-id="@Model.Id"
-                   class="btn btn-danger">Delete</a>
-                <p></p>     
+                <a asp-area="Admin" asp-controller="Agreement" asp-action="Details" asp-route-id="@Model.Id"
+                   class="btn btn-info">Details</a>             
             }
         </div>
     </div>

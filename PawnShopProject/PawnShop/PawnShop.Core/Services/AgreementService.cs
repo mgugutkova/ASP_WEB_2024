@@ -217,17 +217,24 @@ namespace PawnShop.Core.Services
                 agreement.AgrreementStateId = model.AgrreementStateId;
                 agreement.Ainterest = model.Duration * 0.3M;
 
-
                 if (agreement.AgrreementStateId == 5)
                 {
-                    var goodsForShop = new Shop
+                    var goodsForShop = await repository.AllReadOnly<Shop>()
+                        .Where(a => a.AgreementId == id)
+                        .Where(a => a.IsDeleted == false)
+                        .FirstOrDefaultAsync();
+
+                    if (goodsForShop == null)
                     {
-                        AgreementId = agreement.Id,
-                        SellPrice = agreement.Price + (agreement.Price * 0.1M),
-                        Name = agreement.GoodName,
-                        Description = agreement.Description
-                    };
-                    await repository.AddAsync(goodsForShop);
+                        goodsForShop = new Shop
+                        {
+                            AgreementId = agreement.Id,
+                            SellPrice = agreement.Price + (agreement.Price * 0.1M),
+                            Name = agreement.GoodName,
+                            Description = agreement.Description
+                        };
+                        await repository.AddAsync(goodsForShop);
+                    }
                 }
 
                 await repository.SaveChangesAsync();
@@ -250,10 +257,18 @@ namespace PawnShop.Core.Services
                     EndDate = x.EndDate,
                     ReturnPrice = x.ReturnPrice,
                     UserId = x.UserId,
-                    Ainterest = x.Ainterest
+                    Ainterest = x.Ainterest,
+                    AgrreementStates = x.AgrreementStates.Name,
+                    FirstName = x.Account.FirstName,
+                    LastName = x.Account.LastName
 
                 })
                 .FirstOrDefaultAsync();
+
+            if (model != null)
+            {
+                model.IsInterestExist = await IsInterestExistAsync(model.Id);
+            }
 
             return model;
         }
@@ -307,7 +322,12 @@ namespace PawnShop.Core.Services
         {
             return await repository.AllReadOnly<Agreement>()
                 .AnyAsync(a => a.Id == id);
+        }
 
+        public async Task<bool> IsInterestExistAsync(int agreementId)
+        {
+            return await repository.AllReadOnly<Interest>()
+               .AnyAsync(a => a.AgreementId == agreementId);
         }
     }
 }

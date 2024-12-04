@@ -16,6 +16,7 @@ namespace PawnShop.Core.Interfaces
 		Task<IEnumerable<AllAgreementViewModel>> AllAsync();
 
 		Task<bool> IsAgreementExistAsync(int id);
+		Task<bool> IsInterestExistAsync(int agreementId);
 
 		Task <AddAgreementViewModel?> GetAgreementAsync(int? id);
 

@@ -59,8 +59,7 @@ namespace PawnShop.Infrastructure.Data.Model
         public bool IsDeleted { get; set; } = false;
 
 		[Required]
-		[Comment("Статус на договора")]
-		
+		[Comment("Статус на договора")]		
 		public int AgrreementStateId { get; set; } = 1;
 
 		[Required]
