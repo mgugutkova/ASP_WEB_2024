@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using PawnShop.Core.Enumerations;
 using PawnShop.Core.Interfaces;
 using PawnShop.Core.Models.Agreement;
@@ -11,10 +12,12 @@ namespace PawnShop.Core.Services
     public class AgreementService : IAgreementService
     {
         private readonly IRepository repository;
-
-        public AgreementService(IRepository _repository)
+        private readonly ILogger logger;
+        public AgreementService(IRepository _repository,
+            ILogger<AgreementService> _logger)
         {
             repository = _repository;
+            logger = _logger;
         }
 
         public async Task<IEnumerable<AllAgreementViewModel>> AllAsync()
@@ -51,7 +54,6 @@ namespace PawnShop.Core.Services
             var agreementToShow = repository.AllReadOnly<Agreement>()
                 .Where(a => a.IsDeleted == false);
 
-            // if (!string.IsNullOrEmpty(states))
             if (states != 0)
             {
                 agreementToShow = agreementToShow
@@ -119,7 +121,8 @@ namespace PawnShop.Core.Services
                 .ToListAsync();
         }
 
-        public async Task CreateAgreementAsync(string userId,
+        public async Task CreateAgreementAsync(
+            string userId,
             string GoodName,
             string Description,
             decimal Price,

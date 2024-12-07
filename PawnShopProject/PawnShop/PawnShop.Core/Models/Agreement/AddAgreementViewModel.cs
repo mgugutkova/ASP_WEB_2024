@@ -15,7 +15,7 @@ namespace PawnShop.Core.Models.Agreement
 
 		[Required]
 		[StringLength(GoodNameMaxLength, MinimumLength = GoodNameMinLength, ErrorMessage = ErrorMessageLength)]
-		[Display(Name ="Name of good")]
+		[Display(Name ="Name of goods")]
 		public string GoodName { get; set; } = string.Empty;
 
 		[StringLength(DescriptionMaxLength, MinimumLength = DescriptionMinLength, ErrorMessage = ErrorMessageLength)]

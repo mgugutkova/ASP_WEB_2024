@@ -25,34 +25,13 @@ namespace PawnShop.Infrastructure.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.ApplyConfiguration(new UserConfiguration());
-            builder.ApplyConfiguration(new ClientConfiguration());
-            builder.ApplyConfiguration(new AgreementStateConfiguration());
-            builder.ApplyConfiguration(new AgreementConfiguration());
+			builder.ApplyConfiguration(new UserConfiguration());
+			builder.ApplyConfiguration(new ClientConfiguration());
+			builder.ApplyConfiguration(new AgreementStateConfiguration());
+			builder.ApplyConfiguration(new AgreementConfiguration());
 
-            //SeedUsers();
-            //builder.Entity<ApplicationUser>()
-            //    .HasData(AdminUser, UserMsef, UserKsef, GuestUser);
-
-            //SeedClient();
-            //builder.Entity<Client>()
-            //    .HasData(ClientMsef, ClientKsef);
-
-            base.OnModelCreating(builder);
-
-            //builder
-            //    .Entity<AgreementState>()
-            //    .HasData(
-            //        new AgreementState { Id = 1, Name = "Аwaiting approval" },
-            //        new AgreementState { Id = 2, Name = "Approved (Active)" },
-            //        new AgreementState { Id = 3, Name = "Finished" },
-            //        new AgreementState { Id = 4, Name = "Late" },
-            //        new AgreementState { Id = 5, Name = "For а Shop" }
-            //        );
-
-
+			base.OnModelCreating(builder);
+           
         }
-
-
     }
 }
