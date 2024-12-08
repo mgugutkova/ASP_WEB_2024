@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using PawnShop.Core.Interfaces;
 using PawnShop.Core.Models.Interest;
 using PawnShop.Infrastructure.Data.Model;
@@ -9,10 +10,14 @@ namespace PawnShop.Core.Services
     public class InterestService : IInterestService
     {
         private readonly IRepository repository;
+        private readonly ILogger logger;
 
-        public InterestService(IRepository _repository)
+        public InterestService(
+            IRepository _repository,
+            ILogger<InterestService> _logger)
         {
             repository = _repository;
+            logger = _logger;
         }
 
         public async Task AddInterestAsync(int agreementId, string userId)
@@ -102,7 +107,7 @@ namespace PawnShop.Core.Services
                    GoodName = i.Agreement.GoodName,
                    EndDate = i.Agreement.EndDate
                })
-               .OrderByDescending(x => x.DateInterest)
+            //   .OrderByDescending(x => x.DateInterest)
                .ToListAsync();
 
             return interests;

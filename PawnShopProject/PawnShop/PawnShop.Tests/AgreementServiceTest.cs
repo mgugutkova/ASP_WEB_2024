@@ -95,7 +95,6 @@ namespace PawnShop.Tests
             var dbAgreement = await repo.GetByIdAsync<Agreement>(100);
 
             Assert.That(dbAgreement.GoodName, Is.EqualTo("Test edited"));
-
         }
 
 
@@ -113,16 +112,16 @@ namespace PawnShop.Tests
 
             var testAgreements = repo.AddRangeAsync(new List<Agreement>()
             {
-            new Agreement(){Id = 100, GoodName = "Test100" ?? string.Empty, Description = "",IsDeleted = false},
-            new Agreement(){Id = 101, GoodName = "Test101" ?? string.Empty, Description = "",IsDeleted = true},
-            new Agreement(){Id = 102, GoodName = "Test102" ?? string.Empty, Description = "",IsDeleted = false},
+            new Agreement(){Id = 100, GoodName = "Test100" ?? string.Empty, Description = ""},
+            new Agreement(){Id = 101, GoodName = "Test101" ?? string.Empty, Description = ""},
+            new Agreement(){Id = 102, GoodName = "Test102" ?? string.Empty, Description = ""}
             });
 
             await repo.SaveChangesAsync();
 
             var agreementsList = await agreementService.AllAsync();
 
-            Assert.That(5, Is.EqualTo(agreementsList.Count()));
+            Assert.That(6, Is.EqualTo(agreementsList.Count()));
         }
 
 

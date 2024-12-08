@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using PawnShop.Core.Interfaces;
 using PawnShop.Core.Models.Shop;
 using PawnShop.Infrastructure.Data.Model;
@@ -10,10 +11,13 @@ namespace PawnShop.Core.Services
     {
 
         private readonly IRepository repository;
-       
-        public ShopService(IRepository _repository)
+        private readonly ILogger logger;
+        public ShopService(
+            IRepository _repository,
+            ILogger<ShopService> _logger)
         {
-            repository = _repository;           
+            repository = _repository;   
+            logger = _logger;
         }
 
         public async Task<IEnumerable<AllGoodsInShopViewModel>> AllAsync()
