@@ -8,10 +8,12 @@
 else
 {
 	ViewBag.Title = "All Agreements";
+
 }
 
 <h2 class="text-center">@ViewBag.Title</h2>
 <hr />
+
 
 @if (!ViewData.ModelState.IsValid && ViewData.ModelState["Error"] != null)
 {

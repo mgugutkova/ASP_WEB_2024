@@ -110,7 +110,6 @@ namespace PawnShop.Core.Services
             {
                 TotalAgreementCount = totalAgreements,
                 AgreementsList = agreements
-
             };
         }
 

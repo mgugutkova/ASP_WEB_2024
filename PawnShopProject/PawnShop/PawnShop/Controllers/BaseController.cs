@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using static PawnShop.Core.Constants.AdminConstants;
 
 namespace PawnShop.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = UserRole)]
     public class BaseController : Controller
     {       
         [HttpGet]

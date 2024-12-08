@@ -13,5 +13,10 @@ namespace System.Security.Claims
         {
             return user.IsInRole(AdminRole);
         }
+
+        public static bool IsUser(this ClaimsPrincipal user)
+        {
+            return user.IsInRole(UserRole);
+        }
     }
 }

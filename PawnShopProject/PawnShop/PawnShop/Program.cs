@@ -5,7 +5,6 @@ using PawnShop.Core.Services;
 using PawnShop.Infrastructure.Data;
 using PawnShop.Infrastructure.Data.Model;
 using PawnShop.Infrastructure.Data.Repo;
-using System.Security.Policy;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -73,5 +72,6 @@ app.MapDefaultControllerRoute();
 app.MapRazorPages();
 
 await app.CreateAdminRoleAsync();
+await app.CreateUserRoleAsync();
 
 app.Run();

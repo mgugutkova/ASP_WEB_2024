@@ -11,50 +11,69 @@
 
 @if (!ViewData.ModelState.IsValid && ViewData.ModelState["Error"] != null)
 {
-    <div class="alert alert-danger" role="alert">
-        @ViewData.ModelState["Error"].Errors.First().ErrorMessage
-    </div>
+	<div class="alert alert-danger" role="alert">
+		@ViewData.ModelState["Error"].Errors.First().ErrorMessage
+	</div>
 }
 
 <div class="row">
-    <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
-        <form method="post">
-            <div class="form-group">
-                <label asp-for="GoodName"></label>
-                <input asp-for="GoodName" class="form-control" />  @*  placeholder="8888888888"> *@
-                <span asp-validation-for="GoodName" class="small text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description"></label>
-                <input asp-for="Description" class="form-control" >
-                <span asp-validation-for="Description" class="small text-danger"></span>
-            </div>
+	<div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+		<form method="post">
+			<div class="form-group">
+				<label asp-for="GoodName"></label>
+				<input asp-for="GoodName" class="form-control" />  
+				<span asp-validation-for="GoodName" class="small text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Description"></label>
+				<input asp-for="Description" class="form-control">
+				<span asp-validation-for="Description" class="small text-danger"></span>
+			</div>
 
-             <div class="form-group">
-                <label asp-for="Price"></label>
-                <input asp-for="Price" class="form-control">
-                <span asp-validation-for="Price" class="small text-danger"></span>
-            </div>
+			<div class="form-group">
+				<label asp-for="StartDate"></label>
+				<input asp-for="StartDate" class="form-control" disabled>
+				<span asp-validation-for="StartDate" class="small text-danger"></span>
+			</div>
 
-            <div class="form-group">
-                <label asp-for="Duration"></label>
-                <input asp-for="Duration" class="form-control" >
-                <span asp-validation-for="Duration" class="small text-danger"></span>
-            </div>     
-            
-             <div class="form-group">
-                <label asp-for="StartDate"></label>
-                <input asp-for="StartDate" class="form-control" disabled>
-                <span asp-validation-for="StartDate" class="small text-danger"></span>
-            </div> 
+			<div class="form-group">
+				<label asp-for="Price"></label>
+				<input id="price" asp-for="Price" class="form-control">
+				<span asp-validation-for="Price" class="small text-danger"></span>
+			</div>
 
-            <div class="text-center">
-                <input class="btn btn-primary mt-3 " type="submit" value="Save" />
-            </div>
-        </form>
-    </div>
+			<div class="form-group">
+				<label asp-for="Duration"></label>
+				<input id="duration" asp-for="Duration" class="form-control">
+				<span asp-validation-for="Duration" class="small text-danger"></span>
+			</div>
+
+			<div class="text-center">
+				<input class="btn btn-primary mt-3 " type="submit" value="Save" />
+			</div>
+		</form>
+
+		<div class="form-group">
+			<div class="text-center">
+				<label>Hit the button <b>Calculate</b> twice before <b>Save</b>  --> </label>
+				<button id="calculate" onclick="solve()">Calculate</button>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label>Interest</label>
+			<input type="number" class="form-control" id="ainterest" readonly/>
+		</div>
+
+		<div class="form-group">
+			<label>Return Price</label>
+			<input type="number" class="form-control" id="returnprice" readonly/>
+
+		</div>
+	</div>
 </div>
 
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+	<partial name="_ValidationScriptsPartial" />
+	<script src="/../../js/site.js"></script>
 }

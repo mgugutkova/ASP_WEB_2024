@@ -107,10 +107,14 @@
 	<h2 class="text-center">No agreements found by the given criteria!</h2>
 }
 
+
 <div class="row">
 	@foreach (var agreement in Model.Agreements)
 	{
 		<partial name="_AgreementPartial" model="@agreement" />
 	}
 </div>
+
+<div class="text-center"><h3>Total Agreements: &nbsp;   @Model.TotalAgreementCount</h3></div>
+
 

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PawnShop.Core.Interfaces;
 using PawnShop.Core.Models.Client;
 
@@ -15,6 +16,7 @@ namespace PawnShop.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> BecomeClient()
         {
             var currentUserId = GetUserId();
@@ -33,6 +35,7 @@ namespace PawnShop.Controllers
 
         [HttpPost]
         [AutoValidateAntiforgeryToken]
+        [AllowAnonymous]
         public async Task<IActionResult> BecomeClient(BecomeClientFormModel model)
         {
             if (ModelState.IsValid == false)
