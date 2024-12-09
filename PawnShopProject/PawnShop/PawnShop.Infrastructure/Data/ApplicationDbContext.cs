@@ -29,6 +29,8 @@ namespace PawnShop.Infrastructure.Data
 			builder.ApplyConfiguration(new ClientConfiguration());
 			builder.ApplyConfiguration(new AgreementStateConfiguration());
 			builder.ApplyConfiguration(new AgreementConfiguration());
+			builder.ApplyConfiguration(new ShopConfiguration());
+			builder.ApplyConfiguration(new InterestConfiguration());
 
 			base.OnModelCreating(builder);
            

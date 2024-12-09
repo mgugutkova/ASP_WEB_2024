@@ -25,13 +25,18 @@ namespace PawnShop.Infrastructure.SeedDataDB
         public Agreement TV { get; set; }
         public Agreement Bike { get; set; }
 
+        public Shop BikeForShop { get; set; }
+        public Interest TVInterest { get; set; }
+
 
         public SeedData()
         {
             SeedUsers();
             SeedClient();
             SeedState();
-            SeedAgreement();           
+            SeedAgreement();
+            SeedShop();
+            SeedInterest();
         }
 
         private void SeedUsers()
@@ -45,8 +50,8 @@ namespace PawnShop.Infrastructure.SeedDataDB
                 NormalizedUserName = "ADMIN@ABV.BG",
                 Email = "admin@abv.bg",
                 NormalizedEmail = "ADMIN@ABV.BG",
-                FirstName = "Boss",
-                LastName = "Petrov"
+                FirstName = "Admin",
+                LastName = "Boss"
             };
 
             AdminUser.PasswordHash = hasher.HashPassword(AdminUser, "123456");
@@ -85,8 +90,8 @@ namespace PawnShop.Infrastructure.SeedDataDB
                 NormalizedUserName = "GUEST@ABV.BG",
                 Email = "guest@abv.bg",
                 NormalizedEmail = "GUEST@ABV.BG",
-                FirstName = "Galin",
-                LastName = "Gogov"
+                FirstName = "Guest",
+                LastName = "Guestov"
             };
 
             GuestUser.PasswordHash = hasher.HashPassword(GuestUser, "123456");
@@ -154,8 +159,6 @@ namespace PawnShop.Infrastructure.SeedDataDB
                 Id = 5,
                 Name = "For а Shop"
             };
-
-
         }
 
         private void SeedAgreement()
@@ -204,8 +207,32 @@ namespace PawnShop.Infrastructure.SeedDataDB
                 AgrreementStateId =5
                 
             };
-
-
         }
+            
+        private void SeedShop()
+        {
+
+            BikeForShop = new Shop
+            {
+                Id = 1,
+                Name = Bike.GoodName,
+                AgreementId = Bike.Id,
+                SellPrice = Bike.Price
+            };
+        }
+
+        private void SeedInterest()
+        {
+            TVInterest = new Interest
+            {
+                Id = 1,
+                ValueInterest = TV.Ainterest,
+                DateInterest = DateTime.Now,
+                AgreementId = TV.Id,
+                UserId = TV.UserId,
+
+            };
+        }
+
     }
 }

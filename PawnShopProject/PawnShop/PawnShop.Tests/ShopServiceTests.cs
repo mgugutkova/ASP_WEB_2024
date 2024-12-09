@@ -88,7 +88,7 @@ namespace PawnShop.Tests
 
             var goodsList = await shopService.AllAsync();
 
-            Assert.That(3, Is.EqualTo(goodsList.Count()));
+            Assert.That(4, Is.EqualTo(goodsList.Count()));
         }
 
 
@@ -115,7 +115,7 @@ namespace PawnShop.Tests
 
             var goodsList = await shopService.AllNotSoldAsync();
 
-            Assert.That(1, Is.EqualTo(goodsList.Count()));
+            Assert.That(2, Is.EqualTo(goodsList.Count()));
         }
 
 
