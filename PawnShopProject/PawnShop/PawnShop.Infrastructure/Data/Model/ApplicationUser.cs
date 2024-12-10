@@ -16,5 +16,9 @@ namespace PawnShop.Infrastructure.Data.Model
 		[MaxLength(LastNameMaxLength)]
         [PersonalData]
         public string LastName { get; set; } = string.Empty;
-	}
+
+       
+		public Client? Client { get; set; } = null!;
+	
+    }
 }

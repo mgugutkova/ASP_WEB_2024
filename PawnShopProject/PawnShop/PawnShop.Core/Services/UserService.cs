@@ -1,22 +1,52 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PawnShop.Core.Interfaces;
+using PawnShop.Core.Models.User;
 using PawnShop.Infrastructure.Data;
 using PawnShop.Infrastructure.Data.Model;
+using PawnShop.Infrastructure.Data.Repo;
+
 
 namespace PawnShop.Core.Services
 {
     public class UserService : IUserService
     {
-        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly UserManager<ApplicationUser> userManager;
 
         private readonly ApplicationDbContext data;
 
-        public UserService(UserManager<ApplicationUser> userManager, ApplicationDbContext _context)
+        private readonly IRepository repository;
+
+        public UserService(
+            UserManager<ApplicationUser> _userManager,
+            ApplicationDbContext _context,
+            IRepository _repository
+            )
         {
-            _userManager = userManager;
+            userManager = _userManager;
             data = _context;
+            repository = _repository;
+        }
+
+        public async Task<IEnumerable<AllUsersViewModel>> AllAsync()
+        {
+            var users = await repository.AllReadOnly<ApplicationUser>()
+                .Include(a => a.Client)
+                .Where(e => e.Email != null && e.Email != "admin@abv.bg")
+                .Where(e => e.Client.IsDeleted == false)
+                .Select(c => new AllUsersViewModel()
+                {
+                    UserId = c.Id,
+                    FirstName = c.FirstName,
+                    LastName = c.LastName,
+                    Email = c.Email ?? string.Empty,
+                    PhoneNumber = c.Client != null ? c.Client.PhoneNumber : string.Empty,
+                    IsClient = c.Client != null
+                })
+                .ToListAsync();
+
+            return users;
+
         }
 
         public async Task<bool> ExistUserIdAsync(string userId)
@@ -25,10 +55,34 @@ namespace PawnShop.Core.Services
         }
 
 
+        public async Task<bool> Forget(string userId)
+        {
+
+            var user = await userManager.FindByIdAsync(userId);
+
+            if (user == null)
+            {
+                return false;
+            }
+
+            user.PhoneNumber = null;
+            user.FirstName = "";
+            user.Email = null;
+            user.LastName = "";
+            user.NormalizedEmail = null;
+            user.NormalizedUserName = null;
+            user.PasswordHash = null;
+            user.UserName = $"forgottenUser-GDPR_{DateTime.Now.Ticks}";
+
+            var result = await userManager.UpdateAsync(user);
+
+            return result.Succeeded;
+        }
+
 
         public async Task<IdentityResult> UpdateUserAsync(string userId, string newEmail, string newPhoneNumber)
         {
-            var user = await _userManager.FindByIdAsync(userId);
+            var user = await userManager.FindByIdAsync(userId);
 
             if (user == null)
             {
@@ -41,10 +95,11 @@ namespace PawnShop.Core.Services
             user.Email = newEmail;
             user.PhoneNumber = newPhoneNumber;
 
-            var result = await _userManager.UpdateAsync(user);
+            var result = await userManager.UpdateAsync(user);
 
             return result;
         }
+
     }
 }
 

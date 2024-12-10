@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using PawnShop.Core.Models.Agreement;
+using PawnShop.Core.Models.User;
 
 namespace PawnShop.Core.Interfaces
 {
@@ -8,5 +10,8 @@ namespace PawnShop.Core.Interfaces
 
 		Task<bool> ExistUserIdAsync(string userId);
 
+		Task<IEnumerable<AllUsersViewModel>> AllAsync();
+
+		Task <bool>Forget(string userId);
     }
 }

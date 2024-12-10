@@ -3,31 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{05B7C7C8-B967-4C50-8C8E-07375F592D11}|PawnShop.Tests\\PawnShop.Tests.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\pawnshopproject\\pawnshop\\pawnshop.tests\\shopservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05B7C7C8-B967-4C50-8C8E-07375F592D11}|PawnShop.Tests\\PawnShop.Tests.csproj|solutionrelative:pawnshop.tests\\shopservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB9D42F1-5BB7-4D3A-AFEF-9E6DFCF7937B}|PawnShop.Core\\PawnShop.Core.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\pawnshopproject\\pawnshop\\pawnshop.core\\services\\clientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB9D42F1-5BB7-4D3A-AFEF-9E6DFCF7937B}|PawnShop.Core\\PawnShop.Core.csproj|solutionrelative:pawnshop.core\\services\\clientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{05B7C7C8-B967-4C50-8C8E-07375F592D11}|PawnShop.Tests\\PawnShop.Tests.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\pawnshopproject\\pawnshop\\pawnshop.tests\\interestservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05B7C7C8-B967-4C50-8C8E-07375F592D11}|PawnShop.Tests\\PawnShop.Tests.csproj|solutionrelative:pawnshop.tests\\interestservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E63C296A-E282-424F-A8A7-ACFEF8F2448F}|PawnShop\\PawnShop.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\pawnshopproject\\pawnshop\\pawnshop\\areas\\admin\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E63C296A-E282-424F-A8A7-ACFEF8F2448F}|PawnShop\\PawnShop.csproj|solutionrelative:pawnshop\\areas\\admin\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4CC0A52D-A316-4F4F-8869-B23507C6E4D6}|PawnShop.Infrastructure\\PawnShop.Infrastructure.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\pawnshopproject\\pawnshop\\pawnshop.infrastructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4CC0A52D-A316-4F4F-8869-B23507C6E4D6}|PawnShop.Infrastructure\\PawnShop.Infrastructure.csproj|solutionrelative:pawnshop.infrastructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E63C296A-E282-424F-A8A7-ACFEF8F2448F}|PawnShop\\PawnShop.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\pawnshopproject\\pawnshop\\pawnshop\\areas\\admin\\views\\admin\\deleteclient.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E63C296A-E282-424F-A8A7-ACFEF8F2448F}|PawnShop\\PawnShop.csproj|solutionrelative:pawnshop\\areas\\admin\\views\\admin\\deleteclient.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4CC0A52D-A316-4F4F-8869-B23507C6E4D6}|PawnShop.Infrastructure\\PawnShop.Infrastructure.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\pawnshopproject\\pawnshop\\pawnshop.infrastructure\\seeddatadb\\shopconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4CC0A52D-A316-4F4F-8869-B23507C6E4D6}|PawnShop.Infrastructure\\PawnShop.Infrastructure.csproj|solutionrelative:pawnshop.infrastructure\\seeddatadb\\shopconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E63C296A-E282-424F-A8A7-ACFEF8F2448F}|PawnShop\\PawnShop.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\pawnshopproject\\pawnshop\\pawnshop\\areas\\admin\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E63C296A-E282-424F-A8A7-ACFEF8F2448F}|PawnShop\\PawnShop.csproj|solutionrelative:pawnshop\\areas\\admin\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4CC0A52D-A316-4F4F-8869-B23507C6E4D6}|PawnShop.Infrastructure\\PawnShop.Infrastructure.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\pawnshopproject\\pawnshop\\pawnshop.infrastructure\\seeddatadb\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4CC0A52D-A316-4F4F-8869-B23507C6E4D6}|PawnShop.Infrastructure\\PawnShop.Infrastructure.csproj|solutionrelative:pawnshop.infrastructure\\seeddatadb\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB9D42F1-5BB7-4D3A-AFEF-9E6DFCF7937B}|PawnShop.Core\\PawnShop.Core.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\pawnshopproject\\pawnshop\\pawnshop.core\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB9D42F1-5BB7-4D3A-AFEF-9E6DFCF7937B}|PawnShop.Core\\PawnShop.Core.csproj|solutionrelative:pawnshop.core\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4CC0A52D-A316-4F4F-8869-B23507C6E4D6}|PawnShop.Infrastructure\\PawnShop.Infrastructure.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\pawnshopproject\\pawnshop\\pawnshop.infrastructure\\seeddatadb\\interestconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4CC0A52D-A316-4F4F-8869-B23507C6E4D6}|PawnShop.Infrastructure\\PawnShop.Infrastructure.csproj|solutionrelative:pawnshop.infrastructure\\seeddatadb\\interestconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E63C296A-E282-424F-A8A7-ACFEF8F2448F}|PawnShop\\PawnShop.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\pawnshopproject\\pawnshop\\pawnshop\\areas\\admin\\views\\users\\all.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E63C296A-E282-424F-A8A7-ACFEF8F2448F}|PawnShop\\PawnShop.csproj|solutionrelative:pawnshop\\areas\\admin\\views\\users\\all.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mariana\\AppData\\Roaming\\Microsoft\\UserSecrets\\aspnet-PawnShop-31aa876c-b893-4747-a021-7e7a97287145\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{EB9D42F1-5BB7-4D3A-AFEF-9E6DFCF7937B}|PawnShop.Core\\PawnShop.Core.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\pawnshopproject\\pawnshop\\pawnshop.core\\models\\client\\clientviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB9D42F1-5BB7-4D3A-AFEF-9E6DFCF7937B}|PawnShop.Core\\PawnShop.Core.csproj|solutionrelative:pawnshop.core\\models\\client\\clientviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB9D42F1-5BB7-4D3A-AFEF-9E6DFCF7937B}|PawnShop.Core\\PawnShop.Core.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\pawnshopproject\\pawnshop\\pawnshop.core\\interfaces\\iclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB9D42F1-5BB7-4D3A-AFEF-9E6DFCF7937B}|PawnShop.Core\\PawnShop.Core.csproj|solutionrelative:pawnshop.core\\interfaces\\iclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -37,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -57,93 +62,106 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ShopServiceTests.cs",
-              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Tests\\ShopServiceTests.cs",
-              "RelativeDocumentMoniker": "PawnShop.Tests\\ShopServiceTests.cs",
-              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Tests\\ShopServiceTests.cs",
-              "RelativeToolTip": "PawnShop.Tests\\ShopServiceTests.cs",
-              "ViewState": "AgIAAGcAAAAAAAAAAAAIwG0AAABjAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop\\Areas\\Admin\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "PawnShop\\Areas\\Admin\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop\\Areas\\Admin\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "PawnShop\\Areas\\Admin\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowAYAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:28:57.108Z",
+              "WhenOpened": "2024-12-10T15:05:50.601Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "InterestServiceTests.cs",
-              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Tests\\InterestServiceTests.cs",
-              "RelativeDocumentMoniker": "PawnShop.Tests\\InterestServiceTests.cs",
-              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Tests\\InterestServiceTests.cs",
-              "RelativeToolTip": "PawnShop.Tests\\InterestServiceTests.cs",
-              "ViewState": "AgIAAGkAAAAAAAAAAAAwwAwAAAAlAAAAAAAAAA==",
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop\\Areas\\Admin\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "PawnShop\\Areas\\Admin\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop\\Areas\\Admin\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "PawnShop\\Areas\\Admin\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAuwCUAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:28:31.193Z",
+              "WhenOpened": "2024-12-10T13:33:22.243Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Infrastructure\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "PawnShop.Infrastructure\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Infrastructure\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "PawnShop.Infrastructure\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAA1wBUAAAAxAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "ClientService.cs",
+              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Core\\Services\\ClientService.cs",
+              "RelativeDocumentMoniker": "PawnShop.Core\\Services\\ClientService.cs",
+              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Core\\Services\\ClientService.cs",
+              "RelativeToolTip": "PawnShop.Core\\Services\\ClientService.cs",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAuwH4AAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:20:29.226Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ShopConfiguration.cs",
-              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Infrastructure\\SeedDataDB\\ShopConfiguration.cs",
-              "RelativeDocumentMoniker": "PawnShop.Infrastructure\\SeedDataDB\\ShopConfiguration.cs",
-              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Infrastructure\\SeedDataDB\\ShopConfiguration.cs",
-              "RelativeToolTip": "PawnShop.Infrastructure\\SeedDataDB\\ShopConfiguration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:18:21.866Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "secrets.json",
-              "DocumentMoniker": "C:\\Users\\Mariana\\AppData\\Roaming\\Microsoft\\UserSecrets\\aspnet-PawnShop-31aa876c-b893-4747-a021-7e7a97287145\\secrets.json",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\aspnet-PawnShop-31aa876c-b893-4747-a021-7e7a97287145\\secrets.json",
-              "ToolTip": "C:\\Users\\Mariana\\AppData\\Roaming\\Microsoft\\UserSecrets\\aspnet-PawnShop-31aa876c-b893-4747-a021-7e7a97287145\\secrets.json",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\aspnet-PawnShop-31aa876c-b893-4747-a021-7e7a97287145\\secrets.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-12-09T11:12:52.488Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "InterestConfiguration.cs",
-              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Infrastructure\\SeedDataDB\\InterestConfiguration.cs",
-              "RelativeDocumentMoniker": "PawnShop.Infrastructure\\SeedDataDB\\InterestConfiguration.cs",
-              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Infrastructure\\SeedDataDB\\InterestConfiguration.cs",
-              "RelativeToolTip": "PawnShop.Infrastructure\\SeedDataDB\\InterestConfiguration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:01:59.856Z",
+              "WhenOpened": "2024-12-10T12:20:02.493Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "SeedData.cs",
-              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Infrastructure\\SeedDataDB\\SeedData.cs",
-              "RelativeDocumentMoniker": "PawnShop.Infrastructure\\SeedDataDB\\SeedData.cs",
-              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Infrastructure\\SeedDataDB\\SeedData.cs",
-              "RelativeToolTip": "PawnShop.Infrastructure\\SeedDataDB\\SeedData.cs",
-              "ViewState": "AgIAANIAAAAAAAAAAAAqwOoAAAAAAAAAAAAAAA==",
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Core\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "PawnShop.Core\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Core\\Services\\UserService.cs",
+              "RelativeToolTip": "PawnShop.Core\\Services\\UserService.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAxwCkAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T10:44:47.326Z",
+              "WhenOpened": "2024-12-10T12:27:49.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DeleteClient.cshtml",
+              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop\\Areas\\Admin\\Views\\Admin\\DeleteClient.cshtml",
+              "RelativeDocumentMoniker": "PawnShop\\Areas\\Admin\\Views\\Admin\\DeleteClient.cshtml",
+              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop\\Areas\\Admin\\Views\\Admin\\DeleteClient.cshtml",
+              "RelativeToolTip": "PawnShop\\Areas\\Admin\\Views\\Admin\\DeleteClient.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAwCIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-10T13:28:21.154Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ClientViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Core\\Models\\Client\\ClientViewModel.cs",
+              "RelativeDocumentMoniker": "PawnShop.Core\\Models\\Client\\ClientViewModel.cs",
+              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Core\\Models\\Client\\ClientViewModel.cs",
+              "RelativeToolTip": "PawnShop.Core\\Models\\Client\\ClientViewModel.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAA0wA4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T14:36:33.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "All.cshtml",
+              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop\\Areas\\Admin\\Views\\Users\\All.cshtml",
+              "RelativeDocumentMoniker": "PawnShop\\Areas\\Admin\\Views\\Users\\All.cshtml",
+              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop\\Areas\\Admin\\Views\\Users\\All.cshtml",
+              "RelativeToolTip": "PawnShop\\Areas\\Admin\\Views\\Users\\All.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-10T12:04:33.416Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IClientService.cs",
+              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Core\\Interfaces\\IClientService.cs",
+              "RelativeDocumentMoniker": "PawnShop.Core\\Interfaces\\IClientService.cs",
+              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Core\\Interfaces\\IClientService.cs",
+              "RelativeToolTip": "PawnShop.Core\\Interfaces\\IClientService.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAqwBAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T13:27:35.7Z",
               "EditorCaption": ""
             }
           ]

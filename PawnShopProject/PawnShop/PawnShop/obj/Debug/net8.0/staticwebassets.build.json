@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/2yxJCKhoqmZ7h2zvu8MymNicIo5Jc0pRpFXOUWxd8Q=",
+  "Hash": "A3sOe3qyQAMuHIMi/0ZHBhnLiQXiX+mBsm3sRoVJudM=",
   "Source": "PawnShop",
   "BasePath": "_content/PawnShop",
   "Mode": "Default",
@@ -1291,8 +1291,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "3vrfam3uuy",
-      "Integrity": "z0wUa5a6yvl7GsNtFZSDxIW2DZCT5GzAh8gkm5ISd6w=",
+      "Fingerprint": "txd1xkegwu",
+      "Integrity": "0W2Cq6M+elgxgfmSukBYoggUS+IX/Nlk4jtFEvAxaiQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop\\obj\\Debug\\net8.0\\scopedcss\\bundle\\PawnShop.styles.css"
@@ -1312,8 +1312,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "3vrfam3uuy",
-      "Integrity": "z0wUa5a6yvl7GsNtFZSDxIW2DZCT5GzAh8gkm5ISd6w=",
+      "Fingerprint": "txd1xkegwu",
+      "Integrity": "0W2Cq6M+elgxgfmSukBYoggUS+IX/Nlk4jtFEvAxaiQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\PawnShop.bundle.scp.css"
@@ -9721,96 +9721,6 @@
       ]
     },
     {
-      "Route": "PawnShop.3vrfam3uuy.bundle.scp.css",
-      "AssetFile": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\PawnShop.bundle.scp.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2264"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"z0wUa5a6yvl7GsNtFZSDxIW2DZCT5GzAh8gkm5ISd6w=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 03 Dec 2024 12:28:43 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "3vrfam3uuy"
-        },
-        {
-          "Name": "label",
-          "Value": "PawnShop.bundle.scp.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-z0wUa5a6yvl7GsNtFZSDxIW2DZCT5GzAh8gkm5ISd6w="
-        }
-      ]
-    },
-    {
-      "Route": "PawnShop.3vrfam3uuy.styles.css",
-      "AssetFile": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop\\obj\\Debug\\net8.0\\scopedcss\\bundle\\PawnShop.styles.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2264"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"z0wUa5a6yvl7GsNtFZSDxIW2DZCT5GzAh8gkm5ISd6w=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 03 Dec 2024 12:28:43 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "3vrfam3uuy"
-        },
-        {
-          "Name": "label",
-          "Value": "PawnShop.styles.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-z0wUa5a6yvl7GsNtFZSDxIW2DZCT5GzAh8gkm5ISd6w="
-        }
-      ]
-    },
-    {
       "Route": "PawnShop.bundle.scp.css",
       "AssetFile": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\PawnShop.bundle.scp.css",
       "Selectors": [],
@@ -9821,7 +9731,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2264"
+          "Value": "2269"
         },
         {
           "Name": "Content-Type",
@@ -9829,11 +9739,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"z0wUa5a6yvl7GsNtFZSDxIW2DZCT5GzAh8gkm5ISd6w=\""
+          "Value": "\"0W2Cq6M+elgxgfmSukBYoggUS+IX/Nlk4jtFEvAxaiQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 03 Dec 2024 12:28:43 GMT"
+          "Value": "Tue, 10 Dec 2024 09:59:18 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9843,7 +9753,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-z0wUa5a6yvl7GsNtFZSDxIW2DZCT5GzAh8gkm5ISd6w="
+          "Value": "sha256-0W2Cq6M+elgxgfmSukBYoggUS+IX/Nlk4jtFEvAxaiQ="
         }
       ]
     },
@@ -9858,7 +9768,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2264"
+          "Value": "2269"
         },
         {
           "Name": "Content-Type",
@@ -9866,11 +9776,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"z0wUa5a6yvl7GsNtFZSDxIW2DZCT5GzAh8gkm5ISd6w=\""
+          "Value": "\"0W2Cq6M+elgxgfmSukBYoggUS+IX/Nlk4jtFEvAxaiQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 03 Dec 2024 12:28:43 GMT"
+          "Value": "Tue, 10 Dec 2024 09:59:18 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9880,7 +9790,97 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-z0wUa5a6yvl7GsNtFZSDxIW2DZCT5GzAh8gkm5ISd6w="
+          "Value": "sha256-0W2Cq6M+elgxgfmSukBYoggUS+IX/Nlk4jtFEvAxaiQ="
+        }
+      ]
+    },
+    {
+      "Route": "PawnShop.txd1xkegwu.bundle.scp.css",
+      "AssetFile": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\PawnShop.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2269"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0W2Cq6M+elgxgfmSukBYoggUS+IX/Nlk4jtFEvAxaiQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Dec 2024 09:59:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "txd1xkegwu"
+        },
+        {
+          "Name": "label",
+          "Value": "PawnShop.bundle.scp.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0W2Cq6M+elgxgfmSukBYoggUS+IX/Nlk4jtFEvAxaiQ="
+        }
+      ]
+    },
+    {
+      "Route": "PawnShop.txd1xkegwu.styles.css",
+      "AssetFile": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop\\obj\\Debug\\net8.0\\scopedcss\\bundle\\PawnShop.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2269"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0W2Cq6M+elgxgfmSukBYoggUS+IX/Nlk4jtFEvAxaiQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Dec 2024 09:59:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "txd1xkegwu"
+        },
+        {
+          "Name": "label",
+          "Value": "PawnShop.styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0W2Cq6M+elgxgfmSukBYoggUS+IX/Nlk4jtFEvAxaiQ="
         }
       ]
     }

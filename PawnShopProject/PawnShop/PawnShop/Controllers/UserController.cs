@@ -1,10 +1,7 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using PawnShop.Core.Interfaces;
-using PawnShop.Core.Models.Client;
 using PawnShop.Core.Models.User;
-using PawnShop.Core.Services;
 using PawnShop.Infrastructure.Data.Model;
 
 namespace PawnShop.Controllers
@@ -22,7 +19,7 @@ namespace PawnShop.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit()
         {
-            var userName = await userManager.FindByNameAsync(HttpContext.User.Identity.Name);
+            var userName = await userManager.FindByNameAsync(HttpContext.User?.Identity?.Name != null ? HttpContext.User.Identity.Name : string.Empty);
 
             if (userName == null)
             {

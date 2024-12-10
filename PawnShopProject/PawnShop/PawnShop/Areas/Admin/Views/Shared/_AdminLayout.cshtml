@@ -13,7 +13,7 @@
 		<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
 			<div class="container-fluid">
 
-				<a class="navbar-brand" asp-area="Admin" asp-controller="Admin" asp-action="Index">PawnShop-Admin Area</a>
+				<a class="navbar-brand text-danger" asp-area="Admin" asp-controller="Admin" asp-action="Index">PawnShop-Admin Area</a>
 
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
 						aria-expanded="false" aria-label="Toggle navigation">
@@ -29,8 +29,12 @@
 						@if (User?.Identity?.IsAuthenticated ?? false)
 						{
 							<li class="nav-item">
+								<a class="nav-link text-dark" asp-area="Admin" asp-controller="Users" asp-action="All">All Users</a>
+							</li>
+
+							<li class="nav-item">
 								<a class="nav-link text-dark" asp-area="Admin" asp-controller="Shop" asp-action="All">All Goods in Shop</a>
-							</li>						
+							</li>
 
 							<li class="nav-item">
 								<a class="nav-link text-dark" asp-area="Admin" asp-controller="Agreement" asp-action="All">All Agreements</a>
@@ -58,5 +62,27 @@
 	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="~/js/site.js" asp-append-version="true"></script>
 	@await RenderSectionAsync("Scripts", required: false)
+
+	@if(TempData[TempDataConstants.SuccessMessage] != null)
+	{
+		<script>
+			message.ShowSuccess('[@TempDataConstants.SuccessMessage]');
+		</script>
+	}
+
+	@if (TempData[TempDataConstants.ErrorMessage] != null)
+	{
+		<script>
+			message.ShowSuccess('[@TempDataConstants.ErrorMessage]');
+		</script>
+	}
+	@if (TempData[TempDataConstants.WarningMessage] != null)
+	{
+		<script>
+			message.ShowSuccess('[@TempDataConstants.WarningMessage]');
+		</script>
+	}
+
+
 </body>
 </html>

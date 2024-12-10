@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using PawnShop.Core.Interfaces;
 using PawnShop.Core.Models.Client;
+using static PawnShop.Core.Constants.AdminConstants;
 
 namespace PawnShop.Controllers
 {
@@ -64,5 +65,7 @@ namespace PawnShop.Controllers
 
             return View(model);
         }
+
+       
     }
 }

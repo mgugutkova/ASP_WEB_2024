@@ -1,5 +1,6 @@
 ﻿using PawnShop.Core.Models.Agreement;
 using PawnShop.Core.Models.Client;
+using PawnShop.Core.Models.User;
 using PawnShop.Infrastructure.Data.Model;
 
 namespace PawnShop.Core.Interfaces
@@ -14,9 +15,11 @@ namespace PawnShop.Core.Interfaces
 
         Task CreateClientAsync(string userId, string phoneNumber, string address);
 
-        Task<int> GetClientIdAsync(string userId);
-        Task<IEnumerable<AllAgreementViewModel>>GetClientAgreementAsync(string userId);
+        //  Task<int> GetClientIdAsync(string userId);
+        Task<ClientViewModel> GetClientAsync(string userId);
+        Task<IEnumerable<AllAgreementViewModel>> GetClientAgreementAsync(string userId);
 
-       // Task<BecomeClientFormModel> GetClient();
+        Task<AllUsersViewModel> DeleteClientAsync(string userId);
+        Task DeleteClientConfirmendAsync(string userId);
     }
 }

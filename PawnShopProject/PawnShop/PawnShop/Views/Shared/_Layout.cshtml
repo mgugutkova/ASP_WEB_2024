@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
@@ -26,6 +27,10 @@
 							<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
 						</li>
 
+						<li class="nav-item">
+							<a class="nav-link text-dark" asp-area="" asp-controller="Shop" asp-action="AllNotSold">Shop</a>
+						</li>
+
 						@if (User?.Identity?.IsAuthenticated ?? false)
 						{
 							@if (ViewBag.IsClientExist == false)
@@ -35,12 +40,9 @@
 									<a class="nav-link text-dark" asp-area="" asp-controller="Client" asp-action="BecomeClient">Become Client</a>
 								</li>
 							}
-							else
-							{
-								<li class="nav-item">
-									<a class="nav-link text-dark" asp-area="" asp-controller="Shop" asp-action="AllNotSold">Shop</a>
-								</li>
 
+							@if (User.IsUser() == true)
+							{
 								<li class="nav-item">
 									<a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Edit">Edit Client data</a>
 								</li>
@@ -51,9 +53,9 @@
 
 								<li class="nav-item">
 									<a class="nav-link text-dark" asp-area="" asp-controller="Client" asp-action="MineAgreements">Mine Agreements</a>
-								</li>							
+								</li>
 							}
-						}
+						}						
 
 					</ul>
 					<partial name="_LoginPartial" />

@@ -1,13 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PawnShop.Core.Interfaces;
 using PawnShop.Core.Models.Agreement;
+using PawnShop.Core.Models.Client;
+using PawnShop.Core.Models.User;
 using PawnShop.Infrastructure.Data.Model;
 using PawnShop.Infrastructure.Data.Repo;
 
 
 namespace PawnShop.Core.Services
 {
-	public class ClientService : IClientService
+    public class ClientService : IClientService
     {
         private readonly IRepository repository;
 
@@ -42,6 +44,8 @@ namespace PawnShop.Core.Services
             await repository.SaveChangesAsync();
         }
 
+
+
         public async Task<bool> ExistClientIdAsync(string userId)
         {
             if (string.IsNullOrEmpty(userId))
@@ -75,7 +79,7 @@ namespace PawnShop.Core.Services
             return false;
         }
 
-        public async Task<IEnumerable<AllAgreementViewModel>>GetClientAgreementAsync(string userId)
+        public async Task<IEnumerable<AllAgreementViewModel>> GetClientAgreementAsync(string userId)
         {
             var agreements = await repository.All<Agreement>()
                   .Where(c => c.UserId == userId)
@@ -98,45 +102,47 @@ namespace PawnShop.Core.Services
             return agreements;
         }
 
-        //public async Task<BecomeClientFormModel?> GetClient()
-        //{
-        //    //var user = userManager.Users.FirstOrDefault();
-        //    var user = await userManager.GetUserAsync(this.User);
-
-        //    var client = repository.AllReadOnly<Client>()
-        //                 .Where(x => x.UserId == user.Id)
-        //                 .Select(c => new BecomeClientFormModel()
-        //                 {
-        //                     PhoneNumber = c.PhoneNumber,
-        //                     Address = c.Address
-        //                 })
-        //                 .FirstOrDefaultAsync();
-
-
-        //    if (client == null)
-        //    {
-        //        return null;
-        //    }
-
-        //    return null;
-        //}
-
-        public async Task<int> GetClientIdAsync(string userId)
+        public async Task<AllUsersViewModel> DeleteClientAsync(string userId)
         {
-            if (string.IsNullOrEmpty(userId))
-            {
-                return 0;
-            }
+            var user = await repository.AllReadOnly<ApplicationUser>()
+               .Where(x=> x.Id == userId)
+               .Select(c => new AllUsersViewModel()
+               {
+                   UserId = c.Id,
+                   FirstName = c.FirstName,
+                   LastName = c.LastName,
+                   Email = c.Email ?? string.Empty,
+                   PhoneNumber = c.Client != null ? c.Client.PhoneNumber : string.Empty,
+                   IsClient = c.Client != null
+               })
+               .FirstOrDefaultAsync();          
 
-            var getUserId = await repository.AllReadOnly<Client>()
-                .FirstOrDefaultAsync(c => c.UserId == userId);
+            return user;
+        }
 
-            if (getUserId == null)
-            {
-                return 0;
-            }
+        public async Task DeleteClientConfirmendAsync(string userId)
+        {
+            var client = await repository.All<Client>()
+                .Where(x => x.UserId == userId)
+                .Where(x => x.IsDeleted == false)
+                 .FirstOrDefaultAsync();
 
-            return getUserId.Id;
+            client.IsDeleted = true;
+
+            await repository.SaveChangesAsync();
+        }
+
+        public async Task<ClientViewModel> GetClientAsync(string userId)
+        {
+            var client = await repository.AllReadOnly<Client>()
+                .Where(x => x.UserId == userId)
+                .Where(x =>x.IsDeleted == false)
+                .Select (c => new ClientViewModel() {
+                   Id = c.Id
+                })
+                .FirstOrDefaultAsync();           
+
+            return client;
         }
     }
 }

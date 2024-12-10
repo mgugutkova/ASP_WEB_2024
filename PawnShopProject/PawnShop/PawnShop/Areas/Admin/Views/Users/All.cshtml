@@ -1,0 +1,57 @@
+﻿@using PawnShop.Core.Models.User
+
+@model IEnumerable<AllUsersViewModel>
+
+@{
+    ViewBag.Title = "All Users";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+<table class="table table-striped">
+    <thead>
+        <tr>            
+            <th><label>Email</label></th>
+            <th><label>First Name</label></th>
+            <th><label>Larst Name</label></th>
+            <th><label>Phone Number</label></th>
+            <th><label>User Is Client</label></th>
+            <th><label>Actions</label></th>           
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>               
+                <td><label>@user.Email</label></td>
+                <td><label>@user.FirstName</label></td>
+                <td><label>@user.LastName</label></td>
+                <td><label>@user.PhoneNumber</label></td>             
+                <td>
+                    @if (user.IsClient == true)
+                    {
+                        <label>✔</label>
+                    }
+                    else
+                    {
+                        <label class="text-center">❌</label>
+                    }
+                </td>
+                <td>
+                    <form asp-area="Admin" asp-controller="Users" asp-action="Forget" asp-route-userId="@user.UserId" method="post">
+
+                        <button type="submit" class="btn btn-danger">Forget</button>
+                    </form>
+                </td>
+                <td>
+                    <form asp-area="Admin" asp-controller="Admin" asp-action="DeleteClient" asp-route-userId="@user.UserId" method="post">
+
+                        <button type="submit" class="btn btn-danger">Delete Client</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
