@@ -46,7 +46,7 @@ namespace PawnShop.Controllers
 
             await clientService.CreateClientAsync(GetUserId(), model.PhoneNumber, model.Address);
 
-            return RedirectToAction(nameof(Index), "Home");  
+            return View("LoginAgain");  
         }
 
         [HttpGet]

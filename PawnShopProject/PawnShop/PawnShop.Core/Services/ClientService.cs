@@ -1,10 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using PawnShop.Core.Interfaces;
 using PawnShop.Core.Models.Agreement;
 using PawnShop.Core.Models.Client;
 using PawnShop.Core.Models.User;
 using PawnShop.Infrastructure.Data.Model;
 using PawnShop.Infrastructure.Data.Repo;
+using System.Data;
+using static PawnShop.Core.Constants.AdminConstants;
 
 
 namespace PawnShop.Core.Services
@@ -12,10 +15,15 @@ namespace PawnShop.Core.Services
     public class ClientService : IClientService
     {
         private readonly IRepository repository;
+        private readonly UserManager<ApplicationUser> userManager;
 
-        public ClientService(IRepository _repository)
+        public ClientService(
+            IRepository _repository,
+            UserManager<ApplicationUser> _userManager
+            )
         {
             repository = _repository;
+            userManager = _userManager;
         }
 
 
@@ -34,6 +42,7 @@ namespace PawnShop.Core.Services
 
         public async Task CreateClientAsync(string userId, string phoneNumber, string address)
         {
+
             await repository.AddAsync(new Client()
             {
                 UserId = userId,
@@ -42,6 +51,10 @@ namespace PawnShop.Core.Services
             });
 
             await repository.SaveChangesAsync();
+
+            var newClient = await userManager.FindByIdAsync(userId);
+
+            await userManager.AddToRoleAsync(newClient, UserRole);
         }
 
 
