@@ -14,7 +14,7 @@
         public const int PriceMinValue = 10;
         public const int PriceMaxValue = 1000;
 
-		public const int DurationMinValue = 1;
+		public const int DurationMinValue = 0;
 		public const int DurationMaxValue = 30;
 
 		public const int LastNameMaxLength = 20;
