@@ -13,6 +13,7 @@ namespace PawnShop.Areas.Admin.Controllers
             userService = _userService;
         }
 
+        [HttpGet]
         public async Task<IActionResult> All()
         {
             var model = await userService.AllAsync();
@@ -35,6 +36,6 @@ namespace PawnShop.Areas.Admin.Controllers
             }
 
             return RedirectToAction(nameof(All));
-        }
+        }     
     }
 }

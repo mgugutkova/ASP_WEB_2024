@@ -21,6 +21,14 @@ namespace PawnShop.Areas.Admin.Controllers
         }
 
 
+        [HttpPost]
+        public async Task<IActionResult> AllAgreements(string userId)
+        {
+            var model = await agreementService.AllAgreementsAsync(userId);
+
+            return View(model);
+        }
+
         [HttpGet]
         public async Task<IActionResult> All([FromQuery] AllAgreementQueryViewModel query)
         {
@@ -32,8 +40,7 @@ namespace PawnShop.Areas.Admin.Controllers
                 query.AgreementPerPage);
 
             query.TotalAgreementCount = model.TotalAgreementCount;
-            query.Agreements = model.AgreementsList;
-            //  query.AgreementStates = await agreementService.AllStatesNamesAsync();
+            query.Agreements = model.AgreementsList;           
 
             return View(query);
         }

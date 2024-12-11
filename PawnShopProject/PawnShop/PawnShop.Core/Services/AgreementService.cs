@@ -21,6 +21,31 @@ namespace PawnShop.Core.Services
             logger = _logger;
         }
 
+        public async Task<IEnumerable<AllAgreementViewModel>> AllAgreementsAsync(string userId)
+        {
+            var agreements = await repository.AllReadOnly<Agreement>()
+                .Where(a=> a.UserId == userId)
+                .Where(a => a.IsDeleted == false)
+                .Select(c => new AllAgreementViewModel()
+                {
+                    Id = c.Id,
+                    GoodName = c.GoodName,
+                    Description = c.Description,
+                    Price = c.Price,
+                    ReturnPrice = c.ReturnPrice,
+                    Duration = c.Duration,
+                    StartDate = c.StartDate,
+                    EndDate = c.EndDate,
+                    AgrreementStates = c.AgrreementStates.Name,
+                    Ainterest = c.Ainterest,
+                    AgrreementStateId = c.AgrreementStateId
+
+                })
+                .ToListAsync();
+
+            return agreements;
+        }
+
         public async Task<IEnumerable<AllAgreementViewModel>> AllAsync()
         {
             var agreements = await repository.AllReadOnly<Agreement>()

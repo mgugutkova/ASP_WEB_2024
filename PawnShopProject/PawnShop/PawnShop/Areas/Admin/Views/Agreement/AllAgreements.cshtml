@@ -49,13 +49,7 @@ else
 				<td>@item.EndDate.ToString("dd/MM/yyyy")</td>
 				<td>@item.AgrreementStates</td>
 				<td>
-					<a asp-action="EditAgreement" asp-route-id="@item.Id" class="btn btn-info">Edit</a>
-
-					@if (@item.AgrreementStateId == 2 || @item.AgrreementStateId == 3)
-					{
-						<a asp-controller="Interest" asp-action="AllInterests" asp-route-agreementId="@item.Id" class="btn btn-primary">Interests</a>
-					}
-					<a asp-controller="Agreement" asp-action="DeleteAgreement" asp-route-Id="@item.Id" class="btn btn-danger">Delete</a>
+					<a asp-area="Admin" asp-controller="Agreement" asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Detail</a>
 				</td>
 			</tr>			
 		}

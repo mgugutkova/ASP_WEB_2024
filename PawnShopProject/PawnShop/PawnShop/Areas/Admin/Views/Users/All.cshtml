@@ -48,6 +48,13 @@
                         <button type="submit" class="btn btn-danger">Delete Client</button>
                     </form>
                 </td>
+
+                <td>
+                    <form asp-area="Admin" asp-controller="Agreement" asp-action="AllAgreements" asp-route-userId="@user.UserId" method="post">
+
+                        <button type="submit" class="btn btn-primary">View Agreements</button>
+                    </form>
+                </td>
             </tr>
         }
     </tbody>

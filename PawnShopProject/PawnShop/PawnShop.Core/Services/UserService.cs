@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PawnShop.Core.Interfaces;
 using PawnShop.Core.Models.User;
@@ -88,7 +86,7 @@ namespace PawnShop.Core.Services
             user.NormalizedEmail = null;
             user.NormalizedUserName = null;
             user.PasswordHash = null;
-            user.UserName = $"forgottenUser-GDPR_{DateTime.Now}";
+            user.UserName = $"forgottenUser-GDPR";
 
             var result = await userManager.UpdateAsync(user);
 

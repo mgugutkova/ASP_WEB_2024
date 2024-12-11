@@ -31,7 +31,6 @@ namespace PawnShop.Tests
         }
 
 
-
         [Test]
         public async Task TestInterestAdded()
         {
@@ -58,33 +57,7 @@ namespace PawnShop.Tests
             var dbInterest = await repo.GetByIdAsync<Interest>(200);
 
             Assert.That(dbInterest.Id, Is.EqualTo(200));
-        }
-
-
-        //[Test]
-        //public async Task TestAllInterests()
-        //{
-        //    var loggerMock = new Mock<ILogger<InterestService>>();
-
-        //    var logger = loggerMock.Object;
-
-        //    var repo = new Repository(applicationDbContext);
-
-        //    interestService = new InterestService(repo, logger);
-
-        //    var testInterests = repo.AddRangeAsync(new List<Interest>()
-        //    {
-        //    new Interest(){Id = 100, AgreementId = 2, ValueInterest = 10, DateInterest = DateTime.Now},
-        //    new Interest(){Id = 101, AgreementId = 2, ValueInterest = 20, DateInterest = DateTime.Now},
-        //    new Interest(){Id = 102, AgreementId = 2, ValueInterest = 30, DateInterest = DateTime.Now}
-        //    });
-
-        //    await repo.SaveChangesAsync();
-
-        //    var interestsList = await interestService.GetAllInterestsAsync(2);
-
-        //    Assert.That(3, Is.EqualTo(interestsList.Count()));
-        //}
+        }      
 
 
         [Test]
