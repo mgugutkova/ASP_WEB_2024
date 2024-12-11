@@ -13,7 +13,8 @@ namespace PawnShop.Core.Services
     {
         private readonly IRepository repository;
         private readonly ILogger logger;
-        public AgreementService(IRepository _repository,
+        public AgreementService(
+            IRepository _repository,
             ILogger<AgreementService> _logger)
         {
             repository = _repository;
@@ -154,7 +155,7 @@ namespace PawnShop.Core.Services
 
         public async Task<AllAgreementViewModel?> DeleteAgreementAsync(int? id)
         {
-            var model = await repository.AllReadOnly<Agreement>()
+            var agreement = await repository.AllReadOnly<Agreement>()
              .Where(a => a.Id == id)
              .Where(a => a.IsDeleted == false)
              .Select(s => new AllAgreementViewModel()
@@ -169,7 +170,7 @@ namespace PawnShop.Core.Services
              })
              .FirstOrDefaultAsync();
 
-            return model;
+            return agreement;
         }
 
         public async Task DeleteConfirmedAsync(int id)
@@ -245,7 +246,7 @@ namespace PawnShop.Core.Services
 
         public async Task<AllAgreementViewModel?> FindAgreementAsync(int? id)
         {
-            var model = await repository.AllReadOnly<Agreement>()
+            var agreement = await repository.AllReadOnly<Agreement>()
                 .Where(a => a.Id == id)
                 .Where(d => d.IsDeleted == false)
                 .Select(x => new AllAgreementViewModel()
@@ -267,17 +268,17 @@ namespace PawnShop.Core.Services
                 })
                 .FirstOrDefaultAsync();
 
-            if (model != null)
+            if (agreement != null)
             {
-                model.IsInterestExist = await IsInterestExistAsync(model.Id);
+                agreement.IsInterestExist = await IsInterestExistAsync(agreement.Id);
             }
 
-            return model;
+            return agreement;
         }
 
         public async Task<AddAgreementViewModel?> GetAgreementAsync(int? id)
         {
-            var model = await repository.All<Agreement>()
+            var agreement = await repository.All<Agreement>()
                 .Where(a => a.Id == id)
                 .Where(d => d.IsDeleted == false)
                 .Select(x => new AddAgreementViewModel()
@@ -299,12 +300,12 @@ namespace PawnShop.Core.Services
                 })
                 .FirstOrDefaultAsync();
 
-            if (model != null)
+            if (agreement != null)
             {
-                model.AgreementsStates = await GetStatesAsync();
+                agreement.AgreementsStates = await GetStatesAsync();
             }
 
-            return model;
+            return agreement;
         }
 
         public async Task<IEnumerable<AgreementStateViewModel>> GetStatesAsync()

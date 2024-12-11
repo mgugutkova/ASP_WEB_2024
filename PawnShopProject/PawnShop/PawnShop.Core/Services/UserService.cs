@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PawnShop.Core.Interfaces;
 using PawnShop.Core.Models.User;
@@ -26,6 +28,20 @@ namespace PawnShop.Core.Services
             userManager = _userManager;
             data = _context;
             repository = _repository;
+        }
+
+        public async Task<UpdateUserViewModel> EditAsync(string userId)
+        {
+            var user = await userManager.FindByIdAsync( userId );
+            var model = new UpdateUserViewModel()
+            {
+                Id = userId,
+                Email = user.Email ?? string.Empty,
+                FirstName = user.FirstName,
+                LastName = user.LastName
+            };
+
+            return model;
         }
 
         public async Task<IEnumerable<AllUsersViewModel>> AllAsync()
@@ -72,7 +88,7 @@ namespace PawnShop.Core.Services
             user.NormalizedEmail = null;
             user.NormalizedUserName = null;
             user.PasswordHash = null;
-            user.UserName = $"forgottenUser-GDPR_{DateTime.Now.Ticks}";
+            user.UserName = $"forgottenUser-GDPR_{DateTime.Now}";
 
             var result = await userManager.UpdateAsync(user);
 
@@ -80,7 +96,7 @@ namespace PawnShop.Core.Services
         }
 
 
-        public async Task<IdentityResult> UpdateUserAsync(string userId, string newEmail, string newPhoneNumber)
+        public async Task<IdentityResult> UpdateUserAsync(string userId, UpdateUserViewModel model)
         {
             var user = await userManager.FindByIdAsync(userId);
 
@@ -92,8 +108,9 @@ namespace PawnShop.Core.Services
                 });
             }
 
-            user.Email = newEmail;
-            user.PhoneNumber = newPhoneNumber;
+            user.FirstName = model.FirstName;
+            user.LastName = model.LastName;
+            user.Email = model.Email;
 
             var result = await userManager.UpdateAsync(user);
 

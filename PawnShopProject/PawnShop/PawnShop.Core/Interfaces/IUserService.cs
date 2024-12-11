@@ -6,7 +6,9 @@ namespace PawnShop.Core.Interfaces
 {
 	public interface IUserService
 	{
-		Task<IdentityResult> UpdateUserAsync(string userId, string newEmail, string newPhoneNumber);
+		Task<UpdateUserViewModel> EditAsync(string userId);
+
+        Task<IdentityResult> UpdateUserAsync(string userId, UpdateUserViewModel model);
 
 		Task<bool> ExistUserIdAsync(string userId);
 

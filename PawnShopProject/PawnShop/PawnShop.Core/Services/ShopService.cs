@@ -57,15 +57,15 @@ namespace PawnShop.Core.Services
 
         public async Task BuyAsync(int id)
         {
-            var item = await repository.All<Shop>()
+            var goods = await repository.All<Shop>()
              .Where(x => x.Id == id)
              .Where(x => x.IsDeleted == false)
              .Where(x => x.SoldDate == null)
              .FirstOrDefaultAsync();
 
-            if (item != null)
+            if (goods != null)
             {
-                item.SoldDate = DateTime.UtcNow;             
+                goods.SoldDate = DateTime.UtcNow;             
 
                 await repository.SaveChangesAsync();
             }
@@ -73,7 +73,7 @@ namespace PawnShop.Core.Services
 
         public async Task<AllGoodsInShopViewModel?> DeleteAsync(int? id)
         {
-            var model = await repository.AllReadOnly<Shop>()
+            var goods = await repository.AllReadOnly<Shop>()
              .Where(a => a.Id == id)
              .Where(a => a.IsDeleted == false)
              .Select(s => new AllGoodsInShopViewModel()
@@ -86,19 +86,19 @@ namespace PawnShop.Core.Services
              })
              .FirstOrDefaultAsync();
 
-            return model;
+            return goods;
         }
 
         public async Task DeleteConfirmedAsync(int id)
         {
-            var item = await repository.All<Shop>()
+            var goods = await repository.All<Shop>()
                  .Where(x => x.Id == id)
                  .Where(x => x.IsDeleted == false)
                  .FirstOrDefaultAsync();
 
-            if (item != null)
+            if (goods != null)
             {
-                item.IsDeleted = true;
+                goods.IsDeleted = true;
 
                 await repository.SaveChangesAsync();
             }
@@ -106,17 +106,17 @@ namespace PawnShop.Core.Services
 
         public async Task EditAsync(int id, EditGoodsInShop model)
         {
-            var item = await repository.All<Shop>()
+            var goods = await repository.All<Shop>()
                  .Where(x => x.Id == id)
                  .Where(x => x.IsDeleted == false)
                  .FirstOrDefaultAsync();
 
-            if (item != null)
+            if (goods != null)
             {
-                item.SellPrice = model.SellPrice;
-                item.SoldDate = model.SoldDate;
-                item.Name = model.Name;
-                item.Description = model.Description;  
+                goods.SellPrice = model.SellPrice;
+                goods.SoldDate = model.SoldDate;
+                goods.Name = model.Name;
+                goods.Description = model.Description;  
 
                 await repository.SaveChangesAsync();
             }

@@ -54,7 +54,10 @@ namespace PawnShop.Core.Services
 
             var newClient = await userManager.FindByIdAsync(userId);
 
-            await userManager.AddToRoleAsync(newClient, UserRole);
+            if (newClient != null)
+            {
+                await userManager.AddToRoleAsync(newClient, UserRole);
+            }
         }
 
 
@@ -118,7 +121,7 @@ namespace PawnShop.Core.Services
         public async Task<AllUsersViewModel> DeleteClientAsync(string userId)
         {
             var user = await repository.AllReadOnly<ApplicationUser>()
-               .Where(x=> x.Id == userId)
+               .Where(x => x.Id == userId)
                .Select(c => new AllUsersViewModel()
                {
                    UserId = c.Id,
@@ -128,7 +131,7 @@ namespace PawnShop.Core.Services
                    PhoneNumber = c.Client != null ? c.Client.PhoneNumber : string.Empty,
                    IsClient = c.Client != null
                })
-               .FirstOrDefaultAsync();          
+               .FirstOrDefaultAsync();
 
             return user;
         }
@@ -149,11 +152,12 @@ namespace PawnShop.Core.Services
         {
             var client = await repository.AllReadOnly<Client>()
                 .Where(x => x.UserId == userId)
-                .Where(x =>x.IsDeleted == false)
-                .Select (c => new ClientViewModel() {
-                   Id = c.Id
+                .Where(x => x.IsDeleted == false)
+                .Select(c => new ClientViewModel()
+                {
+                    Id = c.Id
                 })
-                .FirstOrDefaultAsync();           
+                .FirstOrDefaultAsync();
 
             return client;
         }

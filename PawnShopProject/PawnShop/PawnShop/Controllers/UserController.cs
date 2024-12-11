@@ -16,22 +16,14 @@ namespace PawnShop.Controllers
             userService = _userService;
             userManager = _userManager;
         }
+
+
         [HttpGet]
         public async Task<IActionResult> Edit()
         {
-            var userName = await userManager.FindByNameAsync(HttpContext.User?.Identity?.Name != null ? HttpContext.User.Identity.Name : string.Empty);
+            var userId =  GetUserId();          
 
-            if (userName == null)
-            {
-                return View("BadRequest");
-            }
-            var model = new UpdateUserViewModel()
-            {
-                Id = userName.Id,
-                Email = userName.Email ?? string.Empty,
-                FirstName = userName.FirstName,
-                LastName = userName.LastName
-            };
+            var model = await userService.EditAsync(userId);
 
             return View(model);
         }
@@ -45,13 +37,7 @@ namespace PawnShop.Controllers
                 return View("BadRequest");
             }
 
-            var userName = await userManager.FindByIdAsync(model.Id);
-
-            userName.FirstName = model.FirstName;
-            userName.LastName = model.LastName;
-            userName.Email = model.Email;
-
-            await userManager.UpdateAsync(userName);
+            await userService.UpdateUserAsync(model.Id, model);           
 
             return RedirectToAction("Index", "Home");
         }

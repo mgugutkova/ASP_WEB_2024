@@ -23,7 +23,7 @@ namespace PawnShop.Core.Services
             if (string.IsNullOrEmpty(user.FirstName) 
                 || string.IsNullOrEmpty(user.LastName))
             {
-                return null;
+                return string.Empty;
             }
             
             return user.FirstName + ' ' + user.LastName;

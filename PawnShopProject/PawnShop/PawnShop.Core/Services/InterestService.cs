@@ -47,7 +47,7 @@ namespace PawnShop.Core.Services
 
         public async Task<AllInterestViewModel?> DeleteInterestAsync(int? id)
         {
-            var model = await repository.AllReadOnly<Interest>()
+            var interest = await repository.AllReadOnly<Interest>()
              .Where(a => a.Id == id)
              .Where(a => a.IsDeleted == false)
              .Select(s => new AllInterestViewModel()
@@ -63,7 +63,7 @@ namespace PawnShop.Core.Services
              })
              .FirstOrDefaultAsync();
 
-            return model;
+            return interest;
         }
 
         public async Task DeleteConfirmedAsync(int id)
@@ -107,7 +107,7 @@ namespace PawnShop.Core.Services
                    GoodName = i.Agreement.GoodName,
                    EndDate = i.Agreement.EndDate
                })
-            //   .OrderByDescending(x => x.DateInterest)
+               .OrderByDescending(x => x.DateInterest)
                .ToListAsync();
 
             return interests;

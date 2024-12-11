@@ -10,7 +10,8 @@ namespace PawnShop.Controllers
         private readonly IAgreementService agreementService;
     
 
-        public InterestController(IInterestService _interestService,
+        public InterestController(
+            IInterestService _interestService,
             IAgreementService _agreementService
           )
         {
