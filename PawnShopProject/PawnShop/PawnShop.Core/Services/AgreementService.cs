@@ -30,7 +30,7 @@ namespace PawnShop.Core.Services
                 {
                     Id = c.Id,
                     GoodName = c.GoodName,
-                    Description = c.Description,
+                    Description = c.Description ?? string.Empty,
                     Price = c.Price,
                     ReturnPrice = c.ReturnPrice,
                     Duration = c.Duration,
@@ -54,7 +54,7 @@ namespace PawnShop.Core.Services
                 {
                     Id = c.Id,
                     GoodName = c.GoodName,
-                    Description = c.Description,
+                    Description = c.Description ?? string.Empty,
                     Price = c.Price,
                     ReturnPrice = c.ReturnPrice,
                     Duration = c.Duration,
@@ -278,7 +278,7 @@ namespace PawnShop.Core.Services
                 {
                     Id = x.Id,
                     GoodName = x.GoodName,
-                    Description = x.Description,
+                    Description = x.Description ?? string.Empty,
                     Price = x.Price,
                     Duration = x.Duration,
                     StartDate = x.StartDate,
@@ -310,7 +310,7 @@ namespace PawnShop.Core.Services
                 {
                     Id = x.Id,
                     GoodName = x.GoodName,
-                    Description = x.Description,
+                    Description = x.Description ?? string.Empty,
                     Price = x.Price,
                     Duration = x.Duration,
                     StartDate = x.StartDate,

@@ -40,24 +40,34 @@ namespace PawnShop.Core.Services
             return false;
         }
 
-        public async Task CreateClientAsync(string userId, string phoneNumber, string address)
+        public async Task<bool> CreateClientAsync(string userId, string phoneNumber, string address)
         {
+            //todo    check phoneNumber unique
 
-            await repository.AddAsync(new Client()
+            try
             {
-                UserId = userId,
-                PhoneNumber = phoneNumber,
-                Address = address
-            });
+                await repository.AddAsync(new Client()
+                {
+                    UserId = userId,
+                    PhoneNumber = phoneNumber,
+                    Address = address
+                });
 
-            await repository.SaveChangesAsync();
+                await repository.SaveChangesAsync();
 
-            var newClient = await userManager.FindByIdAsync(userId);
+                var newClient = await userManager.FindByIdAsync(userId);
 
-            if (newClient != null)
-            {
-                await userManager.AddToRoleAsync(newClient, UserRole);
+                if (newClient != null)
+                {
+                    await userManager.AddToRoleAsync(newClient, UserRole);
+                }
             }
+            catch (Exception ex) 
+            {
+                return false;
+            }
+            return true;
+  
         }
 
 
@@ -104,6 +114,7 @@ namespace PawnShop.Core.Services
                   {
                       Id = a.Id,
                       GoodName = a.GoodName,
+                      Description = a.Description ?? string.Empty,
                       Price = a.Price,
                       ReturnPrice = a.ReturnPrice,
                       Duration = a.Duration,

@@ -86,7 +86,7 @@ namespace PawnShop.Infrastructure.SeedDataDB
             GuestUser = new ApplicationUser()
             {
                 Id = "70e39283-bd42-4d0a-aa2e-46d2a31c4f87",
-                UserName = "guest.abv.bg",
+                UserName = "guest@abv.bg",
                 NormalizedUserName = "GUEST@ABV.BG",
                 Email = "guest@abv.bg",
                 NormalizedEmail = "GUEST@ABV.BG",

@@ -13,7 +13,7 @@ namespace PawnShop.Core.Interfaces
 
         Task<bool> ClientHasAgreementAsync(string userId);
 
-        Task CreateClientAsync(string userId, string phoneNumber, string address);
+        Task<bool> CreateClientAsync(string userId, string phoneNumber, string address);
 
         //  Task<int> GetClientIdAsync(string userId);
         Task<ClientViewModel> GetClientAsync(string userId);

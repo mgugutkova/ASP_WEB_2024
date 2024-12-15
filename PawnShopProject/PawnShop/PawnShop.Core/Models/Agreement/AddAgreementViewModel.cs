@@ -20,9 +20,9 @@ namespace PawnShop.Core.Models.Agreement
 
 		[StringLength(DescriptionMaxLength, MinimumLength = DescriptionMinLength, ErrorMessage = ErrorMessageLength)]
 		[Display(Name = "Description (optional)")]
-		public string? Description { get; set; }
+		public string Description { get; set; } = string.Empty;
 
-		[Required]
+        [Required]
 		[Column(TypeName = "decimal(18,2)")]
 		[Display(Name = "Price")]
 		[Range(PriceMinValue, PriceMaxValue)]

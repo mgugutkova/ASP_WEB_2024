@@ -44,7 +44,12 @@ namespace PawnShop.Controllers
                 return View(model);
             }
 
-            await clientService.CreateClientAsync(GetUserId(), model.PhoneNumber, model.Address);
+            var rezault = await clientService.CreateClientAsync(GetUserId(), model.PhoneNumber, model.Address);
+
+            if (!rezault)
+            {
+                return View("BadRequest");
+            }
 
             return View("LoginAgain");  
         }

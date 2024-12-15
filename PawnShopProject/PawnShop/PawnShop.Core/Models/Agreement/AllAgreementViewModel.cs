@@ -1,5 +1,4 @@
 ﻿
-
 using PawnShop.Core.Models.Interest;
 
 namespace PawnShop.Core.Models.Agreement
@@ -9,7 +8,7 @@ namespace PawnShop.Core.Models.Agreement
         public int Id { get; set; }
         public string GoodName { get; set; } = string.Empty;
 
-        public string? Description { get; set; }
+        public string Description { get; set; } = string.Empty;
 
         public decimal Price { get; set; }
  
