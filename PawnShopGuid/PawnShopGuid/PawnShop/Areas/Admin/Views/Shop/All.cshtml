@@ -1,0 +1,47 @@
+﻿@model IEnumerable<AllGoodsInShopViewModel>
+@{
+	ViewBag.Title = "All Goods in Shop";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+@if (!ViewData.ModelState.IsValid && ViewData.ModelState["Error"] != null)
+{
+	<div class="alert alert-danger" role="alert">
+		@ViewData.ModelState["Error"].Errors.First().ErrorMessage
+	</div>
+}
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Goods</th>
+			<th>Description</th>
+			<th>Sell Price</th>
+			<th>Sold Date</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+
+			<tr>
+				<td>@item.Name</td>
+				<td>@item.Description</td>
+				<td>@item.SellPrice</td>
+				<td>@item.SoldDate</td>
+				<td>
+
+					@if (User.IsInRole("AdminRole"))
+					{
+						<a asp-area="Admin" asp-controller="Shop" asp-action="Edit" asp-route-Id="@item.Id" class="btn btn-info">Edit</a>
+
+						<a asp-area="Admin" asp-controller="Shop" asp-controller="Shop" asp-action="Delete" asp-route-Id="@item.Id" class="btn btn-danger">Delete</a>
+					}				
+
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

@@ -166,7 +166,6 @@ C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
-C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\Mono.TextTemplating.dll
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\NuGet.Common.dll
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\NuGet.Configuration.dll
@@ -186,14 +185,11 @@ C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\System.Composition.Runtime.dll
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\System.Composition.TypedParts.dll
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
-C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\System.Drawing.Common.dll
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\System.Memory.Data.dll
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\System.Reflection.MetadataLoadContext.dll
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\System.Runtime.Caching.dll
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\System.Security.Permissions.dll
-C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\System.Windows.Extensions.dll
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\af\Humanizer.resources.dll
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\ar\Humanizer.resources.dll
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\az\Humanizer.resources.dll
@@ -339,7 +335,6 @@ C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\runtimes\win\lib\net7.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\runtimes\browser-wasm\nativeassets\net8.0\e_sqlite3.a
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\runtimes\linux-arm\native\libe_sqlite3.so
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\runtimes\linux-arm64\native\libe_sqlite3.so
@@ -360,10 +355,7 @@ C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\runtimes\win-x86\native\e_sqlite3.dll
-C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
-C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\PawnShop.Core.dll
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\PawnShop.dll
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\PawnShop.Infrastructure.dll
@@ -371,3 +363,8 @@ C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\PawnShop.Infrastructure.pdb
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\PawnShop.pdb
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\System.Formats.Asn1.dll
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\System.IO.Pipelines.dll
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\System.Text.Encodings.Web.dll
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\System.Text.Json.dll
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\PawnShopProject\PawnShop\PawnShop.Tests\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll

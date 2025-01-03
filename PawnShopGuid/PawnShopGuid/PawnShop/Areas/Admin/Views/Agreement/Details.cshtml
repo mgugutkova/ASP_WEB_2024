@@ -1,0 +1,52 @@
+﻿@model AllAgreementViewModel
+
+@{
+	ViewBag.Title = "Details Agreement";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+@if (!ViewData.ModelState.IsValid && ViewData.ModelState["Error"] != null)
+{
+	<div class="alert alert-danger" role="alert">
+		@ViewData.ModelState["Error"].Errors.First().ErrorMessage
+	</div>
+}
+
+<div class="row">
+	<div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+
+		<h4>@Model.GoodName</h4>
+		<p>Description: <b>@Model.Description</b></p>
+		<p>First Name: <b>@Model.FirstName</b></p>
+		<p>Last Name: <b>@Model.LastName</b></p>
+		<p>Price: <b>@Model.Price</b></p>
+		<p>Return Price: <b>@Model.ReturnPrice</b></p>
+		<p>Return Price: <b>@Model.Ainterest</b></p>
+		<p>Duration: <b>@Model.Duration</b></p>
+		<p>Start Date: <b>@Model.StartDate</b></p>
+		<p>End Date: <b>@Model.EndDate</b></p>
+		<p>State: <b>@Model.AgrreementStates</b></p>
+
+		@if (this.User?.Identity?.IsAuthenticated ?? false && User.IsInRole("AdminRole"))
+		{
+			@if (Model.IsInterestExist)			
+			{
+				<a asp-area="Admin" asp-controller="Interest" asp-action="All" asp-route-agreementId="@Model.Id" class="btn btn-primary">View Interests</a>
+			}
+
+			<a asp-area="Admin" asp-controller="Agreement" asp-action="Edit" asp-route-id="@Model.Id"
+			   class="btn btn-info">Edit</a>
+
+			<a asp-area="Admin" asp-controller="Agreement" asp-action="DeleteAgreement" asp-route-id="@Model.Id"
+			   class="btn btn-danger">Delete</a>
+			<p></p>
+
+			<a asp-area="Admin" asp-controller="Agreement" asp-action="All" class="btn btn-secondary">Back to All</a>
+			<p></p>
+		}
+	</div>
+</div>
+
+

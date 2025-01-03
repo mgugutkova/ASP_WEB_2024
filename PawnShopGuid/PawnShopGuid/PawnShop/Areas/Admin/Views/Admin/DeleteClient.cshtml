@@ -1,0 +1,42 @@
+﻿@model AllUsersViewModel
+
+@{
+	ViewBag.Title = "Delete Client";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+@if (@ViewBag.HasAgreement == true){
+
+	<h3 class="text-center text-capitalize">The Client has Agreements. You can not delete it!</h3>
+}
+
+<div class="row justify-content-center">
+	<div class="col-md-6">
+		<div class="card">
+			<div class="card-body">
+				<h5 class="card-title text-center">First Name: @Model.FirstName  &nbsp; Last Name: @Model.LastName</h5>
+				<p class="mb-0"><strong>Email:</strong> @Model.Email &nbsp</p> 
+				<p class="mb-0"><strong>Phone Number:</strong> @Model.PhoneNumber</p>
+				
+			</div>
+
+			@if (ViewBag.HasAgreement == false)
+			{
+				<p class="text-danger text-center mt-3">Are you sure you want to delete? </p>
+				<div class="card-footer">
+					<form asp-area="Admin" asp-controller="Admin" asp-action="DeleteClientConfirmed" method="post">
+					<input type="hidden" asp-for="UserId" />
+					<button type="submit" class="btn btn-danger">Confirm Delete</button>
+				</form>
+			</div>
+			}
+
+			<div>
+				<button type="button" class="btn btn-danger mt-3" onclick="window.history.back()">Cancel</button>
+			</div>
+			
+		</div>
+	</div>
+</div>
