@@ -1,0 +1,30 @@
+﻿@model AllGoodsInShopViewModel
+@{
+	ViewBag.Title = "Delete Goods in Shop";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+<div class="row justify-content-center">
+	<div class="col-md-6">
+		<div class="card">
+			<div class="card-body">
+				<h5 class="card-title text-center">Good Name: @Model.Name  </h5>
+				<p class="mb-0"><strong>Price:</strong> @Model.Description</p>
+				<p class="mb-0"><strong>Price:</strong> @Model.SellPrice</p>
+				<p class="mb-0"><strong>Sold Date:</strong> @Model.SoldDate</p>
+				<p class="text-danger mt-3">Are you sure you want to delete?!</p>
+			</div>
+			<div class="card-footer">
+				<form asp-action="DeleteConfirmed" method="post">
+					<input type="hidden" asp-for="Id" />
+					<button type="submit" class="btn btn-danger">Confirm Delete</button>
+				</form>
+			</div>
+			<a asp-controller="Shop" asp-action="All" class="btn btn-secondary">Back</a>
+		</div>
+	</div>
+</div>
+
+

@@ -1,0 +1,17 @@
+﻿@{
+    string userId = ViewBag.UserId;
+    ViewBag.Title = "Forget me";
+}
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+<div class="text-center">
+
+    <p class="text-center">Are You Sure!</p>
+    <form asp-controller="User" asp-action="Forgeted" asp-route-userId="@userId" method="post">
+
+        <button type="submit" class="btn btn-danger">YES Forget me</button>
+    </form>
+    <br />
+    <a asp-controller="Home" asp-action="Index" class="btn btn-info me-2 w-50">NO Back to Home</a>
+
+</div>

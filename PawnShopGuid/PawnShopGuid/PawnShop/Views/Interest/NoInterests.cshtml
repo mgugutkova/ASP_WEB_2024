@@ -1,0 +1,23 @@
+﻿@{
+	ViewBag.Title = "No Interests";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+
+@if (!ViewData.ModelState.IsValid && ViewData.ModelState["Error"] != null)
+{
+	<div class="alert alert-danger" role="alert">
+		@ViewData.ModelState["Error"].Errors.First().ErrorMessage
+	</div>
+}
+
+<a asp-controller="Interest" asp-action="AddInterest" asp-route-Id="@ViewBag.AgreementId" class="btn btn-primary">+Add Interest</a>
+
+
+<div>
+	<a asp-controller="Client" asp-action="MineAgreements" class="btn btn-danger mt-3">Back</a>
+	@* <button type="button" class="btn btn-danger mt-3" onclick="window.history.back()">Cancel</button> *@
+</div>
+
