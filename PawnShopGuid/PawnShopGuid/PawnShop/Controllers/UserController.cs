@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using PawnShop.Core.Constants;
 using PawnShop.Core.Interfaces;
@@ -43,6 +44,7 @@ namespace PawnShop.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public IActionResult Forget()
         {
@@ -51,7 +53,7 @@ namespace PawnShop.Controllers
             return View();
         }
 
-
+        [AllowAnonymous]
         [HttpPost]       
         public async Task<IActionResult> Forgeted(string userId)
         {

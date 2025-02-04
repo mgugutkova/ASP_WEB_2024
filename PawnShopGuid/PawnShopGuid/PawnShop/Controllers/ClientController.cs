@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using PawnShop.Core.Interfaces;
 using PawnShop.Core.Models.Client;
+using PawnShop.Infrastructure.Data.Model;
 using static PawnShop.Core.Constants.AdminConstants;
 
 namespace PawnShop.Controllers
@@ -9,17 +11,20 @@ namespace PawnShop.Controllers
     public class ClientController : BaseController
     {
         private readonly IClientService clientService;
+        private readonly UserManager<ApplicationUser> userManager;
 
-        public ClientController(IClientService _clientService)
+        public ClientController(IClientService _clientService, UserManager<ApplicationUser> _userManager)
         {
             clientService = _clientService;
+            userManager = _userManager;
         }
 
         [HttpGet]
         [AllowAnonymous]
         public async Task<IActionResult> BecomeClient()
         {
-            var currentUserId = GetUserId();
+            var currentUserId =  userManager.GetUserId(User);
+           // var currentUserId = GetUserId();
 
             bool IsClientExist = await clientService.ExistClientIdAsync(currentUserId);
 

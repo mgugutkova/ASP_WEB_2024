@@ -79,6 +79,8 @@ namespace PawnShop.Core.Services
                 return false;
             }
 
+            var dateForgot = DateTime.Now.ToString("yyyy-MM-dd");
+
             user.PhoneNumber = null;
             user.FirstName = "forgottenUser-GDPR";
             user.Email = null;
@@ -86,7 +88,7 @@ namespace PawnShop.Core.Services
             user.NormalizedEmail = null;
             user.NormalizedUserName = null;
             user.PasswordHash = null;
-            user.UserName = "forgottenUser-GDPR";
+            user.UserName = "forgottenUser-GDPR" + dateForgot;  
 
             var result = await userManager.UpdateAsync(user);
 
