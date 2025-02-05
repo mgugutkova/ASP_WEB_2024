@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PawnShop")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+515d39458740377aedebdf1b3aa07b3fdcbe6722")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+69c73d4bec27ea6d2256aea667db97742f181f2c")]
 [assembly: System.Reflection.AssemblyProductAttribute("PawnShop")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PawnShop")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -79,7 +79,7 @@ namespace PawnShop.Core.Services
                 return false;
             }
 
-            var dateForgot = DateTime.Now.ToString("yyyy-MM-dd");
+            var dateForgot = DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
 
             user.PhoneNumber = null;
             user.FirstName = "forgottenUser-GDPR";
