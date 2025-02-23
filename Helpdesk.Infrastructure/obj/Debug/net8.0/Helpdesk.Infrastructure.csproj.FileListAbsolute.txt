@@ -1,0 +1,15 @@
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk.Infrastructure\bin\Debug\net8.0\Helpdesk.Infrastructure.deps.json
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk.Infrastructure\bin\Debug\net8.0\Helpdesk.Infrastructure.runtimeconfig.json
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk.Infrastructure\bin\Debug\net8.0\Helpdesk.Infrastructure.dll
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk.Infrastructure\bin\Debug\net8.0\Helpdesk.Infrastructure.pdb
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk.Infrastructure\obj\Debug\net8.0\Helpdesk.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk.Infrastructure\obj\Debug\net8.0\Helpdesk.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk.Infrastructure\obj\Debug\net8.0\Helpdesk.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk.Infrastructure\obj\Debug\net8.0\Helpdesk.Infrastructure.AssemblyInfo.cs
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk.Infrastructure\obj\Debug\net8.0\Helpdesk.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk.Infrastructure\obj\Debug\net8.0\Helpdesk.Infrastructure.sourcelink.json
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk.Infrastructure\obj\Debug\net8.0\Helpdesk.Infrastructure.dll
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk.Infrastructure\obj\Debug\net8.0\refint\Helpdesk.Infrastructure.dll
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk.Infrastructure\obj\Debug\net8.0\Helpdesk.Infrastructure.pdb
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk.Infrastructure\obj\Debug\net8.0\Helpdesk.Infrastructure.genruntimeconfig.cache
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk.Infrastructure\obj\Debug\net8.0\ref\Helpdesk.Infrastructure.dll
