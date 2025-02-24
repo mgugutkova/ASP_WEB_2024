@@ -19,15 +19,41 @@
             </div>
             <div class="form-floating mb-3">
                 <input asp-for="Input.FirstName" class="form-control" autocomplete="firstname" aria-required="true" placeholder="First Name" />
-                <label asp-for="Input.FirstName">First Name</label>
+                <label asp-for="Input.FirstName">Име:</label>
                 <span asp-validation-for="Input.FirstName" class="text-danger"></span>
             </div>
 
             <div class="form-floating mb-3">
-                <input asp-for="Input.LastName" class="form-control" autocomplete="lastname" aria-required="true" placeholder="LastName" />
-                <label asp-for="Input.LastName">Last Name</label>
+                <input asp-for="Input.LastName" class="form-control" autocomplete="lastname" aria-required="true" placeholder="Фамилия" />
+                <label asp-for="Input.LastName">Фамилия:</label>
                 <span asp-validation-for="Input.LastName" class="text-danger"></span>
             </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="Input.Address" class="form-control" autocomplete="address" aria-required="true" placeholder="Сграда, етаж, стая" />
+                <label asp-for="Input.Address">Адрес:</label>
+                <span asp-validation-for="Input.Address" class="text-danger"></span>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="Input.Phone" class="form-control" autocomplete="address" aria-required="true" placeholder="Вътрешен тел., мобилен" />
+                <label asp-for="Input.Phone">Телефон:</label>
+                <span asp-validation-for="Input.Phone" class="text-danger"></span>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="Input.DirectoratesUnitId" class="form-control" autocomplete="address" aria-required="true"  />
+                <label asp-for="Input.DirectoratesUnitId">Дирекция:</label>
+                <span asp-validation-for="Input.DirectoratesUnitId" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-floating mb-3">
+                <input asp-for="Input.Position" class="form-control" autocomplete="address" aria-required="true" placeholder="длъжност" />
+                <label asp-for="Input.Position">Длъжност:</label>
+                <span asp-validation-for="Input.Position" class="text-danger"></span>
+            </div>
+
             <div class="form-floating mb-3">
                 <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
                 <label asp-for="Input.Password">Password</label>

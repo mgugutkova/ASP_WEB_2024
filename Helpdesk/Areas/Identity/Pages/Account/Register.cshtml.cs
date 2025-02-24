@@ -73,14 +73,34 @@ namespace Helpdesk.Areas.Identity.Pages.Account
 
             /// </summary>
           	[Required]
-            [Display(Name = "First Name")]
+            [Display(Name = "Име")]
             [StringLength(FirstNameMaxLength, MinimumLength = FirstNameMinLength, ErrorMessage = ErrorMessageLength)]
             public string FirstName { get; set; }
 
             [Required]
-            [Display(Name = "Last Name")]
+            [Display(Name = "Фамилия")]
             [StringLength(LastNameMaxLength, MinimumLength = LastNameMinLength, ErrorMessage = ErrorMessageLength)]
             public string LastName { get; set; }
+
+            [Required]
+            [Display(Name = "Адрес:")]
+            [StringLength(AddressMaxLength, MinimumLength = AddressMinLength, ErrorMessage = ErrorMessageLength)]
+            public string Address { get; set; }
+
+
+            [Required]
+            [Display(Name = "Телефон:")]
+            [StringLength(PhoneNumberMaxLength, MinimumLength = PhoneNumberMinLength, ErrorMessage = ErrorMessageLength)]
+            public string Phone { get; set; }
+
+            [Required]
+            [Display(Name = "Дирекция:")]          
+            public int DirectoratesUnitId { get; set; }
+
+            [Required]
+            [Display(Name = "Длъжност:")]
+            [StringLength(PositionMaxLength, MinimumLength = PositionMinLength, ErrorMessage = ErrorMessageLength)]
+            public string Position { get; set; }
 
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
@@ -120,7 +140,11 @@ namespace Helpdesk.Areas.Identity.Pages.Account
                     UserName = Input.Email,
                     Email = Input.Email,
                     FirstName = Input.FirstName,
-                    LastName = Input.LastName
+                    LastName = Input.LastName,
+                    Address = Input.Address,
+                    Phone = Input.Phone,
+                    DirectoratesUnitId = Input.DirectoratesUnitId,
+                    Position = Input.Position
                 };
 
                 //var user = CreateUser();

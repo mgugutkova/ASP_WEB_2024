@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpdesk", "Helpdesk.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpdesk.Infrastructure", "..\Helpdesk.Infrastructure\Helpdesk.Infrastructure.csproj", "{CB779B68-996D-4E98-A1D9-2AC05ADA0399}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpdesk.Core", "..\Helpdesk.Core\Helpdesk.Core.csproj", "{F8C53BE2-E47B-495C-A635-04684A1A9FE3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{CB779B68-996D-4E98-A1D9-2AC05ADA0399}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB779B68-996D-4E98-A1D9-2AC05ADA0399}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB779B68-996D-4E98-A1D9-2AC05ADA0399}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8C53BE2-E47B-495C-A635-04684A1A9FE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8C53BE2-E47B-495C-A635-04684A1A9FE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8C53BE2-E47B-495C-A635-04684A1A9FE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8C53BE2-E47B-495C-A635-04684A1A9FE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

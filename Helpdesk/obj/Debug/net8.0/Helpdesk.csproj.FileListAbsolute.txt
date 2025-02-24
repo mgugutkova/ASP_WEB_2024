@@ -298,3 +298,5 @@ C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk\bin\Debug\net8.0\runtime
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk\bin\Debug\net8.0\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk\bin\Debug\net8.0\Helpdesk.Infrastructure.dll
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk\bin\Debug\net8.0\Helpdesk.Infrastructure.pdb
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk\bin\Debug\net8.0\Helpdesk.Core.dll
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk\bin\Debug\net8.0\Helpdesk.Core.pdb

@@ -14,6 +14,6 @@ namespace Helpdesk.Infrastructure.Data.Model
         public string Name { get; set; } = string.Empty;
 
         [Required]
-        public bool IsActive { get; set; }
+        public bool IsActive { get; set; } = true;
     }
 }

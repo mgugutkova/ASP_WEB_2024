@@ -18,6 +18,6 @@ namespace Helpdesk.Infrastructure.Data.Model
         public virtual ICollection<Request> Requests { get; set; } = new HashSet<Request>();
 
         [Required]
-        public bool IsActive { get; set; }
+        public bool IsActive { get; set; } = true;
     }
 }

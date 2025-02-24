@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Helpdesk.Core\Helpdesk.Core.csproj" />
     <ProjectReference Include="..\Helpdesk.Infrastructure\Helpdesk.Infrastructure.csproj" />
   </ItemGroup>
 

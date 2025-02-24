@@ -51,6 +51,6 @@ namespace Helpdesk.Infrastructure.Data.Model
         public string? Comment { get; set; } = null;
 
         [Required]
-        public bool IsActive { get; set; }
+        public bool IsActive { get; set; } = true;
     }
 }

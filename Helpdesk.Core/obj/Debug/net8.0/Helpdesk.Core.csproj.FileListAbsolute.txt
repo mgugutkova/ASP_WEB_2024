@@ -1,0 +1,16 @@
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk.Core\bin\Debug\net8.0\Helpdesk.Core.deps.json
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk.Core\bin\Debug\net8.0\Helpdesk.Core.dll
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk.Core\bin\Debug\net8.0\Helpdesk.Core.pdb
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk.Core\bin\Debug\net8.0\Helpdesk.Infrastructure.dll
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk.Core\bin\Debug\net8.0\Helpdesk.Infrastructure.pdb
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk.Core\obj\Debug\net8.0\Helpdesk.Core.csproj.AssemblyReference.cache
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk.Core\obj\Debug\net8.0\Helpdesk.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk.Core\obj\Debug\net8.0\Helpdesk.Core.AssemblyInfoInputs.cache
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk.Core\obj\Debug\net8.0\Helpdesk.Core.AssemblyInfo.cs
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk.Core\obj\Debug\net8.0\Helpdesk.Core.csproj.CoreCompileInputs.cache
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk.Core\obj\Debug\net8.0\Helpdesk.Core.sourcelink.json
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk.Core\obj\Debug\net8.0\Helpdesk.37196A98.Up2Date
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk.Core\obj\Debug\net8.0\Helpdesk.Core.dll
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk.Core\obj\Debug\net8.0\refint\Helpdesk.Core.dll
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk.Core\obj\Debug\net8.0\Helpdesk.Core.pdb
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk.Core\obj\Debug\net8.0\ref\Helpdesk.Core.dll
