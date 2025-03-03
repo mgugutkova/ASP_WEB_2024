@@ -2,11 +2,14 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 #nullable disable
 
+using Helpdesk.Core.Models.Directorates;
 using Helpdesk.Infrastructure.Data.Model;
+using Helpdesk.Infrastructure.Repo;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using static Helpdesk.Infrastructure.Constants.DataConstants;
 
@@ -16,6 +19,9 @@ namespace Helpdesk.Areas.Identity.Pages.Account
     {
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly IRepository repository;
+        public readonly IEnumerable<AllDirectoratesViewModel> directoratesMI;
+
         //private readonly IUserStore<IdentityUser> _userStore;
         //private readonly IUserEmailStore<IdentityUser> _emailStore;
         //private readonly ILogger<RegisterModel> _logger;
@@ -23,14 +29,18 @@ namespace Helpdesk.Areas.Identity.Pages.Account
 
         public RegisterModel(
             UserManager<ApplicationUser> userManager,
-           // IUserStore<IdentityUser> userStore,
-            SignInManager<ApplicationUser> signInManager
+            // IUserStore<IdentityUser> userStore,
+            SignInManager<ApplicationUser> signInManager,
+            IRepository _repository,
+            IEnumerable<AllDirectoratesViewModel> _directoratesMI
             //ILogger<RegisterModel> logger,
             //IEmailSender emailSender
             )
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            repository = _repository;
+            directoratesMI = GetDirectorateAsync();
             //_userStore = userStore;
             //_emailStore = GetEmailStore();
             //_logger = logger;
@@ -60,6 +70,15 @@ namespace Helpdesk.Areas.Identity.Pages.Account
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
+        /// 
+        //public IEnumerable<AllDirectoratesViewModel> Directorates { get; set; } = directoratesMI
+        //    .Select(d => new AllDirectoratesViewModel()
+        //    {
+        //        Id = d.Id,
+        //        Name = d.Name,
+        //    }).ToList();
+  
+
         public class InputModel
         {
             /// <summary>
@@ -94,7 +113,7 @@ namespace Helpdesk.Areas.Identity.Pages.Account
             public string Phone { get; set; }
 
             [Required]
-            [Display(Name = "Дирекция:")]          
+            [Display(Name = "Дирекция:")]
             public int DirectoratesUnitId { get; set; }
 
             [Required]
@@ -155,29 +174,29 @@ namespace Helpdesk.Areas.Identity.Pages.Account
 
                 if (result.Succeeded)
                 {
-                  //////  //_logger.LogInformation("User created a new account with password.");
+                    //////  //_logger.LogInformation("User created a new account with password.");
 
-                  //////  var userId = await _userManager.GetUserIdAsync(user);
-                  //////  var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-                  //////  code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
-                  //////  var callbackUrl = Url.Page(
-                  //////      "/Account/ConfirmEmail",
-                  //////      pageHandler: null,
-                  //////      values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
-                  //////      protocol: Request.Scheme);
+                    //////  var userId = await _userManager.GetUserIdAsync(user);
+                    //////  var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                    //////  code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
+                    //////  var callbackUrl = Url.Page(
+                    //////      "/Account/ConfirmEmail",
+                    //////      pageHandler: null,
+                    //////      values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
+                    //////      protocol: Request.Scheme);
 
-                  ////////  await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
-                  //////      $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                    ////////  await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
+                    //////      $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
-                  //////  if (_userManager.Options.SignIn.RequireConfirmedAccount)
-                  //////  {
-                  //////      return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl = returnUrl });
-                  //////  }
-                  //////  else
-                  //////  {
-                        await _signInManager.SignInAsync(user, isPersistent: false);
-                        return LocalRedirect(returnUrl);
-                  //  }
+                    //////  if (_userManager.Options.SignIn.RequireConfirmedAccount)
+                    //////  {
+                    //////      return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl = returnUrl });
+                    //////  }
+                    //////  else
+                    //////  {
+                    await _signInManager.SignInAsync(user, isPersistent: false);
+                    return LocalRedirect(returnUrl);
+                    //  }
                 }
                 foreach (var error in result.Errors)
                 {
@@ -211,5 +230,18 @@ namespace Helpdesk.Areas.Identity.Pages.Account
         //    }
         //    return (IUserEmailStore<IdentityUser>)_userStore;
         //}
+
+        private IEnumerable<AllDirectoratesViewModel> GetDirectorateAsync()
+        {
+            var directorates_MI = repository.AllReadOnly<DirectoratesUnit>()
+                .Select(d => new AllDirectoratesViewModel()
+                {
+                    Id = d.Id,
+                    Name = d.Name,
+                })
+                .ToList();
+
+            return directorates_MI;
+        }
     }
 }

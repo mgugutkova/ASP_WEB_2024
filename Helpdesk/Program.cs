@@ -1,5 +1,6 @@
 using Helpdesk.Infrastructure.Data;
 using Helpdesk.Infrastructure.Data.Model;
+using Helpdesk.Infrastructure.Repo;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,6 +11,8 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
+
+builder.Services.AddScoped<IRepository, Repository>();
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
