@@ -18,5 +18,8 @@ namespace Helpdesk.Core.Models.Directorates
         [MaxLength(DirectorateNameMaxLength)]
         [StringLength(DirectorateNameMaxLength, MinimumLength = DirectorateNameMinLength, ErrorMessage = ErrorMessageLength)]
         public string Name { get; set; } = string.Empty;
+
+        [Required]
+        public bool IsActive { get; set; } = true;
     }
 }

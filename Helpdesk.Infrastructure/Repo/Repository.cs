@@ -21,9 +21,9 @@ namespace Helpdesk.Infrastructure.Repo
         {
             return Context.Set<T>(); // връща табл. отговаряща на въпросното entity
         }
-        public async Task AddAsync<T>(T entiry) where T : class
+        public async Task AddAsync<T>(T entity) where T : class
         {
-           await DbSet<T>().AddAsync(entiry);
+           await DbSet<T>().AddAsync(entity);
         }
 
         public IQueryable<T> All<T>() where T : class

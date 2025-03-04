@@ -126,7 +126,7 @@ namespace Helpdesk.Areas.Identity.Pages.Account
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 3)]
+            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Password")]
             public string Password { get; set; }
@@ -234,6 +234,7 @@ namespace Helpdesk.Areas.Identity.Pages.Account
         private IEnumerable<AllDirectoratesViewModel> GetDirectorateAsync()
         {
             var directorates_MI = repository.AllReadOnly<DirectoratesUnit>()
+                .Where(x => x.IsActive == true)
                 .Select(d => new AllDirectoratesViewModel()
                 {
                     Id = d.Id,

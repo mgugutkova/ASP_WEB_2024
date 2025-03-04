@@ -1,3 +1,5 @@
+using Helpdesk.Core.Interfaces;
+using Helpdesk.Core.Services;
 using Helpdesk.Infrastructure.Data;
 using Helpdesk.Infrastructure.Data.Model;
 using Helpdesk.Infrastructure.Repo;
@@ -13,6 +15,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 
 builder.Services.AddScoped<IRepository, Repository>();
+builder.Services.AddScoped<IDirectoratesService, DirectoratesService>();
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
