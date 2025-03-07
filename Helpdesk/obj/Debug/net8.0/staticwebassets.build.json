@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WsS6PE20YWR7cgT7NagGVpC3jcTzVgn4JVFQHB5Lgr0=",
+  "Hash": "/RpAnue/v1lRSbKqBGIUGubrRngPKPRmNL2bencvHEI=",
   "Source": "Helpdesk",
   "BasePath": "_content/Helpdesk",
   "Mode": "Default",
@@ -1291,8 +1291,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "8cqleqml3n",
-      "Integrity": "mI5wchqHSxtrD6JlmCXO8YqGq+hR9LpJ4ZA6Mt0Mt44=",
+      "Fingerprint": "6xk2jt9e1r",
+      "Integrity": "am35CnwdE8p5SUpjitffe0xQs5qKxtGFYfj7MlpXbwk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Helpdesk.styles.css"
@@ -1312,8 +1312,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "8cqleqml3n",
-      "Integrity": "mI5wchqHSxtrD6JlmCXO8YqGq+hR9LpJ4ZA6Mt0Mt44=",
+      "Fingerprint": "6xk2jt9e1r",
+      "Integrity": "am35CnwdE8p5SUpjitffe0xQs5qKxtGFYfj7MlpXbwk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Helpdesk.bundle.scp.css"
@@ -2745,7 +2745,7 @@
       ]
     },
     {
-      "Route": "Helpdesk.8cqleqml3n.bundle.scp.css",
+      "Route": "Helpdesk.6xk2jt9e1r.bundle.scp.css",
       "AssetFile": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Helpdesk.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2755,7 +2755,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1126"
+          "Value": "2269"
         },
         {
           "Name": "Content-Type",
@@ -2763,11 +2763,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"mI5wchqHSxtrD6JlmCXO8YqGq+hR9LpJ4ZA6Mt0Mt44=\""
+          "Value": "\"am35CnwdE8p5SUpjitffe0xQs5qKxtGFYfj7MlpXbwk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 09 Feb 2025 11:13:59 GMT"
+          "Value": "Fri, 07 Mar 2025 14:43:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2777,7 +2777,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "8cqleqml3n"
+          "Value": "6xk2jt9e1r"
         },
         {
           "Name": "label",
@@ -2785,12 +2785,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-mI5wchqHSxtrD6JlmCXO8YqGq+hR9LpJ4ZA6Mt0Mt44="
+          "Value": "sha256-am35CnwdE8p5SUpjitffe0xQs5qKxtGFYfj7MlpXbwk="
         }
       ]
     },
     {
-      "Route": "Helpdesk.8cqleqml3n.styles.css",
+      "Route": "Helpdesk.6xk2jt9e1r.styles.css",
       "AssetFile": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Helpdesk.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2800,7 +2800,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1126"
+          "Value": "2269"
         },
         {
           "Name": "Content-Type",
@@ -2808,11 +2808,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"mI5wchqHSxtrD6JlmCXO8YqGq+hR9LpJ4ZA6Mt0Mt44=\""
+          "Value": "\"am35CnwdE8p5SUpjitffe0xQs5qKxtGFYfj7MlpXbwk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 09 Feb 2025 11:13:59 GMT"
+          "Value": "Fri, 07 Mar 2025 14:43:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2822,7 +2822,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "8cqleqml3n"
+          "Value": "6xk2jt9e1r"
         },
         {
           "Name": "label",
@@ -2830,7 +2830,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-mI5wchqHSxtrD6JlmCXO8YqGq+hR9LpJ4ZA6Mt0Mt44="
+          "Value": "sha256-am35CnwdE8p5SUpjitffe0xQs5qKxtGFYfj7MlpXbwk="
         }
       ]
     },
@@ -2845,7 +2845,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1126"
+          "Value": "2269"
         },
         {
           "Name": "Content-Type",
@@ -2853,11 +2853,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"mI5wchqHSxtrD6JlmCXO8YqGq+hR9LpJ4ZA6Mt0Mt44=\""
+          "Value": "\"am35CnwdE8p5SUpjitffe0xQs5qKxtGFYfj7MlpXbwk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 09 Feb 2025 11:13:59 GMT"
+          "Value": "Fri, 07 Mar 2025 14:43:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2867,7 +2867,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-mI5wchqHSxtrD6JlmCXO8YqGq+hR9LpJ4ZA6Mt0Mt44="
+          "Value": "sha256-am35CnwdE8p5SUpjitffe0xQs5qKxtGFYfj7MlpXbwk="
         }
       ]
     },
@@ -2882,7 +2882,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1126"
+          "Value": "2269"
         },
         {
           "Name": "Content-Type",
@@ -2890,11 +2890,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"mI5wchqHSxtrD6JlmCXO8YqGq+hR9LpJ4ZA6Mt0Mt44=\""
+          "Value": "\"am35CnwdE8p5SUpjitffe0xQs5qKxtGFYfj7MlpXbwk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 09 Feb 2025 11:13:59 GMT"
+          "Value": "Fri, 07 Mar 2025 14:43:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2904,7 +2904,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-mI5wchqHSxtrD6JlmCXO8YqGq+hR9LpJ4ZA6Mt0Mt44="
+          "Value": "sha256-am35CnwdE8p5SUpjitffe0xQs5qKxtGFYfj7MlpXbwk="
         }
       ]
     },

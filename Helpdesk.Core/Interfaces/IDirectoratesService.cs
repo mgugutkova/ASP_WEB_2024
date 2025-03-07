@@ -10,8 +10,9 @@ namespace Helpdesk.Core.Interfaces
     public interface IDirectoratesService
     {
         Task<IEnumerable<AllDirectoratesViewModel>> AllDirectoratesAsync();
-        Task AddDirectoratesAsync(string name);
-        Task EditDirectoratesAsync(int id, AllDirectoratesViewModel model);
+        Task<AllDirectoratesViewModel?> FindDirectorateAsync(int? id);
+        Task AddDirectorateAsync(string name);
+        Task EditDirectorateAsync(int id, AllDirectoratesViewModel model);
 
     }
 }

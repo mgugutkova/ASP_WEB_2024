@@ -1,0 +1,53 @@
+﻿@using Helpdesk.Core.Models.Directorates
+@model AllDirectoratesViewModel
+@{
+	ViewBag.Title = "Редактиране на дирекция";
+}
+
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+@if (!ViewData.ModelState.IsValid && ViewData.ModelState["Error"] != null)
+{
+	<div class="alert alert-danger" role="alert">
+		@ViewData.ModelState["Error"].Errors.First().ErrorMessage
+	</div>
+}
+
+<div class="row">
+	<div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+		<form method="post">
+			<div class="form-group">
+				<label asp-for="Name">Наименование</label>
+				<input asp-for="Name" class="form-control" />
+				<span asp-validation-for="Name" class="small text-danger"></span>
+			</div>
+
+			<div class="form-group">
+				<label asp-for="IsActive">Активна Да/Не</label>
+				<select asp-for="IsActive" class="form-control" >
+					<option value="True">Да</option>
+					<option value="False">Не</option>
+				</select>
+				<span asp-validation-for="IsActive" class="small text-danger"></span>
+			</div>
+
+			<div class=" text-center">
+				<input class="btn btn-primary mt-3 " type="submit" value="Save" />
+			</div>
+			@* <div class="form-group">
+				<span><br /></span>
+			</div>
+			<div class="text-center">
+				<a asp-controller="Home" asp-action="Index" class="btn btn-secondary">Cancel</a>
+			</div> *@
+		</form>
+	</div>
+</div>
+
+@section Scripts {
+	<partial name="_ValidationScriptsPartial" />
+	<script src="/../../js/site.js"></script>
+}
+

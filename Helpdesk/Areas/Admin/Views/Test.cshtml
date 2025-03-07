@@ -3,8 +3,6 @@
 @{
 	ViewBag.Title = "Дирекции";
 }
-
-
 <h2 class="text-center">@ViewBag.Title</h2>
 <hr />
 
@@ -19,7 +17,7 @@
 	<thead>
 		<tr>
 			<th>Наименование</th>
-			<th>Активна Да/Не</th>			
+			<th>Активна Да/Не</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -28,14 +26,14 @@
 			<tr>
 				<td>@item.Name</td>
 				<td>@item.IsActive</td>
-			
+
 				<td>
-					<a asp-controller="Directorate" asp-action="EditDirectorate" asp-route-Id="@item.Id" class="btn btn-danger">Редактиране</a> 
+					<a asp-controller="Directorate" asp-action="EditDirectorate" asp-route-Id="@item.Id" class="btn btn-danger">Редактиране</a>
 				</td>
 			</tr>
 		}
 	</tbody>
 </table>
 <div class="text-center">
-	<a asp-controller="Directorate" asp-action="AddDirectorate" class="btn btn-secondary">Добавяне</a>
+	<a asp-area="Admin" asp-controller="Directorate" asp-action="AddDirectorate" class="btn btn-secondary">Добавяне</a>
 </div>

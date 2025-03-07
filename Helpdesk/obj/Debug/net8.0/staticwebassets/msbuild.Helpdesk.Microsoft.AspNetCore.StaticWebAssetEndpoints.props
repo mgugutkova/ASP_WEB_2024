@@ -24,17 +24,17 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Jtxf9L\u002B5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"5430"},{"Name":"Content-Type","Value":"image/x-icon"},{"Name":"ETag","Value":"\u0022Jtxf9L\u002B5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM=\u0022"},{"Name":"Last-Modified","Value":"Sun, 09 Feb 2025 10:31:44 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/Helpdesk/Helpdesk.8cqleqml3n.bundle.scp.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Helpdesk.8cqleqml3n.bundle.scp.css'))</AssetFile>
+    <StaticWebAssetEndpoint Include="_content/Helpdesk/Helpdesk.6xk2jt9e1r.bundle.scp.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Helpdesk.6xk2jt9e1r.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"8cqleqml3n"},{"Name":"integrity","Value":"sha256-mI5wchqHSxtrD6JlmCXO8YqGq\u002BhR9LpJ4ZA6Mt0Mt44="},{"Name":"label","Value":"_content/Helpdesk/Helpdesk.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1126"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022mI5wchqHSxtrD6JlmCXO8YqGq\u002BhR9LpJ4ZA6Mt0Mt44=\u0022"},{"Name":"Last-Modified","Value":"Sun, 09 Feb 2025 11:13:59 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"6xk2jt9e1r"},{"Name":"integrity","Value":"sha256-am35CnwdE8p5SUpjitffe0xQs5qKxtGFYfj7MlpXbwk="},{"Name":"label","Value":"_content/Helpdesk/Helpdesk.bundle.scp.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2269"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022am35CnwdE8p5SUpjitffe0xQs5qKxtGFYfj7MlpXbwk=\u0022"},{"Name":"Last-Modified","Value":"Fri, 07 Mar 2025 14:43:19 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Helpdesk/Helpdesk.bundle.scp.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Helpdesk.8cqleqml3n.bundle.scp.css'))</AssetFile>
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Helpdesk.6xk2jt9e1r.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-mI5wchqHSxtrD6JlmCXO8YqGq\u002BhR9LpJ4ZA6Mt0Mt44="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1126"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022mI5wchqHSxtrD6JlmCXO8YqGq\u002BhR9LpJ4ZA6Mt0Mt44=\u0022"},{"Name":"Last-Modified","Value":"Sun, 09 Feb 2025 11:13:59 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-am35CnwdE8p5SUpjitffe0xQs5qKxtGFYfj7MlpXbwk="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2269"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022am35CnwdE8p5SUpjitffe0xQs5qKxtGFYfj7MlpXbwk=\u0022"},{"Name":"Last-Modified","Value":"Fri, 07 Mar 2025 14:43:19 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Helpdesk/js/site.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\site.js'))</AssetFile>

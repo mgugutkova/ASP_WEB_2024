@@ -1,0 +1,43 @@
+﻿@using Helpdesk.Core.Models.Directorates
+@model IEnumerable<AllDirectoratesViewModel>
+@{
+	ViewBag.Title = "Дирекции";
+}
+
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+@if (!ViewData.ModelState.IsValid && ViewData.ModelState["Error"] != null)
+{
+	<div class="alert alert-danger" role="alert">
+		@ViewData.ModelState["Error"].Errors.First().ErrorMessage
+	</div>
+}
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Наименование</th>
+			<th>Активна Да/Не</th>			
+		</tr>
+	</thead>
+
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>@item.Name</td>
+				<td>@item.IsActive</td>
+						
+				<td>
+					<a asp-controller="Directorate" asp-action="EditDirectorate" asp-route-Id="@item.Id" class="btn btn-danger">Редактиране</a> 
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+<div class="text-center">
+	<a asp-area="Admin" asp-controller="Directorate" asp-action="AddDirectorate" class="btn btn-secondary">Добавяне</a>
+</div>

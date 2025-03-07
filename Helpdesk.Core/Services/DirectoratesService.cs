@@ -20,7 +20,7 @@ namespace Helpdesk.Core.Services
             repository = _repository;
         }
 
-        public async Task AddDirectoratesAsync(string name)
+        public async Task AddDirectorateAsync(string name)
         {
             var directorate = new DirectoratesUnit
             {
@@ -36,8 +36,9 @@ namespace Helpdesk.Core.Services
             var directorates = await repository.AllReadOnly<DirectoratesUnit>()
                 .Select( d => new AllDirectoratesViewModel()
                 {
+                    Id = d.Id,
                     Name = d.Name,
-                    IsActive = d.IsActive,
+                    IsActive = d.IsActive
                 })
                 .OrderBy(x => x.Name)
                 .ToListAsync();
@@ -45,9 +46,33 @@ namespace Helpdesk.Core.Services
             return directorates;
         }
 
-        public Task EditDirectoratesAsync(int id, AllDirectoratesViewModel model)
+        public async Task EditDirectorateAsync(int id, AllDirectoratesViewModel model)
         {
-            throw new NotImplementedException();
+            var directorate = await repository.GetByIdAsync<DirectoratesUnit>(id);
+
+            if (directorate != null) 
+            { 
+                directorate.IsActive = model.IsActive;
+                directorate.Name = model.Name;
+
+                await repository.SaveChangesAsync();
+            }
+
+        }
+
+        public async Task<AllDirectoratesViewModel?> FindDirectorateAsync(int? id)
+        {
+            var directorate = await repository.All<DirectoratesUnit>()
+                .Where(x => x.Id == id)
+                .Select( d => new AllDirectoratesViewModel()
+                {
+                    Id = d.Id,
+                    Name = d.Name,
+                    IsActive = d.IsActive
+                })
+                .FirstOrDefaultAsync();
+
+            return directorate;
         }
     }
 }
