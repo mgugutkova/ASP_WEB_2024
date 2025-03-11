@@ -240,6 +240,7 @@ namespace Helpdesk.Areas.Identity.Pages.Account
                     Id = d.Id,
                     Name = d.Name,
                 })
+                .OrderBy(x => x.Name)
                 .ToList();
 
             return directorates_MI;

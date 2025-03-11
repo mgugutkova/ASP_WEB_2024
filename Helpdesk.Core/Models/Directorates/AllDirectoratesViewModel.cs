@@ -14,8 +14,7 @@ namespace Helpdesk.Core.Models.Directorates
         [Key]
         public int Id { get; set; }
 
-        [Required]
-        [MaxLength(DirectorateNameMaxLength)]
+        [Required]      
         [StringLength(DirectorateNameMaxLength, MinimumLength = DirectorateNameMinLength, ErrorMessage = ErrorMessageLength)]
         public string Name { get; set; } = string.Empty;
 

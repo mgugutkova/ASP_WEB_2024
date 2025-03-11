@@ -19,7 +19,7 @@
 	<thead>
 		<tr>
 			<th>Наименование</th>
-			<th>Активна Да/Не</th>			
+			<th>Активна Да/Не</th>
 		</tr>
 	</thead>
 
@@ -27,11 +27,19 @@
 		@foreach (var item in Model)
 		{
 			<tr>
-				<td>@item.Name</td>
-				<td>@item.IsActive</td>
-						
+				<td><label>@item.Name</label></td>
 				<td>
-					<a asp-controller="Directorate" asp-action="EditDirectorate" asp-route-Id="@item.Id" class="btn btn-danger">Редактиране</a> 
+					@if (item.IsActive == true)
+					{
+					<label>✔</label>
+					}
+					else
+					{
+					<label class="text-center">❌</label>
+					}
+				</td>
+				<td>
+					<a asp-controller="Directorate" asp-action="EditDirectorate" asp-route-Id="@item.Id" class="btn btn-danger">Редактиране</a>
 				</td>
 			</tr>
 		}

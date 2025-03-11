@@ -1,7 +1,8 @@
-﻿@using Helpdesk.Core.Models.Directorates
-@model AllDirectoratesViewModel
+﻿@using Helpdesk.Core.Models.Categoris
+@model AllCategoriesViewModel
+
 @{
-	ViewBag.Title = "Добавяне на дирекция";
+	ViewBag.Title = "Добавяне на категория";
 }
 
 
@@ -19,11 +20,11 @@
 	<div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
 		<form method="post">
 			<div class="form-group">
-				<label asp-for="Name"></label>
+				<label asp-for="Name">Категория</label>
 				<input asp-for="Name" class="form-control" />
 				<span asp-validation-for="Name" class="small text-danger"></span>
 			</div>
-			
+
 			<div class=" text-center">
 				<input class="btn btn-primary mt-3 " type="submit" value="Save" />
 			</div>
@@ -41,3 +42,4 @@
 	<partial name="_ValidationScriptsPartial" />
 	<script src="/../../js/site.js"></script>
 }
+

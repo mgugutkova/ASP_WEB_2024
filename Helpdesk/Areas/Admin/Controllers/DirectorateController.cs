@@ -1,8 +1,6 @@
-﻿using Helpdesk.Controllers;
-using Helpdesk.Core.Interfaces;
+﻿using Helpdesk.Core.Interfaces;
 using Helpdesk.Core.Models.Directorates;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Helpdesk.Areas.Admin.Controllers
 {
@@ -24,7 +22,7 @@ namespace Helpdesk.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> AddDirectorate()
+        public IActionResult AddDirectorate()
         {
             var model = new AllDirectoratesViewModel();
 
@@ -36,9 +34,10 @@ namespace Helpdesk.Areas.Admin.Controllers
         [AutoValidateAntiforgeryToken]
         public async Task<IActionResult> AddDirectorate(AllDirectoratesViewModel model)
         {
-            if (model == null) { }
-
-            await directoratesService.AddDirectorateAsync(model.Name);
+            if (model != null)
+            {
+                await directoratesService.AddDirectorateAsync(model.Name);
+            }
 
             return RedirectToAction(nameof(AllDirectoratesMI));
         }
