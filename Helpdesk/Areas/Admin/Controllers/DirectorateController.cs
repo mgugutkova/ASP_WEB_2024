@@ -52,6 +52,11 @@ namespace Helpdesk.Areas.Admin.Controllers
                 return View(model);
             }
 
+            if (model == null)
+            {
+                return RedirectToAction(nameof(AllDirectoratesMI));
+            }
+
             return View(model);
         }
 

@@ -3,15 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F8C53BE2-E47B-495C-A635-04684A1A9FE3}|..\\Helpdesk.Core\\Helpdesk.Core.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\helpdesk.core\\services\\categoriesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\helpdesk\\areas\\admin\\views\\category\\addcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|solutionrelative:areas\\admin\\views\\category\\addcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\helpdesk\\areas\\admin\\views\\category\\allcategories.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|solutionrelative:areas\\admin\\views\\category\\allcategories.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\helpdesk\\areas\\admin\\views\\requeststate\\editrequeststate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|solutionrelative:areas\\admin\\views\\requeststate\\editrequeststate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\helpdesk\\areas\\admin\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|solutionrelative:areas\\admin\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\helpdesk\\areas\\admin\\views\\directorate\\adddirectorate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|solutionrelative:areas\\admin\\views\\directorate\\adddirectorate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\helpdesk\\areas\\admin\\views\\requeststate\\addrequeststate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|solutionrelative:areas\\admin\\views\\requeststate\\addrequeststate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\helpdesk\\areas\\admin\\views\\requeststate\\allrequeststate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|solutionrelative:areas\\admin\\views\\requeststate\\allrequeststate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\helpdesk\\areas\\admin\\controllers\\requeststatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|solutionrelative:areas\\admin\\controllers\\requeststatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\helpdesk\\areas\\admin\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -45,54 +58,93 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CategoriesService.cs",
-              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk.Core\\Services\\CategoriesService.cs",
-              "RelativeDocumentMoniker": "..\\Helpdesk.Core\\Services\\CategoriesService.cs",
-              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk.Core\\Services\\CategoriesService.cs",
-              "RelativeToolTip": "..\\Helpdesk.Core\\Services\\CategoriesService.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAowCoAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T10:32:48.798Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "_AdminLayout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
-              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
-              "RelativeToolTip": "Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAB0AAAAdAAAAAAAAAA==",
+              "Title": "AddDirectorate.cshtml",
+              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\Areas\\Admin\\Views\\Directorate\\AddDirectorate.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Directorate\\AddDirectorate.cshtml",
+              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\Areas\\Admin\\Views\\Directorate\\AddDirectorate.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\Directorate\\AddDirectorate.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAB4AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-11T10:24:21.73Z",
+              "WhenOpened": "2025-03-12T14:01:37.653Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AllCategories.cshtml",
-              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\Areas\\Admin\\Views\\Category\\AllCategories.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Category\\AllCategories.cshtml",
-              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\Areas\\Admin\\Views\\Category\\AllCategories.cshtml",
-              "RelativeToolTip": "Areas\\Admin\\Views\\Category\\AllCategories.cshtml",
-              "ViewState": "AgIAACgAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
+              "Title": "EditRequestState.cshtml",
+              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\Areas\\Admin\\Views\\RequestState\\EditRequestState.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\RequestState\\EditRequestState.cshtml",
+              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\Areas\\Admin\\Views\\RequestState\\EditRequestState.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\RequestState\\EditRequestState.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-11T10:18:40.522Z",
+              "WhenOpened": "2025-03-12T13:59:23.795Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "AddRequestState.cshtml",
+              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\Areas\\Admin\\Views\\RequestState\\AddRequestState.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\RequestState\\AddRequestState.cshtml",
+              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\Areas\\Admin\\Views\\RequestState\\AddRequestState.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\RequestState\\AddRequestState.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-12T13:48:26.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AddCategory.cshtml",
+              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\Areas\\Admin\\Views\\Category\\AddCategory.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Category\\AddCategory.cshtml",
+              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\Areas\\Admin\\Views\\Category\\AddCategory.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\Category\\AddCategory.cshtml",
+              "ViewState": "AgIAABoAAAAAAAAAAAAYwCUAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-12T13:47:57.043Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AllRequestState.cshtml",
+              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\Areas\\Admin\\Views\\RequestState\\AllRequestState.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\RequestState\\AllRequestState.cshtml",
+              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\Areas\\Admin\\Views\\RequestState\\AllRequestState.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\RequestState\\AllRequestState.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-12T13:51:58.135Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RequestStateController.cs",
+              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\Areas\\Admin\\Controllers\\RequestStateController.cs",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\RequestStateController.cs",
+              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\Areas\\Admin\\Controllers\\RequestStateController.cs",
+              "RelativeToolTip": "Areas\\Admin\\Controllers\\RequestStateController.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAIwA8AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T12:59:31.706Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "CategoryController.cs",
               "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\Areas\\Admin\\Controllers\\CategoryController.cs",
               "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\CategoryController.cs",
               "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\Areas\\Admin\\Controllers\\CategoryController.cs",
               "RelativeToolTip": "Areas\\Admin\\Controllers\\CategoryController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAowCQAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAADQAAAAAAAAAAAAqwBgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T15:13:10.899Z",
+              "WhenOpened": "2025-03-12T13:04:30.728Z",
               "EditorCaption": ""
             }
           ]

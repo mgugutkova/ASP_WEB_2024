@@ -46,6 +46,11 @@ namespace Helpdesk.Areas.Admin.Controllers
         {
             var model = await categoriesService.FindCategoryAsync(id);
 
+            if (model == null)
+            {
+                return RedirectToAction(nameof(AllCategories));
+            }
+
             return View(model);
         }
 

@@ -1,7 +1,7 @@
-﻿@using Helpdesk.Core.Models.Categoris
-@model IEnumerable<AllCategoriesViewModel>
+﻿@using Helpdesk.Core.Models.RequestState
+@model IEnumerable<AllRequestStateViewModel>
 @{
-	ViewBag.Title = "Категории";
+	ViewBag.Title = "Вид статус";
 }
 
 
@@ -36,7 +36,7 @@
 			<tr>
 				<td><label>@item.Name</label></td>
 				<td>
-					<a asp-controller="Category" asp-action="EditCategory" asp-route-Id="@item.Id" class="btn btn-primary text-center">Редактиране</a>
+					<a asp-controller="RequestState" asp-action="EditRequestState" asp-route-Id="@item.Id" class="btn btn-primary text-center">Редактиране</a>
 				</td>
 			</tr>
 		}
@@ -44,6 +44,7 @@
 </table>
 
 <div class="text-center">
-	<a asp-area="Admin" asp-controller="Category" asp-action="AddCategory" class="btn btn-secondary">Добавяне</a>
+	<a asp-area="Admin" asp-controller="RequestState" asp-action="AddRequestState" class="btn btn-secondary">Добавяне</a>
 </div>
+
 

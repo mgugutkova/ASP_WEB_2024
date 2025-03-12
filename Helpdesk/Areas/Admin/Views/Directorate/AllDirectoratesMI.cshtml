@@ -20,6 +20,7 @@
 		<tr>
 			<th>Наименование</th>
 			<th>Активна Да/Не</th>
+			<th></th>
 		</tr>
 	</thead>
 
@@ -39,7 +40,7 @@
 					}
 				</td>
 				<td>
-					<a asp-controller="Directorate" asp-action="EditDirectorate" asp-route-Id="@item.Id" class="btn btn-danger">Редактиране</a>
+					<a asp-controller="Directorate" asp-action="EditDirectorate" asp-route-Id="@item.Id" class="btn btn-primary text-center">Редактиране</a>
 				</td>
 			</tr>
 		}

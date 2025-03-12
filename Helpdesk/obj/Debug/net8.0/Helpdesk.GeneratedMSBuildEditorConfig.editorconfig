@@ -40,6 +40,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcQWxsQ2F0ZWdvcmllcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/Helpdesk/Areas/Admin/Views/Category/EditCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcRWRpdENhdGVnb3J5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/Helpdesk/Areas/Admin/Views/Directorate/AddDirectorate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGlyZWN0b3JhdGVcQWRkRGlyZWN0b3JhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -50,6 +54,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/Helpdesk/Areas/Admin/Views/Directorate/EditDirectorate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGlyZWN0b3JhdGVcRWRpdERpcmVjdG9yYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/Helpdesk/Areas/Admin/Views/RequestState/AddRequestState.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUmVxdWVzdFN0YXRlXEFkZFJlcXVlc3RTdGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/Helpdesk/Areas/Admin/Views/RequestState/AllRequestState.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUmVxdWVzdFN0YXRlXEFsbFJlcXVlc3RTdGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/Helpdesk/Areas/Admin/Views/RequestState/EditRequestState.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUmVxdWVzdFN0YXRlXEVkaXRSZXF1ZXN0U3RhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/Helpdesk/Areas/Admin/Views/Shared/_AdminPartial.cshtml]

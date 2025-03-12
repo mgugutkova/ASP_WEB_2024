@@ -28,8 +28,7 @@ namespace Helpdesk.Core.Services
             };
              
             await repository.AddAsync(category);
-            await repository.SaveChangesAsync();
-                
+            await repository.SaveChangesAsync();                
         }
 
         public async Task<IEnumerable<AllCategoriesViewModel>> AllCategoriesAsync()
