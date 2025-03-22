@@ -3,7 +3,7 @@ using static Helpdesk.Infrastructure.Constants.DataConstants;
 
 namespace Helpdesk.Core.Models.RequestState
 {
-    public class AllRequestStateViewModel
+    public class RequestServiceViewModel
     {
         [Key]
         public int Id { get; set; }

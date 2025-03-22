@@ -41,7 +41,7 @@ namespace Helpdesk.Infrastructure.Data.Model
         [ForeignKey(nameof(RequestStateId))]
         public RequestState RequestState { get; set; } = null!;
 
-        public Guid OperatorId { get; set; }
+        public Guid? OperatorId { get; set; }
 
         [ForeignKey(nameof(OperatorId))]
         public Operator? Operator { get; set; } = null;

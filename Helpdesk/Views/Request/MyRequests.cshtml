@@ -1,0 +1,51 @@
+﻿@using Helpdesk.Core.Models.Request
+
+@model IEnumerable<RequestViewModel>
+@{
+	ViewBag.Title = "Заявка";
+}
+
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+@* @if (Model.Count() == 0)
+{
+	<div class="text-center">
+		<a asp-area="Admin" asp-controller="Category" asp-action="AddCategory" class="btn btn-secondary">Добавяне</a>
+	</div>
+} *@
+
+@if (!ViewData.ModelState.IsValid && ViewData.ModelState["Error"] != null)
+{
+	<div class="alert alert-danger" role="alert">
+		@ViewData.ModelState["Error"].Errors.First().ErrorMessage
+	</div>
+}
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Описание</th>
+			<th></th>
+		</tr>
+	</thead>
+
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td><label>@item.Description</label></td>
+				<td>
+					<a asp-controller="Request" asp-action="Detail" asp-route-Id="@item.Id" class="btn btn-primary text-center">Редактиране</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+<div class="text-center">
+	<a asp-area="" asp-controller="Request" asp-action="AddRequest" class="btn btn-secondary">Добавяне</a>
+</div>
+
+

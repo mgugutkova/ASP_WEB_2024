@@ -18,6 +18,8 @@ builder.Services.AddScoped<IRepository, Repository>();
 builder.Services.AddScoped<IDirectoratesService, DirectoratesService>();
 builder.Services.AddScoped<ICategoriesService, CategoriesService>();
 builder.Services.AddScoped<IRequestStateService, RequestStateService>();
+builder.Services.AddScoped<IRequestService, RequestService>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -32,6 +34,8 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options => {
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
+builder.Services.AddHttpContextAccessor();
+
 
 var app = builder.Build();
 

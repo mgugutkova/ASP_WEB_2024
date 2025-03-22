@@ -24,9 +24,9 @@ namespace Helpdesk.Infrastructure.Data.Model
         public string Address { get; set; } = string.Empty;
 
 
-        [Required]
-        [MaxLength(PhoneNumberMaxLength)]
-        public string Phone{ get; set; } = string.Empty;
+        //[Required]
+        //[MaxLength(PhoneNumberMaxLength)]
+        //public string Phone{ get; set; } = string.Empty;
 
 
         [Required]
@@ -40,6 +40,6 @@ namespace Helpdesk.Infrastructure.Data.Model
         [MaxLength(PositionMaxLength)]
         public string? Position { get; set; } = null;
 
-        public virtual ICollection<Request> Requests { get; set; } = new HashSet<Request>();
+        public virtual ICollection<Request> Requests { get; set; } = new HashSet<Request>();  // maybe not need
     }
 }

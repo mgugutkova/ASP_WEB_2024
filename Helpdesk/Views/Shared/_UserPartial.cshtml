@@ -1,0 +1,68 @@
+﻿@* @using Helpdesk.Core.Models.ApplicationUser
+@model UserViewModel *@
+@using Helpdesk.Infrastructure.Data.Model
+@using Microsoft.AspNetCore.Http
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<ApplicationUser> userManager
+
+@{
+    ViewBag.Title = "Данни на потребителя";
+
+    var userName = User.Identity.Name;
+    var user = userManager.FindByNameAsync(userName);
+    var fName = user.Id;
+    var test = userName.FirstOrDefault();
+
+    // var currentUserId = HttpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? string.Empty;
+}
+
+<div class="row">
+	<div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+		@* <form method="post">
+			<div class="form-group">
+				<label asp-for="FirstName">Име</label>
+				<input asp-for="FirstName" class="form-control" readonly />
+				<span asp-validation-for="FirstName" class="small text-danger"></span>
+			</div>
+
+			<div class="form-group">
+				<label asp-for="LastName">Фамилия</label>
+				<input asp-for="LastName" class="form-control" readonly />
+				<span asp-validation-for="LastName" class="small text-danger"></span>
+			</div>
+
+			<div class="form-group">
+				<label asp-for="Address">Адрес</label>
+				<input asp-for="Address" class="form-control" readonly />
+				<span asp-validation-for="Address" class="small text-danger"></span>
+			</div>
+
+			<div class="form-group">
+				<label asp-for="Phone">Телефон</label>
+				<input asp-for="Phone" class="form-control" readonly />
+				<span asp-validation-for="Phone" class="small text-danger"></span>
+			</div>
+
+			<div class="form-group">
+				<label asp-for="DirectorateName">Дирекция</label>
+				<input asp-for="DirectorateName" class="form-control" readonly />
+				<span asp-validation-for="DirectorateName" class="small text-danger"></span>
+			</div>
+
+			<div class="form-group">
+				<label asp-for="Position">Длъжност</label>
+				<input asp-for="Position" class="form-control" readonly />
+				<span asp-validation-for="Position" class="small text-danger"></span>
+			</div>
+
+
+
+		<div class=" text-center">
+				<input class="btn btn-primary mt-3 " type="submit" value="Save" />
+			</div> 
+
+
+		</form> *@
+	</div>
+</div>
+}

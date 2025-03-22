@@ -3,11 +3,6 @@ using Helpdesk.Core.Models.Directorates;
 using Helpdesk.Infrastructure.Data.Model;
 using Helpdesk.Infrastructure.Repo;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Helpdesk.Core.Services
 {
@@ -73,6 +68,21 @@ namespace Helpdesk.Core.Services
                 .FirstOrDefaultAsync();
 
             return directorate;
+        }
+
+        public async Task<IEnumerable<AllDirectoratesViewModel>> GetDirectoratesActive()
+        {
+            var directorates_MI =  await repository.AllReadOnly<DirectoratesUnit>()
+                .Where(x => x.IsActive == true)
+                .Select(d => new AllDirectoratesViewModel()
+                {
+                    Id = d.Id,
+                    Name = d.Name,
+                })
+                .OrderBy(x => x.Name)
+                .ToListAsync();
+
+            return directorates_MI;
         }
     }
 }

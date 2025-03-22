@@ -25,10 +25,10 @@ namespace Helpdesk.Core.Services
             await repository.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<AllRequestStateViewModel>> AllRequestStateAsync()
+        public async Task<IEnumerable<RequestServiceViewModel>> AllRequestStateAsync()
         {
             var states = await repository.All<RequestState>()
-                .Select(x => new AllRequestStateViewModel()
+                .Select(x => new RequestServiceViewModel()
                 {
                     Id = x.Id,
                     Name = x.Name
@@ -39,7 +39,7 @@ namespace Helpdesk.Core.Services
             return states;
         }
 
-        public async Task EditRequestStateAsync(int id, AllRequestStateViewModel model)
+        public async Task EditRequestStateAsync(int id, RequestServiceViewModel model)
         {
             var state = await repository.GetByIdAsync<RequestState>(id);
 
@@ -50,11 +50,11 @@ namespace Helpdesk.Core.Services
             }
         }
 
-        public async Task<AllRequestStateViewModel?> FindRequestStateAsync(int? id)
+        public async Task<RequestServiceViewModel?> FindRequestStateAsync(int? id)
         {
             var state = await repository.All<RequestState>()
                 .Where(r => r.Id == id)
-                .Select(x => new AllRequestStateViewModel
+                .Select(x => new RequestServiceViewModel
                 { 
                 Name= x.Name
                 })

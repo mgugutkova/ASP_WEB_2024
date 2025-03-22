@@ -76,11 +76,6 @@ namespace Helpdesk.Infrastructure.Migrations
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Phone")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");
 
@@ -205,7 +200,7 @@ namespace Helpdesk.Infrastructure.Migrations
                         .HasColumnType("bit")
                         .HasDefaultValue(true);
 
-                    b.Property<Guid>("OperatorId")
+                    b.Property<Guid?>("OperatorId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("RequestStateId")
@@ -418,9 +413,7 @@ namespace Helpdesk.Infrastructure.Migrations
 
                     b.HasOne("Helpdesk.Infrastructure.Data.Model.Operator", "Operator")
                         .WithMany("Requests")
-                        .HasForeignKey("OperatorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("OperatorId");
 
                     b.HasOne("Helpdesk.Infrastructure.Data.Model.RequestState", "RequestState")
                         .WithMany()

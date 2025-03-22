@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 #nullable disable
 
+using Helpdesk.Core.Interfaces;
 using Helpdesk.Core.Models.Directorates;
 using Helpdesk.Infrastructure.Data.Model;
 using Helpdesk.Infrastructure.Repo;
@@ -9,7 +10,6 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using static Helpdesk.Infrastructure.Constants.DataConstants;
 
@@ -19,8 +19,8 @@ namespace Helpdesk.Areas.Identity.Pages.Account
     {
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly UserManager<ApplicationUser> _userManager;
-        private readonly IRepository repository;
-        public readonly IEnumerable<AllDirectoratesViewModel> directoratesMI;
+        private readonly IDirectoratesService directorateService;     
+        //private readonly IEnumerable<AllDirectoratesViewModel> directoratesMI;
 
         //private readonly IUserStore<IdentityUser> _userStore;
         //private readonly IUserEmailStore<IdentityUser> _emailStore;
@@ -31,22 +31,25 @@ namespace Helpdesk.Areas.Identity.Pages.Account
             UserManager<ApplicationUser> userManager,
             // IUserStore<IdentityUser> userStore,
             SignInManager<ApplicationUser> signInManager,
-            IRepository _repository,
-            IEnumerable<AllDirectoratesViewModel> _directoratesMI
+            IDirectoratesService _directorateService       
+       
             //ILogger<RegisterModel> logger,
             //IEmailSender emailSender
             )
         {
             _userManager = userManager;
             _signInManager = signInManager;
-            repository = _repository;
-            directoratesMI = GetDirectorateAsync();
+            directorateService = _directorateService; 
+          
             //_userStore = userStore;
             //_emailStore = GetEmailStore();
             //_logger = logger;
             //_emailSender = emailSender;
         }
 
+        public IEnumerable<AllDirectoratesViewModel> directoratesMI {  get; set; } = new List<AllDirectoratesViewModel>();
+
+     
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
@@ -70,13 +73,7 @@ namespace Helpdesk.Areas.Identity.Pages.Account
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
-        /// 
-        //public IEnumerable<AllDirectoratesViewModel> Directorates { get; set; } = directoratesMI
-        //    .Select(d => new AllDirectoratesViewModel()
-        //    {
-        //        Id = d.Id,
-        //        Name = d.Name,
-        //    }).ToList();
+        ///  
   
 
         public class InputModel
@@ -110,7 +107,7 @@ namespace Helpdesk.Areas.Identity.Pages.Account
             [Required]
             [Display(Name = "Телефон:")]
             [StringLength(PhoneNumberMaxLength, MinimumLength = PhoneNumberMinLength, ErrorMessage = ErrorMessageLength)]
-            public string Phone { get; set; }
+            public string PhoneNumber { get; set; }
 
             [Required]
             [Display(Name = "Дирекция:")]
@@ -144,6 +141,7 @@ namespace Helpdesk.Areas.Identity.Pages.Account
 
         public async Task OnGetAsync(string returnUrl = null)
         {
+            directoratesMI = await directorateService.GetDirectoratesActive();
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }
@@ -161,7 +159,7 @@ namespace Helpdesk.Areas.Identity.Pages.Account
                     FirstName = Input.FirstName,
                     LastName = Input.LastName,
                     Address = Input.Address,
-                    Phone = Input.Phone,
+                    PhoneNumber = Input.PhoneNumber,
                     DirectoratesUnitId = Input.DirectoratesUnitId,
                     Position = Input.Position
                 };
@@ -229,21 +227,6 @@ namespace Helpdesk.Areas.Identity.Pages.Account
         //        throw new NotSupportedException("The default UI requires a user store with email support.");
         //    }
         //    return (IUserEmailStore<IdentityUser>)_userStore;
-        //}
-
-        private IEnumerable<AllDirectoratesViewModel> GetDirectorateAsync()
-        {
-            var directorates_MI = repository.AllReadOnly<DirectoratesUnit>()
-                .Where(x => x.IsActive == true)
-                .Select(d => new AllDirectoratesViewModel()
-                {
-                    Id = d.Id,
-                    Name = d.Name,
-                })
-                .OrderBy(x => x.Name)
-                .ToList();
-
-            return directorates_MI;
-        }
+        //}       
     }
 }

@@ -16,14 +16,14 @@ namespace Helpdesk.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult AddRequestState()
         {
-            var model = new AllRequestStateViewModel();
+            var model = new RequestServiceViewModel();
 
             return View(model);
         }
 
         [HttpPost]
         [AutoValidateAntiforgeryToken]
-        public async Task<IActionResult> AddRequestState(AllRequestStateViewModel model)
+        public async Task<IActionResult> AddRequestState(RequestServiceViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -62,7 +62,7 @@ namespace Helpdesk.Areas.Admin.Controllers
 
         [HttpPost]
         [AutoValidateAntiforgeryToken]
-        public async Task<IActionResult> EditRequestState(int id, AllRequestStateViewModel model)
+        public async Task<IActionResult> EditRequestState(int id, RequestServiceViewModel model)
         {
             await stateService.EditRequestStateAsync(id, model);
 

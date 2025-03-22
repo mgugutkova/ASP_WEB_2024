@@ -14,5 +14,7 @@ namespace Helpdesk.Core.Interfaces
         Task AddDirectorateAsync(string name);
         Task EditDirectorateAsync(int id, AllDirectoratesViewModel model);
 
+        Task<IEnumerable<AllDirectoratesViewModel>> GetDirectoratesActive();
+
     }
 }

@@ -36,16 +36,10 @@
             </div>
 
             <div class="form-floating mb-3">
-                <input asp-for="Input.Phone" class="form-control" autocomplete="address" aria-required="true" placeholder="Вътрешен тел., мобилен" />
-                <label asp-for="Input.Phone">Телефон:</label>
-                <span asp-validation-for="Input.Phone" class="text-danger"></span>
+                <input asp-for="Input.PhoneNumber" class="form-control" autocomplete="address" aria-required="true" placeholder="Вътрешен тел., мобилен" />
+                <label asp-for="Input.PhoneNumber">Телефон:</label>
+                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
             </div>
-
-			@*   <div class="form-floating mb-3">
-                <input asp-for="Input.DirectoratesUnitId" class="form-control" autocomplete="address" aria-required="true"  />
-                <label asp-for="Input.DirectoratesUnitId">Дирекция:</label>
-                <span asp-validation-for="Input.DirectoratesUnitId" class="text-danger"></span>
-            </div>*@
 
              <div class="form-group  mb-3">
                 <label asp-for="Input.DirectoratesUnitId">Дирекция:</label>
