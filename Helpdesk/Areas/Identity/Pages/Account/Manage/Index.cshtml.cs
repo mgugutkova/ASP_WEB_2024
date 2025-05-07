@@ -3,6 +3,7 @@
 #nullable disable
 
 using Helpdesk.Core.Interfaces;
+using Helpdesk.Core.Models.Directorates;
 using Helpdesk.Infrastructure.Data.Model;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -16,18 +17,21 @@ namespace Helpdesk.Areas.Identity.Pages.Account.Manage
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
-        private readonly IUserService userService;
+        private readonly IDirectoratesService directorateService;
+    
 
         public IndexModel(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
-            IUserService _userService)
+            IDirectoratesService _directorateService
+            )       
         {
             _userManager = userManager;
             _signInManager = signInManager;
-            userService = _userService;
+            directorateService = _directorateService;           
         }
 
+        public IEnumerable<AllDirectoratesViewModel> directoratesMI { get; set; } = new List<AllDirectoratesViewModel>();
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
@@ -84,18 +88,21 @@ namespace Helpdesk.Areas.Identity.Pages.Account.Manage
             [Display(Name = "Длъжност")]
             [StringLength(PositionMaxLength, MinimumLength = PositionMinLength, ErrorMessage = ErrorMessageLength)]
             public string? Position { get; set; }
+
+            [Required]
+            [Display(Name = "Дирекция:")]
+            public int DirectoratesUnitId { get; set; }
         }
 
         private async Task LoadAsync(ApplicationUser user)
         {
             var userName = await _userManager.GetUserNameAsync(user);
-            var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
-          //  var userId = await _userManager.GetUserIdAsync(user);
-           // var userItems = await userService.GetUserByIdAsync(userId);
+            var phoneNumber = await _userManager.GetPhoneNumberAsync(user);        
             var firstName = user.FirstName;
             var lastName = user.LastName;
             var address = user.Address;
             var position = user.Position;
+            var directoratesID = user.DirectoratesUnitId;          
 
             Username = userName;
 
@@ -105,7 +112,8 @@ namespace Helpdesk.Areas.Identity.Pages.Account.Manage
                 FirstName = firstName,
                 LastName = lastName,
                 Address = address,
-                Position = position
+                Position = position,
+                DirectoratesUnitId = directoratesID
             };
         }
 
@@ -116,7 +124,8 @@ namespace Helpdesk.Areas.Identity.Pages.Account.Manage
             {
                 return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
             }
-
+           
+            directoratesMI = await directorateService.AllDirectoratesAsync();
             await LoadAsync(user);
             return Page();
         }
@@ -139,6 +148,7 @@ namespace Helpdesk.Areas.Identity.Pages.Account.Manage
             user.LastName = Input.LastName;
             user.Address = Input.Address;
             user.Position = Input.Position;
+            user.DirectoratesUnitId = Input.DirectoratesUnitId;
             await _userManager.UpdateAsync(user);
 
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);

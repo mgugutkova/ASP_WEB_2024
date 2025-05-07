@@ -1,24 +1,23 @@
-﻿using Helpdesk.Infrastructure.Data.Model;
+﻿using Helpdesk.Core.Models.Request;
+using Helpdesk.Infrastructure.Data.Model;
 using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static Helpdesk.Infrastructure.Constants.DataConstants;
-using Helpdesk.Core.Models.Request;
 
 namespace Helpdesk.Core.Models.ApplicationUser
 {
     public class UserViewModel
     {
         [Required]
+        public string UserId { get; set; } = string.Empty;
+
+        [Required]
+        public string Email { get; set; } = string.Empty;
+
+        [Required]
         [StringLength(FirstNameMaxLength, MinimumLength = FirstNameMinLength, ErrorMessage = ErrorMessageLength)]
         [PersonalData]
         public string FirstName { get; set; } = string.Empty;
-
 
         [Required]
         [StringLength(LastNameMaxLength, MinimumLength = LastNameMinLength, ErrorMessage = ErrorMessageLength)]
@@ -46,6 +45,9 @@ namespace Helpdesk.Core.Models.ApplicationUser
         [MaxLength(PositionMaxLength)]
         [StringLength(PositionMaxLength, MinimumLength = PositionMinLength, ErrorMessage = ErrorMessageLength)]
         public string? Position { get; set; } = null;
+
+        [Required]
+        public string RoleName { get; set; } = string.Empty;
 
         public virtual ICollection<RequestViewModel> Requests { get; set; } = new HashSet<RequestViewModel>();
 

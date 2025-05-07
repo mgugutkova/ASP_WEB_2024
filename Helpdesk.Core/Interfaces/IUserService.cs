@@ -1,4 +1,5 @@
-﻿using Helpdesk.Infrastructure.Data.Model;
+﻿using Helpdesk.Core.Models.ApplicationUser;
+using Helpdesk.Infrastructure.Data.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,11 @@ namespace Helpdesk.Core.Interfaces
     public interface IUserService
     {
         Task<ApplicationUser?> GetUserByIdAsync(string userId);
+
+        Task<IEnumerable<UserViewModel>> AllUsersAsync();
+        Task<UsersServiceQueryModel> AllUsersQueryAsync(
+            string? searchTerm = null,
+            int currentPage = 1,
+            int usersPerPage = 10);
     }
 }

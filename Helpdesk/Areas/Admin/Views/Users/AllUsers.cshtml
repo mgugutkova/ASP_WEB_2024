@@ -1,0 +1,40 @@
+﻿@using Helpdesk.Core.Models.ApplicationUser
+@model IEnumerable<UserViewModel>
+
+@{
+	ViewBag.Title = "Потребители";
+}
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Име</th>
+			<th>Фамилия</th>
+			<th>Адрес</th>
+			<th>Дирекция</th>
+			<th>Длъжност</th>
+			<th>Телефон</th>
+			<th>Роля</th>
+			<th></th>
+		</tr>
+	</thead>
+
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td><label>@item.FirstName</label></td>
+				<td><label>@item.LastName</label></td>
+				<td>@item.Address</td>
+				<td>@item.DirectorateName</td>
+				<td>@item.Position</td>
+				<td>@item.PhoneNumber</td>
+				<td>@item.RoleName</td>
+				<td>
+					<a asp-controller="Users" asp-action="All" asp-route-Id="@item.UserId" class="btn btn-primary text-center">Задай Роля</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

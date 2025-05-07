@@ -12,7 +12,7 @@ namespace Helpdesk.Core.Services
     public class RequestService : IRequestService
     {
         private readonly IRepository repository;
-        //private readonly UserManager<ApplicationUser> userManager;
+        // private readonly UserManager<ApplicationUser> userManager;
         //private readonly IUserService userService;
         //private readonly IUserStore<ApplicationUser> userStore;
         private readonly IHttpContextAccessor httpContextAccessor;
@@ -26,7 +26,7 @@ namespace Helpdesk.Core.Services
 )
         {
             repository = _repository;
-            //userManager = _userManager;
+            // userManager = _userManager;
             //userService = _userService;
             //userStore = _userStore;
             httpContextAccessor = _httpContextAccessor;
@@ -56,26 +56,71 @@ namespace Helpdesk.Core.Services
             throw new NotImplementedException();
         }
 
-        public Task EditRequestAsync(Guid id, RequestViewModel model)
+        public async Task EditRequestAsync(Guid id, RequestViewModel model)
         {
-            throw new NotImplementedException();
+            var request = await repository.GetByIdAsync<Request>(id);
+
+            if (request != null)
+            {
+
+                request.Description = model.Description;
+                request.CategoryId = model.CategoryId;
+                request.StartDate = model.StartDate;
+                request.EndDate = model.EndDate;
+                request.RequestStateId = model.RequestStateId;
+                request.OperatorId = model.OperatorId;
+                request.Comment = model.Comment;
+                request.IsActive = model.IsActive;
+
+                await repository.SaveChangesAsync();
+            }
         }
 
-        public Task<RequestViewModel?> FindRequestAsync(Guid? id)
+        public async Task<RequestViewModel?> FindRequestAsync(Guid? id)
         {
-            throw new NotImplementedException();
+            var request = await repository.All<Request>()
+                .Where(x => x.Id == id)
+                .Where(x => x.IsActive == true)
+                .Select(r => new RequestViewModel()
+                {
+                    Id = r.Id,
+                    Description = r.Description,
+                    UserId = r.UserId,
+                    CategoryId = r.CategoryId,
+                    StartDate = r.StartDate,
+                    EndDate = r.EndDate,
+                    RequestStateId = r.RequestStateId,
+                    RequestState = r.RequestState.Name,
+                    OperatorId = r.OperatorId,
+                    OperatorName = r.Operator.UserId ?? string.Empty,
+                    Comment = r.Comment,
+                    IsActive = r.IsActive,
+                })
+                .FirstOrDefaultAsync();
+
+            return request;
         }
 
         public async Task<IEnumerable<RequestViewModel>> MyRequestAsync(string userId)
         {
+
             var requests = await repository.All<Request>()
-                .Where(x => x.UserId == userId)
-                .Where(x => x.IsActive == true)
-                .Select(r => new RequestViewModel()
-                {
-                    Description = r.Description,
-                })
-                .ToListAsync();
+                 .Where(x => x.UserId == userId)
+                 .Where(x => x.IsActive == true)
+                 .Select(r => new RequestViewModel()
+                 {
+                     Id = r.Id,
+                     Description = r.Description,
+                     CategoryId = r.CategoryId,
+                     CategoryName = r.Category.Name,
+                     StartDate = r.StartDate,
+                     EndDate = r.EndDate,
+                     RequestState = r.RequestState.Name,
+                     OperatorName = r.Operator.UserId ?? string.Empty
+                     // UserFullName = fullName ?? string.Empty
+                 })
+                 .OrderByDescending(x => x.StartDate)
+                 .ToListAsync();
 
             return requests;
         }
@@ -83,7 +128,7 @@ namespace Helpdesk.Core.Services
         public async Task<IEnumerable<AllCategoriesViewModel>> AllCategoryList()
         {
 
-            var categories =  await repository.AllReadOnly<Category>()
+            var categories = await repository.AllReadOnly<Category>()
                          .Select(d => new AllCategoriesViewModel()
                          {
                              Id = d.Id,

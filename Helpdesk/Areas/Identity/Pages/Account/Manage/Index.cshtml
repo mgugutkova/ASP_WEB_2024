@@ -40,6 +40,13 @@
                 <label asp-for="Input.Position" class="form-label"></label>
                 <span asp-validation-for="Input.Position" class="text-danger"></span>
             </div>
+            <div class="form-group mb-3">
+                <label asp-for="Input.DirectoratesUnitId"></label>
+                <select asp-for="Input.DirectoratesUnitId" class="form-control" aria-required="true" asp-items="@(new SelectList(@Model.directoratesMI, "Id", "Name"))">
+                    <option value="Input.DirectoratesUnitId"></option>
+                </select>
+                <span asp-validation-for="Input.DirectoratesUnitId" class="text-danger"></span>
+            </div>
             <button id="update-profile-button" type="submit" class="w-100 btn btn-lg btn-primary">Save</button>
         </form>
     </div>

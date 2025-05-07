@@ -1,5 +1,4 @@
-﻿using PawnShop.Core.Models.Interest;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using static PawnShop.Infrastructure.Data.DataConstants;
 

@@ -7,10 +7,14 @@ namespace Helpdesk.Controllers
     public class RequestController : BaseController
     {
         private readonly IRequestService requestService;
+       // private readonly UserManager<ApplicationUser> userManager;
 
-        public RequestController(IRequestService _requestService)
+        public RequestController(
+            IRequestService _requestService)
+           // UserManager<ApplicationUser> _userManager)
         {
             requestService = _requestService;
+           // userManager = _userManager;
         }
 
         [HttpGet]
@@ -18,7 +22,7 @@ namespace Helpdesk.Controllers
         {
             var currentUser = GetUserId();
 
-            var model = await requestService.MyRequestAsync(currentUser);
+            var model = await requestService.MyRequestAsync(currentUser);        
 
             return View(model);
         }
@@ -33,7 +37,6 @@ namespace Helpdesk.Controllers
             return View(model);
         }
 
-        
 
         [HttpPost]
         public async Task<IActionResult> AddRequest(RequestViewModel model)
@@ -44,6 +47,33 @@ namespace Helpdesk.Controllers
 
            // return RedirectToAction(nameof(MyRequests), new { model.UserId });  
             return RedirectToAction(nameof(MyRequests));  
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Detail(Guid id)
+        {
+            var model = await requestService.FindRequestAsync(id);
+
+            if (model == null)
+            {
+                return NotFound();
+            }
+            model.CategoryList = await requestService.AllCategoryList();
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> Detail(Guid id, RequestViewModel model)
+        {
+            if (id != model.Id)
+            {
+                return NotFound();
+            }
+            await requestService.EditRequestAsync(id, model);
+
+            return RedirectToAction(nameof(MyRequests));
         }
     }
 }

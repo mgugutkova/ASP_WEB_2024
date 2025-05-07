@@ -1,20 +1,23 @@
 ﻿@using Helpdesk.Core.Models.Request
+@using Helpdesk.Infrastructure.Data.Model
+@using Microsoft.AspNetCore.Identity
+@using Helpdesk.Extentions
+@inject UserManager<ApplicationUser> UserManager
+
+@{
+	var fullName = await UserManager.GetFullNameAsync(User);
+}
 
 @model IEnumerable<RequestViewModel>
 @{
-	ViewBag.Title = "Заявка";
+	ViewBag.Title = "Моите Заявки";
 }
 
 
 <h2 class="text-center">@ViewBag.Title</h2>
+<h2 class="text-center">@fullName</h2>
 <hr />
 
-@* @if (Model.Count() == 0)
-{
-	<div class="text-center">
-		<a asp-area="Admin" asp-controller="Category" asp-action="AddCategory" class="btn btn-secondary">Добавяне</a>
-	</div>
-} *@
 
 @if (!ViewData.ModelState.IsValid && ViewData.ModelState["Error"] != null)
 {
@@ -27,6 +30,11 @@
 	<thead>
 		<tr>
 			<th>Описание</th>
+			<th>Категория</th>
+			<th>Подадена</th>
+			<th>Приключена</th>
+			<th>Статус</th>
+			<th>Разпределена</th>
 			<th></th>
 		</tr>
 	</thead>
@@ -36,8 +44,13 @@
 		{
 			<tr>
 				<td><label>@item.Description</label></td>
+				<td><label>@item.CategoryName</label></td>
+				<td>@item.StartDate</td>
+				<td>@item.EndDate</td>
+				<td>@item.RequestState</td>
+				<td>@item.OperatorName</td>
 				<td>
-					<a asp-controller="Request" asp-action="Detail" asp-route-Id="@item.Id" class="btn btn-primary text-center">Редактиране</a>
+					<a asp-controller="Request" asp-action="Detail" asp-route-Id="@item.Id" class="btn btn-primary text-center">Детайли</a>
 				</td>
 			</tr>
 		}

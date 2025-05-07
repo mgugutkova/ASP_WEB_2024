@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using static Helpdesk.Infrastructure.Constants.DataConstants;
@@ -20,17 +21,17 @@ namespace Helpdesk.Infrastructure.Data.Model
 
 
         [Required]
-        [MaxLength(AddressMaxLength)]        
+        [MaxLength(AddressMaxLength)]
         public string Address { get; set; } = string.Empty;
 
 
-        //[Required]
-        //[MaxLength(PhoneNumberMaxLength)]
-        //public string Phone{ get; set; } = string.Empty;
+        [Required]
+        [DefaultValue("User")]
+        public string RoleName { get; set; } = string.Empty;
 
 
         [Required]
-        public int  DirectoratesUnitId { get; set; }
+        public int DirectoratesUnitId { get; set; }
 
         [Required]
         [ForeignKey(nameof(DirectoratesUnitId))]

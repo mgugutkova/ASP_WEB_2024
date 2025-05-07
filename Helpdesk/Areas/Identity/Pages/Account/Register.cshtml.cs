@@ -5,7 +5,6 @@
 using Helpdesk.Core.Interfaces;
 using Helpdesk.Core.Models.Directorates;
 using Helpdesk.Infrastructure.Data.Model;
-using Helpdesk.Infrastructure.Repo;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -150,6 +149,14 @@ namespace Helpdesk.Areas.Identity.Pages.Account
         {
             returnUrl ??= Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+
+            var roleName = "User";
+
+            if (Input.Email.StartsWith("admin@") || (Input.Email.StartsWith("Admin@")))
+            {
+                roleName = "Admin";
+            }       
+
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser
@@ -161,7 +168,8 @@ namespace Helpdesk.Areas.Identity.Pages.Account
                     Address = Input.Address,
                     PhoneNumber = Input.PhoneNumber,
                     DirectoratesUnitId = Input.DirectoratesUnitId,
-                    Position = Input.Position
+                    Position = Input.Position,
+                    RoleName = roleName
                 };
 
                 //var user = CreateUser();
@@ -170,7 +178,16 @@ namespace Helpdesk.Areas.Identity.Pages.Account
                 //await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
                 var result = await _userManager.CreateAsync(user, Input.Password);
 
-                if (result.Succeeded)
+                if (Input.Email.StartsWith("admin@") || (Input.Email.StartsWith("Admin@")))
+                {
+                    await _userManager.AddToRoleAsync(user, "Admin");
+                }
+                else
+                {
+                    await _userManager.AddToRoleAsync(user, "User");
+                }
+
+                    if (result.Succeeded)
                 {
                     //////  //_logger.LogInformation("User created a new account with password.");
 

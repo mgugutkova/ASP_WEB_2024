@@ -3,17 +3,11 @@ using Helpdesk.Core.Models.Categoris;
 using Helpdesk.Infrastructure.Data.Model;
 using Helpdesk.Infrastructure.Repo;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Helpdesk.Core.Services
 {
     public class CategoriesService : ICategoriesService
     {
-
         private readonly IRepository repository;
 
         public CategoriesService(IRepository _repository)

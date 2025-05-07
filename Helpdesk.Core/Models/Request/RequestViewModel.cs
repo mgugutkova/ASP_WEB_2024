@@ -15,7 +15,7 @@ namespace Helpdesk.Core.Models.Request
         [Required]
         public string UserId { get; set; } = string.Empty;
 
-        public string UserMI { get; set; } = string.Empty;
+        public string UserFullName { get; set; } = string.Empty;
 
         [Required]
         [StringLength(DescriptionMaxLength, MinimumLength = DescriptionMinLength, ErrorMessage = ErrorMessageLength)]
@@ -27,26 +27,34 @@ namespace Helpdesk.Core.Models.Request
         [Display(Name = "* Категория:")]
         public int CategoryId { get; set; }
 
+        public string CategoryName { get; set; } = string.Empty;
+
         public IEnumerable<AllCategoriesViewModel> CategoryList { get; set; } = new List<AllCategoriesViewModel>();
 
         [Required]
+        [Display(Name = "Подадена:")]
         public DateTime StartDate { get; set; } = DateTime.UtcNow;
 
+        [Display(Name = "Приключена:")]
         public DateTime? EndDate { get; set; }
 
         [Required]
         [Display(Name = "* Статус:")]
         public int RequestStateId { get; set; } = 1;
 
-        public string RequestState { get; set; } = null!;
+        [Display(Name = "Статус:")]
+        public string RequestState { get; set; } = string.Empty;
+       
 
-        //public Guid? OperatorId { get; set; }
+        public Guid? OperatorId { get; set; }
 
+        [Display(Name = "Разпределена:")]
+        public string? OperatorName { get; set; } = string.Empty;
         //public Operator? Operator { get; set; } = null;
 
         [StringLength(CommentMaxLength, MinimumLength = CommentMinLength, ErrorMessage = ErrorMessageLength)]
         [Display(Name = "Заключение/коментар:")]
-        public string? Comment { get; set; } = null;
+        public string? Comment { get; set; } = string.Empty;
 
         [Required]
         public bool IsActive { get; set; } = true;

@@ -1,0 +1,76 @@
+﻿@using Helpdesk.Core.Models.Request
+@model RequestViewModel
+
+@{
+	ViewBag.Title = "Детайли";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+@if (!ViewData.ModelState.IsValid && ViewData.ModelState["Error"] != null)
+{
+	<div class="alert alert-danger" role="alert">
+		@ViewData.ModelState["Error"].Errors.First().ErrorMessage
+	</div>
+}
+
+<div class="row">
+	<div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+		<form method="post">
+			<div class="form-group">
+				<label asp-for="Description"></label>
+				<input asp-for="Description" class="form-control" />
+				<span asp-validation-for="Description" class="small text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="CategoryId"></label>
+				<select asp-for="CategoryId" class="form-control" asp-items="@(new SelectList(Model.CategoryList, "Id", "Name"))">
+					<option value="CategoryId"></option>
+				</select>
+				<span asp-validation-for="CategoryId" class="small text-danger"></span>
+			</div>
+
+			<div class="form-group">
+				<label asp-for="StartDate"></label>
+				<input asp-for="StartDate" class="form-control" readonly>
+				<span asp-validation-for="StartDate" class="small text-danger"></span>
+			</div>
+
+			<div class="form-group">
+				<label asp-for="EndDate"></label>
+				<input asp-for="EndDate" class="form-control" readonly>
+				<span asp-validation-for="EndDate" class="small text-danger"></span>
+			</div>
+
+			<div class="form-group">
+				<label asp-for="RequestState"></label>
+				<input asp-for="RequestState" class="form-control" readonly>
+				<span asp-validation-for="RequestState" class="small text-danger"></span>
+			</div>
+
+			<div class="form-group">
+				<label asp-for="Comment"></label>
+				<input asp-for="Comment" class="form-control" readonly>			
+				<span asp-validation-for="Comment" class="small text-danger"></span>
+			</div>
+
+			<div class=" text-center">
+				<input class="btn btn-primary mt-3" type="submit" value="Save" />
+			</div>
+			<div class="form-group">
+				<span><br /></span>
+			</div>
+		</form>
+		<div class="text-center">
+			<a asp-controller="Request" asp-action="MyRequests" class="btn btn-secondary">Back</a>
+		</div>
+	</div>
+</div>
+
+@section Scripts {
+	<partial name="_ValidationScriptsPartial" />
+	<script src="/../../js/site.js"></script>
+}
+
+
