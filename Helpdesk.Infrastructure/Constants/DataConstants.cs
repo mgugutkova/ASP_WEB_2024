@@ -35,5 +35,7 @@
         public const string DataFormat = "dd/MM/yyyy";
 
         public const string ErrorMessageLength = "The field {0} must be between {2} and {1} characters";
+
+        public const int ItemsPerPage = 5;
     }
 }

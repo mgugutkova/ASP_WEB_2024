@@ -14,7 +14,8 @@ namespace Helpdesk.Core.Interfaces
 
         Task<IEnumerable<UserViewModel>> AllUsersAsync();
         Task<UsersServiceQueryModel> AllUsersQueryAsync(
-            string? searchTerm = null,
+            string? searchTerm = null,          
+            int dirId = 0,
             int currentPage = 1,
             int usersPerPage = 10);
     }

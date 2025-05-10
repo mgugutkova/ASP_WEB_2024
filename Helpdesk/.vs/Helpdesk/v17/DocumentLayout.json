@@ -3,15 +3,15 @@
   "WorkspaceRootPath": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\helpdesk\\areas\\admin\\views\\users\\searchformquery.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|solutionrelative:areas\\admin\\views\\users\\searchformquery.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\helpdesk\\areas\\admin\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|solutionrelative:areas\\admin\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F8C53BE2-E47B-495C-A635-04684A1A9FE3}|..\\Helpdesk.Core\\Helpdesk.Core.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\helpdesk.core\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\helpdesk\\areas\\admin\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|solutionrelative:areas\\admin\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\helpdesk\\areas\\admin\\views\\users\\searchformquery.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|solutionrelative:areas\\admin\\views\\users\\searchformquery.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F8C53BE2-E47B-495C-A635-04684A1A9FE3}|..\\Helpdesk.Core\\Helpdesk.Core.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\helpdesk.core\\models\\applicationuser\\allusersqueryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -31,7 +31,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -55,41 +55,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SearchFormQuery.cshtml",
-              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\Areas\\Admin\\Views\\Users\\SearchFormQuery.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Users\\SearchFormQuery.cshtml",
-              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\Areas\\Admin\\Views\\Users\\SearchFormQuery.cshtml",
-              "RelativeToolTip": "Areas\\Admin\\Views\\Users\\SearchFormQuery.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAIwAwAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-02T14:28:22.419Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
               "Title": "UsersServiceQueryModel.cs",
               "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk.Core\\Models\\ApplicationUser\\UsersServiceQueryModel.cs",
               "RelativeDocumentMoniker": "..\\Helpdesk.Core\\Models\\ApplicationUser\\UsersServiceQueryModel.cs",
               "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk.Core\\Models\\ApplicationUser\\UsersServiceQueryModel.cs",
               "RelativeToolTip": "..\\Helpdesk.Core\\Models\\ApplicationUser\\UsersServiceQueryModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-02T12:14:58.779Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\Areas\\Admin\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\UsersController.cs",
-              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\Areas\\Admin\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "Areas\\Admin\\Controllers\\UsersController.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAowCIAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T14:05:40.842Z",
               "EditorCaption": ""
             },
             {
@@ -100,9 +74,35 @@
               "RelativeDocumentMoniker": "..\\Helpdesk.Core\\Services\\UserService.cs",
               "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk.Core\\Services\\UserService.cs",
               "RelativeToolTip": "..\\Helpdesk.Core\\Services\\UserService.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAAAEsAAABMAAAAAAAAAA==",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAnwE8AAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T12:50:36.834Z",
+              "WhenOpened": "2025-05-10T06:53:57.345Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SearchFormQuery.cshtml",
+              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\Areas\\Admin\\Views\\Users\\SearchFormQuery.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Users\\SearchFormQuery.cshtml",
+              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\Areas\\Admin\\Views\\Users\\SearchFormQuery.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\Users\\SearchFormQuery.cshtml",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAAAG4AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-02T14:28:22.419Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\Areas\\Admin\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\Areas\\Admin\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Areas\\Admin\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAMwC0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T14:05:40.842Z",
               "EditorCaption": ""
             },
             {
@@ -113,7 +113,7 @@
               "RelativeDocumentMoniker": "..\\Helpdesk.Core\\Models\\ApplicationUser\\AllUsersQueryViewModel.cs",
               "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk.Core\\Models\\ApplicationUser\\AllUsersQueryViewModel.cs",
               "RelativeToolTip": "..\\Helpdesk.Core\\Models\\ApplicationUser\\AllUsersQueryViewModel.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABEAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwA8AAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-02T11:58:16.371Z",
               "EditorCaption": ""

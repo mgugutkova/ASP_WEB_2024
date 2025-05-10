@@ -9,10 +9,20 @@
 <hr />
 
 <form method="get">
+
 	<div class="row">
 		<div class="form-group col-md-3">
 			<label asp-for="SearchItem">Търси</label>
 			<input asp-for="SearchItem" class="form-control" placeholder="...">
+		</div>
+
+		<div class="form-group col-md-3 d-flex justify-content-between">
+			<div class="form-group">
+				<label asp-for="dirId">Дирекции</label>
+				<select asp-for="dirId" class="form-control" aria-required="true" asp-items="@(new SelectList(@Model.DirectoratesList, "Id", "Name"))">
+					<option value="">Изберете</option>
+				</select>	
+			</div>
 		</div>
 		<div class="col-md-3">
 			<div class="form-group mt-4 p-2">
@@ -104,5 +114,6 @@ else
 
 <div class="text-center">
 
-	<h3> Total Users: &nbsp; @Model.TotalUsersCount</h3>
+@* 	<h3> Total Users: &nbsp; @Model.TotalUsersCount</h3> *@
+	<h3> Users: &nbsp; @Model.FoundUsersCount</h3>
 </div>

@@ -3,32 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{EB9D42F1-5BB7-4D3A-AFEF-9E6DFCF7937B}|PawnShop.Core\\PawnShop.Core.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\pawnshopproject\\pawnshop\\pawnshop.core\\models\\agreement\\agreementservicequerymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB9D42F1-5BB7-4D3A-AFEF-9E6DFCF7937B}|PawnShop.Core\\PawnShop.Core.csproj|solutionrelative:pawnshop.core\\models\\agreement\\agreementservicequerymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E63C296A-E282-424F-A8A7-ACFEF8F2448F}|PawnShop\\PawnShop.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\pawnshopproject\\pawnshop\\pawnshop\\areas\\admin\\views\\agreement\\all.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E63C296A-E282-424F-A8A7-ACFEF8F2448F}|PawnShop\\PawnShop.csproj|solutionrelative:pawnshop\\areas\\admin\\views\\agreement\\all.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB9D42F1-5BB7-4D3A-AFEF-9E6DFCF7937B}|PawnShop.Core\\PawnShop.Core.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\pawnshopproject\\pawnshop\\pawnshop.core\\services\\agreementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB9D42F1-5BB7-4D3A-AFEF-9E6DFCF7937B}|PawnShop.Core\\PawnShop.Core.csproj|solutionrelative:pawnshop.core\\services\\agreementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB9D42F1-5BB7-4D3A-AFEF-9E6DFCF7937B}|PawnShop.Core\\PawnShop.Core.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\pawnshopproject\\pawnshop\\pawnshop.core\\models\\agreement\\allagreementqueryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB9D42F1-5BB7-4D3A-AFEF-9E6DFCF7937B}|PawnShop.Core\\PawnShop.Core.csproj|solutionrelative:pawnshop.core\\models\\agreement\\allagreementqueryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E63C296A-E282-424F-A8A7-ACFEF8F2448F}|PawnShop\\PawnShop.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\pawnshopproject\\pawnshop\\pawnshop\\areas\\admin\\controllers\\agreementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E63C296A-E282-424F-A8A7-ACFEF8F2448F}|PawnShop\\PawnShop.csproj|solutionrelative:pawnshop\\areas\\admin\\controllers\\agreementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB9D42F1-5BB7-4D3A-AFEF-9E6DFCF7937B}|PawnShop.Core\\PawnShop.Core.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\pawnshopproject\\pawnshop\\pawnshop.core\\models\\agreement\\agreementservicequerymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB9D42F1-5BB7-4D3A-AFEF-9E6DFCF7937B}|PawnShop.Core\\PawnShop.Core.csproj|solutionrelative:pawnshop.core\\models\\agreement\\agreementservicequerymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E63C296A-E282-424F-A8A7-ACFEF8F2448F}|PawnShop\\PawnShop.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\pawnshopproject\\pawnshop\\pawnshop\\areas\\admin\\views\\shared\\_agreementpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E63C296A-E282-424F-A8A7-ACFEF8F2448F}|PawnShop\\PawnShop.csproj|solutionrelative:pawnshop\\areas\\admin\\views\\shared\\_agreementpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E63C296A-E282-424F-A8A7-ACFEF8F2448F}|PawnShop\\PawnShop.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\pawnshopproject\\pawnshop\\pawnshop\\areas\\admin\\views\\users\\all.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E63C296A-E282-424F-A8A7-ACFEF8F2448F}|PawnShop\\PawnShop.csproj|solutionrelative:pawnshop\\areas\\admin\\views\\users\\all.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E63C296A-E282-424F-A8A7-ACFEF8F2448F}|PawnShop\\PawnShop.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\pawnshopproject\\pawnshop\\pawnshop\\areas\\admin\\views\\agreement\\allagreements.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E63C296A-E282-424F-A8A7-ACFEF8F2448F}|PawnShop\\PawnShop.csproj|solutionrelative:pawnshop\\areas\\admin\\views\\agreement\\allagreements.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{EB9D42F1-5BB7-4D3A-AFEF-9E6DFCF7937B}|PawnShop.Core\\PawnShop.Core.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\pawnshopproject\\pawnshop\\pawnshop.core\\services\\agreementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB9D42F1-5BB7-4D3A-AFEF-9E6DFCF7937B}|PawnShop.Core\\PawnShop.Core.csproj|solutionrelative:pawnshop.core\\services\\agreementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,7 +54,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "AllAgreementQueryViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Core\\Models\\Agreement\\AllAgreementQueryViewModel.cs",
+              "RelativeDocumentMoniker": "PawnShop.Core\\Models\\Agreement\\AllAgreementQueryViewModel.cs",
+              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Core\\Models\\Agreement\\AllAgreementQueryViewModel.cs",
+              "RelativeToolTip": "PawnShop.Core\\Models\\Agreement\\AllAgreementQueryViewModel.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwBMAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T13:51:50.942Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "AgreementServiceQueryModel.cs",
               "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Core\\Models\\Agreement\\AgreementServiceQueryModel.cs",
               "RelativeDocumentMoniker": "PawnShop.Core\\Models\\Agreement\\AgreementServiceQueryModel.cs",
@@ -70,36 +75,38 @@
               "RelativeToolTip": "PawnShop.Core\\Models\\Agreement\\AgreementServiceQueryModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T12:03:34.822Z"
+              "WhenOpened": "2025-05-02T12:03:34.822Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "AgreementController.cs",
               "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop\\Areas\\Admin\\Controllers\\AgreementController.cs",
               "RelativeDocumentMoniker": "PawnShop\\Areas\\Admin\\Controllers\\AgreementController.cs",
               "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop\\Areas\\Admin\\Controllers\\AgreementController.cs",
               "RelativeToolTip": "PawnShop\\Areas\\Admin\\Controllers\\AgreementController.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAA9wCYAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowCYAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T15:03:18.069Z"
+              "WhenOpened": "2025-04-30T15:03:18.069Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "All.cshtml",
               "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop\\Areas\\Admin\\Views\\Agreement\\All.cshtml",
               "RelativeDocumentMoniker": "PawnShop\\Areas\\Admin\\Views\\Agreement\\All.cshtml",
               "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop\\Areas\\Admin\\Views\\Agreement\\All.cshtml",
               "RelativeToolTip": "PawnShop\\Areas\\Admin\\Views\\Agreement\\All.cshtml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAB0AAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-05-02T16:43:49.715Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "AgreementService.cs",
               "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop.Core\\Services\\AgreementService.cs",
               "RelativeDocumentMoniker": "PawnShop.Core\\Services\\AgreementService.cs",
@@ -107,44 +114,7 @@
               "RelativeToolTip": "PawnShop.Core\\Services\\AgreementService.cs",
               "ViewState": "AgIAAEsAAAAAAAAAAAAIwE4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T15:02:10.497Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "_AgreementPartial.cshtml",
-              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop\\Areas\\Admin\\Views\\Shared\\_AgreementPartial.cshtml",
-              "RelativeDocumentMoniker": "PawnShop\\Areas\\Admin\\Views\\Shared\\_AgreementPartial.cshtml",
-              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop\\Areas\\Admin\\Views\\Shared\\_AgreementPartial.cshtml",
-              "RelativeToolTip": "PawnShop\\Areas\\Admin\\Views\\Shared\\_AgreementPartial.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-02T16:58:41.992Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "All.cshtml",
-              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop\\Areas\\Admin\\Views\\Users\\All.cshtml",
-              "RelativeDocumentMoniker": "PawnShop\\Areas\\Admin\\Views\\Users\\All.cshtml",
-              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop\\Areas\\Admin\\Views\\Users\\All.cshtml",
-              "RelativeToolTip": "PawnShop\\Areas\\Admin\\Views\\Users\\All.cshtml",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAAAAoAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-02T16:43:32.542Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AllAgreements.cshtml",
-              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop\\Areas\\Admin\\Views\\Agreement\\AllAgreements.cshtml",
-              "RelativeDocumentMoniker": "PawnShop\\Areas\\Admin\\Views\\Agreement\\AllAgreements.cshtml",
-              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\PawnShopProject\\PawnShop\\PawnShop\\Areas\\Admin\\Views\\Agreement\\AllAgreements.cshtml",
-              "RelativeToolTip": "PawnShop\\Areas\\Admin\\Views\\Agreement\\AllAgreements.cshtml",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-30T15:04:44.454Z"
+              "WhenOpened": "2025-04-30T15:02:10.497Z"
             }
           ]
         }
