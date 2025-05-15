@@ -45,5 +45,34 @@ namespace Helpdesk.Areas.Admin.Controllers
 
             return View(query);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> EditUser(string userId)
+        {
+            var model = await userService.GetUserByIdAsync(userId);
+
+            if (model == null)
+            {
+                return NotFound();
+            }
+            //  var directorates = await directoratesService.AllDirectoratesAsync();
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditUser(UpdateUserViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            var id = model.UserId;
+            await userService.EditUserByIdAsync(model.UserId, model);
+
+            TempData["SuccessMessage"] = "User edited successfully!";
+
+            return RedirectToAction("SearchFormQuery");
+        }
     }
 }

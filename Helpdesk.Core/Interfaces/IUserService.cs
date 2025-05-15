@@ -10,7 +10,8 @@ namespace Helpdesk.Core.Interfaces
 {
     public interface IUserService
     {
-        Task<ApplicationUser?> GetUserByIdAsync(string userId);
+        Task<UpdateUserViewModel?> GetUserByIdAsync(string userId);
+        Task EditUserByIdAsync(string userId, UpdateUserViewModel model);
 
         Task<IEnumerable<UserViewModel>> AllUsersAsync();
         Task<UsersServiceQueryModel> AllUsersQueryAsync(

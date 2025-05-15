@@ -1,4 +1,5 @@
-﻿using Helpdesk.Core.Models.Request;
+﻿using Helpdesk.Core.Models.Directorates;
+using Helpdesk.Core.Models.Request;
 using Helpdesk.Infrastructure.Data.Model;
 using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
@@ -10,6 +11,7 @@ namespace Helpdesk.Core.Models.ApplicationUser
     {
         [Required]
         public string UserId { get; set; } = string.Empty;
+        public string UserName { get; set; } = string.Empty;
 
         [Required]
         public string Email { get; set; } = string.Empty;
@@ -50,6 +52,8 @@ namespace Helpdesk.Core.Models.ApplicationUser
         public string RoleName { get; set; } = string.Empty;
 
         public virtual ICollection<RequestViewModel> Requests { get; set; } = new HashSet<RequestViewModel>();
+
+        public IEnumerable<AllDirectoratesViewModel> DirectoratesList { get; set; } = new HashSet<AllDirectoratesViewModel>();
 
     }
 }

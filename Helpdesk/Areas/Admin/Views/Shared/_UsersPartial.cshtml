@@ -10,4 +10,15 @@
 	<td>@Model.Address</td>
 	<td>@Model.Position</td>
 	<td>@Model.DirectorateName</td>
+	<td style="display:none">@Model.UserId </td>
+
+	@if (Model.UserName.ToLower().Contains("admin"))
+	{
+		<td>&nbsp;</td>
+	}
+	else
+	{
+		
+	<td><a asp-controller="Users" asp-action="EditUser" asp-route-userId="@Model.UserId" class="btn btn-primary text-center">Редактиране</a></td>
+	}
 </tr>
