@@ -29,6 +29,8 @@ namespace Helpdesk.Areas.Admin.Controllers
         {
             var model = await userService.AllUsersQueryAsync(
                  query.SearchItem,              
+                 query.SortItem,  
+               //  query.Status.Active,               // Status.Active,
                  query.dirId,
                  query.CurrentPage,
                  query.UsersPerPage);
@@ -42,6 +44,7 @@ namespace Helpdesk.Areas.Admin.Controllers
             query.UsersPerPage = model.UsersPerPage;
             query.UsersListAll = model.UsersLists;
             query.DirectoratesList = await directoratesService.AllDirectoratesAsync();
+            query.SortItem = model.SortItem;
 
             return View(query);
         }

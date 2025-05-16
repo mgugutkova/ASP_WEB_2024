@@ -41,6 +41,9 @@ namespace Helpdesk.Infrastructure.Data.Model
         [MaxLength(PositionMaxLength)]
         public string? Position { get; set; } = null;
 
+        [Required]
+        public bool IsActive { get; set; } = true;
+
         public virtual ICollection<Request> Requests { get; set; } = new HashSet<Request>();  // maybe not need
     }
 }

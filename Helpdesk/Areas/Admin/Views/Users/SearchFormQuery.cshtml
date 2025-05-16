@@ -1,4 +1,5 @@
-﻿@using Helpdesk.Core.Models.ApplicationUser
+﻿@using Helpdesk.Core.Enumeration
+@using Helpdesk.Core.Models.ApplicationUser
 @model AllUsersQueryViewModel
 
 @{
@@ -21,9 +22,22 @@
 				<label asp-for="dirId">Дирекции</label>
 				<select asp-for="dirId" class="form-control" aria-required="true" asp-items="@(new SelectList(@Model.DirectoratesList, "Id", "Name"))">
 					<option value="">Изберете</option>
-				</select>	
+				</select>
 			</div>
 		</div>
+
+		<div class="form-group  col-md-3">
+			<label asp-for="SortItem">Select State</label>
+			<select asp-for="SortItem" class="form-control" aria-required="true">
+				<optgroup label="Select Status">
+					@foreach (var item in Enum.GetNames(typeof(Status)))
+					{
+						<option value="@item">@item</option>
+					}
+				</optgroup>
+			</select>			
+		</div>
+
 		<div class="col-md-3">
 			<div class="form-group mt-4 p-2">
 				<input type="submit" value="Search" class="btn btn-primary" />
@@ -44,7 +58,7 @@
 		nextPage = Model.TotalPages;
 	}
 
-	var maxPage = Math.Ceiling((double)Model.TotalUsersCount / Model.UsersPerPage);	
+	var maxPage = Math.Ceiling((double)Model.TotalUsersCount / Model.UsersPerPage);
 }
 
 <div class="row mb-5">
@@ -116,6 +130,6 @@ else
 
 <div class="text-center">
 
-@* 	<h3> Total Users: &nbsp; @Model.TotalUsersCount</h3> *@
+	@* 	<h3> Total Users: &nbsp; @Model.TotalUsersCount</h3> *@
 	<h3> Users: &nbsp; @Model.FoundUsersCount</h3>
 </div>

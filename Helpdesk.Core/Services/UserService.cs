@@ -46,117 +46,86 @@ namespace Helpdesk.Core.Services
         }
 
         public async Task<UsersServiceQueryModel> AllUsersQueryAsync(
-            string? searchTerm = null,
+            string? searchTerm = null,         
+            Status sortItem = Status.Active,
             int dirId = 0,
             int currentPage = 1,
             int usersPerPage = 1)
         {
-            var usersAll = await userManager.Users
-           .Select(x => new UserViewModel()
-           {
-               UserId = x.Id,
-               UserName = x.UserName ?? string.Empty,
-               Email = x.Email ?? string.Empty,
-               FirstName = x.FirstName,
-               LastName = x.LastName,
-               Address = x.Address,
-               PhoneNumber = x.PhoneNumber ?? string.Empty,
-               Position = x.Position,
-               DirectoratesUnit = x.DirectoratesUnit,
-               DirectorateName = x.DirectoratesUnit.Name,
-               DirectoratesUnitId = x.DirectoratesUnit.Id,
-               RoleName = x.RoleName,
-           })
-           .OrderBy(x => x.FirstName)
-           //.Skip((currentPage - 1) * usersPerPage)
-           //.Take(usersPerPage)
-           .ToListAsync();
 
-            // var findUsersCount = usersToShow.Count();
-            var findUsersCount = usersAll.Count();
+            var usersAll = userManager.Users.AsQueryable();         
 
-            var usersToShow = usersAll
-               .Skip((currentPage - 1) * usersPerPage)
-               .Take(usersPerPage);
-
+            if (sortItem == Status.NoActive)
+            {
+                usersAll = userManager.Users
+                    .Where(x => x.IsActive == false);
+            }
+            else if (sortItem == Status.All)
+            {
+                usersAll = userManager.Users
+                    .Where(x => x.UserName != null);
+            }
+            else if (sortItem == Status.Active)
+            {
+                usersAll = userManager.Users
+                    .Where(x => x.IsActive == true);
+            }
 
 
             if (searchTerm != null)
             {
                 string normalizeSearchTerm = searchTerm.ToLower();
 
-                //  var usersQuery = await userManager.Users
-                usersToShow = await userManager.Users
-
+                usersAll = usersAll
                     .Where(x =>
                        x.FirstName.ToLower().Contains(normalizeSearchTerm) ||
                        x.LastName.ToLower().Contains(normalizeSearchTerm) ||
                        x.Address.ToLower().Contains(normalizeSearchTerm) ||
                        x.Email.ToLower().Contains(normalizeSearchTerm) ||
                        x.UserName.ToLower().Contains(normalizeSearchTerm)
-                       )
-                     .Select(u => new UserViewModel()
-                     {
-                         UserId = u.Id,
-                         UserName = u.UserName ?? string.Empty,
-                         Email = u.Email ?? string.Empty,
-                         FirstName = u.FirstName,
-                         LastName = u.LastName,
-                         Address = u.Address,
-                         PhoneNumber = u.PhoneNumber ?? string.Empty,
-                         Position = u.Position,
-                         DirectoratesUnit = u.DirectoratesUnit,
-                         DirectorateName = u.DirectoratesUnit.Name
-                         //RoleName = x.RoleName,
-                     })
-                    .OrderBy(u => u.FirstName)
-                    .Skip((currentPage - 1) * usersPerPage)
-                    .Take(usersPerPage)
-                    .ToListAsync();
-
-                findUsersCount = usersToShow.Count();
+                       );       
             }
 
 
             if (dirId != 0)
             {
-                usersToShow = await userManager.Users
-                    .Where(x => x.DirectoratesUnitId == dirId)
-                     .Select(u => new UserViewModel()
-                     {
-                         UserId = u.Id,
-                         UserName = u.UserName ?? string.Empty,
-                         Email = u.Email ?? string.Empty,
-                         FirstName = u.FirstName,
-                         LastName = u.LastName,
-                         Address = u.Address,
-                         PhoneNumber = u.PhoneNumber ?? string.Empty,
-                         Position = u.Position,
-                         DirectoratesUnit = u.DirectoratesUnit,
-                         DirectorateName = u.DirectoratesUnit.Name
-                     })
-                    .OrderBy(u => u.FirstName)
-                    .Skip((currentPage - 1) * usersPerPage)
-                    .Take(usersPerPage)
-                    .ToListAsync();
-
-                findUsersCount = usersToShow.Count();
-            }
+                usersAll = usersAll
+                   .Where(x => x.DirectoratesUnitId == dirId);                        
+            }      
 
 
-            //   var totalUsersCount = usersAll.Count();
+            var findUsersCount = usersAll.Count();
+
+            var usersToShow = await usersAll
+                  .Skip((currentPage - 1) * usersPerPage)
+                  .Take(usersPerPage)
+                  .Select(x => new UserViewModel()
+                  {
+                      UserId = x.Id,
+                      UserName = x.UserName ?? string.Empty,
+                      Email = x.Email ?? string.Empty,
+                      FirstName = x.FirstName,
+                      LastName = x.LastName,
+                      Address = x.Address,
+                      PhoneNumber = x.PhoneNumber ?? string.Empty,
+                      Position = x.Position,
+                      DirectoratesUnit = x.DirectoratesUnit,
+                      DirectorateName = x.DirectoratesUnit.Name,
+                      DirectoratesUnitId = x.DirectoratesUnit.Id,
+                      RoleName = x.RoleName,
+                  })
+                  .OrderBy(x => x.FirstName)
+                  .ToListAsync();
 
             var totalPagesCount = (int)Math.Ceiling((double)findUsersCount / usersPerPage);
 
             return new UsersServiceQueryModel
-            {
-                // TotalUsersCount = totalUsersCount,
+            {               
                 TotalUsersCount = await userManager.Users.CountAsync(),
                 FoundUsersCount = findUsersCount,
                 TotalPagesCount = totalPagesCount,
                 UsersPerPage = usersPerPage,
                 UsersLists = usersToShow
-
             };
         }
 
@@ -173,6 +142,7 @@ namespace Helpdesk.Core.Services
             user.PhoneNumber = model.PhoneNumber;
             user.Position = model.Position;
             user.DirectoratesUnitId = model.DirectoratesUnitId;
+            user.IsActive = model.IsActive;
             user.RoleName = model.RoleName;
 
             await userManager.AddToRoleAsync(user, model.RoleName);
@@ -197,7 +167,8 @@ namespace Helpdesk.Core.Services
                 Address = user.Address,
                 PhoneNumber = user.PhoneNumber ?? string.Empty,
                 Position = user.Position,
-                RoleName = Enum.Parse(typeof(RoleNameItems), user.RoleName).ToString() ?? string.Empty,        
+                RoleName = Enum.Parse(typeof(RoleNameItems), user.RoleName).ToString() ?? string.Empty,
+                IsActive = user.IsActive,
                 DirectoratesUnitId = user.DirectoratesUnitId,
                 DirectoratesList = await repository.All<DirectoratesUnit>()
                     .Select(d => new AllDirectoratesViewModel

@@ -1,4 +1,5 @@
-﻿using Helpdesk.Core.Models.ApplicationUser;
+﻿using Helpdesk.Core.Enumeration;
+using Helpdesk.Core.Models.ApplicationUser;
 using Helpdesk.Infrastructure.Data.Model;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,8 @@ namespace Helpdesk.Core.Interfaces
         Task<IEnumerable<UserViewModel>> AllUsersAsync();
         Task<UsersServiceQueryModel> AllUsersQueryAsync(
             string? searchTerm = null,          
+           // string? sortItem = null,
+            Status sortItem = Status.Active,
             int dirId = 0,
             int currentPage = 1,
             int usersPerPage = 10);

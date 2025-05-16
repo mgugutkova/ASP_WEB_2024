@@ -26,7 +26,9 @@ namespace Helpdesk.Core.Models.ApplicationUser
 
         public string? Position { get; set; } = null;
     
-        public string RoleName { get; set; } = string.Empty;  
+        public string RoleName { get; set; } = string.Empty;
+
+        public bool IsActive { get; set; } 
 
         //public virtual ICollection<RequestViewModel> Requests { get; set; } = new HashSet<RequestViewModel>();
 

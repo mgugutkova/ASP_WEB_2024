@@ -1,4 +1,5 @@
-﻿using Helpdesk.Core.Models.Directorates;
+﻿using Helpdesk.Core.Enumeration;
+using Helpdesk.Core.Models.Directorates;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using static Helpdesk.Infrastructure.Constants.DataConstants;
@@ -10,7 +11,8 @@ namespace Helpdesk.Core.Models.ApplicationUser
         public int UsersPerPage { get; set; } = ItemsPerPage;
 
         [Display(Name = "Search by text")]
-        public string SearchItem { get; set; } = null!;     
+        public string SearchItem { get; set; } = null!;
+        public Status SortItem { get; set; }      
         public int dirId { get; set; }
         public int CurrentPage { get; set; } = 1;
         public int TotalUsersCount { get; set; }
