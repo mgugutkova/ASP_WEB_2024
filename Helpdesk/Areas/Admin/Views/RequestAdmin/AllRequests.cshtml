@@ -1,0 +1,48 @@
+﻿@using Helpdesk.Core.Models.Request
+@model IEnumerable<RequestViewModel>
+@{
+	ViewBag.Title = "All Requests";
+}
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+@if (!ViewData.ModelState.IsValid && ViewData.ModelState["Error"] != null)
+{
+	<div class="alert alert-danger" role="alert">
+		@ViewData.ModelState["Error"].Errors.First().ErrorMessage
+	</div>
+}
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>Име</th>
+			<th>Наименование</th>
+			<th>Дата</th>
+			<th>ID</th>
+			
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr class="request-row" data-id="@item.Id">
+				<td>@item.UserFullName</td>
+				<td>@item.Description</td>
+				<td>@item.StartDate</td>
+				<td>@item.Id</td>
+				
+
+			@* 	<td>
+					<a asp-controller="Directorate" asp-action="EditDirectorate" asp-route-Id="@item.Id" class="btn btn-danger">Редактиране</a>
+				</td> *@
+			</tr>
+		}
+	</tbody>
+</table>
+<div id="requestDetails" class="mt-4">
+	<p>Посочи заявка за подробности...</p>
+</div>
+
+@section Scripts {
+	<script src="~/js/RequestDetail.js"></script>
+}

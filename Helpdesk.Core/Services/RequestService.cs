@@ -1,9 +1,11 @@
 ﻿using Helpdesk.Core.Interfaces;
+using Helpdesk.Core.Models.ApplicationUser;
 using Helpdesk.Core.Models.Categoris;
 using Helpdesk.Core.Models.Request;
 using Helpdesk.Infrastructure.Data.Model;
 using Helpdesk.Infrastructure.Repo;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
@@ -12,21 +14,21 @@ namespace Helpdesk.Core.Services
     public class RequestService : IRequestService
     {
         private readonly IRepository repository;
-        // private readonly UserManager<ApplicationUser> userManager;
+        private readonly UserManager<ApplicationUser> userManager;
         //private readonly IUserService userService;
         //private readonly IUserStore<ApplicationUser> userStore;
         private readonly IHttpContextAccessor httpContextAccessor;
 
 
         public RequestService(IRepository _repository,
-            //UserManager<ApplicationUser> _userManager,
+            UserManager<ApplicationUser> _userManager,
             //IUserService _userService,
             //IUserStore<ApplicationUser> _userStore,
             IHttpContextAccessor _httpContextAccessor
 )
         {
             repository = _repository;
-            // userManager = _userManager;
+            userManager = _userManager;
             //userService = _userService;
             //userStore = _userStore;
             httpContextAccessor = _httpContextAccessor;
@@ -51,9 +53,31 @@ namespace Helpdesk.Core.Services
             await repository.SaveChangesAsync();
         }
 
-        public Task<IEnumerable<RequestViewModel>> AllRequestAsync()
+        public async Task<IEnumerable<RequestViewModel>> AllRequestAsync()
         {
-            throw new NotImplementedException();
+            var requests = await repository.All<Request>()            
+               .Where(x => x.IsActive == true)
+               .Select(r => new RequestViewModel()
+               {
+                   Id = r.Id,
+                   Description = r.Description,
+                   UserId = r.UserId,
+                   CategoryId = r.CategoryId,
+                   StartDate = r.StartDate,
+                   EndDate = r.EndDate,
+                   RequestStateId = r.RequestStateId,
+                   RequestState = r.RequestState.Name,
+                   OperatorId = r.OperatorId,
+                   OperatorName = r.Operator.UserId ?? string.Empty,
+                   Comment = r.Comment,
+                   IsActive = r.IsActive,
+                   CategoryName = r.Category.Name,
+                   UserFullName = r.UserMI.FirstName + " " + r.UserMI.LastName,          
+
+               })
+               .ToListAsync();
+
+            return requests;
         }
 
         public async Task EditRequestAsync(Guid id, RequestViewModel model)

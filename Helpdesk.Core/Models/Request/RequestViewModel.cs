@@ -1,8 +1,5 @@
 ﻿using Helpdesk.Core.Models.Categoris;
-using Helpdesk.Infrastructure.Data.Model;
-using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using static Helpdesk.Infrastructure.Constants.DataConstants;
 
 namespace Helpdesk.Core.Models.Request
@@ -13,7 +10,7 @@ namespace Helpdesk.Core.Models.Request
         public Guid Id { get; set; }
 
         [Required]
-        public string UserId { get; set; } = string.Empty;
+        public string UserId { get; set; } = string.Empty; 
 
         public string UserFullName { get; set; } = string.Empty;
 
