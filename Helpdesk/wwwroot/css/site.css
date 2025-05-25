@@ -20,7 +20,36 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.table-active {
+    background-color: #dcecfb !important;
+}
+
+.request-table-container {
+    max-height: 250px; /* Можеш да смениш според нуждите */
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+    .request-table-container table {
+        margin-bottom: 0;
+    }
+
+
 .request-row:hover {
     background-color: #f0f8ff;
     cursor: pointer;
+}
+
+.request-row.active-row {
+    background-color: #d0ebff !important;
+    font-weight: bold;
+}
+
+.request-row .status-cell {
+    text-align: center;
+    width: 40px;
+    font-size: 18px;
+    color: #0d6efd;
 }

@@ -36,7 +36,6 @@ namespace Helpdesk.Infrastructure.Data.Model
         [Required]
         public int RequestStateId { get; set; }
 
-
         [Required]
         [ForeignKey(nameof(RequestStateId))]
         public RequestState RequestState { get; set; } = null!;

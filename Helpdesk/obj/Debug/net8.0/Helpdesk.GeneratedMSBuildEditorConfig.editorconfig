@@ -60,8 +60,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUmVxdWVzdEFkbWluXEFsbFJlcXVlc3RzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/Helpdesk/Areas/Admin/Views/RequestAdmin/_DetailsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUmVxdWVzdEFkbWluXF9EZXRhaWxzUGFydGlhbC5jc2h0bWw=
+[C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/Helpdesk/Areas/Admin/Views/RequestAdmin/DetailsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUmVxdWVzdEFkbWluXERldGFpbHNQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/Helpdesk/Areas/Admin/Views/RequestAdmin/EditPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUmVxdWVzdEFkbWluXEVkaXRQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Mariana/Documents/GitHub/ASP_WEB_2024/Helpdesk/Areas/Admin/Views/RequestState/AddRequestState.cshtml]

@@ -12,8 +12,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>jbsxpl853o</Fingerprint>
-      <Integrity>n/q6BP7e2915iQM9CcWKu5YELBMq5cAb9m2Gh1VDjd8=</Integrity>
+      <Fingerprint>7oizsk3ehw</Fingerprint>
+      <Integrity>uZoutl7tOHmhEmD9w61kwetN8VVneTtMM/xcErqJQHI=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</OriginalItemSpec>
@@ -54,6 +54,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Helpdesk.6xk2jt9e1r.bundle.scp.css'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\RequestDetail - Copy.js'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Helpdesk</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Helpdesk</BasePath>
+      <RelativePath>js/RequestDetail - Copy.js</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>nqvav4djzy</Fingerprint>
+      <Integrity>0aGViceaMevjJ8Yi07scgaZIxRB9ioiw1x3ENoEnlm4=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\RequestDetail - Copy.js'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\RequestDetail.js'))">
       <SourceType>Package</SourceType>
       <SourceId>Helpdesk</SourceId>
@@ -66,8 +84,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>evwhx8iinq</Fingerprint>
-      <Integrity>qkGuK0DOVlgwyxkTZAsz8i98jDrIMEKpwG2zlLjgJic=</Integrity>
+      <Fingerprint>8lwvkanmpw</Fingerprint>
+      <Integrity>vKJuaLtpi3wvqDYu5esLIq+/ccvT2mc6ZAHK2ovLL8s=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\RequestDetail.js'))</OriginalItemSpec>

@@ -1,10 +1,11 @@
 ﻿document.addEventListener('DOMContentLoaded', function () {
     const rows = document.querySelectorAll('.request-row');
     const detailsContainer = document.getElementById('detailsContainer');
-    let lastHoveredId = null;
+    let lastProductId = null;
     let isEditing = false;
 
     function loadDetails(id) {
+
         if (isEditing || lastHoveredId === id) return;
 
         lastHoveredId = id;
@@ -34,7 +35,7 @@
             })
             .then(html => {
                 detailsContainer.innerHTML = html;
-                attachFormSubmitHandler(); // handle form submit
+                attachFormSubmitHandler(); // добавяме submit логиката
             })
             .catch(error => {
                 detailsContainer.innerHTML = `<p style="color:red;">${error.message}</p>`;
@@ -62,13 +63,28 @@
                 .then(() => {
                     isEditing = false;
                     lastHoveredId = null;
-                    loadDetails(id); // Презарежда детайли
+                    loadDetails(id); // презареждаме подробностите след запис
+                    //   updateTableRow(id, formData); // обновяваме реда в таблицата
                     clearActiveRowIndicators();
                 })
                 .catch(error => {
+                    console.error("Грешка при запис-catch:", error);
                     detailsContainer.innerHTML += `<p style="color:red;">${error.message}</p>`;
                 });
+
+            //.catch(error => {
+            //    detailsContainer.innerHTML += `<p style="color:red;">${error.message}</p>`;
+            //});
         });
+    }
+
+    function updateTableRow(id, formData) {
+        const row = document.querySelector(`.request-row[data-id="${id}"]`);
+        if (row) {
+            row.children[4].textContent = formData.get("Comment");
+            //row.children[1].textContent = `${formData.get("Price")} лв`;
+            //row.children[2].textContent = `${formData.get("WeightInGrams")} гр`;
+        }
     }
 
     function clearActiveRowIndicators() {
@@ -78,8 +94,6 @@
             if (statusCell) statusCell.textContent = '';
         });
     }
-
-    // Събития по редове
     rows.forEach(row => {
         const id = row.getAttribute('data-id');
 
@@ -87,16 +101,38 @@
             if (!isEditing) {
                 loadDetails(id);
             }
+
+            //row.addEventListener('mouseenter', () => loadDetails(id));
+            //row.addEventListener('click', () => loadEditForm(id));
+
+            //row.addEventListener('mouseenter', () => {
+            //    const id = row.getAttribute('data-id');
+
+            if (id !== lastProductId) {
+                lastProductId = id;
+                loadProductDetails(id);
+            }
+            //});
         });
 
         row.addEventListener('click', () => {
             clearActiveRowIndicators();
+            // Премахни маркировката и иконите от всички редове
+            //rows.forEach(r => {
+            //    r.classList.remove('active-row');
+            //    const statusCell = r.querySelector('.status-cell');
+            //    if (statusCell) statusCell.textContent = '';
+            //});
+
+            // Добави маркировка към текущия ред
             row.classList.add('active-row');
 
+            // Постави иконка ✏️ в последната колона
             const statusCell = row.querySelector('.status-cell');
             if (statusCell) statusCell.textContent = '✏️';
 
             loadEditForm(id);
         });
+
     });
 });

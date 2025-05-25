@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5L5/bRhh/mW3HsdCBDVVE8/0ZnX2UFJyu0T//QsskW0=",
+  "Hash": "sWZ+PSX+y8kAI+3WCiILxZh/UxYd2Z+HqEpTibNc9S8=",
   "Source": "Helpdesk",
   "BasePath": "_content/Helpdesk",
   "Mode": "Default",
@@ -1333,8 +1333,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "jbsxpl853o",
-      "Integrity": "n/q6BP7e2915iQM9CcWKu5YELBMq5cAb9m2Gh1VDjd8=",
+      "Fingerprint": "7oizsk3ehw",
+      "Integrity": "uZoutl7tOHmhEmD9w61kwetN8VVneTtMM/xcErqJQHI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -1361,6 +1361,27 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\wwwroot\\js\\RequestDetail - Copy.js",
+      "SourceId": "Helpdesk",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\wwwroot\\",
+      "BasePath": "_content/Helpdesk",
+      "RelativePath": "js/RequestDetail - Copy#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "nqvav4djzy",
+      "Integrity": "0aGViceaMevjJ8Yi07scgaZIxRB9ioiw1x3ENoEnlm4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\RequestDetail - Copy.js"
+    },
+    {
       "Identity": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\wwwroot\\js\\RequestDetail.js",
       "SourceId": "Helpdesk",
       "SourceType": "Discovered",
@@ -1375,8 +1396,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "evwhx8iinq",
-      "Integrity": "qkGuK0DOVlgwyxkTZAsz8i98jDrIMEKpwG2zlLjgJic=",
+      "Fingerprint": "8lwvkanmpw",
+      "Integrity": "vKJuaLtpi3wvqDYu5esLIq+/ccvT2mc6ZAHK2ovLL8s=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\RequestDetail.js"
@@ -2602,6 +2623,51 @@
   ],
   "Endpoints": [
     {
+      "Route": "css/site.7oizsk3ehw.css",
+      "AssetFile": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "976"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uZoutl7tOHmhEmD9w61kwetN8VVneTtMM/xcErqJQHI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 25 May 2025 11:54:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "7oizsk3ehw"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-uZoutl7tOHmhEmD9w61kwetN8VVneTtMM/xcErqJQHI="
+        }
+      ]
+    },
+    {
       "Route": "css/site.css",
       "AssetFile": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\wwwroot\\css\\site.css",
       "Selectors": [],
@@ -2612,7 +2678,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "441"
+          "Value": "976"
         },
         {
           "Name": "Content-Type",
@@ -2620,11 +2686,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"n/q6BP7e2915iQM9CcWKu5YELBMq5cAb9m2Gh1VDjd8=\""
+          "Value": "\"uZoutl7tOHmhEmD9w61kwetN8VVneTtMM/xcErqJQHI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 21 May 2025 14:34:50 GMT"
+          "Value": "Sun, 25 May 2025 11:54:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2634,52 +2700,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-n/q6BP7e2915iQM9CcWKu5YELBMq5cAb9m2Gh1VDjd8="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.jbsxpl853o.css",
-      "AssetFile": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "441"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"n/q6BP7e2915iQM9CcWKu5YELBMq5cAb9m2Gh1VDjd8=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 21 May 2025 14:34:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "jbsxpl853o"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-n/q6BP7e2915iQM9CcWKu5YELBMq5cAb9m2Gh1VDjd8="
+          "Value": "sha256-uZoutl7tOHmhEmD9w61kwetN8VVneTtMM/xcErqJQHI="
         }
       ]
     },
@@ -5150,8 +5171,8 @@
       ]
     },
     {
-      "Route": "js/RequestDetail.evwhx8iinq.js",
-      "AssetFile": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\wwwroot\\js\\RequestDetail.js",
+      "Route": "js/RequestDetail - Copy.js",
+      "AssetFile": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\wwwroot\\js\\RequestDetail - Copy.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5160,7 +5181,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1190"
+          "Value": "5311"
         },
         {
           "Name": "Content-Type",
@@ -5168,11 +5189,48 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"qkGuK0DOVlgwyxkTZAsz8i98jDrIMEKpwG2zlLjgJic=\""
+          "Value": "\"0aGViceaMevjJ8Yi07scgaZIxRB9ioiw1x3ENoEnlm4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 22 May 2025 18:59:35 GMT"
+          "Value": "Sun, 25 May 2025 19:26:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0aGViceaMevjJ8Yi07scgaZIxRB9ioiw1x3ENoEnlm4="
+        }
+      ]
+    },
+    {
+      "Route": "js/RequestDetail - Copy.nqvav4djzy.js",
+      "AssetFile": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\wwwroot\\js\\RequestDetail - Copy.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5311"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0aGViceaMevjJ8Yi07scgaZIxRB9ioiw1x3ENoEnlm4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 25 May 2025 19:26:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5182,7 +5240,52 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "evwhx8iinq"
+          "Value": "nqvav4djzy"
+        },
+        {
+          "Name": "label",
+          "Value": "js/RequestDetail - Copy.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0aGViceaMevjJ8Yi07scgaZIxRB9ioiw1x3ENoEnlm4="
+        }
+      ]
+    },
+    {
+      "Route": "js/RequestDetail.8lwvkanmpw.js",
+      "AssetFile": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\wwwroot\\js\\RequestDetail.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3615"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vKJuaLtpi3wvqDYu5esLIq+/ccvT2mc6ZAHK2ovLL8s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 25 May 2025 19:33:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8lwvkanmpw"
         },
         {
           "Name": "label",
@@ -5190,7 +5293,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-qkGuK0DOVlgwyxkTZAsz8i98jDrIMEKpwG2zlLjgJic="
+          "Value": "sha256-vKJuaLtpi3wvqDYu5esLIq+/ccvT2mc6ZAHK2ovLL8s="
         }
       ]
     },
@@ -5205,7 +5308,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1190"
+          "Value": "3615"
         },
         {
           "Name": "Content-Type",
@@ -5213,11 +5316,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"qkGuK0DOVlgwyxkTZAsz8i98jDrIMEKpwG2zlLjgJic=\""
+          "Value": "\"vKJuaLtpi3wvqDYu5esLIq+/ccvT2mc6ZAHK2ovLL8s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 22 May 2025 18:59:35 GMT"
+          "Value": "Sun, 25 May 2025 19:33:04 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5227,7 +5330,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-qkGuK0DOVlgwyxkTZAsz8i98jDrIMEKpwG2zlLjgJic="
+          "Value": "sha256-vKJuaLtpi3wvqDYu5esLIq+/ccvT2mc6ZAHK2ovLL8s="
         }
       ]
     },

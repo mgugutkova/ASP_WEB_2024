@@ -1,0 +1,70 @@
+﻿@using Helpdesk.Core.Models.Request
+@model RequestViewModel
+@{
+	ViewBag.Title = "Request Details";
+}
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>Описание</th>
+			<th>Статус</th>
+			<th>Дата на приключване</th>
+			<th>Разпределена на</th>
+			<th>Коментар</th>
+			<th></th>			
+		</tr>
+	</thead>
+	<tr class="request-row" data-id="@Model.Id">
+		
+		<td>@Model.Description</td>
+		<td>@Model.RequestState</td>
+		<td>@Model.EndDate</td>
+		<td>@Model.OperatorName</td>
+		<td>@Model.Comment</td>
+		<td style="display:none">@Model.Id</td>
+		@* <td><a asp-controller="Users" asp-action="EditUser" asp-route-userId="@Model.UserId" class="btn btn-primary text-center">Редактиране</a></td> *@
+	</tr>
+</table>
+
+@section Scripts {
+	<script src="~/js/RequestDetail.js"></script>
+}
+
+@* <form method="post">
+	<tr>
+		<td class="form-group">
+			<label asp-for="Description"></label>
+			<input asp-for="Description" class="form-control" />
+			<span asp-validation-for="Description" class="small text-danger"></span>
+		</td>
+
+		<td class="form-group">
+			<label asp-for="RequestState"></label>
+			<input asp-for="RequestState" class="form-control" />
+			<span asp-validation-for="RequestState" class="small text-danger"></span>
+		</td>
+		<td class="form-group">
+			<label asp-for="EndDate"></label>
+			<input asp-for="EndDate" class="form-control" readonly />
+		</td>
+		<td class="form-group">
+			<label asp-for="OperatorName"></label>
+			<input asp-for="OperatorName" class="form-control" />
+			<span asp-validation-for="OperatorName" class="small text-danger"></span>
+		</td>
+		<td class="form-group">
+			<label asp-for="Comment"></label>
+			<input asp-for="Comment" class="form-control" />
+			<span asp-validation-for="Comment" class="small text-danger"></span>
+		</td>
+		<td style="display:none">@Model.Id</td>
+
+
+		<td class="text-center">
+			<input class="btn btn-primary mt-3 " type="submit" value="Save" />
+		</td>
+	</tr>
+	</form> *@

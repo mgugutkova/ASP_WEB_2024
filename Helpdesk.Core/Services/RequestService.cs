@@ -62,6 +62,9 @@ namespace Helpdesk.Core.Services
                    Id = r.Id,
                    Description = r.Description,
                    UserId = r.UserId,
+                   Address = r.UserMI.Address,
+                   Phone = r.UserMI.PhoneNumber ?? string.Empty,
+                   DirectorateName = r.UserMI.DirectoratesUnit.Name,
                    CategoryId = r.CategoryId,
                    StartDate = r.StartDate,
                    EndDate = r.EndDate,
@@ -86,15 +89,18 @@ namespace Helpdesk.Core.Services
 
             if (request != null)
             {
-
                 request.Description = model.Description;
                 request.CategoryId = model.CategoryId;
-                request.StartDate = model.StartDate;
-                request.EndDate = model.EndDate;
-                request.RequestStateId = model.RequestStateId;
+                request.StartDate = model.StartDate;                
+                request.RequestStateId = model.RequestStateId;            
                 request.OperatorId = model.OperatorId;
                 request.Comment = model.Comment;
                 request.IsActive = model.IsActive;
+
+                if (model.RequestStateId == 3)
+                {
+                    request.EndDate = DateTime.UtcNow;
+                }
 
                 await repository.SaveChangesAsync();
             }
@@ -111,6 +117,7 @@ namespace Helpdesk.Core.Services
                     Description = r.Description,
                     UserId = r.UserId,
                     CategoryId = r.CategoryId,
+                    CategoryName = r.Category.Name,
                     StartDate = r.StartDate,
                     EndDate = r.EndDate,
                     RequestStateId = r.RequestStateId,
