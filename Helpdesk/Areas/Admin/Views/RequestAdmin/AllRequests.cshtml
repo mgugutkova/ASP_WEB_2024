@@ -23,6 +23,7 @@
 				<th>Адрес</th>
 				<th>Телефон</th>
 				<th>Дирекция</th>
+				<th>История</th>
 				<th></th>
 
 			</tr>
@@ -37,22 +38,26 @@
 					<td>@item.StartDate</td>
 					<td>@item.Address</td>
 					<td>@item.Phone</td>
-					<td>@item.DirectorateName</td>
+					<td>@item.DirectorateName</td>			
+					<td><button class="load-history-btn btn btn-sm btn-secondary"
+							data-request-id="@item.Id">	История
+					</button>
+					</td>
 					<td style="display:none">@item.Id</td>
-
-
-					@* 	<td>
-					<a asp-controller="Directorate" asp-action="EditDirectorate" asp-route-Id="@item.Id" class="btn btn-danger">Редактиране</a>
-				</td> *@
 				</tr>
 			}
 		</tbody>
 	</table>
 </div>
+
 <div id="detailsContainer" class="mt-4">
 	<p>Посочи заявка за подробности...</p>
 </div>
+<div id="historyContainer"></div>
+
+
 
 @section Scripts {
 	<script src="~/js/RequestDetail.js"></script>
+	<script src="~/js/RequestHistory.js"></script>
 }

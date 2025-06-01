@@ -1,66 +1,95 @@
 ﻿@using Helpdesk.Core.Models.Request
+@using Helpdesk.Core.Models.RequestHistory
 @model RequestViewModel
 @{
 	ViewBag.Title = "Request Details";
 }
+
+
 <h2 class="text-center">@ViewBag.Title</h2>
 <hr />
 
+<input type="hidden" name="Id" value="@Model.Id" />
+<input type="hidden" name="UserId" value="@Model.UserId" />
+<input type="hidden" name="CategoryId" value="@Model.CategoryId" />
+
 <form asp-action="Edit" method="post" asp-antiforgery="false">
 
-	<input type="hidden" name="Id" value="@Model.Id" />
-	<input type="hidden" name="UserId" value="@Model.UserId" />
-	<input type="hidden" name="CategoryId" value="@Model.CategoryId" />
+	<table class="form-group table table-hover">
 
-	<table class="table table-hover">
-	<thead>
-		<tr>
-			<th>Описание</th>
-			<th>Статус</th>
-			<th>Дата на приключване</th>
-			<th>Разпределена на</th>
-			<th>Коментар</th>
-			<th></th>
+		<tr class="request-row" data-id="@Model.Id">
+			<td class="form-group">
+				<div>
+					<label asp-for="Description"></label>
+					<textarea asp-for="Description" class="form-control" rows="5"></textarea>
+					<span asp-validation-for="Description" class="small text-danger"></span>
+				</div>
+			</td>
+
+			<td class="form-group">
+				<table class="table table-hover">
+					<tbody>
+						<tr>
+							<td>
+								<label asp-for="RequestStateId"></label>
+								<select asp-for="RequestStateId" class="form-control" aria-required="true" asp-items="@(new SelectList(@Model.StateList, "Id", "Name"))">
+									<option value="Id">Изберете</option>
+								</select>
+								<span asp-validation-for="RequestStateId" class="small text-danger"></span>
+							</td>
+							<td>
+								<label asp-for="OperatorId"></label>
+								<select asp-for="OperatorId" class="form-control" aria-required="true" asp-items="@(new SelectList(@Model.AdminList, "UserId", "FirstName", "LastName", "RoleName"))">
+									<option value="UserId">Изберете</option>
+								</select>
+								<span asp-validation-for="OperatorId" class="small text-danger"></span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<div>
+					<table class="table table-hover">
+						<tbody>
+							<tr>
+								<td>
+									<label asp-for="Comment"></label>
+									<input asp-for="Comment" class="form-control" />
+									<span asp-validation-for="Comment" class="small text-danger"></span>
+								</td>
+								<td>
+									<label asp-for="Satisfaction"></label>
+									<input asp-for="Satisfaction" class="form-control" readonly />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div>
+					<table class="table table-hover">
+						<tbody>
+							<tr>
+								<td>
+									<label asp-for="EndDate"></label>
+									<input asp-for="EndDate" type="datetime" class="form-control" name="EndDate" value="@Model.EndDate" readonly />
+								</td>
+								<td>
+									<label asp-for="ManagerName"></label>
+									<input asp-for="ManagerName" type="datetime" class="form-control" name="ManagerName" value="@Model.ManagerName" readonly />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="text-center">					
+					<button type="submit" class="btn btn-primary">Запази</button>
+				</div>
+			</td>
 		</tr>
-	</thead>	
-
-	<tr class="request-row" data-id="@Model.Id">
-		<td class="form-group">
-			<label asp-for="Description"></label>
-			<input asp-for="Description" class="form-control" />
-			<span asp-validation-for="Description" class="small text-danger"></span>
-		</td>
-
-		<td class="form-group">
-			<label asp-for="RequestState"></label>
-			<input asp-for="RequestState" class="form-control" />
-			<span asp-validation-for="RequestState" class="small text-danger"></span>
-		</td>
-		<td class="form-group">
-			<label asp-for="EndDate"></label>
-			<input asp-for="EndDate" class="form-control" readonly />
-		</td>
-		<td class="form-group">
-			<label asp-for="OperatorName"></label>
-			<input asp-for="OperatorName" class="form-control" />
-			<span asp-validation-for="OperatorName" class="small text-danger"></span>
-		</td>
-		<td class="form-group">
-			<label asp-for="Comment"></label>
-			<input asp-for="Comment" class="form-control" />
-			<span asp-validation-for="Comment" class="small text-danger"></span>
-		</td>	
-		
-		<td class="text-center">
-			<button type="submit" class="btn btn-primary">Запази</button>		
-		</td>
-	</tr>
-
 	</table>
-</form>
+</form>	
 
 @section Scripts {
 	<partial name="_ValidationScriptsPartial" />
-	<script src="~/js/RequestDetail.js"></script>
 }
 

@@ -1,11 +1,7 @@
-﻿using Helpdesk.Core.Models.Categoris;
+﻿using Helpdesk.Core.Models.ApplicationUser;
+using Helpdesk.Core.Models.Categoris;
 using Helpdesk.Core.Models.Request;
-using Helpdesk.Core.Models.RequestState;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Helpdesk.Core.Models.RequestHistory;
 
 namespace Helpdesk.Core.Interfaces
 {
@@ -17,6 +13,9 @@ namespace Helpdesk.Core.Interfaces
         Task AddRequestAsync(string description, int categoryId);
         Task EditRequestAsync(Guid id, RequestViewModel model);
         Task<IEnumerable<AllCategoriesViewModel>> AllCategoryList();
+        Task<IEnumerable<ITAdminViewModel>> AllOperatorsAsync();
+        Task<IEnumerable<ITAdminViewModel>> AllManagerssAsync();
+        Task<IEnumerable<RequestHistoryViewModel?>> AllRequestHistoryAsync(Guid? Id);
 
     }
 }

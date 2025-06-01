@@ -2,6 +2,7 @@
 using Helpdesk.Core.Models.ApplicationUser;
 using Helpdesk.Core.Models.Categoris;
 using Helpdesk.Core.Models.Request;
+using Helpdesk.Core.Models.RequestHistory;
 using Helpdesk.Infrastructure.Data.Model;
 using Helpdesk.Infrastructure.Repo;
 using Microsoft.AspNetCore.Http;
@@ -55,7 +56,7 @@ namespace Helpdesk.Core.Services
 
         public async Task<IEnumerable<RequestViewModel>> AllRequestAsync()
         {
-            var requests = await repository.All<Request>()            
+            var requests = await repository.All<Request>()
                .Where(x => x.IsActive == true)
                .Select(r => new RequestViewModel()
                {
@@ -71,11 +72,12 @@ namespace Helpdesk.Core.Services
                    RequestStateId = r.RequestStateId,
                    RequestState = r.RequestState.Name,
                    OperatorId = r.OperatorId,
-                   OperatorName = r.Operator.UserId ?? string.Empty,
+                   OperatorName = r.Operator.FirstName + " " + r.Operator.LastName,
+                   ManagerName = r.Manager.FirstName + " " + r.Manager.LastName,
                    Comment = r.Comment,
                    IsActive = r.IsActive,
                    CategoryName = r.Category.Name,
-                   UserFullName = r.UserMI.FirstName + " " + r.UserMI.LastName,          
+                   UserFullName = r.UserMI.FirstName + " " + r.UserMI.LastName,
 
                })
                .ToListAsync();
@@ -85,22 +87,40 @@ namespace Helpdesk.Core.Services
 
         public async Task EditRequestAsync(Guid id, RequestViewModel model)
         {
+            var currentUserId = httpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? string.Empty;
+
             var request = await repository.GetByIdAsync<Request>(id);
 
             if (request != null)
             {
+                if (model.RequestStateId != request.RequestStateId)
+                {
+                    var history = new RequestHistory
+                    {
+                        RequestId = id,
+                        RequestStateId = model.RequestStateId,
+                        ChangeDate = DateTime.UtcNow,
+                        ChangedById = currentUserId,
+                    };
+
+                    await repository.AddAsync(history);
+                    await repository.SaveChangesAsync();
+                }
+
                 request.Description = model.Description;
                 request.CategoryId = model.CategoryId;
-                request.StartDate = model.StartDate;                
-                request.RequestStateId = model.RequestStateId;            
+                request.StartDate = model.StartDate;
+                request.RequestStateId = model.RequestStateId;
                 request.OperatorId = model.OperatorId;
                 request.Comment = model.Comment;
+                request.Satisfaction = model.Satisfaction;
                 request.IsActive = model.IsActive;
 
                 if (model.RequestStateId == 3)
                 {
                     request.EndDate = DateTime.UtcNow;
-                }
+                    request.ManagerId = currentUserId;
+                }  
 
                 await repository.SaveChangesAsync();
             }
@@ -123,11 +143,15 @@ namespace Helpdesk.Core.Services
                     RequestStateId = r.RequestStateId,
                     RequestState = r.RequestState.Name,
                     OperatorId = r.OperatorId,
-                    OperatorName = r.Operator.UserId ?? string.Empty,
+                    OperatorName = r.Operator.FirstName + " " + r.Operator.LastName,
+                    ManagerName = r.Manager.FirstName + " " + r.Manager.LastName,
                     Comment = r.Comment,
+                    Satisfaction = r.Satisfaction,
                     IsActive = r.IsActive,
                 })
                 .FirstOrDefaultAsync();
+
+            request.AdminList = await AllOperatorsAsync();
 
             return request;
         }
@@ -147,7 +171,8 @@ namespace Helpdesk.Core.Services
                      StartDate = r.StartDate,
                      EndDate = r.EndDate,
                      RequestState = r.RequestState.Name,
-                     OperatorName = r.Operator.UserId ?? string.Empty
+                     OperatorName = r.Operator.FirstName + " " + r.Operator.LastName,
+                     Comment = r.Comment
                      // UserFullName = fullName ?? string.Empty
                  })
                  .OrderByDescending(x => x.StartDate)
@@ -169,6 +194,74 @@ namespace Helpdesk.Core.Services
                          .ToListAsync();
 
             return categories;
+        }
+        public async Task<IEnumerable<ITAdminViewModel>> AllManagerssAsync()
+        {
+            var managers = await userManager.GetUsersInRoleAsync("Admin");
+
+            var model = managers
+                .Select(x => new ITAdminViewModel()
+                {
+                    UserId = x.Id,
+                    FirstName = x.FirstName,
+                    LastName = x.LastName,
+                    RoleName = x.RoleName,
+                })
+                .OrderBy(x => x.FirstName)
+                .ToList();
+
+            return model;
+        }
+
+        public async Task<IEnumerable<ITAdminViewModel>> AllOperatorsAsync()
+        {
+            //var users =  userManager.Users
+            //   .Where(x => x.RoleName == RoleNameItems.Operator.ToString());
+            var operators = await userManager.GetUsersInRoleAsync("Operator");
+            var admins = await userManager.GetUsersInRoleAsync("Admin");
+
+            var model = operators.Concat(admins)
+                .Where(x => x.IsActive == true)
+                .Select(x => new ITAdminViewModel()
+                {
+                    UserId = x.Id,
+                    FirstName = x.FirstName,
+                    LastName = x.LastName,
+                    RoleName = x.RoleName,
+                })
+                .OrderBy(x => x.FirstName)
+                .Distinct()
+                .ToList();
+
+
+            return model;
+        }
+
+        public async Task<IEnumerable<RequestHistoryViewModel?>> AllRequestHistoryAsync(Guid? Id)
+        {
+            var history = await repository.All<RequestHistory>()
+               .Where(x => x.RequestId == Id)
+               .Select(r => new RequestHistoryViewModel()
+               {
+                   RequestStateId = r.RequestStateId,
+                   RequestState = r.RequestState.Name,
+                   ChangeDate = r.ChangeDate,
+                   ChangedById = r.ChangedById,
+                   ChangedByUser = r.ChangedByUser.FirstName + " " + r.ChangedByUser.LastName,
+                   RequestId = r.RequestId,
+                   id = r.id
+               })
+                .OrderByDescending(x => x.ChangeDate)
+                .ToListAsync();
+
+            if (history == null)
+            {
+                return new List<RequestHistoryViewModel>();
+            }
+            else
+            {
+                return history;
+            }
         }
     }
 }

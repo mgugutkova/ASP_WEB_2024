@@ -23,6 +23,7 @@ namespace Helpdesk.Core.Services
             repository = _repository;
         }
 
+      
         public async Task<IEnumerable<UserViewModel>> AllUsersAsync()
         {
             var users = await userManager.Users

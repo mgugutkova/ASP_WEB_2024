@@ -15,6 +15,7 @@ namespace Helpdesk.Core.Interfaces
         Task EditUserByIdAsync(string userId, UpdateUserViewModel model);
 
         Task<IEnumerable<UserViewModel>> AllUsersAsync();
+      
         Task<UsersServiceQueryModel> AllUsersQueryAsync(
             string? searchTerm = null,          
            // string? sortItem = null,

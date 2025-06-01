@@ -7,10 +7,14 @@ namespace Helpdesk.Areas.Admin.Controllers
     public class RequestAdminController : AdminBaseController
     {
         private readonly IRequestService requestService;
+        private readonly IRequestStateService requestStateService;
 
-        public RequestAdminController(IRequestService _requestService)
+        public RequestAdminController(
+            IRequestService _requestService,
+            IRequestStateService _requestStateService)
         {
             requestService = _requestService;
+            requestStateService = _requestStateService;
         }
 
         [HttpGet]
@@ -23,19 +27,18 @@ namespace Helpdesk.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            return View(requests);            
+            return View(requests);
         }
 
         [HttpGet]
         public async Task<IActionResult> DetailsPartial(Guid id)
         {
             var model = await requestService.FindRequestAsync(id);
-          
+
             if (model == null)
                 return NotFound(); // Важно!
 
-            return PartialView(model);
-            //return PartialView("_ProductDetails", request);  
+            return PartialView(model);           
         }
 
         [HttpGet]
@@ -44,11 +47,14 @@ namespace Helpdesk.Areas.Admin.Controllers
             var model = await requestService.FindRequestAsync(id);
 
             if (model == null)
+            {
                 return NotFound(); // Важно!
+            }
+
+            model.StateList = await requestStateService.AllRequestStateAsync(); 
 
             return PartialView(model);
 
-           // return PartialView("_ProductEditPartial", product);
         }
 
         [HttpPost]
@@ -61,7 +67,20 @@ namespace Helpdesk.Areas.Admin.Controllers
             await requestService.EditRequestAsync(model.Id, model);
 
             return Ok();
-           // return RedirectToAction("AllRequests");
+            
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> HistoryPartial(Guid id)
+        {     
+            var model = await requestService.AllRequestHistoryAsync(id);  
+
+            if (model == null)
+            {
+                return NotFound();
+            }
+    
+             return PartialView("HistoryPartial", model);
         }
 
     }

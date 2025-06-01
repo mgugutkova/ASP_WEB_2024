@@ -16,10 +16,19 @@ namespace Helpdesk.Infrastructure.Data.Model
         [ForeignKey(nameof(UserId))]
         public ApplicationUser UserMI { get; set; } = null!;
 
+        public string? OperatorId { get; set; }
+
+        [ForeignKey(nameof(OperatorId))]
+        public ApplicationUser? Operator { get; set; } = null; // който изпълнява заявките
+
+        public string? ManagerId { get; set; }
+
+        [ForeignKey(nameof(ManagerId))]
+        public ApplicationUser? Manager { get; set; } = null;  // който close заявките
+
         [Required]
         [MaxLength(DescriptionMaxLength)]
         public string Description { get; set; } = string.Empty!;
-
 
         [Required]
         public int CategoryId { get; set; }
@@ -40,14 +49,14 @@ namespace Helpdesk.Infrastructure.Data.Model
         [ForeignKey(nameof(RequestStateId))]
         public RequestState RequestState { get; set; } = null!;
 
-        public Guid? OperatorId { get; set; }
-
-        [ForeignKey(nameof(OperatorId))]
-        public Operator? Operator { get; set; } = null;
-
 
         [MaxLength(CommentMaxLength)]
         public string? Comment { get; set; } = null;
+
+        [MaxLength(CommentMaxLength)]
+        public string? Satisfaction { get; set; } = null;
+
+        public byte[] Data { get; set; } = Array.Empty<byte>();
 
         [Required]
         public bool IsActive { get; set; } = true;

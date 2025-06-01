@@ -1,0 +1,41 @@
+﻿@using Helpdesk.Core.Models.RequestHistory
+
+@model IEnumerable<RequestHistoryViewModel>
+@{
+	ViewBag.Title = "Request History";
+}
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>Статус</th>
+			<th>Дата</th>
+			<th>Оператор</th>			
+		</tr>
+	</thead>
+	<tbody>
+		@* <tr>
+			<td colspan="3" class="text-center">Историята е празна.</td>
+		</tr>*@	
+
+		@foreach (var item in Model)
+		{
+		<tr class="history">
+			
+			<td>@item.RequestState</td>
+			<td>@item.ChangeDate</td>
+			<td>@item.ChangedByUser</td>					
+		</tr>
+		}
+
+	</tbody>
+</table>
+
+@* <ul>
+	@foreach (var item in Model)
+	{
+		<li data-id="@item.RequestStateId">>@item.RequestState - @item.ChangeDate - @item.ChangedByUser</li>
+	}
+</ul> *@

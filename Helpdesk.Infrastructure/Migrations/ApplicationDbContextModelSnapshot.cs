@@ -159,28 +159,6 @@ namespace Helpdesk.Infrastructure.Migrations
                     b.ToTable("DirectoratesUnits");
                 });
 
-            modelBuilder.Entity("Helpdesk.Infrastructure.Data.Model.Operator", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool>("IsActive")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(true);
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Operators");
-                });
-
             modelBuilder.Entity("Helpdesk.Infrastructure.Data.Model.Request", b =>
                 {
                     b.Property<Guid>("Id")
@@ -193,6 +171,10 @@ namespace Helpdesk.Infrastructure.Migrations
                     b.Property<string>("Comment")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<byte[]>("Data")
+                        .IsRequired()
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -207,11 +189,18 @@ namespace Helpdesk.Infrastructure.Migrations
                         .HasColumnType("bit")
                         .HasDefaultValue(true);
 
-                    b.Property<Guid?>("OperatorId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("ManagerId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("OperatorId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("RequestStateId")
                         .HasColumnType("int");
+
+                    b.Property<string>("Satisfaction")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
@@ -224,6 +213,8 @@ namespace Helpdesk.Infrastructure.Migrations
 
                     b.HasIndex("CategoryId");
 
+                    b.HasIndex("ManagerId");
+
                     b.HasIndex("OperatorId");
 
                     b.HasIndex("RequestStateId");
@@ -231,6 +222,38 @@ namespace Helpdesk.Infrastructure.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Requests");
+                });
+
+            modelBuilder.Entity("Helpdesk.Infrastructure.Data.Model.RequestHistory", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<DateTime>("ChangeDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ChangedById")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<Guid>("RequestId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("RequestStateId")
+                        .HasColumnType("int");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("ChangedById");
+
+                    b.HasIndex("RequestId");
+
+                    b.HasIndex("RequestStateId");
+
+                    b.ToTable("RequestsHistory");
                 });
 
             modelBuilder.Entity("Helpdesk.Infrastructure.Data.Model.RequestState", b =>
@@ -399,17 +422,6 @@ namespace Helpdesk.Infrastructure.Migrations
                     b.Navigation("DirectoratesUnit");
                 });
 
-            modelBuilder.Entity("Helpdesk.Infrastructure.Data.Model.Operator", b =>
-                {
-                    b.HasOne("Helpdesk.Infrastructure.Data.Model.ApplicationUser", "ITUser")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ITUser");
-                });
-
             modelBuilder.Entity("Helpdesk.Infrastructure.Data.Model.Request", b =>
                 {
                     b.HasOne("Helpdesk.Infrastructure.Data.Model.Category", "Category")
@@ -418,8 +430,12 @@ namespace Helpdesk.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Helpdesk.Infrastructure.Data.Model.Operator", "Operator")
-                        .WithMany("Requests")
+                    b.HasOne("Helpdesk.Infrastructure.Data.Model.ApplicationUser", "Manager")
+                        .WithMany()
+                        .HasForeignKey("ManagerId");
+
+                    b.HasOne("Helpdesk.Infrastructure.Data.Model.ApplicationUser", "Operator")
+                        .WithMany()
                         .HasForeignKey("OperatorId");
 
                     b.HasOne("Helpdesk.Infrastructure.Data.Model.RequestState", "RequestState")
@@ -429,18 +445,47 @@ namespace Helpdesk.Infrastructure.Migrations
                         .IsRequired();
 
                     b.HasOne("Helpdesk.Infrastructure.Data.Model.ApplicationUser", "UserMI")
-                        .WithMany("Requests")
+                        .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Category");
 
+                    b.Navigation("Manager");
+
                     b.Navigation("Operator");
 
                     b.Navigation("RequestState");
 
                     b.Navigation("UserMI");
+                });
+
+            modelBuilder.Entity("Helpdesk.Infrastructure.Data.Model.RequestHistory", b =>
+                {
+                    b.HasOne("Helpdesk.Infrastructure.Data.Model.ApplicationUser", "ChangedByUser")
+                        .WithMany()
+                        .HasForeignKey("ChangedById")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Helpdesk.Infrastructure.Data.Model.Request", "Request")
+                        .WithMany()
+                        .HasForeignKey("RequestId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Helpdesk.Infrastructure.Data.Model.RequestState", "RequestState")
+                        .WithMany()
+                        .HasForeignKey("RequestStateId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ChangedByUser");
+
+                    b.Navigation("Request");
+
+                    b.Navigation("RequestState");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -492,16 +537,6 @@ namespace Helpdesk.Infrastructure.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("Helpdesk.Infrastructure.Data.Model.ApplicationUser", b =>
-                {
-                    b.Navigation("Requests");
-                });
-
-            modelBuilder.Entity("Helpdesk.Infrastructure.Data.Model.Operator", b =>
-                {
-                    b.Navigation("Requests");
                 });
 #pragma warning restore 612, 618
         }

@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\js\\RequestDetail.js"
     },
     {
+      "Id": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\wwwroot\\js\\RequestHistory.js",
+      "PackagePath": "staticwebassets\\js\\RequestHistory.js"
+    },
+    {
       "Id": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

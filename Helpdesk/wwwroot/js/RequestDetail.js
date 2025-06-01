@@ -3,6 +3,7 @@
     const detailsContainer = document.getElementById('detailsContainer');
     let lastHoveredId = null;
     let isEditing = false;
+    console.log('RequestDetail.js loaded');
 
     function loadDetails(id) {
         if (isEditing || lastHoveredId === id) return;

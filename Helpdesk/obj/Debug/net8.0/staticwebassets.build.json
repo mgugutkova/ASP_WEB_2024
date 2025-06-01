@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "sWZ+PSX+y8kAI+3WCiILxZh/UxYd2Z+HqEpTibNc9S8=",
+  "Hash": "7BdeEQKz5uAN0iGI1nTtjAuk9OfzOfjQIcHFGfwpt2E=",
   "Source": "Helpdesk",
   "BasePath": "_content/Helpdesk",
   "Mode": "Default",
@@ -1333,8 +1333,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "7oizsk3ehw",
-      "Integrity": "uZoutl7tOHmhEmD9w61kwetN8VVneTtMM/xcErqJQHI=",
+      "Fingerprint": "hxo28lvwao",
+      "Integrity": "S6nMWZ5Hh2j+e1U9zYQ5C7IuxqW3jY7HRXvILyTBoHs=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -1396,11 +1396,32 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "8lwvkanmpw",
-      "Integrity": "vKJuaLtpi3wvqDYu5esLIq+/ccvT2mc6ZAHK2ovLL8s=",
+      "Fingerprint": "pjjrzzrhng",
+      "Integrity": "SwVX/Bx39Oi5iva4hJ7iC0YtmoC2kyAu2gjQ6IHFc3g=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\RequestDetail.js"
+    },
+    {
+      "Identity": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\wwwroot\\js\\RequestHistory.js",
+      "SourceId": "Helpdesk",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\wwwroot\\",
+      "BasePath": "_content/Helpdesk",
+      "RelativePath": "js/RequestHistory#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "pvyzi58lg9",
+      "Integrity": "VeEjzbdZEkwA0qeRwdVFbcfgcS/di4hWSUrPcdTWz8U=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\RequestHistory.js"
     },
     {
       "Identity": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\wwwroot\\js\\site.js",
@@ -1417,8 +1438,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "xtxxf3hu2r",
-      "Integrity": "hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo=",
+      "Fingerprint": "3r8b2a0bt1",
+      "Integrity": "8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
@@ -2623,51 +2644,6 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.7oizsk3ehw.css",
-      "AssetFile": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "976"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"uZoutl7tOHmhEmD9w61kwetN8VVneTtMM/xcErqJQHI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 25 May 2025 11:54:36 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "7oizsk3ehw"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-uZoutl7tOHmhEmD9w61kwetN8VVneTtMM/xcErqJQHI="
-        }
-      ]
-    },
-    {
       "Route": "css/site.css",
       "AssetFile": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\wwwroot\\css\\site.css",
       "Selectors": [],
@@ -2686,11 +2662,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"uZoutl7tOHmhEmD9w61kwetN8VVneTtMM/xcErqJQHI=\""
+          "Value": "\"S6nMWZ5Hh2j+e1U9zYQ5C7IuxqW3jY7HRXvILyTBoHs=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 25 May 2025 11:54:36 GMT"
+          "Value": "Mon, 26 May 2025 10:08:46 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2700,7 +2676,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-uZoutl7tOHmhEmD9w61kwetN8VVneTtMM/xcErqJQHI="
+          "Value": "sha256-S6nMWZ5Hh2j+e1U9zYQ5C7IuxqW3jY7HRXvILyTBoHs="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.hxo28lvwao.css",
+      "AssetFile": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "976"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"S6nMWZ5Hh2j+e1U9zYQ5C7IuxqW3jY7HRXvILyTBoHs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 26 May 2025 10:08:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hxo28lvwao"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-S6nMWZ5Hh2j+e1U9zYQ5C7IuxqW3jY7HRXvILyTBoHs="
         }
       ]
     },
@@ -5253,51 +5274,6 @@
       ]
     },
     {
-      "Route": "js/RequestDetail.8lwvkanmpw.js",
-      "AssetFile": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\wwwroot\\js\\RequestDetail.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "3615"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"vKJuaLtpi3wvqDYu5esLIq+/ccvT2mc6ZAHK2ovLL8s=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 25 May 2025 19:33:04 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "8lwvkanmpw"
-        },
-        {
-          "Name": "label",
-          "Value": "js/RequestDetail.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-vKJuaLtpi3wvqDYu5esLIq+/ccvT2mc6ZAHK2ovLL8s="
-        }
-      ]
-    },
-    {
       "Route": "js/RequestDetail.js",
       "AssetFile": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\wwwroot\\js\\RequestDetail.js",
       "Selectors": [],
@@ -5308,7 +5284,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3615"
+          "Value": "3660"
         },
         {
           "Name": "Content-Type",
@@ -5316,11 +5292,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"vKJuaLtpi3wvqDYu5esLIq+/ccvT2mc6ZAHK2ovLL8s=\""
+          "Value": "\"SwVX/Bx39Oi5iva4hJ7iC0YtmoC2kyAu2gjQ6IHFc3g=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 25 May 2025 19:33:04 GMT"
+          "Value": "Sat, 31 May 2025 07:12:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5330,7 +5306,179 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-vKJuaLtpi3wvqDYu5esLIq+/ccvT2mc6ZAHK2ovLL8s="
+          "Value": "sha256-SwVX/Bx39Oi5iva4hJ7iC0YtmoC2kyAu2gjQ6IHFc3g="
+        }
+      ]
+    },
+    {
+      "Route": "js/RequestDetail.pjjrzzrhng.js",
+      "AssetFile": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\wwwroot\\js\\RequestDetail.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3660"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SwVX/Bx39Oi5iva4hJ7iC0YtmoC2kyAu2gjQ6IHFc3g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 07:12:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pjjrzzrhng"
+        },
+        {
+          "Name": "label",
+          "Value": "js/RequestDetail.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-SwVX/Bx39Oi5iva4hJ7iC0YtmoC2kyAu2gjQ6IHFc3g="
+        }
+      ]
+    },
+    {
+      "Route": "js/RequestHistory.js",
+      "AssetFile": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\wwwroot\\js\\RequestHistory.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3561"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VeEjzbdZEkwA0qeRwdVFbcfgcS/di4hWSUrPcdTWz8U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 01 Jun 2025 21:11:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-VeEjzbdZEkwA0qeRwdVFbcfgcS/di4hWSUrPcdTWz8U="
+        }
+      ]
+    },
+    {
+      "Route": "js/RequestHistory.pvyzi58lg9.js",
+      "AssetFile": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\wwwroot\\js\\RequestHistory.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3561"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VeEjzbdZEkwA0qeRwdVFbcfgcS/di4hWSUrPcdTWz8U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 01 Jun 2025 21:11:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pvyzi58lg9"
+        },
+        {
+          "Name": "label",
+          "Value": "js/RequestHistory.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-VeEjzbdZEkwA0qeRwdVFbcfgcS/di4hWSUrPcdTWz8U="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.3r8b2a0bt1.js",
+      "AssetFile": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\wwwroot\\js\\site.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 07:09:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3r8b2a0bt1"
+        },
+        {
+          "Name": "label",
+          "Value": "js/site.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U="
         }
       ]
     },
@@ -5345,7 +5493,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "231"
+          "Value": "3"
         },
         {
           "Name": "Content-Type",
@@ -5353,11 +5501,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo=\""
+          "Value": "\"8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 09 Feb 2025 10:31:42 GMT"
+          "Value": "Sat, 31 May 2025 07:09:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5367,52 +5515,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo="
-        }
-      ]
-    },
-    {
-      "Route": "js/site.xtxxf3hu2r.js",
-      "AssetFile": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\wwwroot\\js\\site.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "231"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 09 Feb 2025 10:31:42 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "xtxxf3hu2r"
-        },
-        {
-          "Name": "label",
-          "Value": "js/site.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo="
+          "Value": "sha256-8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U="
         }
       ]
     },
