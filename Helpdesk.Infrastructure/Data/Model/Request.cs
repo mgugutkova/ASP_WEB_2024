@@ -57,6 +57,9 @@ namespace Helpdesk.Infrastructure.Data.Model
         public string? Satisfaction { get; set; } = null;
 
         public byte[] Data { get; set; } = Array.Empty<byte>();
+        public string? FileName { get; set; } // напр. "document.pdf"
+        public string? ContentType { get; set; } // напр. "application/pdf" или "image/jpeg"
+
 
         [Required]
         public bool IsActive { get; set; } = true;

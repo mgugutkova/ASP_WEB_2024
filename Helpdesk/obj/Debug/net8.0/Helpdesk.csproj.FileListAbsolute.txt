@@ -288,12 +288,6 @@ C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk\obj\Debug\net8.0\scopedc
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk\obj\Debug\net8.0\staticwebassets\msbuild.Helpdesk.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk\obj\Debug\net8.0\staticwebassets\msbuild.Helpdesk.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk\obj\Debug\net8.0\staticwebassets\msbuild.build.Helpdesk.props
-C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Helpdesk.props
-C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Helpdesk.props
-C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk\obj\Debug\net8.0\Helpdesk.csproj.Up2Date
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk\obj\Debug\net8.0\Helpdesk.dll
@@ -301,3 +295,8 @@ C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk\obj\Debug\net8.0\refint\
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk\obj\Debug\net8.0\Helpdesk.pdb
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk\obj\Debug\net8.0\Helpdesk.genruntimeconfig.cache
 C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk\obj\Debug\net8.0\ref\Helpdesk.dll
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\Mariana\Documents\GitHub\ASP_WEB_2024\Helpdesk\obj\Debug\net8.0\staticwebassets.build.json.cache

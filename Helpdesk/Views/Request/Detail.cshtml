@@ -23,6 +23,7 @@
 				<input asp-for="Description" class="form-control" />
 				<span asp-validation-for="Description" class="small text-danger"></span>
 			</div>
+
 			<div class="form-group">
 				<label asp-for="CategoryId"></label>
 				<select asp-for="CategoryId" class="form-control" asp-items="@(new SelectList(Model.CategoryList, "Id", "Name"))">
@@ -35,6 +36,19 @@
 				<label asp-for="StartDate"></label>
 				<input asp-for="StartDate" class="form-control" readonly>
 				<span asp-validation-for="StartDate" class="small text-danger"></span>
+			</div>
+
+			<div class="form-group">
+
+				@if (Model.FileName != null)
+				{
+					<br />
+					<a asp-action="DownloadAttachment" asp-route-id="@Model.Id" class="btn btn-primary">
+						📎 Изтегли прикачения файл
+					</a>
+					<br />
+				}				
+
 			</div>
 
 			<div class="form-group">
@@ -58,6 +72,7 @@
 				<label asp-for="Satisfaction"></label>
 				<input asp-for="Satisfaction" class="form-control" >
 				<span asp-validation-for="Satisfaction" class="small text-danger"></span>
+			</div>	
 
 			<div class=" text-center">
 				<input class="btn btn-primary mt-3" type="submit" value="Save" />

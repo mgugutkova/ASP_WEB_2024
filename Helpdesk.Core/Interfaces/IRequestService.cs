@@ -2,6 +2,7 @@
 using Helpdesk.Core.Models.Categoris;
 using Helpdesk.Core.Models.Request;
 using Helpdesk.Core.Models.RequestHistory;
+using Microsoft.AspNetCore.Http;
 
 namespace Helpdesk.Core.Interfaces
 {
@@ -10,7 +11,7 @@ namespace Helpdesk.Core.Interfaces
         Task<IEnumerable<RequestViewModel>> AllRequestAsync();
         Task<IEnumerable<RequestViewModel>> MyRequestAsync(string userId);
         Task<RequestViewModel?> FindRequestAsync(Guid? id);
-        Task AddRequestAsync(string description, int categoryId);
+        Task AddRequestAsync(string description, int categoryId, IFormFile? attachment);
         Task EditRequestAsync(Guid id, RequestViewModel model);
         Task<IEnumerable<AllCategoriesViewModel>> AllCategoryList();
         Task<IEnumerable<ITAdminViewModel>> AllOperatorsAsync();

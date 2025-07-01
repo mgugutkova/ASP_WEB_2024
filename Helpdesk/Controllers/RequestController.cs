@@ -32,7 +32,13 @@ namespace Helpdesk.Controllers
         {            
             var model = new RequestViewModel();
 
-            model.CategoryList = await requestService.AllCategoryList(); 
+            model.CategoryList = await requestService.AllCategoryList();
+
+            var bulgariaTime = DateTime.UtcNow;
+            TimeZoneInfo bulgariaTimeZone = TimeZoneInfo.FindSystemTimeZoneById("FLE Standard Time");
+            DateTime startDate = TimeZoneInfo.ConvertTimeFromUtc(bulgariaTime, bulgariaTimeZone);
+            model.StartDate = startDate;
+
 
             return View(model);
         }
@@ -43,7 +49,7 @@ namespace Helpdesk.Controllers
         {
             model.UserId = GetUserId();
 
-            await requestService.AddRequestAsync(model.Description, model.CategoryId);
+            await requestService.AddRequestAsync(model.Description, model.CategoryId, model.Attachment);
 
            // return RedirectToAction(nameof(MyRequests), new { model.UserId });  
             return RedirectToAction(nameof(MyRequests));  
@@ -76,6 +82,23 @@ namespace Helpdesk.Controllers
             return RedirectToAction(nameof(MyRequests));
         }
 
-      
+        [HttpGet]
+        public async Task<IActionResult> DownloadAttachment(Guid id)
+        {
+            var request = await requestService.FindRequestAsync(id);
+               
+
+            if (request == null || request.Attachment == null || request.Attachment.Length == 0)
+            {
+                return NotFound("Файлът не е намерен.");
+            }
+
+            using var memoryStream = new MemoryStream();
+            await request.Attachment.CopyToAsync(memoryStream);
+            var fileBytes = memoryStream.ToArray();
+
+            return File(fileBytes, "application/octet-stream", request.FileName);
+        }       
+
     }
 }

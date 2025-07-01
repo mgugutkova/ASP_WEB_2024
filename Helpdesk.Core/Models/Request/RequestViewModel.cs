@@ -2,6 +2,7 @@
 using Helpdesk.Core.Models.Categoris;
 using Helpdesk.Core.Models.RequestHistory;
 using Helpdesk.Core.Models.RequestState;
+using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
 using static Helpdesk.Infrastructure.Constants.DataConstants;
 
@@ -66,6 +67,13 @@ namespace Helpdesk.Core.Models.Request
         [Display(Name = "Удовлетвореност")]
         public string? Satisfaction { get; set; } = null;
 
+        [Display(Name = "Прикачи файлове")]
+        public IFormFile? Attachment { get; set; }
+
+        [Display(Name = "Име на файла")]
+        public string? FileName { get; set; } = null;
+
+
         [Required]
         public bool IsActive { get; set; } = true;
         public string FirstName { get; set; } = string.Empty;
@@ -76,21 +84,3 @@ namespace Helpdesk.Core.Models.Request
         public string? Position { get; set; } = string.Empty;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

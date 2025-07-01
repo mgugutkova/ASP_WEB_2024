@@ -35,10 +35,15 @@ namespace Helpdesk.Core.Services
             httpContextAccessor = _httpContextAccessor;
         }
 
-        public async Task AddRequestAsync(string description, int categoryId)
+        public async Task AddRequestAsync(string description, int categoryId, IFormFile? attachment)
         {
             var currentUserId = httpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? string.Empty;
 
+          
+
+            var bulgariaTime = DateTime.UtcNow;
+            TimeZoneInfo bulgariaTimeZone = TimeZoneInfo.FindSystemTimeZoneById("FLE Standard Time");
+            DateTime startDate= TimeZoneInfo.ConvertTimeFromUtc(bulgariaTime, bulgariaTimeZone);
 
             var request = new Request
             {
@@ -46,9 +51,23 @@ namespace Helpdesk.Core.Services
                 Description = description,
                 UserId = currentUserId,
                 CategoryId = categoryId,
-                StartDate = DateTime.UtcNow,
-                RequestStateId = 1,
+                StartDate = startDate,
+                RequestStateId = 1               
             };
+
+            byte[] fileData = Array.Empty<byte>();
+
+            if (attachment != null)
+            {
+                using (var memoryStream = new MemoryStream())
+                {
+                    await attachment.CopyToAsync(memoryStream);
+                    fileData = memoryStream.ToArray();
+                }
+                request.Data = fileData;
+                request.FileName = attachment.FileName;
+                request.ContentType = attachment.ContentType;
+            }
 
             await repository.AddAsync(request);
             await repository.SaveChangesAsync();
@@ -91,15 +110,21 @@ namespace Helpdesk.Core.Services
 
             var request = await repository.GetByIdAsync<Request>(id);
 
+            var bulgariaTime = DateTime.UtcNow;
+            TimeZoneInfo bulgariaTimeZone = TimeZoneInfo.FindSystemTimeZoneById("FLE Standard Time");
+
             if (request != null)
             {
                 if (model.RequestStateId != request.RequestStateId)
                 {
+                   
+                    DateTime changedDate = TimeZoneInfo.ConvertTimeFromUtc(bulgariaTime, bulgariaTimeZone);
+
                     var history = new RequestHistory
                     {
                         RequestId = id,
                         RequestStateId = model.RequestStateId,
-                        ChangeDate = DateTime.UtcNow,
+                        ChangeDate = changedDate,
                         ChangedById = currentUserId,
                     };
 
@@ -118,7 +143,8 @@ namespace Helpdesk.Core.Services
 
                 if (model.RequestStateId == 3)
                 {
-                    request.EndDate = DateTime.UtcNow;
+                    DateTime endDate = TimeZoneInfo.ConvertTimeFromUtc(bulgariaTime, bulgariaTimeZone);
+                    request.EndDate = endDate;
                     request.ManagerId = currentUserId;
                 }  
 
@@ -148,6 +174,8 @@ namespace Helpdesk.Core.Services
                     Comment = r.Comment,
                     Satisfaction = r.Satisfaction,
                     IsActive = r.IsActive,
+                    Attachment = r.Data != null ? new FormFile(new MemoryStream(r.Data), 0, r.Data.Length, "file", "attachment") : null,
+                    FileName = r.FileName,
                 })
                 .FirstOrDefaultAsync();
 
@@ -172,7 +200,8 @@ namespace Helpdesk.Core.Services
                      EndDate = r.EndDate,
                      RequestState = r.RequestState.Name,
                      OperatorName = r.Operator.FirstName + " " + r.Operator.LastName,
-                     Comment = r.Comment
+                     Comment = r.Comment,
+                     Attachment = r.Data != null ? new FormFile(new MemoryStream(r.Data), 0, r.Data.Length, "file", "attachment") : null,
                      // UserFullName = fullName ?? string.Empty
                  })
                  .OrderByDescending(x => x.StartDate)
