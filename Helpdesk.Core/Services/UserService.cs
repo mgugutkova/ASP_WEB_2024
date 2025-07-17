@@ -23,7 +23,7 @@ namespace Helpdesk.Core.Services
             repository = _repository;
         }
 
-      
+
         public async Task<IEnumerable<UserViewModel>> AllUsersAsync()
         {
             var users = await userManager.Users
@@ -47,14 +47,14 @@ namespace Helpdesk.Core.Services
         }
 
         public async Task<UsersServiceQueryModel> AllUsersQueryAsync(
-            string? searchTerm = null,         
+            string? searchTerm = null,
             Status sortItem = Status.Active,
             int dirId = 0,
             int currentPage = 1,
             int usersPerPage = 1)
         {
 
-            var usersAll = userManager.Users.AsQueryable();         
+            var usersAll = userManager.Users.AsQueryable();
 
             if (sortItem == Status.NoActive)
             {
@@ -84,22 +84,21 @@ namespace Helpdesk.Core.Services
                        x.Address.ToLower().Contains(normalizeSearchTerm) ||
                        x.Email.ToLower().Contains(normalizeSearchTerm) ||
                        x.UserName.ToLower().Contains(normalizeSearchTerm)
-                       );       
+                       );
             }
 
 
             if (dirId != 0)
             {
                 usersAll = usersAll
-                   .Where(x => x.DirectoratesUnitId == dirId);                        
-            }      
+                   .Where(x => x.DirectoratesUnitId == dirId);
+            }
 
 
             var findUsersCount = usersAll.Count();
 
             var usersToShow = await usersAll
-                  .Skip((currentPage - 1) * usersPerPage)
-                  .Take(usersPerPage)
+
                   .Select(x => new UserViewModel()
                   {
                       UserId = x.Id,
@@ -116,12 +115,14 @@ namespace Helpdesk.Core.Services
                       RoleName = x.RoleName,
                   })
                   .OrderBy(x => x.FirstName)
+                  .Skip((currentPage - 1) * usersPerPage)
+                  .Take(usersPerPage)
                   .ToListAsync();
 
             var totalPagesCount = (int)Math.Ceiling((double)findUsersCount / usersPerPage);
 
             return new UsersServiceQueryModel
-            {               
+            {
                 TotalUsersCount = await userManager.Users.CountAsync(),
                 FoundUsersCount = findUsersCount,
                 TotalPagesCount = totalPagesCount,
@@ -145,6 +146,12 @@ namespace Helpdesk.Core.Services
             user.DirectoratesUnitId = model.DirectoratesUnitId;
             user.IsActive = model.IsActive;
             user.RoleName = model.RoleName;
+
+            // Вземи всички роли на потребителя
+            var currentRoles = await userManager.GetRolesAsync(user);
+
+            // Премахни всички роли
+            var removeResult = await userManager.RemoveFromRolesAsync(user, currentRoles);
 
             await userManager.AddToRoleAsync(user, model.RoleName);
 

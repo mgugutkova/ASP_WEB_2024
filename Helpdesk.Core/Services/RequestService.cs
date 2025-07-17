@@ -37,13 +37,13 @@ namespace Helpdesk.Core.Services
 
         public async Task AddRequestAsync(string description, int categoryId, IFormFile? attachment)
         {
-            var currentUserId = httpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? string.Empty;
-
-          
+            var currentUserId = httpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? string.Empty;          
 
             var bulgariaTime = DateTime.UtcNow;
+            // Get the Bulgaria time zone
             TimeZoneInfo bulgariaTimeZone = TimeZoneInfo.FindSystemTimeZoneById("FLE Standard Time");
-            DateTime startDate= TimeZoneInfo.ConvertTimeFromUtc(bulgariaTime, bulgariaTimeZone);
+            // Convert UTC time to Bulgaria time
+            DateTime startDate = TimeZoneInfo.ConvertTimeFromUtc(bulgariaTime, bulgariaTimeZone);
 
             var request = new Request
             {

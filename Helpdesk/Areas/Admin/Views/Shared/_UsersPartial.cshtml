@@ -19,6 +19,11 @@
 	else
 	{
 		
-	<td><a asp-controller="Users" asp-action="EditUser" asp-route-userId="@Model.UserId" class="btn btn-primary text-center">Редактиране</a></td>
+	<td><a 
+		asp-controller="Users" 
+		asp-action="EditUser" 
+		asp-route-userId="@Model.UserId"
+		asp-route-currentPage="@Model.CurrentPage"
+		class="btn btn-primary text-center">Редактиране</a></td>
 	}
 </tr>

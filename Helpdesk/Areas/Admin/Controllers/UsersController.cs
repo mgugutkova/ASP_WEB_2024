@@ -50,7 +50,7 @@ namespace Helpdesk.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> EditUser(string userId)
+        public async Task<IActionResult> EditUser(string userId, int currentPage = 1)
         {
             var model = await userService.GetUserByIdAsync(userId);
 
@@ -58,24 +58,31 @@ namespace Helpdesk.Areas.Admin.Controllers
             {
                 return NotFound();
             }
+
+            ViewBag.CurrentPage = currentPage; // ще го използваме при POST
+
             //  var directorates = await directoratesService.AllDirectoratesAsync();
 
             return View(model);
         }
 
         [HttpPost]
-        public async Task<IActionResult> EditUser(UpdateUserViewModel model)
+        public async Task<IActionResult> EditUser(UpdateUserViewModel model, int currentPage = 1)
         {
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
+
             var id = model.UserId;
+
             await userService.EditUserByIdAsync(model.UserId, model);
 
             TempData["SuccessMessage"] = "User edited successfully!";
 
-            return RedirectToAction("SearchFormQuery");
+            // return RedirectToAction("SearchFormQuery");
+            // Пренасочване към SearchFormQuery с текущата страница
+            return RedirectToAction("SearchFormQuery", new { CurrentPage = currentPage });
         }
     }
 }

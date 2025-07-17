@@ -35,10 +35,12 @@ namespace Helpdesk.Controllers
             model.CategoryList = await requestService.AllCategoryList();
 
             var bulgariaTime = DateTime.UtcNow;
-            TimeZoneInfo bulgariaTimeZone = TimeZoneInfo.FindSystemTimeZoneById("FLE Standard Time");
-            DateTime startDate = TimeZoneInfo.ConvertTimeFromUtc(bulgariaTime, bulgariaTimeZone);
-            model.StartDate = startDate;
 
+            TimeZoneInfo bulgariaTimeZone = TimeZoneInfo.FindSystemTimeZoneById("FLE Standard Time");
+            // Convert UTC time to Bulgaria time
+            DateTime startDate = TimeZoneInfo.ConvertTimeFromUtc(bulgariaTime, bulgariaTimeZone);
+            // Set the StartDate property to the converted time
+            model.StartDate = startDate;
 
             return View(model);
         }

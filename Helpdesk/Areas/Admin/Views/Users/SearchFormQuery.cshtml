@@ -121,6 +121,7 @@ else
 			<tbody>
 				@foreach (var userItem in Model.UsersListAll)
 				{
+					userItem.CurrentPage = Model.CurrentPage;
 					<partial name="_UsersPartial" model="@userItem" />
 				}
 			</tbody>
