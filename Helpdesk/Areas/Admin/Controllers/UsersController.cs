@@ -1,4 +1,5 @@
-﻿using Helpdesk.Core.Interfaces;
+﻿using Helpdesk.Core.Enumeration;
+using Helpdesk.Core.Interfaces;
 using Helpdesk.Core.Models.ApplicationUser;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,7 +18,7 @@ namespace Helpdesk.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> AllUsers()
+        public async Task<IActionResult> AllUsers()  // не се ползва това действие
         {
             var users = await userService.AllUsersAsync();
 
@@ -26,11 +27,11 @@ namespace Helpdesk.Areas.Admin.Controllers
 
         [HttpGet]
         public async Task<IActionResult> SearchFormQuery([FromQuery] AllUsersQueryViewModel query)
-        {
+        {          
+
             var model = await userService.AllUsersQueryAsync(
                  query.SearchItem,              
                  query.SortItem,  
-               //  query.Status.Active,               // Status.Active,
                  query.dirId,
                  query.CurrentPage,
                  query.UsersPerPage);
@@ -50,7 +51,9 @@ namespace Helpdesk.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> EditUser(string userId, int currentPage = 1)
+        public async Task<IActionResult> EditUser(string userId,
+            int currentPage = 1,
+            Status sortItem = Status.Active)
         {
             var model = await userService.GetUserByIdAsync(userId);
 
@@ -61,18 +64,24 @@ namespace Helpdesk.Areas.Admin.Controllers
 
             ViewBag.CurrentPage = currentPage; // ще го използваме при POST
 
-            //  var directorates = await directoratesService.AllDirectoratesAsync();
+            ViewBag.SortItem = sortItem; // ще го използваме при POST         
 
             return View(model);
         }
 
         [HttpPost]
-        public async Task<IActionResult> EditUser(UpdateUserViewModel model, int currentPage = 1)
+        public async Task<IActionResult> EditUser(UpdateUserViewModel model,
+            int currentPage = 1,
+            Status sortItem = Status.Active)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
+           
+                if (!ModelState.IsValid)
+                {
+                    ViewBag.CurrentPage = currentPage;
+                    ViewBag.SortItem = sortItem;
+                    return View(model);
+                }
+            
 
             var id = model.UserId;
 
@@ -81,8 +90,11 @@ namespace Helpdesk.Areas.Admin.Controllers
             TempData["SuccessMessage"] = "User edited successfully!";
 
             // return RedirectToAction("SearchFormQuery");
-            // Пренасочване към SearchFormQuery с текущата страница
-            return RedirectToAction("SearchFormQuery", new { CurrentPage = currentPage });
+            // Пренасочване към SearchFormQuery с текущата страница и текущия сортиращ елемент
+            return RedirectToAction("SearchFormQuery", new {
+                currentPage = currentPage,
+                sortItem = sortItem
+            });
         }
     }
 }

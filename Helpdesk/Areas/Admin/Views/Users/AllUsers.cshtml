@@ -1,4 +1,5 @@
-﻿@using Helpdesk.Core.Models.ApplicationUser
+﻿@* НЕ СЕ ПОЛЗВА *@
+@using Helpdesk.Core.Models.ApplicationUser
 @model IEnumerable<UserViewModel>
 
 @{
@@ -32,7 +33,7 @@
 				<td>@item.PhoneNumber</td>
 				<td>@item.RoleName</td>
 				<td>
-					<a asp-controller="Users" asp-action="All" asp-route-Id="@item.UserId" class="btn btn-primary text-center">Задай Роля</a>
+					<a asp-controller="Users" asp-action="All" asp-route-Id="@item.UserId" class="btn btn-primary text-center">Задай Роля - n/a</a>
 				</td>
 			</tr>
 		}

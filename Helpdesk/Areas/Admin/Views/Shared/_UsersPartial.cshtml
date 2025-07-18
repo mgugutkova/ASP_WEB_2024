@@ -18,12 +18,14 @@
 	}
 	else
 	{
+
 		
 	<td><a 
 		asp-controller="Users" 
 		asp-action="EditUser" 
 		asp-route-userId="@Model.UserId"
 		asp-route-currentPage="@Model.CurrentPage"
-		class="btn btn-primary text-center">Редактиране</a></td>
+		asp-route-sortItem="@Model.SortItem.ToString()"
+		class="btn btn-primary text-center">Редактирай</a></td>
 	}
 </tr>

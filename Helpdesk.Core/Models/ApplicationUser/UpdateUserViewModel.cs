@@ -1,6 +1,4 @@
-﻿using Helpdesk.Core.Enumeration;
-using Helpdesk.Core.Models.Directorates;
-using Helpdesk.Infrastructure.Data.Model;
+﻿using Helpdesk.Core.Models.Directorates;
 
 namespace Helpdesk.Core.Models.ApplicationUser
 {

@@ -1,4 +1,5 @@
-﻿using Helpdesk.Core.Models.Directorates;
+﻿using Helpdesk.Core.Enumeration;
+using Helpdesk.Core.Models.Directorates;
 using Helpdesk.Core.Models.Request;
 using Helpdesk.Infrastructure.Data.Model;
 using Microsoft.AspNetCore.Identity;
@@ -51,6 +52,7 @@ namespace Helpdesk.Core.Models.ApplicationUser
         [Required]
         public string RoleName { get; set; } = string.Empty;
         public int CurrentPage { get; set; } 
+        public Status SortItem { get; set; } 
 
         public virtual ICollection<RequestViewModel> Requests { get; set; } = new HashSet<RequestViewModel>();
 

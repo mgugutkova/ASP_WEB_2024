@@ -23,6 +23,9 @@
 		<form asp-action="EditUser" method="post">
 
 			<input type="hidden" name="currentPage" value="@ViewBag.CurrentPage" />
+			 <input type="hidden" name="sortItem" value="@ViewBag.SortItem" /> 
+			@* <input type="hidden" name="sortItem" value="@TempData["SortItem"]" /> *@
+
 
 			<div class="form-group">
 				<label asp-for="FirstName">Име</label>
