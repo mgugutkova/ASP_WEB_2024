@@ -52,6 +52,7 @@ namespace Helpdesk.Core.Models.ApplicationUser
         [Required]
         public string RoleName { get; set; } = string.Empty;
         public int CurrentPage { get; set; } 
+        public int DirId { get; set; } 
         public Status SortItem { get; set; } 
 
         public virtual ICollection<RequestViewModel> Requests { get; set; } = new HashSet<RequestViewModel>();

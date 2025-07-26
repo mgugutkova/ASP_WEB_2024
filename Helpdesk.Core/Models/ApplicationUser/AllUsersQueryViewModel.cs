@@ -13,7 +13,7 @@ namespace Helpdesk.Core.Models.ApplicationUser
         [Display(Name = "Search by text")]
         public string SearchItem { get; set; } = null!;
         public Status SortItem { get; set; }      
-        public int dirId { get; set; }
+        public int DirId { get; set; }
         public int CurrentPage { get; set; } = 1;
         public int TotalUsersCount { get; set; }
         public int FoundUsersCount { get; set; }

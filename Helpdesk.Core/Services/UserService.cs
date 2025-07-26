@@ -114,6 +114,7 @@ namespace Helpdesk.Core.Services
                       DirectoratesUnitId = x.DirectoratesUnit.Id,
                       RoleName = x.RoleName,
                       SortItem = sortItem,
+                      DirId = dirId,
                   })
                   .OrderBy(x => x.FirstName)
                   .Skip((currentPage - 1) * usersPerPage)
@@ -130,6 +131,7 @@ namespace Helpdesk.Core.Services
                 UsersPerPage = usersPerPage,
                 UsersLists = usersToShow,
                 SortItem = sortItem,
+                DirId = dirId
             };
         }
 

@@ -32,14 +32,14 @@ namespace Helpdesk.Areas.Admin.Controllers
             var model = await userService.AllUsersQueryAsync(
                  query.SearchItem,              
                  query.SortItem,  
-                 query.dirId,
+                 query.DirId,
                  query.CurrentPage,
                  query.UsersPerPage);
 
           var users = await userService.AllUsersAsync();
 
            // query.TotalUsersCount = model.TotalUsersCount;
-            query.dirId = model.dirId;              
+            query.DirId = model.DirId;              
             query.TotalUsersCount = users.Count(); 
             query.FoundUsersCount = model.FoundUsersCount;
             query.UsersPerPage = model.UsersPerPage;
@@ -53,7 +53,8 @@ namespace Helpdesk.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> EditUser(string userId,
             int currentPage = 1,
-            Status sortItem = Status.Active)
+            Status sortItem = Status.Active,
+            int dirId = 0)
         {
             var model = await userService.GetUserByIdAsync(userId);
 
@@ -64,7 +65,9 @@ namespace Helpdesk.Areas.Admin.Controllers
 
             ViewBag.CurrentPage = currentPage; // ще го използваме при POST
 
-            ViewBag.SortItem = sortItem; // ще го използваме при POST         
+            ViewBag.SortItem = sortItem; // ще го използваме при POST
+                                         
+            ViewBag.DirId = dirId; // ще го използваме при POST         
 
             return View(model);
         }
@@ -72,14 +75,18 @@ namespace Helpdesk.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> EditUser(UpdateUserViewModel model,
             int currentPage = 1,
-            Status sortItem = Status.Active)
+            Status sortItem = Status.Active,
+            int dirId = 0)
         {
            
                 if (!ModelState.IsValid)
                 {
                     ViewBag.CurrentPage = currentPage;
                     ViewBag.SortItem = sortItem;
-                    return View(model);
+                    ViewBag.DirId = dirId;
+                    model.DirectoratesList = await directoratesService.AllDirectoratesAsync();
+
+                return View(model);
                 }
             
 
@@ -93,7 +100,8 @@ namespace Helpdesk.Areas.Admin.Controllers
             // Пренасочване към SearchFormQuery с текущата страница и текущия сортиращ елемент
             return RedirectToAction("SearchFormQuery", new {
                 currentPage = currentPage,
-                sortItem = sortItem
+                sortItem = sortItem,
+                dirId = dirId
             });
         }
     }
