@@ -10,9 +10,11 @@
 <table class="table table-hover">
 	<thead>
 		<tr>
+			<th>Номер на заявка</th>
 			<th>Статус</th>
 			<th>Дата</th>
 			<th>Променено от</th>			
+			<th></th>			
 		</tr>
 	</thead>
 	<tbody>
@@ -24,9 +26,11 @@
 		{
 		<tr class="history">
 			
+			<td>@item.RequestNumber</td>
 			<td>@item.RequestState</td>
 			<td>@item.ChangeDate</td>
 			<td>@item.ChangedByUser</td>					
+			<td>@item.id</td>					
 		</tr>
 		}
 

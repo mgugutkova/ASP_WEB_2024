@@ -1,7 +1,8 @@
 ﻿@using Helpdesk.Core.Models.Request
 @model RequestViewModel
 @{
-	ViewBag.Title = "Request Details";
+	// ViewBag.Title = "Request Details";
+	ViewBag.Title = "Request Details " + Model.RequestNumber;
 }
 <h2 class="text-center">@ViewBag.Title</h2>
 <hr />
@@ -10,6 +11,7 @@
 	<thead>
 		<tr>
 			<th>Описание</th>
+			<th>Адрес</th>
 			<th>Статус</th>
 			<th>Разпределена</th>
 			<th>Приключена</th>
@@ -21,6 +23,7 @@
 	<tr class="request-row" data-id="@Model.Id">
 		
 		<td><textarea rows="3" cols="50">@Model.Description</textarea></td>
+		<td>@Model.Address</td>
 		<td>@Model.RequestState</td>
 		<td>@Model.OperatorName</td>
 		<td>@Model.EndDate</td>
@@ -31,6 +34,6 @@
 	</tr>
 </table>
 
-@section Scripts {
+@* @section Scripts {
 	<script src="~/js/RequestDetail.js"></script>
-}
+} *@

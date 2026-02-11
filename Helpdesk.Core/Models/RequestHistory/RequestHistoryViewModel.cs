@@ -12,8 +12,10 @@ namespace Helpdesk.Core.Models.RequestHistory
     {
         public int id { get; set; }
       
-        public Guid RequestId { get; set; }  
-      
+        public Guid RequestId { get; set; }
+
+        public int RequestNumber { get; set; }
+
         public int RequestStateId { get; set; }
 
         public string RequestState { get; set; } = string.Empty;

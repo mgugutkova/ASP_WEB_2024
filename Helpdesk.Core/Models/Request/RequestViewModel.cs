@@ -13,6 +13,10 @@ namespace Helpdesk.Core.Models.Request
         [Key]
         public Guid Id { get; set; }
 
+        [Display(Name = "Номер на заявка")]
+       // [Required]
+        public int RequestNumber { get; set; }
+
         [Required]
         public string UserId { get; set; } = string.Empty; 
 
@@ -39,7 +43,7 @@ namespace Helpdesk.Core.Models.Request
         [Display(Name = "Подадена")]
         public DateTime StartDate { get; set; } = DateTime.UtcNow;
 
-        [Display(Name = "Приключена")]
+        [Display(Name = "Приключена на")]
         public DateTime? EndDate { get; set; }
 
         [Required]
@@ -58,7 +62,7 @@ namespace Helpdesk.Core.Models.Request
         [Display(Name = "Мениджър")]
         public string? ManagerId { get; set; }
 
-        [Display(Name = "Приключена")]
+        [Display(Name = "Приключена от")]
         public string? ManagerName { get; set; } = string.Empty;
        
         [Display(Name = "Заключение/коментар")]

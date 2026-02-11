@@ -201,6 +201,12 @@ namespace Helpdesk.Infrastructure.Migrations
                     b.Property<string>("OperatorId")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<int>("RequestNumber")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RequestNumber"));
+
                     b.Property<int>("RequestStateId")
                         .HasColumnType("int");
 
@@ -222,6 +228,9 @@ namespace Helpdesk.Infrastructure.Migrations
                     b.HasIndex("ManagerId");
 
                     b.HasIndex("OperatorId");
+
+                    b.HasIndex("RequestNumber")
+                        .IsUnique();
 
                     b.HasIndex("RequestStateId");
 

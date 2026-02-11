@@ -1,9 +1,12 @@
 wwwroot\css\site.css
 wwwroot\favicon.ico
-wwwroot\js\RequestDetail - Copy.js
-wwwroot\js\RequestDetail.js
-wwwroot\js\RequestHistory.js
+wwwroot\js\api.js
+wwwroot\js\details.js
+wwwroot\js\edit.js
+wwwroot\js\main.js
 wwwroot\js\site.js
+wwwroot\js\table.js
+wwwroot\js\ui.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
 wwwroot\lib\bootstrap\dist\css\bootstrap.min.css

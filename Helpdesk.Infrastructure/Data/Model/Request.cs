@@ -9,6 +9,10 @@ namespace Helpdesk.Infrastructure.Data.Model
         [Key]
         public Guid Id { get; set; }
 
+        
+        [Display(Name = "Номер на заявка")]        
+        public int RequestNumber { get; set; }
+
         [Required]
         public string UserId { get; set; } = string.Empty;
 

@@ -20,7 +20,9 @@ namespace Helpdesk.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> AllRequests()
         {
+            
             var requests = await requestService.AllRequestAsync();
+            ViewBag.Time = DateTime.Now.ToString("HH:mm:ss.fff");
 
             if (requests == null)
             {
@@ -28,6 +30,17 @@ namespace Helpdesk.Areas.Admin.Controllers
             }
 
             return View(requests);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> RequestsTable()
+        {
+            var requests = await requestService.AllRequestAsync();
+            if (requests == null)
+            {
+                return NotFound();
+            }
+            return PartialView("_RequestsTable", requests);
         }
 
         [HttpGet]
@@ -66,8 +79,9 @@ namespace Helpdesk.Areas.Admin.Controllers
             }
             await requestService.EditRequestAsync(model.Id, model);
 
-            return Ok();
-            
+           // return Ok();
+          // return RedirectToAction(nameof(AllRequests));
+            return Json(new { success = true });
         }
 
         [HttpGet]

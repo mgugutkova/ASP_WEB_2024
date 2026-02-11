@@ -37,7 +37,7 @@ namespace Helpdesk.Core.Services
 
         public async Task AddRequestAsync(string description, int categoryId, IFormFile? attachment)
         {
-            var currentUserId = httpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? string.Empty;          
+            var currentUserId = httpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? string.Empty;
 
             var bulgariaTime = DateTime.UtcNow;
             // Get the Bulgaria time zone
@@ -52,7 +52,7 @@ namespace Helpdesk.Core.Services
                 UserId = currentUserId,
                 CategoryId = categoryId,
                 StartDate = startDate,
-                RequestStateId = 1               
+                RequestStateId = 1
             };
 
             byte[] fileData = Array.Empty<byte>();
@@ -76,6 +76,7 @@ namespace Helpdesk.Core.Services
         public async Task<IEnumerable<RequestViewModel>> AllRequestAsync()
         {
             var requests = await repository.All<Request>()
+               .AsNoTracking()
                .Where(x => x.IsActive == true)
                .Select(r => new RequestViewModel()
                {
@@ -97,12 +98,14 @@ namespace Helpdesk.Core.Services
                    IsActive = r.IsActive,
                    CategoryName = r.Category.Name,
                    UserFullName = r.UserMI.FirstName + " " + r.UserMI.LastName,
-
+                   RequestNumber = r.RequestNumber
                })
+               .OrderByDescending(x => x.StartDate)
                .ToListAsync();
 
             return requests;
         }
+
 
         public async Task EditRequestAsync(Guid id, RequestViewModel model)
         {
@@ -110,51 +113,71 @@ namespace Helpdesk.Core.Services
 
             var request = await repository.GetByIdAsync<Request>(id);
 
+
             var bulgariaTime = DateTime.UtcNow;
             TimeZoneInfo bulgariaTimeZone = TimeZoneInfo.FindSystemTimeZoneById("FLE Standard Time");
 
             if (request != null)
             {
+                var oldRequestStateId = request.RequestStateId;
+
                 if (model.RequestStateId != request.RequestStateId)
                 {
-                   
-                    DateTime changedDate = TimeZoneInfo.ConvertTimeFromUtc(bulgariaTime, bulgariaTimeZone);
-
-                    var history = new RequestHistory
-                    {
-                        RequestId = id,
-                        RequestStateId = model.RequestStateId,
-                        ChangeDate = changedDate,
-                        ChangedById = currentUserId,
-                    };
-
-                    await repository.AddAsync(history);
-                    await repository.SaveChangesAsync();
+                    await AddHistoryRecord(currentUserId, bulgariaTime, model);
                 }
 
+                //if (model.RequestStateId == 1 && model.OperatorId != null)
+                //{
+                //    model.OperatorId = null;
+                //}
+
                 request.Description = model.Description;
-                request.CategoryId = model.CategoryId;
-                request.StartDate = model.StartDate;
                 request.RequestStateId = model.RequestStateId;
                 request.OperatorId = model.OperatorId;
                 request.Comment = model.Comment;
-                request.Satisfaction = model.Satisfaction;
-                request.IsActive = model.IsActive;
 
                 if (model.RequestStateId == 3)
                 {
                     DateTime endDate = TimeZoneInfo.ConvertTimeFromUtc(bulgariaTime, bulgariaTimeZone);
                     request.EndDate = endDate;
                     request.ManagerId = currentUserId;
-                }  
+                }
+
+                if (model.RequestStateId == 1 && model.OperatorId != null)
+                {
+                    request.RequestStateId = 2;
+                    model.RequestStateId = 2;
+                    await AddHistoryRecord(currentUserId, bulgariaTime, model);
+                }
 
                 await repository.SaveChangesAsync();
             }
         }
 
+
+        public async Task AddHistoryRecord(string currentUserId,
+            DateTime bulgariaTime,
+            RequestViewModel model)
+        {
+            TimeZoneInfo bulgariaTimeZone = TimeZoneInfo.FindSystemTimeZoneById("FLE Standard Time");
+            DateTime changedDate = TimeZoneInfo.ConvertTimeFromUtc(bulgariaTime, bulgariaTimeZone);
+
+            var history = new RequestHistory
+            {
+                RequestId = model.Id,
+                RequestStateId = model.RequestStateId,
+                ChangeDate = changedDate,
+                ChangedById = currentUserId,
+            };
+
+            await repository.AddAsync(history);
+            await repository.SaveChangesAsync();
+        }
+
         public async Task<RequestViewModel?> FindRequestAsync(Guid? id)
         {
             var request = await repository.All<Request>()
+                .AsNoTracking()
                 .Where(x => x.Id == id)
                 .Where(x => x.IsActive == true)
                 .Select(r => new RequestViewModel()
@@ -162,6 +185,9 @@ namespace Helpdesk.Core.Services
                     Id = r.Id,
                     Description = r.Description,
                     UserId = r.UserId,
+                    Address = r.UserMI.Address,
+                    Phone = r.UserMI.PhoneNumber,
+                    UserFullName = r.UserMI.FirstName + " " + r.UserMI.LastName,
                     CategoryId = r.CategoryId,
                     CategoryName = r.Category.Name,
                     StartDate = r.StartDate,
@@ -176,6 +202,7 @@ namespace Helpdesk.Core.Services
                     IsActive = r.IsActive,
                     Attachment = r.Data != null ? new FormFile(new MemoryStream(r.Data), 0, r.Data.Length, "file", "attachment") : null,
                     FileName = r.FileName,
+                    RequestNumber = r.RequestNumber
                 })
                 .FirstOrDefaultAsync();
 
@@ -202,6 +229,7 @@ namespace Helpdesk.Core.Services
                      OperatorName = r.Operator.FirstName + " " + r.Operator.LastName,
                      Comment = r.Comment,
                      Attachment = r.Data != null ? new FormFile(new MemoryStream(r.Data), 0, r.Data.Length, "file", "attachment") : null,
+                     RequestNumber = r.RequestNumber
                      // UserFullName = fullName ?? string.Empty
                  })
                  .OrderByDescending(x => x.StartDate)
@@ -278,7 +306,8 @@ namespace Helpdesk.Core.Services
                    ChangedById = r.ChangedById,
                    ChangedByUser = r.ChangedByUser.FirstName + " " + r.ChangedByUser.LastName,
                    RequestId = r.RequestId,
-                   id = r.id
+                   id = r.id,
+                   RequestNumber = r.Request.RequestNumber
                })
                 .OrderByDescending(x => x.ChangeDate)
                 .ToListAsync();
