@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\helpdesk\\areas\\admin\\views\\requestadmin\\_requeststable.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|solutionrelative:areas\\admin\\views\\requestadmin\\_requeststable.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\helpdesk\\areas\\admin\\views\\requestadmin\\allrequests.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|solutionrelative:areas\\admin\\views\\requestadmin\\allrequests.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\helpdesk\\areas\\admin\\views\\requestadmin\\historypartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|solutionrelative:areas\\admin\\views\\requestadmin\\historypartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\helpdesk\\wwwroot\\js\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|solutionrelative:wwwroot\\js\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\helpdesk\\wwwroot\\js\\ui.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|solutionrelative:wwwroot\\js\\ui.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\helpdesk\\wwwroot\\js\\table.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|solutionrelative:wwwroot\\js\\table.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
@@ -15,20 +35,8 @@
       "RelativeMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|solutionrelative:wwwroot\\js\\details.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\helpdesk\\wwwroot\\js\\ui.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|solutionrelative:wwwroot\\js\\ui.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\helpdesk\\wwwroot\\js\\api.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|solutionrelative:wwwroot\\js\\api.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\helpdesk\\wwwroot\\js\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|solutionrelative:wwwroot\\js\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\helpdesk\\areas\\admin\\views\\requestadmin\\allrequests.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|solutionrelative:areas\\admin\\views\\requestadmin\\allrequests.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{426B2A82-D2F0-4F7F-AF6E-E37CBECB893C}|Helpdesk.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\helpdesk\\areas\\admin\\views\\requestadmin\\editpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -74,6 +82,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "_RequestsTable.cshtml",
+              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\Areas\\Admin\\Views\\RequestAdmin\\_RequestsTable.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\RequestAdmin\\_RequestsTable.cshtml",
+              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\Areas\\Admin\\Views\\RequestAdmin\\_RequestsTable.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\RequestAdmin\\_RequestsTable.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABcAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-15T13:49:49.587Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HistoryPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\Areas\\Admin\\Views\\RequestAdmin\\HistoryPartial.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\RequestAdmin\\HistoryPartial.cshtml",
+              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\Areas\\Admin\\Views\\RequestAdmin\\HistoryPartial.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\RequestAdmin\\HistoryPartial.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABMAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-15T13:05:16.903Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "table.js",
               "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\wwwroot\\js\\table.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\table.js",
@@ -81,12 +115,11 @@
               "RelativeToolTip": "wwwroot\\js\\table.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-02-03T16:20:33.901Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T16:20:33.901Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "api.js",
               "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\wwwroot\\js\\api.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\api.js",
@@ -94,25 +127,23 @@
               "RelativeToolTip": "wwwroot\\js\\api.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-02-03T16:15:42.196Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T16:15:42.196Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ui.js",
               "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\wwwroot\\js\\ui.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\ui.js",
               "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\wwwroot\\js\\ui.js",
               "RelativeToolTip": "wwwroot\\js\\ui.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAwwCcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-02-03T16:12:46.936Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T16:12:46.936Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "details.js",
               "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\wwwroot\\js\\details.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\details.js",
@@ -120,12 +151,11 @@
               "RelativeToolTip": "wwwroot\\js\\details.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-02-03T16:12:30.503Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T16:12:30.503Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "edit.js",
               "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\wwwroot\\js\\edit.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\edit.js",
@@ -133,25 +163,24 @@
               "RelativeToolTip": "wwwroot\\js\\edit.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-02-03T16:10:16.953Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T16:10:16.953Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "main.js",
               "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\wwwroot\\js\\main.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\main.js",
               "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\wwwroot\\js\\main.js",
               "RelativeToolTip": "wwwroot\\js\\main.js",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAuwAwAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2026-02-03T16:08:11.694Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "EditPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\Areas\\Admin\\Views\\RequestAdmin\\EditPartial.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\RequestAdmin\\EditPartial.cshtml",
@@ -159,12 +188,11 @@
               "RelativeToolTip": "Areas\\Admin\\Views\\RequestAdmin\\EditPartial.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-30T14:11:42.566Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-30T14:11:42.566Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "RequestService.cs",
               "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk.Core\\Services\\RequestService.cs",
               "RelativeDocumentMoniker": "..\\Helpdesk.Core\\Services\\RequestService.cs",
@@ -172,12 +200,11 @@
               "RelativeToolTip": "..\\Helpdesk.Core\\Services\\RequestService.cs",
               "ViewState": "AgIAACYBAAAAAAAAAAAkwDUBAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-30T12:21:04.054Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-30T12:21:04.054Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "AllRequests.cshtml",
               "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\Areas\\Admin\\Views\\RequestAdmin\\AllRequests.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\RequestAdmin\\AllRequests.cshtml",
@@ -190,7 +217,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "RequestAdminController.cs",
               "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\Areas\\Admin\\Controllers\\RequestAdminController.cs",
               "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\RequestAdminController.cs",

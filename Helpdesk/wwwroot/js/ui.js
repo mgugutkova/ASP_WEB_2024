@@ -32,3 +32,8 @@ export function closeModal() {
     const modal = bootstrap.Modal.getInstance(modalEl);
     modal.hide();
 }
+
+export function clearHistory() {
+    const container = document.querySelector("#historyContainer");
+    if (container) container.innerHTML = "";
+}

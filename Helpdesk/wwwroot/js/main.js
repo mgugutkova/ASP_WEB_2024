@@ -1,6 +1,8 @@
-﻿import { clearActiveRows, markRowActive } from "./ui.js";
+﻿/*import { clearActiveRows, markRowActive } from "./ui.js";*/
+import { clearActiveRows, markRowActive, clearHistory } from "./ui.js";
 import { loadEditForm } from "./edit.js";
 import { loadHistory } from "./details.js";
+
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -16,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Ред от таблицата
         const row = e.target.closest(".request-row");
         if (row && !e.target.closest("#detailsContainer")) {
+            clearHistory();
             clearActiveRows();
             markRowActive(row);
             loadEditForm(row.dataset.id);

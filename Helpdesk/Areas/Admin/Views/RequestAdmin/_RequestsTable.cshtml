@@ -18,15 +18,13 @@
 			<thead>
 				<tr>
 					<th></th>
-					<th>Номер на заявка</th>
+					<th>Nº заявка</th>
 					<th>Дата</th>
 					<th>Име</th>
 					<th>Категория</th>
 					<th>Статус</th>
 					<th>Дирекция</th>
 					<th>История</th>
-					<th></th>
-
 				</tr>
 			</thead>
 			<tbody>
@@ -40,7 +38,7 @@
 						<td>@item.CategoryName</td>
 						<td>@item.RequestState</td>
 						<td>@item.DirectorateName</td>
-					@* 	<td>
+						@* 	<td>
 							<button class="load-details-btn btn btn-sm btn-secondary"
 									data-request-id="@item.Id">
 								Детайли
@@ -52,8 +50,8 @@
 								История
 							</button>
 						</td>
-						@* <td style="display:none">@item.Id</td> *@
-						<td>@item.Id</td>
+						<td style="display:none">@item.Id</td>
+						@* <td>@item.Id</td>*@
 					</tr>
 				}
 			</tbody>
