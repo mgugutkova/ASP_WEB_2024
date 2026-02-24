@@ -75,13 +75,21 @@ namespace Helpdesk.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return PartialView("EditPartial", model);
+                return Json(new { success = false });
+                //return PartialView("EditPartial", model);
             }
             await requestService.EditRequestAsync(model.Id, model);
 
            // return Ok();
           // return RedirectToAction(nameof(AllRequests));
-            return Json(new { success = true });
+           // return Json(new { success = true });
+            var updatedRow = await requestService.GetRowAsync(model.Id);
+
+            return Json(new
+            {
+                success = true,
+                row = updatedRow
+            });
         }
 
         [HttpGet]

@@ -2,6 +2,7 @@
 import { clearActiveRows, markRowActive, clearHistory } from "./ui.js";
 import { loadEditForm } from "./edit.js";
 import { loadHistory } from "./details.js";
+import { setSelectedRequest } from "./state.js";
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -18,6 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
         // Ред от таблицата
         const row = e.target.closest(".request-row");
         if (row && !e.target.closest("#detailsContainer")) {
+
+            const id = row.dataset.id;
+            setSelectedRequest(id);   // 👈 КЛЮЧОВ РЕД
+
             clearHistory();
             clearActiveRows();
             markRowActive(row);

@@ -5,6 +5,7 @@ wwwroot\js\details.js
 wwwroot\js\edit.js
 wwwroot\js\main.js
 wwwroot\js\site.js
+wwwroot\js\state.js
 wwwroot\js\table.js
 wwwroot\js\ui.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css

@@ -294,6 +294,23 @@ namespace Helpdesk.Core.Services
             return model;
         }
 
+        public async Task<RequestViewModel> GetRowAsync(Guid id)
+        {
+
+            return await repository.All<Request>()
+                .Where(r => r.Id == id)
+                .Select(r => new RequestViewModel
+                {
+                    Id = r.Id,
+                    StartDate = r.StartDate,                   
+                    UserFullName = r.UserMI.FirstName + " " + r.UserMI.LastName,
+                    CategoryName = r.Category.Name,
+                    RequestState = r.RequestState.Name,
+                    DirectorateName = r.UserMI.DirectoratesUnit.Name,
+                    RequestNumber = r.RequestNumber
+                })
+                .FirstAsync();
+        }
         public async Task<IEnumerable<RequestHistoryViewModel?>> AllRequestHistoryAsync(Guid? Id)
         {
             var history = await repository.All<RequestHistory>()

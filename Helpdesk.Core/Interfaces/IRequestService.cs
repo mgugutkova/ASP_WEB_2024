@@ -10,7 +10,8 @@ namespace Helpdesk.Core.Interfaces
     {
         Task<IEnumerable<RequestViewModel>> AllRequestAsync();
         Task<IEnumerable<RequestViewModel>> MyRequestAsync(string userId);
-        Task<RequestViewModel?> FindRequestAsync(Guid? id);
+        Task<RequestViewModel?> FindRequestAsync(Guid? id);       
+        Task<RequestViewModel> GetRowAsync(Guid id);
         Task AddRequestAsync(string description, int categoryId, IFormFile? attachment);
         Task EditRequestAsync(Guid id, RequestViewModel model);
         Task<IEnumerable<AllCategoriesViewModel>> AllCategoryList();

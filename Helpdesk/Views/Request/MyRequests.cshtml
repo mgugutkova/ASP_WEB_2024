@@ -29,6 +29,7 @@
 <table class="table table-striped">
 	<thead>
 		<tr>
+			<th>Nº заявка</th>
 			<th>Описание</th>
 			<th>Категория</th>
 			<th>Подадена</th>
@@ -44,6 +45,7 @@
 		@foreach (var item in Model)
 		{
 			<tr>
+				<td>@item.RequestNumber</td>				
 				<td><label>@item.Description</label></td>
 				<td><label>@item.CategoryName</label></td>
 				<td>@item.StartDate</td>
