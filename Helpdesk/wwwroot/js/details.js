@@ -1,4 +1,6 @@
-﻿import { getHtml } from "./api.js";
+﻿//details.js - функции за зареждане на детайлите и историята на заявка
+
+import { getHtml } from "./api.js";
 import { showLoader, setHtml } from "./ui.js";
 
 export async function loadDetails(id) {

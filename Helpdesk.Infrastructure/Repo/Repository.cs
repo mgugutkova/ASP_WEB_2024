@@ -13,7 +13,8 @@ namespace Helpdesk.Infrastructure.Repo
             Context = _context;
         }
 
-        protected DbSet<T> DbSet<T>() where T : class
+       // protected DbSet<T> DbSet<T>() where T : class
+        public DbSet<T> DbSet<T>() where T : class
         {
             return Context.Set<T>(); // връща табл. отговаряща на въпросното entity
         }
@@ -56,5 +57,10 @@ namespace Helpdesk.Infrastructure.Repo
         {
             return await Context.SaveChangesAsync();
         }
+
+        //public DbSet<T> Set<T>() where T : class
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

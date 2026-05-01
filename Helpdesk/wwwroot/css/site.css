@@ -26,16 +26,16 @@ body {
 }
 
 /* Контейнерът, който реално се скролира */
-.request-table-container {
-    max-height: 60vh; /* Можеш да смениш според нуждите */
-    overflow-y: auto;
+/*.request-table-container {
+    max-height: 60vh;*/ /* Можеш да смениш според нуждите */
+    /*overflow-y: auto;
     border: 1px solid #ddd;
     border-radius: 6px;
 }
 
     .request-table-container table {
         margin-bottom: 0;
-    }
+    }*/
 
 /* Hover подсказка */
 .request-row:hover {
@@ -64,3 +64,19 @@ body {
     background: #fff;
     z-index: 2;
 }
+
+#requestsTableContainer {
+    height: 500px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+}
+
+ Sticky header 
+#requestTable thead th {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 2;
+    border-bottom: 2px solid #ddd;
+}
+

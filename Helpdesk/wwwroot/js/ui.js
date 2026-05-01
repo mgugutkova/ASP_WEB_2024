@@ -1,5 +1,5 @@
-﻿export function setHtml(selector, html) {
-    /*document.querySelector(selector).innerHTML = html;*/
+﻿//ui.js - общи функции за работа с UI
+export function setHtml(selector, html) {    
     const el = document.querySelector(selector);
     if (el) el.innerHTML = html;
 }
@@ -12,7 +12,9 @@ export function showLoader(selector) {
 export function clearActiveRows() {
     document.querySelectorAll(".request-row").forEach(r => {
         r.classList.remove("active-row", "table-active");
+
         const statusCell = r.querySelector(".status-cell");
+
         if (statusCell) statusCell.textContent = "";
     });
 }
@@ -43,31 +45,5 @@ export function formatBgDate(dateString) {
 
     return `${day}.${month}.${year} ${hours}:${minutes}:${seconds}`;
 }
-
-//export function formatBgDate(dateString) {
-//    if (!dateString) return "";
-
-//    return new Intl.DateTimeFormat("bg-BG", {
-//        day: "numeric",
-//        month: "numeric",
-//        year: "numeric",
-//        hour: "2-digit",
-//        minute: "2-digit",
-//        second: "2-digit"
-//    }).format(new Date(dateString));
-//}
-
-// Bootstrap 5 modal (native)
-//export function openModal() {
-//    const modalEl = document.getElementById("modal");
-//    const modal = new bootstrap.Modal(modalEl);
-//    modal.show();
-//}
-
-//export function closeModal() {
-//    const modalEl = document.getElementById("modal");
-//    const modal = bootstrap.Modal.getInstance(modalEl);
-//    modal.hide();
-//}
 
 

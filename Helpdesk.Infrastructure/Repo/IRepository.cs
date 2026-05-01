@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,5 +20,10 @@ namespace Helpdesk.Infrastructure.Repo
         Task AddAsync<T>(T entiry) where T : class;
 
         Task<int> SaveChangesAsync();
+
+        DbSet<T> DbSet<T>() where T : class;
+
+       // DbSet<T> Set<T>() where T : class;
+
     }
 }

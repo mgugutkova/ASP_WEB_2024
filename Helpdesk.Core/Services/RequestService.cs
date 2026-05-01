@@ -106,6 +106,47 @@ namespace Helpdesk.Core.Services
             return requests;
         }
 
+        public async Task<IEnumerable<RequestViewModel>> GetPagedAsync(int skip, int take, int stateId)
+        {
+            var query = repository.DbSet<Request>().AsQueryable();
+
+            if (stateId == 3)
+            {
+                query = query.Where(r => r.RequestStateId == 3);
+            }
+            // stateId == 0 → без филтър
+
+            var requests = await query
+                 .OrderByDescending(r => r.StartDate)
+                .Skip(skip)
+                .Take(take)
+                .Select(r => new RequestViewModel
+                {
+                    Id = r.Id,
+                    Description = r.Description,
+                    UserId = r.UserId,
+                    Address = r.UserMI.Address,
+                    Phone = r.UserMI.PhoneNumber ?? string.Empty,
+                    DirectorateName = r.UserMI.DirectoratesUnit.Name,
+                    CategoryId = r.CategoryId,
+                    StartDate = r.StartDate,
+                    EndDate = r.EndDate,
+                    RequestStateId = r.RequestStateId,
+                    RequestState = r.RequestState.Name,
+                    OperatorId = r.OperatorId,
+                    OperatorName = r.Operator.FirstName + " " + r.Operator.LastName,
+                    ManagerName = r.Manager.FirstName + " " + r.Manager.LastName,
+                    Comment = r.Comment,
+                    IsActive = r.IsActive,
+                    CategoryName = r.Category.Name,
+                    UserFullName = r.UserMI.FirstName + " " + r.UserMI.LastName,
+                    RequestNumber = r.RequestNumber
+                })
+                .AsNoTracking()
+                .ToListAsync();
+
+            return requests;
+        }
 
         public async Task EditRequestAsync(Guid id, RequestViewModel model)
         {
@@ -302,7 +343,7 @@ namespace Helpdesk.Core.Services
                 .Select(r => new RequestViewModel
                 {
                     Id = r.Id,
-                    StartDate = r.StartDate,                   
+                    StartDate = r.StartDate,
                     UserFullName = r.UserMI.FirstName + " " + r.UserMI.LastName,
                     CategoryName = r.Category.Name,
                     RequestState = r.RequestState.Name,
@@ -337,6 +378,39 @@ namespace Helpdesk.Core.Services
             {
                 return history;
             }
+        }
+
+        public async Task<IEnumerable<RequestViewModel>> GetClosedRequestPagedAsync(int skip, int take)
+        {
+            return await repository.DbSet<Request>()
+                 .Where(r => r.RequestStateId == 3)
+                 .OrderByDescending(r => r.StartDate)
+                 .Skip(skip)
+                 .Take(take)
+                 .Select(r => new RequestViewModel
+                 {
+                     Id = r.Id,
+                     Description = r.Description,
+                     UserId = r.UserId,
+                     Address = r.UserMI.Address,
+                     Phone = r.UserMI.PhoneNumber ?? string.Empty,
+                     DirectorateName = r.UserMI.DirectoratesUnit.Name,
+                     CategoryId = r.CategoryId,
+                     StartDate = r.StartDate,
+                     EndDate = r.EndDate,
+                     RequestStateId = r.RequestStateId,
+                     RequestState = r.RequestState.Name,
+                     OperatorId = r.OperatorId,
+                     OperatorName = r.Operator.FirstName + " " + r.Operator.LastName,
+                     ManagerName = r.Manager.FirstName + " " + r.Manager.LastName,
+                     Comment = r.Comment,
+                     IsActive = r.IsActive,
+                     CategoryName = r.Category.Name,
+                     UserFullName = r.UserMI.FirstName + " " + r.UserMI.LastName,
+                     RequestNumber = r.RequestNumber
+                 })
+                 .AsNoTracking()
+                 .ToListAsync();
         }
     }
 }

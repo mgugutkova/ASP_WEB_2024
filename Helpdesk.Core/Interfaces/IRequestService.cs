@@ -8,6 +8,8 @@ namespace Helpdesk.Core.Interfaces
 {
     public interface IRequestService
     {
+        Task<IEnumerable<RequestViewModel>> GetPagedAsync(int skip, int take, int stateId);
+        Task<IEnumerable<RequestViewModel>> GetClosedRequestPagedAsync(int skip, int take);
         Task<IEnumerable<RequestViewModel>> AllRequestAsync();
         Task<IEnumerable<RequestViewModel>> MyRequestAsync(string userId);
         Task<RequestViewModel?> FindRequestAsync(Guid? id);       

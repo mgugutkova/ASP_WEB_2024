@@ -1,6 +1,7 @@
 ﻿using Helpdesk.Core.Interfaces;
 using Helpdesk.Core.Models.Request;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Helpdesk.Areas.Admin.Controllers
 {
@@ -18,18 +19,30 @@ namespace Helpdesk.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> AllRequests()
+        public async Task<IActionResult> RequestsPage(int stateId = 0, int skip = 0, int take = 10)
         {
-            
-            var requests = await requestService.AllRequestAsync();
-            ViewBag.Time = DateTime.Now.ToString("HH:mm:ss.fff");
+            var data = await requestService.GetPagedAsync(skip, take, stateId);
 
-            if (requests == null)
-            {
-                return NotFound();
-            }
+            return PartialView("_RequestsTable", data);
+        }
 
-            return View(requests);
+
+        [HttpGet]
+        public IActionResult AllRequests()
+        {
+            ViewBag.Time = DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss");
+            ViewBag.Title = "Всички Заявки !!! ";
+
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult ClosedRequests()
+        {
+            ViewBag.Time = DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss");
+            ViewBag.Title = "Затворени Заявки !!! ";
+
+            return View();
         }
 
         [HttpGet]
@@ -51,7 +64,7 @@ namespace Helpdesk.Areas.Admin.Controllers
             if (model == null)
                 return NotFound(); // Важно!
 
-            return PartialView(model);           
+            return PartialView(model);
         }
 
         [HttpGet]
@@ -64,7 +77,7 @@ namespace Helpdesk.Areas.Admin.Controllers
                 return NotFound(); // Важно!
             }
 
-            model.StateList = await requestStateService.AllRequestStateAsync(); 
+            model.StateList = await requestStateService.AllRequestStateAsync();
 
             return PartialView(model);
 
@@ -76,13 +89,9 @@ namespace Helpdesk.Areas.Admin.Controllers
             if (!ModelState.IsValid)
             {
                 return Json(new { success = false });
-                //return PartialView("EditPartial", model);
             }
             await requestService.EditRequestAsync(model.Id, model);
 
-           // return Ok();
-          // return RedirectToAction(nameof(AllRequests));
-           // return Json(new { success = true });
             var updatedRow = await requestService.GetRowAsync(model.Id);
 
             return Json(new
@@ -94,16 +103,14 @@ namespace Helpdesk.Areas.Admin.Controllers
 
         [HttpGet]
         public async Task<IActionResult> HistoryPartial(Guid id)
-        {     
-            var model = await requestService.AllRequestHistoryAsync(id);  
+        {
+            var model = await requestService.AllRequestHistoryAsync(id);
 
             if (model == null)
             {
                 return NotFound();
             }
-    
-             return PartialView("HistoryPartial", model);
+            return PartialView("HistoryPartial", model);
         }
-
     }
 }

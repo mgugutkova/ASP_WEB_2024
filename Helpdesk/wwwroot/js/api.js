@@ -1,4 +1,6 @@
-﻿export async function getHtml(url) {
+﻿//api.js - общи функции за работа с API
+
+export async function getHtml(url) {
     const r = await fetch(url);
     if (!r.ok) throw new Error("Грешка при зареждане");
     return r.text();

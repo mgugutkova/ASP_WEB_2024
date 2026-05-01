@@ -1,0 +1,47 @@
+﻿@* ClosedRequests.cshtml *@
+
+@using Helpdesk.Core.Models.Request
+@{
+	ViewBag.StateId = 3;
+}
+
+
+<div id="requestsTableContainer"> 
+
+	<p><center>@ViewBag.Title @ViewBag.StateId  към  @ViewBag.Time</center></p>
+
+	<table class="table table-hover" id="requestTable">
+		<thead>
+			<tr>
+				<th></th>
+				<th>Nº заявка</th>
+				<th>Дата</th>
+				<th>Име</th>
+				<th>Категория</th>
+				<th>Статус</th>
+				<th>Дирекция</th>
+				<th>История</th>
+			</tr>
+		</thead>
+		<tbody id="requestTableBody">
+			@* Празно — JS ще зареди първите 10 *@
+		</tbody>
+	</table>
+</div>
+
+<div id="detailsContainer" class="mt-4">
+	<p>Избери заявка за подробности...</p>
+</div>
+
+<div id="historyContainer"></div>
+<div id="modal" tabindex="-1"></div>
+
+
+@section Scripts {
+	<script>
+		window.stateId = @ViewBag.StateId;
+	</script>
+	
+	<script type="module" src="~/js/main.js?v=@DateTime.Now.Ticks"></script> 
+
+}

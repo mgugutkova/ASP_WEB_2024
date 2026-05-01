@@ -1,7 +1,6 @@
 ﻿@using Helpdesk.Core.Models.Request
 @model RequestViewModel
-@{
-	// ViewBag.Title = "Request Details";
+@{	
 	ViewBag.Title = "Request Details " + Model.RequestNumber;
 }
 <h2 class="text-center">@ViewBag.Title</h2>
@@ -33,7 +32,3 @@
 		
 	</tr>
 </table>
-
-@* @section Scripts {
-	<script src="~/js/RequestDetail.js"></script>
-} *@
