@@ -14,7 +14,7 @@ import { loadHistory } from "./details.js";
 import { setSelectedRequest } from "./state.js";
 
 let skip = 0;
-const take = 10;
+const take = 5;
 let isLoading = false;
 let noMoreData = false;
 

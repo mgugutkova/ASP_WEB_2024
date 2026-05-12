@@ -19,7 +19,7 @@ namespace Helpdesk.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> RequestsPage(int stateId = 0, int skip = 0, int take = 10)
+        public async Task<IActionResult> RequestsPage(int stateId = 0, int skip = 0, int take = 5)
         {
             var data = await requestService.GetPagedAsync(skip, take, stateId);
 
