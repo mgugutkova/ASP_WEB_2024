@@ -114,6 +114,10 @@ namespace Helpdesk.Core.Services
             {
                 query = query.Where(r => r.RequestStateId == 3);
             }
+            else if (stateId == 9)
+            {
+                query = query.Where(r => r.RequestStateId != 3);
+            }
             // stateId == 0 → без филтър
 
             var requests = await query

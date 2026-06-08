@@ -46,6 +46,15 @@ namespace Helpdesk.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        public IActionResult ActiveRequests()
+        {
+            ViewBag.Time = DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss");
+            ViewBag.Title = "Активни Заявки !!! ";
+
+            return View();
+        }
+
+        [HttpGet]
         public async Task<IActionResult> RequestsTable()
         {
             var requests = await requestService.AllRequestAsync();
