@@ -1,0 +1,58 @@
+﻿@using Fondacia.Core.Models.PersonnelUser
+@model CreatePersonnelViewModel
+
+<h2>Създаване на нов потребител</h2>
+
+<form asp-action="Create" method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label asp-for="Email">* Email</label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Password">* Парола</label>
+        <input asp-for="Password" class="form-control" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+    <hr />
+
+    <div class="form-group">
+        <label asp-for="FullName">* Пълно име</label>
+        <input asp-for="FullName" class="form-control" />
+        <span asp-validation-for="FullName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ShortName">* Кратко име</label>
+        <input asp-for="ShortName" class="form-control" />
+        <span asp-validation-for="ShortName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Notice">Бележка</label>
+        <textarea asp-for="Notice" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label asp-for="Photo">Профилна снимка</label>
+        <input asp-for="Photo" type="file" class="form-control" />
+        <span asp-validation-for="Photo" class="text-danger"></span>
+
+    </div>
+    
+    <br />
+    
+
+    <button type="submit" class="btn btn-primary">Създай</button>
+
+    <div class="form-group">
+		<p>* задължителни полета</p>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

@@ -1,0 +1,38 @@
+﻿@using Fondacia.Core.Models.PersonnelUser
+@model CompleteProfileViewModel
+
+<h2>Попълване на профил</h2>
+
+<form asp-action="CompleteProfile" method="post">
+
+    <div class="form-group">
+        <label asp-for="FullName">* Пълно име</label>
+        <input asp-for="FullName" class="form-control" />
+        <span asp-validation-for="FullName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ShortName">* Кратко име</label>
+        <input asp-for="ShortName" class="form-control" />
+        <span asp-validation-for="ShortName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Notice">Бележка</label>
+        <textarea asp-for="Notice" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <br/>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Запази</button>
+
+    <div class="form-group">
+        <p>* задължителни полета</p>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

@@ -1,0 +1,220 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\FondaciaProject\\Fondacia\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B14A4CA2-26BA-455B-B34F-9B87D75787EC}|Fondacia.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\fondaciaproject\\fondacia\\controllers\\personnelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B14A4CA2-26BA-455B-B34F-9B87D75787EC}|Fondacia.csproj|solutionrelative:controllers\\personnelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF73437-3E26-498D-80A7-1DDECA5994EF}|..\\Fondacia.Core\\Fondacia.Core.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\fondaciaproject\\fondacia.core\\services\\personnelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF73437-3E26-498D-80A7-1DDECA5994EF}|..\\Fondacia.Core\\Fondacia.Core.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\fondaciaproject\\fondacia.core\\services\\serviceresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B14A4CA2-26BA-455B-B34F-9B87D75787EC}|Fondacia.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\fondaciaproject\\fondacia\\views\\personnel\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B14A4CA2-26BA-455B-B34F-9B87D75787EC}|Fondacia.csproj|solutionrelative:views\\personnel\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF73437-3E26-498D-80A7-1DDECA5994EF}|..\\Fondacia.Core\\Fondacia.Core.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\fondaciaproject\\fondacia.core\\models\\personneluser\\createpersonnelviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF73437-3E26-498D-80A7-1DDECA5994EF}|..\\Fondacia.Core\\Fondacia.Core.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\fondaciaproject\\fondacia.core\\interfaces\\ipersonnel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B14A4CA2-26BA-455B-B34F-9B87D75787EC}|Fondacia.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\fondaciaproject\\fondacia\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B14A4CA2-26BA-455B-B34F-9B87D75787EC}|Fondacia.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF73437-3E26-498D-80A7-1DDECA5994EF}|..\\Fondacia.Core\\Fondacia.Core.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\fondaciaproject\\fondacia.core\\models\\personneluser\\editprofileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E6F0AAE-0843-4D80-AABF-E84854712E8B}|..\\Fondacia.Infrastructure\\Fondacia.Infrastructure.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\fondaciaproject\\fondacia.infrastructure\\constants\\dataconstants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B14A4CA2-26BA-455B-B34F-9B87D75787EC}|Fondacia.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\fondaciaproject\\fondacia\\views\\personnel\\editprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B14A4CA2-26BA-455B-B34F-9B87D75787EC}|Fondacia.csproj|solutionrelative:views\\personnel\\editprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E6F0AAE-0843-4D80-AABF-E84854712E8B}|..\\Fondacia.Infrastructure\\Fondacia.Infrastructure.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\fondaciaproject\\fondacia.infrastructure\\data\\model\\personnel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PersonnelService.cs",
+              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\FondaciaProject\\Fondacia.Core\\Services\\PersonnelService.cs",
+              "RelativeDocumentMoniker": "..\\Fondacia.Core\\Services\\PersonnelService.cs",
+              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\FondaciaProject\\Fondacia.Core\\Services\\PersonnelService.cs",
+              "RelativeToolTip": "..\\Fondacia.Core\\Services\\PersonnelService.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAgwHAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-10T19:46:12.496Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PersonnelController.cs",
+              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\FondaciaProject\\Fondacia\\Controllers\\PersonnelController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PersonnelController.cs",
+              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\FondaciaProject\\Fondacia\\Controllers\\PersonnelController.cs",
+              "RelativeToolTip": "Controllers\\PersonnelController.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAgwEUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-10T19:37:29.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IPersonnel.cs",
+              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\FondaciaProject\\Fondacia.Core\\Interfaces\\IPersonnel.cs",
+              "RelativeDocumentMoniker": "..\\Fondacia.Core\\Interfaces\\IPersonnel.cs",
+              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\FondaciaProject\\Fondacia.Core\\Interfaces\\IPersonnel.cs",
+              "RelativeToolTip": "..\\Fondacia.Core\\Interfaces\\IPersonnel.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-10T19:46:00.881Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CreatePersonnelViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\FondaciaProject\\Fondacia.Core\\Models\\PersonnelUser\\CreatePersonnelViewModel.cs",
+              "RelativeDocumentMoniker": "..\\Fondacia.Core\\Models\\PersonnelUser\\CreatePersonnelViewModel.cs",
+              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\FondaciaProject\\Fondacia.Core\\Models\\PersonnelUser\\CreatePersonnelViewModel.cs",
+              "RelativeToolTip": "..\\Fondacia.Core\\Models\\PersonnelUser\\CreatePersonnelViewModel.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAowAYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-11T20:53:55.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\FondaciaProject\\Fondacia\\Views\\Personnel\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Personnel\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\FondaciaProject\\Fondacia\\Views\\Personnel\\Create.cshtml",
+              "RelativeToolTip": "Views\\Personnel\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-07-11T20:14:27.833Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EditProfileViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\FondaciaProject\\Fondacia.Core\\Models\\PersonnelUser\\EditProfileViewModel.cs",
+              "RelativeDocumentMoniker": "..\\Fondacia.Core\\Models\\PersonnelUser\\EditProfileViewModel.cs",
+              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\FondaciaProject\\Fondacia.Core\\Models\\PersonnelUser\\EditProfileViewModel.cs",
+              "RelativeToolTip": "..\\Fondacia.Core\\Models\\PersonnelUser\\EditProfileViewModel.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAA1wBUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-11T18:57:01.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DataConstants.cs",
+              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\FondaciaProject\\Fondacia.Infrastructure\\Constants\\DataConstants.cs",
+              "RelativeDocumentMoniker": "..\\Fondacia.Infrastructure\\Constants\\DataConstants.cs",
+              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\FondaciaProject\\Fondacia.Infrastructure\\Constants\\DataConstants.cs",
+              "RelativeToolTip": "..\\Fondacia.Infrastructure\\Constants\\DataConstants.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-11T21:00:12.159Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ServiceResult.cs",
+              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\FondaciaProject\\Fondacia.Core\\Services\\ServiceResult.cs",
+              "RelativeDocumentMoniker": "..\\Fondacia.Core\\Services\\ServiceResult.cs",
+              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\FondaciaProject\\Fondacia.Core\\Services\\ServiceResult.cs",
+              "RelativeToolTip": "..\\Fondacia.Core\\Services\\ServiceResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAiwA0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-11T21:06:34.982Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\FondaciaProject\\Fondacia\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\FondaciaProject\\Fondacia\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-11T21:08:35.207Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Personnel.cs",
+              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\FondaciaProject\\Fondacia.Infrastructure\\Data\\Model\\Personnel.cs",
+              "RelativeDocumentMoniker": "..\\Fondacia.Infrastructure\\Data\\Model\\Personnel.cs",
+              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\FondaciaProject\\Fondacia.Infrastructure\\Data\\Model\\Personnel.cs",
+              "RelativeToolTip": "..\\Fondacia.Infrastructure\\Data\\Model\\Personnel.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwBAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-11T19:01:11.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "EditProfile.cshtml",
+              "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\FondaciaProject\\Fondacia\\Views\\Personnel\\EditProfile.cshtml",
+              "RelativeDocumentMoniker": "Views\\Personnel\\EditProfile.cshtml",
+              "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\FondaciaProject\\Fondacia\\Views\\Personnel\\EditProfile.cshtml",
+              "RelativeToolTip": "Views\\Personnel\\EditProfile.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-07-11T11:18:00.421Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

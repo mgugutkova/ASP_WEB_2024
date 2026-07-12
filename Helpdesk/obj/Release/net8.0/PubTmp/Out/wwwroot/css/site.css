@@ -1,0 +1,82 @@
+html {
+  font-size: 12px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.table-active {
+    background-color: #dcecfb !important;
+}
+
+/* Контейнерът, който реално се скролира */
+/*.request-table-container {
+    max-height: 60vh;*/ /* Можеш да смениш според нуждите */
+    /*overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+    .request-table-container table {
+        margin-bottom: 0;
+    }*/
+
+/* Hover подсказка */
+.request-row:hover {
+    background-color: #f0f8ff;
+    cursor: pointer;
+}
+
+/* Активен ред */
+.request-row.active-row {
+    background-color: #d0ebff !important;
+    font-weight: bold;
+}
+
+/* Иконката за редакция */
+.request-row .status-cell {
+    text-align: center;
+    width: 40px;
+    font-size: 18px;
+    color: #0d6efd;
+}
+
+/* Sticky header – силно препоръчително */
+.request-table-container thead th {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 2;
+}
+
+#requestsTableContainer {
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+}
+
+ Sticky header 
+#requestTable thead th {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 2;
+    border-bottom: 2px solid #ddd;
+}
+

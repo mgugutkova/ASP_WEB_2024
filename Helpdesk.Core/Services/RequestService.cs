@@ -114,7 +114,7 @@ namespace Helpdesk.Core.Services
             {
                 query = query.Where(r => r.RequestStateId == 3);
             }
-            else if (stateId == 9)
+            else if (stateId == 999)
             {
                 query = query.Where(r => r.RequestStateId != 3);
             }
