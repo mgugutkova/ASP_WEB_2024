@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Fondacia.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+57922550d329dcf0cf3f3c8f5eea09eb023ca8b8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+05124028345821666c223db6b21b78b87ab2b092")]
 [assembly: System.Reflection.AssemblyProductAttribute("Fondacia.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Fondacia.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

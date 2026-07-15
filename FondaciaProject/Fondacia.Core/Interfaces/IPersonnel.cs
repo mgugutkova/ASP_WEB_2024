@@ -19,5 +19,9 @@ namespace Fondacia.Core.Interfaces
 
         Task<EditProfileViewModel> EditPersonnelAsync(EditProfileViewModel model, string currentUserId);
 
+        Task<List<PersonnelListItemViewModel>> GetAllPersonnelAsync();
+
+        Task<EditProfileViewModel?> GetPersonnelForEditAsync(Guid id);
+
     }
 }

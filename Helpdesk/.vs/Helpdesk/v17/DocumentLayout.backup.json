@@ -3,13 +3,13 @@
   "WorkspaceRootPath": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CB779B68-996D-4E98-A1D9-2AC05ADA0399}|..\\Helpdesk.Infrastructure\\Helpdesk.Infrastructure.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\helpdesk.infrastructure\\data\\model\\request.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CB779B68-996D-4E98-A1D9-2AC05ADA0399}|..\\Helpdesk.Infrastructure\\Helpdesk.Infrastructure.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\helpdesk.infrastructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB779B68-996D-4E98-A1D9-2AC05ADA0399}|..\\Helpdesk.Infrastructure\\Helpdesk.Infrastructure.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\helpdesk.infrastructure\\data\\model\\directoratesunit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB779B68-996D-4E98-A1D9-2AC05ADA0399}|..\\Helpdesk.Infrastructure\\Helpdesk.Infrastructure.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\helpdesk.infrastructure\\data\\model\\request.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB779B68-996D-4E98-A1D9-2AC05ADA0399}|..\\Helpdesk.Infrastructure\\Helpdesk.Infrastructure.csproj|c:\\users\\mariana\\documents\\github\\asp_web_2024\\helpdesk.infrastructure\\data\\model\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -80,15 +80,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Bookmark",
@@ -107,8 +103,12 @@
               "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk.Infrastructure\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "..\\Helpdesk.Infrastructure\\Data\\ApplicationDbContext.cs",
@@ -133,15 +133,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Request.cs",
               "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk.Infrastructure\\Data\\Model\\Request.cs",
               "RelativeDocumentMoniker": "..\\Helpdesk.Infrastructure\\Data\\Model\\Request.cs",
               "ToolTip": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk.Infrastructure\\Data\\Model\\Request.cs",
               "RelativeToolTip": "..\\Helpdesk.Infrastructure\\Data\\Model\\Request.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAA0wCMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAxwEEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-08T12:53:33.8Z"
+              "WhenOpened": "2026-06-08T12:53:33.8Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -157,7 +158,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "DirectoratesUnit.cs",
               "DocumentMoniker": "C:\\Users\\Mariana\\Documents\\GitHub\\ASP_WEB_2024\\Helpdesk.Infrastructure\\Data\\Model\\DirectoratesUnit.cs",
               "RelativeDocumentMoniker": "..\\Helpdesk.Infrastructure\\Data\\Model\\DirectoratesUnit.cs",

@@ -1,0 +1,27 @@
+﻿@{
+    var crumbs = ViewData["Breadcrumbs"] as List<(string Text, string Url)>;
+}
+
+@if (crumbs != null && crumbs.Any())
+{
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            @foreach (var crumb in crumbs)
+            {
+                if (!string.IsNullOrEmpty(crumb.Url))
+                {
+                    <li class="breadcrumb-item">
+                        <a href="@crumb.Url">@crumb.Text</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="breadcrumb-item active" aria-current="page">
+                        @crumb.Text
+                    </li>
+                }
+            }
+        </ol>
+    </nav>
+}
+

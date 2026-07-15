@@ -10,17 +10,14 @@ namespace Fondacia.Core.Services
     public class PersonnelService : IPersonnel
     {
         private readonly UserManager<IdentityUser> _userManager;
-        private readonly ApplicationDbContext _context;
-   //    private readonly ServiceResult<CreatePersonnelViewModel> _serviceResult;
+        private readonly ApplicationDbContext _context;   
 
         public PersonnelService(
             UserManager<IdentityUser> userManager,
             ApplicationDbContext context)
-         //   ServiceResult<CreatePersonnelViewModel> serviceResult)
         {
             _userManager = userManager;
             _context = context;
-          //  _serviceResult = serviceResult;
         }
 
         public async Task<CompleteProfileViewModel> CompleteProfileAsync(CompleteProfileViewModel model, string userId)
@@ -61,7 +58,6 @@ namespace Fondacia.Core.Services
             return identityUser;
         }
 
-        //   public async Task<CreatePersonnelViewModel> CreatePersonnelAsync(CreatePersonnelViewModel model, string currentUser, string identityUserId)
 
         public async Task<ServiceResult<CreatePersonnelViewModel>> CreatePersonnelAsync(
     CreatePersonnelViewModel model, string currentUser, string identityUserId)
@@ -81,16 +77,21 @@ namespace Fondacia.Core.Services
             };
 
             //  Качване на снимка в базата  // да се копира и в EditPersonnelAsync
-            if (model.Photo != null)
+
+            if (model.RemovePhoto)
+            {
+                var avatarPath = Path.Combine("wwwroot", "images", "avatar.png");
+                personnel.ProfilePhoto = await File.ReadAllBytesAsync(avatarPath);
+                personnel.ProfilePhotoContentType = "image/png";
+            }
+            else if (model.Photo != null)
             {
                 // Ограничение: максимум 2 MB
                 const int maxFileSize = 2 * 1024 * 1024;
 
                 if (model.Photo.Length > maxFileSize)
                 {
-                    //throw new Exception("Снимката трябва да бъде до 2 MB.");
                     return ServiceResult<CreatePersonnelViewModel>.Fail("Снимката трябва да бъде до 2 MB.");
-
                 }
                 using var ms = new MemoryStream();
                 await model.Photo.CopyToAsync(ms);
@@ -130,10 +131,14 @@ namespace Fondacia.Core.Services
                .Include(p => p.IdentityUser)
                .FirstOrDefaultAsync(p => p.IdentityUserId == userId);
 
-            if (personnel == null)
-            {
+            if (personnel == null) {
                 throw new Exception("Personnel not found for the given user ID.");
             }
+            //if (personnel == null)
+            //{               
+            //  //  return ServiceResult<EditProfileViewModel>.Fail("Personnel not found for the given user ID.");
+            //  return null;
+            //}
 
             string? base64 = null;
 
@@ -155,7 +160,7 @@ namespace Fondacia.Core.Services
             return model;
         }
 
-        public async Task<EditProfileViewModel> EditPersonnelAsync(EditProfileViewModel model, string currentUserId)
+        public async Task<EditProfileViewModel > EditPersonnelAsync(EditProfileViewModel model, string currentUserId)
         {
             var personnel = await _context.Personnel
                 .Include(p => p.IdentityUser)
@@ -163,7 +168,8 @@ namespace Fondacia.Core.Services
 
             if (personnel == null)
             {
-                throw new Exception("Personnel not found for the given ID.");
+                return null;
+               // return ServiceResult<EditProfileViewModel>.Fail("Personnel not found for the given user ID.");
             }
 
             personnel.FullName = model.FullName;
@@ -172,7 +178,13 @@ namespace Fondacia.Core.Services
             personnel.IsActive = model.IsActive;
 
             // Upload photo to database
-            if (model.Photo != null)
+            if (model.RemovePhoto)
+            {
+                var avatarPath = Path.Combine("wwwroot", "images", "avatar.png");
+                personnel.ProfilePhoto = await File.ReadAllBytesAsync(avatarPath);
+                personnel.ProfilePhotoContentType = "image/png";
+            }
+            else if (model.Photo != null)
             {
                 using var ms = new MemoryStream();
                 await model.Photo.CopyToAsync(ms);
@@ -185,8 +197,53 @@ namespace Fondacia.Core.Services
             personnel.ModifiedOn = DateTime.UtcNow;
 
             await _context.SaveChangesAsync();
+
             return model;
         }
+
+        public async Task<EditProfileViewModel?> GetPersonnelForEditAsync(Guid id)
+        {
+            var personnel = await _context.Personnel
+                .Include(p => p.IdentityUser)
+                .FirstOrDefaultAsync(p => p.Id == id);
+
+            if (personnel == null)
+                return null;
+
+            string? base64 = null;
+
+            if (personnel.ProfilePhoto != null)
+            {
+                base64 = $"data:{personnel.ProfilePhotoContentType};base64,{Convert.ToBase64String(personnel.ProfilePhoto)}";
+            }
+
+            return new EditProfileViewModel
+            {
+                Id = personnel.Id,
+                FullName = personnel.FullName,
+                ShortName = personnel.ShortName,
+                Notice = personnel.Notice,
+                IsActive = personnel.IsActive,
+                ExistingPhotoBase64 = base64
+              //  Email = personnel.IdentityUser?.Email ?? ""
+            };
+        }
+
+        public async Task<List<PersonnelListItemViewModel>> GetAllPersonnelAsync()
+        {
+            return await _context.Personnel
+                .Include(p => p.IdentityUser)
+                .Select(p => new PersonnelListItemViewModel
+                {
+                    Id = p.Id,
+                    FullName = p.FullName,
+                    ShortName = p.ShortName,
+                    Email = p.IdentityUser != null ? p.IdentityUser.Email : "",
+                    IsActive = p.IsActive
+                })
+                .ToListAsync();
+        }
+
 
     }
 }

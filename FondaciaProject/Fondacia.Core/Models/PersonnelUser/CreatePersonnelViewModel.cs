@@ -31,5 +31,8 @@ namespace Fondacia.Core.Models.PersonnelUser
         // Upload
         //[MaxLength(DataConstants.maxFileSize, ErrorMessage = "Снимката трябва да бъде до 2 MB.")]
         public IFormFile? Photo { get; set; }
+
+        public bool RemovePhoto { get; set; }
+
     }
 }

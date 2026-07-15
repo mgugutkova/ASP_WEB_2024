@@ -1,0 +1,62 @@
+﻿@using Fondacia.Core.Models.PersonnelUser
+@model EditProfileViewModel
+
+<h2>Редакция на профил</h2>
+
+<form asp-action="EditProfile" method="post" enctype="multipart/form-data">
+
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label asp-for="FullName">Пълно име</label>
+        <input asp-for="FullName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ShortName">Кратко име</label>
+        <input asp-for="ShortName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Notice">Забележка</label>
+        <textarea asp-for="Notice" class="form-control"></textarea>
+    </div>
+
+    <hr />
+
+    <h4>Профилна снимка</h4>
+
+    @if (!string.IsNullOrEmpty(Model.ExistingPhotoBase64))
+    {
+        <img src="@Model.ExistingPhotoBase64" width="150" class="mb-3" id="photoPreview" />
+    }
+
+    <div class="form-group">
+        <label asp-for="Photo">Качи снимка</label>
+        <input asp-for="Photo" type="file" class="form-control" id="Photo" />
+        <span asp-validation-for="Photo" class="text-danger"></span>
+    </div>
+
+    <div class="form-check mt-2">
+        <input asp-for="RemovePhoto" class="form-check-input" type="checkbox" id="removePhotoCheckbox" />
+        <label class="form-check-label" for="RemovePhoto">
+            Премахни снимката js
+        </label>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="IsActive">Изберете: (ако вече не е служител във фондацията, изберете "неактивен"</label>
+        <select asp-for="IsActive" class="form-control">
+            <option value="true" selected="@(Model.IsActive ? "selected" : null)">Активен</option>
+            <option value="false" selected="@(Model.IsActive ? null : "selected")">Неактивен</option>
+        </select>
+    </div> 
+
+    <button type="submit" class="btn btn-success mt-3">Запази</button>
+</form>
+
+@section Scripts {
+    <script src="~/js/site.js"></script>
+}
+
+

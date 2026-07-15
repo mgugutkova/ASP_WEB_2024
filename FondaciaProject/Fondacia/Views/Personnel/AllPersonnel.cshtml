@@ -1,0 +1,38 @@
+﻿@using Fondacia.Core.Models.PersonnelUser
+@model List<PersonnelListItemViewModel>
+
+<h2>Всички служители</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Име</th>
+            <th>Кратко име</th>
+            <th>Email</th>
+            <th>Активен</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.FullName</td>
+                <td>@p.ShortName</td>
+                <td>@p.Email</td>
+                <td>
+                    @(p.IsActive ? "Да" : "Не")
+                </td>
+                <td>
+                    <a asp-action="EditPerson"
+                       asp-route-id="@p.Id"
+                       class="btn btn-sm btn-primary">
+                        Edit
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

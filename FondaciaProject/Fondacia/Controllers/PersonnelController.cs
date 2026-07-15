@@ -112,53 +112,135 @@ namespace Fondacia.Controllers
 
             var personnel = await _personnelService.CompleteProfileAsync(model, userId);
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction(nameof(Index), "Home");
         }
 
         [HttpGet]
         public async Task<IActionResult> EditProfile()
         {
+            ViewData["Breadcrumbs"] = new List<(string Text, string Url)>
+    {
+        ("Начало", Url.Action("Index", "Home")),
+        ("Моят профил", Url.Action("EditProfile", "Personnel")),
+        ("Редакция", null)
+    };
             var userId = _userManager.GetUserId(User);
+
             if (userId == null)
-            {
                 return RedirectToAction("Login", "Account");
-            }
+
 
             var model = await _personnelService.GetPersonnelAsync(userId);
 
             if (model == null)
-            {
                 return RedirectToAction(nameof(CompleteProfile));
-            }
 
-            return View(model);
+
+            ViewBag.FormAction = "EditProfile";
+            return View("Edit", model);
         }
-
 
         [HttpPost]
         [AutoValidateAntiforgeryToken]
         public async Task<IActionResult> EditProfile(EditProfileViewModel model)
         {
+            return await SavePerson(model, "EditProfile");
+
+            //    if (!ModelState.IsValid)
+            //    {
+            //        return View(model);
+            //    }
+
+            //    var currentUserId = _userManager.GetUserId(User);
+
+            //    if (currentUserId == null)
+            //    {
+            //        return RedirectToAction("Login", "Account");
+            //    }
+
+            //    var personnel = await _personnelService.EditPersonnelAsync(model, currentUserId);
+
+            //    if (personnel == null)
+            //    {
+            //        return NotFound();
+            //    }
+
+            //    return RedirectToAction(nameof(Index), "Home");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> EditPerson(Guid id)
+        {
+            var model = await _personnelService.GetPersonnelForEditAsync(id);
+
+            if (model == null)
+                return NotFound();
+
+            ViewBag.FormAction = "EditPerson";
+            return View("Edit", model);
+        }
+
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> EditPerson(EditProfileViewModel model)
+        {
+            return await SavePerson(model, "EditPerson");
+
+            //    if (!ModelState.IsValid)
+            //    {
+            //        return View(model);
+            //    }
+
+            //    var currentUserId = _userManager.GetUserId(User);
+
+            //    if (currentUserId == null)
+            //    {
+            //        return RedirectToAction("Login", "Account");
+            //    }
+
+            //    var personnel = await _personnelService.EditPersonnelAsync(model, currentUserId);
+
+            //    if (personnel == null)
+            //    {
+            //        return NotFound();
+            //    }
+
+            //    return RedirectToAction(nameof(Index), "Home");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> AllPersonnel()
+        {
+            ViewData["Breadcrumbs"] = new List<(string Text, string Url)>
+              {
+                  ("Начало", Url.Action("Index", "Home")),
+                  ("Потребители", null)
+              };
+            var model = await _personnelService.GetAllPersonnelAsync();
+            return View(model);
+        }
+
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        private async Task<IActionResult> SavePerson(EditProfileViewModel model, string actionName)
+        {
             if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
+                return View("Edit", model);
 
             var currentUserId = _userManager.GetUserId(User);
-
             if (currentUserId == null)
-            {
                 return RedirectToAction("Login", "Account");
-            }
 
             var personnel = await _personnelService.EditPersonnelAsync(model, currentUserId);
 
             if (personnel == null)
-            {
                 return NotFound();
-            }
 
-            return RedirectToAction(nameof(Index), "Home");
+            if (actionName == "EditProfile")
+                return RedirectToAction(nameof(Index), "Home");
+
+            return RedirectToAction(nameof(AllPersonnel));
         }
+
     }
 }
